@@ -1,0 +1,330 @@
+#+TITLE: Week 3.10 Math Homework
+#+AUTHOR: 2024110144
+#+LATEX_CLASS: article
+#+LATEX_CLASS_OPTIONS: [a4paper,12pt]
+#+LATEX_HEADER: \usepackage[margin=0.5in]{geometry}
+#+OPTIONS: \n:t toc:nil num:nil date:nil
+
+#+BEGIN_COMMENT
+3.10 Thomas 14.2 35-40 odd
+3.12 微积分学导论下 6.1 8 even 11 odd
+3.14 Thomas 14.3 1-92 mod 6
+     14.5 1-40 mod 5
+#+END_COMMENT
+
+* 3.10
+# at what points in space are the functions in 35-40 continuous?
+** 35
+*** a $f(x,y,z)=x^2+y^2-2z^2$
+since this function is polynomail, it is continuous everywhere in the real number space
+*** b $f(x,y,z)=\sqrt{x^2+y^2-1}$
+we need $x^2+y^2-1\geq 0$
+then since $x, y, z$ for $x^2+y^2-1$ is continuous
+we know that all points that satisfy $x^2+y^2\geq 1$ are continuous
+** 37
+*** a $h(x,y,z)=xy\sin\frac{1}{z}$
+$z\neq 0$, no restriction for xy
+so it is continuous for all $(x,y,z)$ above/below plane $xOy$ respectively
+*** b $h(x,y,z)=\frac{1}{x^2+z^2-1}$
+it is continuous for all $(x,y,z), x^2+z^2\neq 1$
+in other words, it is continuous outside and inside assert $x^2+z^2=1$ separately.
+** 39
+*** a $h(x,y,z)=\sqrt{4-x^2-y^2-z^2}$
+it is continuous for all the points inside sphere $x^2+y^2+z^2=4$.
+*** b $h(x,y,z)=\frac{1}{4-\sqrt{x^2+y^2+z^2-9}}$
+first, $x^2+y^2+z^2\geq 9$
+second, $x^2+y^2+z^2\neq 25$
+so it is continuous for
+- points outside sphere $x^2+y^2+z^2=9$ but inside sphere $x^2+y^2+z^2=25$
+- points outside sphere $x^2+y^2+z^2=25$
+respectively
+
+* 3.12
+** 8
+# 判断下列极限是否存在，若存在，求出其极限。
+*** 2
+$\lim_{\begin{align*} x &\rightarrow 0\\ y &\rightarrow 0\end{align*}} \frac{\sin xy}{x}$
+yes, and it is $0$.
+we can see so by multiplying $y$ and taking $\frac{\sin xy}{xy}$ as $1$.
+*** 4
+$\lim_{\begin{align*} x &\rightarrow \infty\\ y &\rightarrow a\end{align*}} \left(1+\frac{1}{x}\right)^{\frac{x^2}{x+y}}$
+Using Taylor Expansion, we know when $x\rightarrow \infty$,
+there is $\left(1+\frac{1}{x}\right)\rightarrow \frac{1}{x}$.
+$\lim_{\begin{align*} x &\rightarrow \infty\\ y &\rightarrow a\end{align*}} e^{\frac{x^2}{x+y}\ln\left(1+\frac{1}{x}\right)}$
+so the limit equals to that of $e^{\frac{x}{x+y}}$
+the answer is $e$
+*** 6
+$\lim_{\begin{align*} x &\rightarrow \infty\\ y &\rightarrow \infty\end{align*}} \frac{x^2+y^2}{x^4+y^4}$
+it is obviously $0$ no matter the equation we choose to describe the relationship between $x,y$
+*** 8
+$\lim_{\begin{align*} x &\rightarrow 1\\ y &\rightarrow 0\end{align*}} \frac{\ln \left(x+e^y\right)}{\sqrt{x^2+y^2}}$
+when they approach their limits
+the dividend would be $\ln 2$ and the dividor would be $1$
+so the answer is $\ln 2$
+*** 10
+$\lim_{\begin{align*} x &\rightarrow 0\\ y &\rightarrow 0\end{align*}} \frac{\sqrt{xy+1}-1}{x+y}$
+using $x+y\geq 2\sqrt{xy}$ we know the limit would not be greater than that of $\frac{\sqrt{xy+1}-1}{2\sqrt{xy}}$
+which equals to that of $\frac{\sqrt{xy}}{2+2\sqrt{xy+1}}$
+giving the upper bond $0$ for the limit
+by the other hand, it is obvious that the limit would not be negative
+so the answer is exactly $0$, ultilizing the sandwich law
+*** 12
+$\lim_{\begin{align*} x &\rightarrow 0\\ y &\rightarrow 0\end{align*}} (1+xy)^{\frac{1}{x+y}}$
+the limit is equal to that of $e^{\frac{1}{x+y} \ln (1+xy)}$
+where $\ln (1+xy)$ can be substituded by $xy$
+examing the $\frac{xy}{x+y}$ which at last approaches $0$
+giving us the answer of $1$
+** 11
+# 研究下列函数的连续性。
+*** 1
+$$f(x,y)=\left\{\begin{align*} & \frac{xy}{x+y}, & x\neq y\\
+& 0, & x=y \end{align*}\right .$$;
+for points not in $x=y$
+they are continuous in groups separated by $x+y=0$
+for points in $x=y$
+they are of course continuous since they are all 0
+for other situation
+we have to check if points in $x=y$ is continuous with nearby points
+which means $f(m,m)=\lim_{\begin{align*} x &\rightarrow m\\ y &\rightarrow m \end{align*}} f(x,y)$
+which further indicates $\lim_{\begin{align*} x &\rightarrow m\\ y &\rightarrow m \end{align*}} f(x,y) = 0$
+which is not correct when $m\neq 0$
+just assign $y=kx$
+*** 3
+$$f(x,y)=\left\{\begin{align*} & \frac{x^2 y}{x^2+y^2}, & (x,y)\neq (0,0)\\
+& 0, & (x,y)=(0,0) \end{align*}\right .$$;
+it is continuous obviously for points other than $(0,0)$
+then for the situation near $(0,0)$
+since the function do approaches $0$ when it approaches $(0,0)$
+we can see that by assigning $y=kx$
+the function is continuous anywhere
+
+* 3.14
+** 14.3
+*** 6
+$f(x,y)=(2x-3y)^3$
+\begin{align*}
+\frac{\delta f}{\delta x} &= 6(2x-3y)^2\\
+\frac{\delta f}{\delta y} &= -9(2x-3y)^2
+\end{align*}
+*** 12
+$f(x,y)=\tan^{-1} \frac{y}{x}$
+we know that the derivation of $\tan^{-1} u$ is $\frac{1}{1+u^2}$
+\begin{align*}
+\frac{\delta f}{\delta x} &= -\frac{y}{x^2+y^2}\\
+\frac{\delta f}{\delta y} &= \frac{x}{x^2+y^2}
+\end{align*}
+*** 18
+$f(x,y)=\cos^2 (3x-y^2)$
+\begin{align*}
+\frac{\delta f}{\delta x} &= -3 \sin (6x-2y^2)\\
+\frac{\delta f}{\delta y} &= 2y \sin (6x-2y^2)
+\end{align*}
+*** 24
+$f(x,y,z)=xy+xz+yz$
+\begin{align*}
+f_x &= y+z\\
+f_y &= x+z\\
+f_z &= x+y
+\end{align*}
+*** 30
+$f(x,y,z)=yz+\ln (xy)$
+\begin{align*}
+f_x &= \frac{1}{x}\\
+f_y &= z+\frac{1}{y}\\
+f_z &= y
+\end{align*}
+*** 36
+$g(u,v)=v^2 e^{\frac{2u}{v}}$
+\begin{align*}
+g_u &= 2v e^{\frac{2u}{v}}\\
+g_v &= 2(v-u) e^{\frac{2u}{v}}
+\end{align*}
+*** 42
+$f(x,y)=\sin xy$
+\begin{align*}
+f_{x^2} &= -y^2 \sin xy\\
+f_{xy} &= \cos xy - xy \sin xy\\
+f_{yx} &= \cos xy - xy \sin xy\\
+f_{y^2} &= -x^2 \sin xy
+\end{align*}
+*** 48
+$w=y e^{x^2-y}$
+\begin{align*}
+w_{x^2} &= 2y(1+2x^2) e^{x^2-y}\\
+w_{xy} &= 2x(1-y) e^{x^2-y}\\
+w_{yx} &= 2x(1-y) e^{x^2-y}\\
+w_{y^2} &= (y-2) e^{x^2-y}
+\end{align*}
+*** 54
+$w=x\sin y+y\sin x+xy$
+\begin{align*}
+w_x &= \sin y + y\cos x + y\\
+w_y &= \sin x + x\cos y + x\\
+w_{xy} &= \cos y + \cos x + 1\\
+w_{yx} &= \cos y + \cos x + 1
+\end{align*}
+so that they are indeed equal
+*** 60
+$$f(x,y)=\left\{\begin{align*} & \frac{\sin (x^3+y^4)}{x^2+y^2}, & (x,y) \neq (0,0)\\
+& 0, & (x,y) = (0,0) \end{align*}\right .$$
+the one associated with $x$ is equal to $\lim_{h\rightarrow 0} \frac{f(h,0)-f(0,0)}{h-0}$
+which evaluates to $0$
+the counterpart about $y$ has the same output
+so the partial derivatives there are both $0$
+*** 66
+at $(1,-1,-3)$
+$$\frac{\delta x}{\delta z} = \lim_{h\rightarrow 0} \frac{f(1,-1,-3+h)-f(1,-1,-3)}{h}$$
+gives $\frac{1}{6}$
+just differentiate both sides with respect to $z$ then pass the point in
+*** 72 WFL
+$$f(x,y)=\left\{\begin{align*} & xy\frac{x^2-y^2}{x^2+y^2}, & (x,y)\neq 0,\\
+& 0, & (x,y)=0.\end{align*}\right .$$
+**** a
+$$\begin{align*}
+\frac{\delta f}{\delta y}(x,0) &= \lim_{h\rightarrow 0} \frac{f(x,h)-f(x,0)}{h}\\
+&= \lim_{h\rightarrow 0} \frac{f(x,h)}{h}\\
+&= \lim_{h\rightarrow 0} x \cdot \frac{x^2-h^2}{x^2+h^2}\\
+&= x
+\end{align*}$$
+$$\begin{align*}
+\frac{\delta f}{\delta x}(0,y) &= \lim_{h\rightarrow 0} \frac{f(h,y)-f(0,y)}{h}\\
+&= \lim_{h\rightarrow 0} \frac{f(h,y)}{h}\\
+&= \lim_{h\rightarrow 0} y \cdot \frac{h^2-y^2}{h^2+y^2}\\
+&= -y
+\end{align*}$$
+
+**** b
+
+from a we can see one is $1$ and the other is $-1$
+they are not equal
+
+*** 78
+$f(x,y)=\tan^{-1}\frac{x}{y}$
+the once partials are $\frac{y}{x^2+y^2}$ and $\frac{-x}{x^2+y^2}$ respectively
+the second is $\pm \frac{2xy}{x^2+y^2}$
+which add up to $0$, satisfying the Laplace equation
+
+*** 84
+$w=\ln (2x+2ct)$
+one partial for $t$ is $\frac{c}{x+ct}$
+for $x$ is $\frac{1}{x+ct}$
+the second would be $\frac{-c^2}{(x+ct)^2}$ and $\frac{-1}{(x+ct)^2}$ respectively
+after rising the latter one with $c^2$
+it is obvious that the wave equation is satisfied
+
+*** 90
+$u(x,t)=\sin(\alpha x)\cdot e^{-\beta t}$
+$\frac{\delta u}{\delta t} = -\beta \sin (\alpha x) \cdot e^{-\beta t}$
+$\frac{\delta^2 u}{\delta x^2} = -\alpha^2 \sin(\alpha x)\cdot e^{-\beta t}$
+we need $\beta=\alpha^2$ for this to be a solution
+
+** 14.5
+
+*** 5
+$f(x,y)=\sqrt{2x+3y}$ at $(-1,2)$
+$$\begin{align*}
+f_x &= (2x+3y)^{-\frac{1}{2}}\\
+f_y &= \frac{3}{2} (2x+3y)^{-\frac{1}{2}}
+\end{align*}$$
+assign $(-1,2)$ in the partial derivatives
+we have $\frac{1}{2}$ and $\frac{3}{4}$ respectively
+so the gradient is $\left(\frac{1}{2},\frac{3}{4}\right)$
+#+begin_src gnuplot :file Thomas-14.5-5.png :exports both
+  set term png size 300,300
+  set xrange [-3:3]
+  set yrange [-1:5]
+  set xlabel "X"
+  set ylabel "Y"
+  set title "Thomas-14.5-5"
+
+  f(x, y) = sqrt(2*x + 3*y)
+
+  set contour
+  set cntrparam levels discrete 2
+  set view 0, 90
+  splot f(x, y) with lines title "Level Curve: f(x, y) = 2"
+
+  set arrow from -1, 2 to -1 + 0.5/1.414, 2 + 0.75/1.414 nohead lw 2 lc rgb "red" title "Gradient Vector"
+
+  set pointsize 2
+  set style fill solid 1.0
+  set object 1 circle at -1, 2 radius 0.1 fillcolor rgb "blue" behind
+
+  replot
+#+end_src
+
+#+RESULTS:
+[[file:Thomas-14.5-5.png]]
+
+*** 10
+$f(x,y,z)=e^{x+y} \cos z+(y+1) \sin^{-1} x$ at $(0,0,\frac{\pi}{6})$
+just calculate the partial derivations for $x,y,z$ and assign the point to it
+we have $(\frac{\sqrt{3}}{2}+1,\frac{\sqrt{3}}{2},-\frac{1}{2})$
+
+*** 15
+$f(x,y,z)=xy+yz+zx,P_0 (1,-1,2),\vec{u}=3\vec{i}+6\vec{j}-2\vec{k}$
+the partial derivation is $y+z,x+z,z+y$ respectively
+so the gradient at $P_0$ is $(1,3,0)$
+we normalize $\vec{u}$ to get $(\frac{3\vec{i}}{7},\frac{6\vec{j}}{7},\frac{-2\vec{k}}{7})$
+the we just need to dot multiply the gradient and normalized $\vec{u}$
+the answer is $3$
+
+*** 20
+$f(x,y)=x^2 y + e^{xy} \sin y, P_0=(1,0)$
+the gradient is $(0,2)$
+the normalized direction vector is $(0,1)$
+so the desired derivative is $2$ and $-2$ for increase and decrease respectively
+with direction of $(0,1)$ and $(0,-1)$ correspondingly
+
+*** 25
+$x^2+y^2=4,(\sqrt{2},\sqrt{2})$
+the tangent line is $x+y=2\sqrt{2}$
+#+begin_src gnuplot :file Thomas-14.5-25.png :exports both
+     set term png size 300,300
+     set title "Thomas-14.5-25"
+     set xlabel "X"
+     set ylabel "Y"
+     set xrange [-3:3]
+     set yrange [-3:3]
+     f(x, y) = x**2 + y**2 - 4
+     x0 = sqrt(2.0)
+     y0 = sqrt(2.0)
+     gradx = 2*sqrt(2.0)
+     grady = 2*sqrt(2.0)
+     tangent(x) = y0 + (grady/gradx) * (x-x0)
+
+     splot f(x,y) title "circle",\
+	   tangent(x) title "tangent",\
+	   x0, y0 with points pt 7 lc rgb "red" title "Point (sqrt(2), sqrt(2))",\
+	   x0 + gradx/2, y0 + grady/2 with vectors x0, y0 nohead lw 2 lc rgb "blue" title "∇f"
+#+end_src
+
+#+RESULTS:
+[[file:Thomas-14.5-25.png]]
+
+*** 30
+$f(x,y)=\frac{x-y}{x+y}$
+it asks for $\vec{u}$ and the value of $D_u f\left(-\frac{1}{2},\frac{3}{2}\right)$
+so that $D_u$
+- a is largest
+  we found that $D_u=3X_{\vec{u}}+Y_{\vec{u}}$
+  so the answer is $(1,0),3$
+- b is smallest
+  $(-1,0),-3$
+- c $=0$
+  $(0,-3)$
+- d $=-2$
+  $(-\frac{2}{3},1)$
+- e $=1$
+  $(0,1)$
+
+*** 35
+# The derivative of f(x,y) at P_0(1,2) in the direction of i+j is 2\sqrt{2} and in the direction of -2j is -3. what is the derivative of f in the direction  of -i-2j? give reasons for your answer.
+from the first two messages we can get $\nabla f = (1,3)$
+which we can just dot multiply with normalized vector
+to get the final answer $-\frac{7\sqrt{5}}{5}$
+
+*** 40
+well, we have $\nabla (fg) = g \nabla f + f \nabla g$
+and a similar chain rule
+not quite clear what does this quetion want

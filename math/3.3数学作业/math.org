@@ -1,0 +1,390 @@
+#+TITLE: Math Homework
+#+AUTHOR: 2024110144
+#+LATEX_CLASS: article
+#+LATEX_CLASS_OPTIONS: [a4paper,12pt]
+#+LATEX_HEADER: \usepackage{amsmath}
+#+LATEX_HEADER: \usepackage[margin=1in]{geometry}
+#+OPTIONS: \n:t
+#+OPTIONS: toc:nil
+
+# 3.3
+# Thomas 12.4 35-50 mod 6
+#        12.5 1-74 mod 6
+# 3.5
+# Thomas 12.6 1-58 mod 6
+# DL 6.1 4,8 all odd
+# PPT open/closed collection intersection/union
+# 3.7
+# 验证二重极限唯一性，局部有界性，四则运算法则和复合运算法则
+# Thomas 14.2 1-34 41-78 mod 6
+
+* 3.3
+** 12.4
+*** 36
+$A(0,0),B(7,3),C(9,8),D(2,5)$.
+the area is just $\left | \vec{AB} \times \vec{AD} \right |$.
+which evaluates to $29$.
+*** 42
+$A(-1,-1),B(3,3),C(2,1)$.
+the area is just $\frac{1}{2} \left | \vec{AB} \times \vec{AC} \right |$.
+which evaluates to $4$.
+*** 48
+$A(0,0,0),B(1,2,0),C(0,-3,2),D(3,-4,5)$.
+the area is $\left | \vec{AB} \cdot \left ( \vec{AC} \times \vec{AD} \right ) \right |$.
+which evaluates to $5$.
+** 12.5
+*** 6
+the desired line is
+\begin{align}
+x &= 3 + 2t\\
+y &= -2 - t\\
+z &= 1 + 3t
+\end{align}
+*** 12
+This is of course
+\begin{align}
+x &= 0\\
+y &= 0\\
+z &= t
+\end{align}
+*** 18
+for $0 \leq t \leq 1$,
+\begin{align}
+x(t) &= 3t\\
+y(t) &= 2 - 2t\\
+z(t) &= 0
+\end{align}
+#+begin_src gnuplot :file Thomas-12.5-18.png :export both
+  set term png size 300,300
+  set parametric
+  set urange [0:1]
+  set xrange [0:3]
+  set yrange [0:2]
+  set zrange [-1:1]
+  set xlabel "X"
+  set ylabel "Y"
+  set zlabel "Z"
+  set view 60, 30
+
+  splot 3*u, 2 - 2*u, 0 with lines title "line"
+#+end_src
+
+#+RESULTS:
+[[file:Thomas-12.5-18.png]]
+
+*** 24
+Refer to the points as ABC
+We have $\vec{AB} = (-1,1,2)$,
+and $\vec{AC} = (-3,2,3)$.
+Thus we get
+a normal vector of the plane
+as $\vec{AB} \times \vec{AC} = (-1,-3,1)$.
+ultilizing this and point A
+the plane can be written as
+$−1(x−2)−3(y−4)+1(z−5)=0$.
+which can be simplified as $x+3y−z=9$.
+*** 30
+L1:
+\begin{align*}
+x &= t\\
+y &= 3-3t\\
+z &= -2-t
+\end{align*}
+L2:
+\begin{align*}
+x &= 1+s\\
+y &= 4+s\\
+z &= -1+s
+\end{align*}
+we can see they both include point $(0,3,-2)$.
+then with a random $(1,0,-1)$ from L1
+and $(2,5,0)$ from L2
+we have a normal vector of the plane as
+\begin{equation*}
+(2,2,2)\times (1,-3,1) = (8,0,-8)
+\end{equation*}
+then we can get the plane with this and point
+being $x-z+2=0,y\in \bar{R}$.
+
+*** 36
+First we observe that $(0,1,0)$ is on the line
+so there is a vector between it and the desired point $(2,1,-1)$,
+$(2,0,-1)$ with magnitude length of $\sqrt{5}$.
+then we choose a random $(2,3,2)$,
+the line can be represented by vector $(1,1,1)$ and a point $(0,1,0)$.
+\begin{align}
+\sin\theta &= \frac{\left | (2,0,-1) \times (1,1,1) \right |}{\sqrt{15}}\\
+&= \frac{\left | (1,3,2) \right |}{\sqrt{15}}\\
+&= \frac{\sqrt{14}}{\sqrt{15}}
+\end{align}
+so distance is $\frac{\sqrt{14}}{\sqrt{3}} = \frac{\sqrt{42}}{3}$.
+*** 42
+we choose $(1,0,1)$, $(2,0,0)$ and $(0,4,0)$ from the plane
+getting two vectors
+namely $(1,0,-1), (-1,4,1)$.
+so we have a normal vector $(4,0,4)$.
+now we calculate $(0,2,3)$ and $(4,0,4)$.
+the latter can be seen as $(1,0,1)$,
+\begin{align*}
+\cos\theta &= \frac{(0,2,3) \cdot (1,0,1)}{\sqrt{26}}\\
+&= \frac{3}{\sqrt{26}}
+\end{align*}
+so the distance is $\frac{3\sqrt{2}}{2}$.
+*** 48
+$(2,-3,-3)$ and $(1,13,18)$ are common points of the planes
+giving a vector $(-1,16,21)$,
+using $(0,1,1)$ we get a normal vector for the first plane
+as $(5,1,-1)$.
+similarly using $(-1,1,1)$ we have normal vector $(1,4,3)$.
+assume $\theta$ as the angle of the two normal vectors
+we have $\cos \theta = \frac{2\sqrt{3}}{\sqrt{26}}$.
+so $\theta = \arccos \frac{2\sqrt{3}}{\sqrt{26}}$.
+this along with its supplementary angle is the answer.
+*** 54
+let $x=2$, we have the answer as $\left(2,-\frac{20}{7}, \frac{27}{7}\right)$.
+*** 60
+$(3,2,5)$ and $(1,-3,1)$ are on the line
+we have
+\begin{align}
+x &= t\\
+y &= 2.5t - 5.5\\
+z &= 2t-1
+\end{align}
+*** 66
+my answer is $x=\sqrt{3}y+C,z=3$ where C is any real number
+because the plane is parallel to plane xOy
+and $\frac{\pi}{6}+\frac{\pi}{3}=\frac{\pi}{2}$,
+the slope k of the line is pinned at $\frac{\sqrt{3}}{3}$.
+*** 72
+of course, because we can always cross multiply two vectors like this.
+* 3.5
+** 12.6
+*** 6
+e.
+it is a circular paraboloid
+*** 12
+c.
+this is called an ellipsoid
+*** 18
+#+begin_src gnuplot :file Thomas-12.6-18.png :export both
+  set term png size 300,300
+  set parametric
+  set xrange [-3:3]
+  set yrange [-3:3]
+  set zrange [-5:5]
+  set xlabel "X"
+  set ylabel "Y"
+  set zlabel "Z"
+  set title "Thomas-12.6-18"
+
+  splot 2*cos(u)*sin(v), 2*sin(u)*sin(v), 4*cos(v) with lines lw 2 title "ellipsoid"
+#+end_src
+
+#+RESULTS:
+[[file:Thomas-12.6-18.png]]
+
+*** 24
+#+begin_src gnuplot :file Thomas-12.6-24.png :export both
+  set term png size 300,300
+  set parametric
+  set xrange [-2:2]
+  set yrange [0:2]
+  set zrange [-2:2]
+  set xlabel "X"
+  set ylabel "Y"
+  set zlabel "Z"
+  set title "Thomas-12.6-24"
+
+  splot u, 1 - u**2 - v**2, v with lines lw 2 title "PARABOLOID"
+#+end_src
+
+#+RESULTS:
+[[file:Thomas-12.6-24.png]]
+
+*** 30
+#+begin_src gnuplot :file Thomas-12.6-30.png :export both
+  set parametric
+  set xrange [-3:3]
+  set yrange [-3:3]
+  set zrange [-3:3]
+  set xlabel "X"
+  set ylabel "Y"
+  set zlabel "Z"
+  set title "Thomas-12.6-30"
+
+  splot 2*sinh(u)*cos(v), 2*cosh(u), sinh(u)*sin(v) with lines lw 2
+#+end_src
+
+#+RESULTS:
+[[file:Thomas-12.6-30.png]]
+
+*** 36
+#+begin_src gnuplot :file Thomas-12.6-36.png :export both
+  set term png size 300,300
+  set parametric
+  set xrange [-0.125:0.125]
+  set yrange [-0.25:0.25]
+  set zrange [-2:2]
+  set xlabel "X"
+  set ylabel "Y"
+  set zlabel "Z"
+  set title "Thomas-12.6-36"
+  set urange [0:2*pi]
+  set vrange [-2:2]
+  splot (1/4)*cos(u), (1/2)*sin(u), v with lines lw 2
+#+end_src
+
+#+RESULTS:
+[[file:Thomas-12.6-36.png]]
+
+*** 42
+#+begin_src gnuplot :file Thomas-12.6-42.png :export both
+  set term png size 300,300
+  set parametric
+  set xrange [-3:3]
+  set yrange [-3:3]
+  set zrange [-3:3]
+  set xlabel "X"
+  set ylabel "Y"
+  set zlabel "Z"
+  set title "Thomas-12.6-42"
+  set urange [-2:2]
+  set vrange [0:2*pi]
+
+  splot sinh(u)*cos(v), cosh(u), sinh(u)*sin(v) with lines lw 2
+#+end_src
+
+#+RESULTS:
+[[file:Thomas-12.6-42.png]]
+
+*** 48
+**** a
+the volumn for $\frac{x^2}{a^2}+\frac{y^2}{b^2}-\frac{z^2}{c^2}=1$
+and $z=0$ $z=h,h>0$ is $\pi abh \left(1+\frac{h^2}{3c^2}\right)$,
+ultilizing the formula of ellipse area and integral.
+**** b
+$V=\frac{h}{2} \left(A_0+A_h\right)$.
+**** c
+$A_0=\pi ab$,
+$A_h=\pi ab\left(1+\frac{h^2}{c^2}\right)$,
+$A_m=\pi ab\left(1+\frac{h^2}{4c^2}\right)$.
+combine them and they are indeed equivalent.
+*** 54
+#+begin_src gnuplot :file Thomas-12.6-54.png :export both
+  set term png size 300,300
+  set parametric
+  set xrange [-5:5]
+  set yrange [-5:5]
+  set zrange [-5:5]
+  set xlabel "X"
+  set ylabel "Y"
+  set zlabel "Z"
+  set title "Thomas-12.6-54"
+  set urange [-2:2]
+  set vrange [0:2*pi]
+  splot 3*sinh(u)*cos(v), 4*cos(v), 3*sinh(u)*sin(v) with lines lw 2
+#+end_src
+
+#+RESULTS:
+[[file:Thomas-12.6-54.png]]
+
+** 6.1
+*** 4
+**** 1
+$z=\sqrt{1-x^2}+\sqrt{1+y^2}$.
+x is restricted to $[-1,1]$.
+it is not a closed region
+**** 3
+$z=\frac{\sqrt{x^2+y^2+2x}}{\sqrt{2x-x^2-y^2}}$.
+not a closed region
+it is a region
+x is $[0,2]$ and y is in $[-1,1]$.
+**** 5
+$u=\arcsin\frac{\sqrt{x^2+y^2}}{z}$.
+it is a region in the xy plane.
+z is restricted to $[-1,1]$.
+* 3.7
+** 14.2
+*** 6
+\begin{align}
+\lim_{(x,y)\rightarrow (0,0)} \cos \frac{x^2+y^3}{x+y+1} &= \lim_{(x,y)\rightarrow (0,0)} \cos \frac{0}{1}\\
+&= \cos 0\\
+&= 1
+\end{align}
+*** 12
+$\lim_{(x,y)\rightarrow \left( \frac{\pi}{2},0 \right) \frac{\cos y + 1}{y-\sin x}$.
+when x, y approaches the limit, we get $\frac{2}{-1}$,
+so the limit is just $-2$.
+*** 18
+\begin{align}
+\lim_{\begin{align*}(x,y) &\rightarrow (2,2)\\x+y &\neq 4\end{align*}} \frac{x+y-4}{\sqrt{x+y}-2} &= \lim_{\begin{align*}z &\rightarrow 4\\z &\neq 4\end{align*}} \frac{z-4}{\sqrt{z}-2}\\
+&= \lim_{z\rightarrow 4} \left(\sqrt{z}+2\right)\\
+&= 4
+\end{align}
+*** 24
+rewrite the fractions to find the limits
+\begin{align}
+\lim_{(x,y)\rightarrow (2,2)} \frac{x-y}{x^4-y^4} &= \lim_{(x,y)\rightarrow (2,2)} \frac{1}{(x+y)(x^2+y^2)}\\
+&= \frac{1}{32}
+\end{align}
+*** 30
+since it is continued at the point, we can just assign the values
+\begin{equation}
+\lim_{P\rightarrow (2,-3,6)} \ln\sqrt{x^2+y^2+z^2} = \ln 7
+\end{equation}
+*** 42
+To find out at what points $(x, y, z)$ in space are the function continuous,
+**** a
+\begin{equation}
+f(x,y,z) = \ln xyz
+\end{equation}
+all positive, all negative, or two/one positive or negative would be ok.
+**** b
+\begin{equation}
+f(x,y,z) = e^{x+y} \cos z
+\end{equation}
+It don't impose any restriction as long as x,y,z are real numbers
+*** 48
+# By considering different paths of approach, show that the functions inhave no limit as (x, y)->(0, 0).
+\begin{equation}
+h(x,y) = \frac{x^2 y}{x^4+y^2}
+\end{equation}
+using $y=x^2$, the limit is $\frac{1}{2}$.
+using $y=kx$, the limit is $0$.
+since they are different, the limit doesn't exist.
+*** 54
+# if f(x_0,y_0)=3, what can you say about \lim_{(x,y)\rightarrow (x_0,y_0)} f(x,y) if f is continuous at (x_0,y_0)? or if f is not continous there? Give your reasons. Hint: The Sandwich Theory.
+when it is continuous there, the limit is $3$ of course.
+when it is not continuous there, the limit may or may not exist
+and when it does exist, it might or might not be $3$.
+*** 60
+\begin{equation}
+f(x,y) = xy\frac{x^2-y^2}{x^2+y^2}
+\end{equation}
+the function approaches $0$ when $(x,y)\rightarrow (0,0)$.
+so $f(0,0)$ can be defined as 0 for it to be continuous at the origin.
+*** 66
+\begin{equation}
+f(x,y) = \frac{x^2-y^2}{x^2+y^2}
+\end{equation}
+# find the limit as $(x,y)\rightarrow (0,0)$ or show that it doesn't exist.
+it doesn't exist
+because the limit is 1 when we approach the origin through x-axis
+and becomes -1 when we go along y-axis
+they are different which is impossible
+*** 72
+# use the limit definition to find a delta for any given epsilon
+\begin{equation}
+f(x,y) = \frac{x+y}{2+\cos x}, \epsilon = 0.02
+\end{equation}
+when x is near 0, we know that $2<2+\cos x<3$.
+then choosing $\delta = 0.02$ is sufficient.
+*** 78
+# similar to the one above, just become xyz instead
+\begin{equation}
+f(x,y,z) = \tan^2 x + \tan^2 y + \tan^2 z, \epsilon = 0.03
+\end{equation}
+the tangent stuff is smaller than $x^2+y^2+z^2$,
+which is further smaller than $\delta^2$.
+so we can choose $\delta = 0.1$.
+actually as long as $\delta^2 < \epsilon$, we are fine.

@@ -1,0 +1,117 @@
+#+TITLE: Week 3.17 Math Homework
+#+AUTHOR: 2024110144
+#+LATEX_CLASS: article
+#+LATEX_CLASS_OPTIONS: [a4paper,12pt]
+#+LATEX_HEADER: \usepackage[margin=0.5in]{geometry}
+#+OPTIONS: \n:t toc:nil num:nil date:nil
+
+#+begin_comment
+3.17 Thomas 14.6 1-58 mod 5
+3.19 Thomas 14.4 1-52 mod 5
+3.21 导论下 6.4 2,4,5,6,7,9,10,11,12
+#+end_comment
+
+* 3.17
+** 5
+# find equations for the (a) tangent plane (b) normal line at the point $P_0$ on the given surface.
+$$\cos \pi x - x^2 y + e^{xz} + yz = 4, \, P_0(0,1,2)$$
+the gradient at $(0,1,2)$ is $(2,2,1)$
+the tangent plane is defined for all the points on it
+satisfying $\nabla f \cdot \left((x,y,z)-P_0\right)=0$
+which is $2x+2y+z-4=0$
+the normal line is
+$$\begin{align*}
+x &= 0+2t\\
+y &= 1+2t\\
+z &= 2+t
+\end{align*}$$
+which is $x=2t,\,y=1+2t,\,z=2+t$
+** 10
+# find an equation for the plane that is tangent to the given surface at the given point.
+$$z=e^{-(x^2+y^2)},\,(0,0,1)$$
+$$\begin{align*}
+\frac{\delta z}{\delta x} &= \frac{\delta}{\delta x} e^{-(x^2+y^2)}\\
+&= \frac{\delta}{\delta x} -2x \cdot e^{-(x^2+y^2)}
+\end{align*}$$
+$$\begin{align*}
+\frac{\delta z}{\delta y} &= \frac{\delta}{\delta y} e^{-(x^2+y^2)}\\
+&= \frac{\delta}{\delta y} -2y \cdot e^{-(x^2+y^2)}
+\end{align*}$$
+the tangent plane is
+$$z-z_0=\frac{\delta z}{\delta x} (x_0,y_0) (x-x_0) + \frac{\delta z}{\delta y} (x_0,y_0) (y-y_0)$$
+take $(0,0,1)$ and both partial derivatives are $0$
+we know $z=1$
+** 15
+# find parametric equation for the line tangent to the curve of intersection of the surfaces at the given point.
+$$\begin{align*}
+&\text{Surfaces:} & x^2+2y+2z=4,\,y=1\\
+&\text{Point:} & (1,1,\frac{1}{2})
+\end{align*}$$
+the gradients of the surfaces are $(2x,2,2)$ and $(0,1,0)$
+assign the point to them
+we have $(2,2,2)$ and $(0,1,0)$
+then we can have a tangent line by calculating their cross product
+which evaluates to $(-2,0,2)$
+the point is on the line so
+$$\begin{align*}
+x &= 1-2t\\
+y &= 1\\
+z &= \frac{1}{2}+2t
+\end{align*}$$
+
+** 20
+#+begin_comment
+By about how much will
+$$\begin{equation*}
+f(x,y.z)=e^x \cos yz
+\end{equation*}$$
+change as the point $P(x,y,z)$ movesfrom the origin a distance of $ds=0.1$ unit in the direction of $2\vec{i}+2\vec{j}-2\vec{k}$?
+#+end_comment
+$\nabla f = (e^x \cos (yz),-e^x z \sin (yz),-e^x y \sin (yz))$
+then the gradient at $(0,0,0)$ would be $(1,0,0)$
+normalized the direction vector, we have $(\frac{\sqrt{3}}{3},\frac{\sqrt{3}}{3},-\frac{\sqrt{3}}{3})$
+so $D_u f = \frac{\sqrt{3}}{3}$
+consider distance as $d$, then the answer is $d \cdot \frac{\sqrt{3}}{3}$
+** 25
+# find the linearization $L(x,y)$ of the function at each point.
+$$f(x,y)=x^2+y^2+1 \, \text{at} \, \text{a.} (0,0) \, \text{b.} (1,1)$$
+*** a
+it is just $1$ since $f(0,0)=1$
+*** b
+calculating the partial derivatives we have the linearization $L(x,y)=2x+2y-1$
+** 30
+# 同上
+$$f(x,y)=e^{2y-x} \, \text{at} \, \text{a.} (0,0) \, \text{b.} (1,2)$$
+*** a
+since the partial derivatives are $-1,2$ respectively
+the linearization would be $L(x,y)=-x+2y+1$
+*** b
+similarly we have $L(x,y)=-e^3 x+2e^3 y -2e^3$
+** 35
+# find the linearization $L(x,y)$ of the function $f(x,y)$ at $P_0$.
+# then find an upper bound for the magnitude $|E|$ of the error in the approximation $f(x,y)\,\approx\, L(x,y)$ over the rectangle $R$.
+$$f(x,y)=1+y+x\cos y \,\text{at}\, P_0(0,0)\text{,}\\
+\text{R:}\, |x|\leq 0.2,\, |y|\leq 0.2\\
+\text{(Use $|\cos y| \leq 1$ and $|\sin y| \leq 1$ in estimating $E$)}$$
+** 40
+# find the linearizations $L(x,y,z)$ of the functions at the given points.
+$$f(x,y,z)=x^2+y^2+z^2 \,\text{at}\,\\
+\text{a.} (1,1,1)\,\text{b.} (0,1,0)\,\text{c.} (1,0,0)$$
+** 45
+# find the linearizations $L(x,y,z)$ of the function $f(x,y,z)$ at point $P_0$.
+# then find an upper bound for the magnitude of the error E in the approximation $f(x,y,z)\approx L(x,y,z)$ over the region $R$.
+$$f(x,y,z)=xz-3yz+2 \,\text{at}\, P_0(1,1,2)\text{,}\\
+\text{R:}\, |x-1|\leq 0.01\text{,}\, |y-1|\leq 0.01\text{,}\, |z-2|\leq 0.02$$
+** 50
+
+** 55
+
+* 3.19
+** 5
+** 10
+** 15
+** 20
+** 25
+** 30
+** 35
+** 40

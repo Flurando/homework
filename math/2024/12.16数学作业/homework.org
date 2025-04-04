@@ -1,0 +1,429 @@
+#+TITLE: 12.16
+#+AUTHOR: 2024110144
+
+# Thomas 5.4 1-94 mod 9
+# Thomas 5.6 1-122 mod 9
+
+* 5.4
+** 9
+\begin{align*}
+\int_0^{\frac{\pi}{3}} 2 \sec^2 x dx &= 2 \int_0^{\frac{\pi}{3}} \sec^2 x dx\\
+&= \tan x |_0^{\frac{\pi}{3}}\\
+&= \sqrt{3}
+\end{align*}
+
+** 18
+\begin{align*}
+&\int_{-\frac{\pi}{3}}^{-\frac{\pi}{4}} \left(4\sec^2 t + \frac{\pi}{t^2}\right) dt\\
+&= 4 \int_{-\frac{\pi}{3}}^{-\frac{\pi}{4}} \sec^2 t dt + \pi \int_{-\frac{\pi}{3}}^{-\frac{\pi}{4}} \frac{1}{t^2} dt\\
+&= 4 \tan t |_{-\frac{\pi}{3}}^{-\frac{\pi}{4}} - \pi \frac{1}{t} |_{-\frac{\pi}{3}}^{-\frac{\pi}{4}}\\
+&= 4 \sqrt{3} - 4 + 1\\
+&= 4 \sqrt{3} - 3
+\end{align*}
+
+** 27
+\begin{align*}
+\int_{-4}^4 \left| x \right| dx &= 2 \int_0^4 x dx\\
+&= x^2 |_0^4\\
+&= 16
+\end{align*}
+
+** 36
+\begin{align*}
+\int_1^2 \frac{\ln x}{x} dx &= \frac{(\ln x)^2}{2} |_1^2\\
+&= \frac{(\ln 2)^2}{2}
+\end{align*}
+
+** 45
+\begin{equation*}
+y = \int_0^x \sqrt{1 + t^2} dt &= \sqrt{1 + x^2}
+\end{equation*}
+
+** 54
+\begin{equation*}
+y = \int_{2^x}^1 \sqrt[3]{t} dt &= \frac{3}{4} \left[t^{\frac{4}{3}}\right] |_{2^x}^1\\
+&= \frac{3}{4} \left(1 - 2^{\frac{4x}{3}}\right)
+\end{equation*}
+The derivation is $-2^{\frac{4x}{3}} \ln 2$
+
+** 63
+\begin{equation*}
+y = \sec \theta \tan \theta
+\end{equation*}
+The area is just half of the rectangle, $\frac{\sqrt{2}\pi}{2}$
+
+** 72
+\begin{equation*}
+y = \sin kx
+\end{equation*}
+One arch of the area is just $\int_0^{\frac{2\pi}{k}} \sin kx dx$
+
+Thus, the answer is $2 \cdot \frac{1}{k} = \frac{2}{k}$
+
+** 81
+*** a
+True
+
+$g'(x) = f(x)$
+
+*** b
+True
+
+This is because $f'(x)$ is continuous
+
+*** c
+True
+
+Consider $g'(1) = f(1)$
+
+We know that there is a vertical tangent
+
+*** d
+False
+
+You know that $g$ has a local minimum at $x=1$ because $f(x)$ changes from negative to positive
+
+*** e
+True
+
+Since $g'(1)=0$, at point $x=1$, $g$ has a local minimum here
+
+*** f
+False
+
+An inflection point occurs where the second derivative change sign
+
+*** g
+True
+
+Since $g'(1) = f(1) = 0$
+
+The statement is true
+
+** 90
+\begin{equation*}
+\int_0^{x^2} \sqrt{1 - t^2} dt
+\end{equation*}
+
+For $x > 1$ the square root doesn't exist
+
+So the domain is $[-1, 1]$
+
+Let $t = \cos \theta$
+
+We have $\int_0^{\frac{\pi}{2}} \cos \theta d\sin \theta$
+
+Which is $\int_0^{\frac{\pi}{2}} \cos^2 \theta d\theta$
+
+So $F(x) = \frac{1}{2} \arcsin x^2 + \frac{x^2}{2} \sqrt{1-x^4}$
+
+[[./5.4-90.png]]
+
+* 5.6
+** 9
+*** a
+\begin{align*}
+\int_0^{\sqrt{3}} \frac{4x}{\sqrt{x^2 + 1}} dx &= \int_1^4 \frac{2}{\sqrt{du}} du\\
+&= 4
+\end{align*}
+*** b
+\begin{align*}
+&\int_{-\sqrt{3}}^{\sqrt{3}} \frac{4x}{\sqrt{x^2 + 1}} dx
+&= 0
+\end{align*}
+
+** 18
+\begin{align*}
+&\int_{\pi}^{\frac{3\pi}{2}} \cot^5 \left(\frac{\theta}{6}\right) \sec^2 \left(\frac{\theta}{6}\right) d\theta\\
+&= 6 \int_{\frac{\pi}{6}}^{\frac{\pi}{4}} \cot^5 u \sec^2 u du\\
+&= 6 \left(\int_1^{\sqrt{3}} v^3 dv - \int_1^{\sqrt{3}} v dv + \int_1^{\sqrt{3}} \frac{v}{1+v^2} dv\right)\\
+&= 6 \left(2 - 1 + + \frac{1}{2} \ln 2\right)\\
+&= 6 + 3 \ln 2
+\end{align*}
+
+** 27
+\begin{align*}
+\int_0^{\pi} \frac{\sin t}{2 - \cos t} dt &= \int_0^{\pi} \frac{\sin u}{2 + \cos u} du\\
+&= 2 \int_0^{\pi} \frac{\sin t}{2 + \sin^2 t} dt\\
+&= \frac{\pi}{\sqrt{3}}
+\end{align*}
+
+** 36
+\begin{align*}
+\int_0^{\frac{\pi}{12}} 6 \tan 3x dx &= 6 \cdot \frac{1}{6} \ln 2\\
+&= \ln 2
+\end{align*}
+
+** 45
+\begin{align*}
+\int_{-1}^{-\frac{\sqrt{2}}{2}} \frac{dy}{y\sqrt{4y^2-1}} &= \int_{\frac{\sqrt{2}}{2}}^1 \frac{du}{\sqrt{u(1-4u^2)}}\\
+&= \frac{\pi}{12}
+\end{align*}
+
+** 54
+\begin{equation*}
+\int_0^1 (x^{\frac{1}{3}} - x^{\frac{1}{2}}) dx = \frac{1}{12}
+\end{equation*}
+
+** 63
+\begin{align*}
+\int_{-2}^2 (4-x^2) dx &= 4 \int_{-2}^2 dx - \int_{-2}^2 x^2 dx\\
+&= 16 - \frac{16}{3}\\
+&= \frac{32}{3}
+\end{align*}
+
+** 72
+The area between $y=|x^2-4|$ and $y=\frac{x^2}{2} - 4$ is $\frac{128}{3\sqrt{3}}$
+
+** 81
+The area between $4x^2+y=4$ and $x^4-y=1$ is $\int_{-1}^1 \left((4-4x^2)-(x^4-1)\right) dx$
+
+Which is $\frac{104}{15}$
+
+** 90
+The area enclosed by $x=\tan^2 y$ and $x = -\tan^2 y$ is $+\infty$
+
+** 99
+The area is $\int_0^{\ln 3} (e^{2x} - e^x) dx$
+
+Which is $4-2=2$
+
+** 108
+The area between the curves is $4$
+
+** 116
+Suppose $t=xu$
+
+Then we have $\int_x^{xy} \frac{1}{t} dt = \int_1^y \frac{1}{u} du$
+
+# Thomas 8.3 1-74 mod 9
+# Thomas 8.4 1-58 mod 9
+
+* 8.3
+** 9
+\begin{equation*}
+\int  \cos^3 x dx = \sin x - \frac{\sin^3 x}{3} + C
+\end{equation*}
+
+** 18
+\begin{align*}
+\int 8 \cos^4 2\pi x dx &= 8 \int \cos^4 2\pi x dx\\
+&= 8 \int \left(\frac{1+\cos 4\pi x}{2}\right)^2 dx\\
+&= 3x + \frac{\sin 4\pi x}{\pi} + \frac{\sin 8\pi x}{8\pi} + C
+\end{align*}
+
+** 27
+\begin{equation*}
+\int_{\frac{\pi}{3}}^{\frac{\pi}{2}} \frac{\sin^2 x}{\sqrt{1-\cos x}} dx = \frac{9\sqrt{3}-10\sqrt{2}}{3\sqrt{2}} + C 
+\end{equation*}
+
+** 36
+\begin{align*}
+\int \sec^3 x \tan^3 x dx &= \int \sec^3 x \tan x (\sec^2 x - 1) dx\\
+&= \frac{1}{5} \sec^5 x - \frac{1}{3} \sec^3 x + C
+\end{align*}
+
+** 45
+\begin{align*}
+\int 4 \tan^3 x dx &= 4 \int \tan^3 x dx\\
+&= 4 \int \tan x (\sec^2 x - 1) dx\\
+&= 4\frac{\tan^2 x}{2} + 4\ln |\cos x| + C
+\end{align*}
+
+** 54
+\begin{align*}
+\int_0^{\frac{\pi}{2}} \sin x \cos x dx &= \frac{1}{4} \int_0^{\frac{\pi}{2}} \sin 2x d2x\\
+&= \frac{1}{4} \cdot 2\\
+&= \frac{1}{2}
+\end{align*}
+
+** 63
+\begin{equation*}
+\int \frac{\sec^3 x}{\tan x} dx = -\ln |\csc x + \cot x| + C
+\end{equation*}
+
+** 72
+\begin{align*}
+\int_0^{\pi} \sqrt{1+\cos 4x} dx &= \sqrt{2} \int_0^{\pi} |\cos 2x| dx\\
+&= \sqrt{2} \left(\frac{1}{2} + 1 + \frac{1}{2}\right)\\
+&= 2\sqrt{2}
+\end{align*}
+
+* 8.4
+** 9
+\begin{align*}
+\int \frac{dx}{\sqrt(4x^2-49)} &= \frac{1}{2} \int \sec \theta d\theta\\
+&= \ln |\sec\theta + \tan\theta |+ C\\
+&= \frac{1}{2} \ln (2x + \sqrt{4x^2-49}) + C
+\end{align*}
+
+** 18
+Let $x=\tan \theta$
+
+\begin{align*}
+\int \frac{dx}{x^2\sqrt{x^2 + 1}} &= \int \frac{\sec \theta d\theta}{\tan^2 \theta}\\
+&= -\frac{\sqrt{x^2+1}}{x} + C
+\end{align*}
+
+** 27
+Let $x = \sin \theta$
+
+\begin{equation*}
+\int \frac{(1-x^2)^{\frac{3}{2}}}{x^6} dx = -\frac{1}{5x^5} + \frac{2}{3x^3} - \frac{1}{x} + C
+\end{equation*}
+
+** 36
+\begin{align*}
+\int_{\ln \frac{3}{4}}^{\ln \frac{4}{3}} \frac{e^t dt}{(1+e^{2t})^{\frac{3}{2}}} &= \int_{\frac{3}{4}}^{\frac{4}{3}} \frac{du}{(1+u^2)^{\frac{3}{2}}}\\
+&= \frac{1}{5}
+\end{align*}
+
+** 45
+\begin{align*}
+\int \sqrt{\frac{4-x}{x}} dx &= 2 \int \sqrt{4-u^2} du\\
+&= 4 \arcsin \frac{\sqrt{x}}{2} + 2 \sqrt{x(4-x)} + C
+\end{align*}
+
+** 54
+This is of course $\pi a b$
+
+# Thomas 8.5 1-60 mod 6
+# DL 4.2 6,7 mod 2 ... 1
+
+* 8.5
+** 6
+\begin{equation*}
+\frac{z}{z^3-z^2-6z} = \frac{1}{5} \left(\frac{1}{z-3} - \frac{1}{z+2}\right)
+\end{equation*}
+
+** 12
+\begin{align*}
+\int \frac{2x+1}{x^2-7x+12} dx &= \frac{-7}{x-3} + \frac{9}{x-4}\\
+&= -7\ln |x-3| + 9\ln |x-4| + C
+\end{align*}
+
+** 18
+\begin{align*}
+\int_{-1}^0 \frac{x^3 dx}{x^2-2x+1} &= \int_{-1}^0 \left(x+2+\frac{2}{(x-1)^2}\right) dx\\
+&= \frac{5}{2}
+\end{align*}
+
+** 24
+\begin{align*}
+\int \frac{8x^2+8x+2}{(4x^2 + 1)^2} dx &= \int \frac{8x^2}{(4x^2+1)^2} dx + \int \frac{8x}{(4x^2+1)^2} dx + \int \frac{2}{(4x^2+1)^2} dx\\
+&= \frac{2}{4x^2+1} - \frac{4}{(4x^2+1)^2} + C
+\end{align*}
+
+** 30
+\begin{align*}
+\int \frac{x^2+x}{x^4 - 3 x^2 - 4} dx &= \int \left(\frac{\frac{7}{25}}{x-2} - \frac{\frac{2}{25}}{x+2} - \frac{\frac{1}{5}}{x^2 + 1}\right) dx\\
+&= \frac{7}{25} \ln |x-2| - \frac{25}{2} \ln |x+2| - \frac{1}{10} \ln |x^2+1| + C
+\end{align*}
+
+** 36
+\begin{align*}
+\int \frac{16x^3}{4x^2-4x+1} dx &= \int 4x dx - 4 \int \frac{x}{4x^2-4x+1} dx\\
+&= 2x^2 - 2\ln |4x^2-4x+1| + C
+\end{align*}
+
+** 42
+\begin{equation*}
+\int \frac{\sin \theta d \theta}{\cos^2 \theta + \cos \theta - 2} = -\frac{1}{3} \ln |\frac{\cos \theta - 1}{\cos \theta + 2}| + C
+\end{equation*}
+
+** 48
+\begin{align*}
+\int \frac{1}{x\sqrt{x+9}} dx &= \int \frac{2}{u^2-9} du\\
+&= \frac{1}{3} \ln |\frac{u-3}{u+3}| + C\\
+&= \frac{1}{3} \ln |\frac{\sqrt{x+9}-3}{\sqrt{x+9}+3}| + C
+\end{align*}
+
+** 54
+We have $\frac{dx}{x^2+1}=\frac{dt}{t+1}$
+
+By intergrating them seperately, we get $\tan^{-1} x = \ln |t+1| + C$
+
+Thus the answer is $x=\tan\ln (t+1)$
+
+** 60
+*** a
+We have $\frac{dx}{(c-x)^2}=kdt$
+
+integrate both sides
+
+$-\frac{1}{c-x} = kt+C$
+
+Thus $x=c-\frac{1}{\frac{1}{c}-kt}$
+
+*** b
+$−\ln∣a−x∣+\ln∣b−x∣=k(b−a)t+C$
+
+Thus $x=\frac{b(1-e^{k(b-a)t})}{1-\frac{b}{a} e^{k(b-a)t}}$
+
+* 4.2
+** 6
+*** 1
+\begin{align*}
+\int \frac{1}{x^2+x-2} dx &= \frac{1}{3} \left(\int \frac{1}{x-1} dx + \int \frac{1}{x+2} dx\right)\\
+&= \frac{1}{3} \ln |\frac{x-1}{x+2}| + C
+\end{align*}
+
+*** 3
+\begin{align*}
+\int \frac{1}{x^2+x-2} dx &= \frac{1}{3} \left(\int \frac{1}{x-1} dx + \int \frac{1}{x+2} dx\right)\\
+&= \frac{1}{3} \ln |\frac{x-1}{x+2}| + C
+\end{align*}
+
+*** 5
+\begin{align*}
+\int \frac{2x^2-5}{x^4-5x^2+6} dx &= \int \frac{1}{x^2-2} dx + \int \frac{1}{x^2-3} dx\\
+&= \frac{\sqrt{2}}{2} \ln |\frac{x-\sqrt{2}}{x+\sqrt{2}}| + \frac{\sqrt{3}}{3} \ln |\frac{x-\sqrt{3}}{x+\sqrt{3}}| + C
+\end{align*}
+
+*** 7
+\begin{align*}
+\int \frac{x^3+1}{x^3-x^2} dx &= x + \int \frac{x^2+1}{x^3-x^2} dx\\
+&= x + \int \left(-\frac{1}{x} - \frac{1}{x^2} + \frac{2}{x-1}\right) dx\\
+&= x - \ln |x| + \frac{1}{x} + 2 \ln |x-1| + C
+\end{align*}
+
+*** 9
+\begin{align*}
+\int \frac{1}{(x+1)^2 (x^2+1)} dx &= \frac{1}{2} \int \left(\frac{1}{x+1} + \frac{1}{(x+1)^2} - \frac{x^2+1}\right) dx\\
+&= \frac{1}{2} \ln |x+1| - \frac{1}{2(x+1)} - \frac{1}{2} \tan^{-1} x + C
+\end{align*}
+
+*** 11
+\begin{align*}
+\int \frac{1}{(x^2 + 4x + 6)^2} dx &= \int \frac{1}{(u^2+2)^2} du\\
+&= \frac{\sqrt{2}}{8} \tan^{-1} \frac{x+2}{\sqrt{2}} + \frac{\sqrt{2}(x+2)}{16((x+2)^2+2)} + C
+\end{align*}
+
+** 7
+*** 1
+\begin{align*}
+\int \frac{1}{1+\sqrt{1+x}} dx &= 2 \int \frac{u}{u+1} du\\
+&= 2u - 2\ln |1+u| + C\\
+&= 2\sqrt{1+x} - 2\ln |1+\sqrt{1+x}| + C
+\end{align*}
+
+*** 3
+\begin{align*}
+\int \frac{\sqrt{x}}{1+x} dx &= 2u - 2 \int \frac{1}{1+u^2} du\\
+&= 2\sqrt{x} - 2 \tan^{-1} \sqrt{x} + C
+\end{align*}
+
+*** 5
+\begin{equation*}
+\int \sqrt{\frac{1-x}{1+x}} dx = 4\ln |1+x| - x + C
+\end{equation*}
+
+*** 7
+\begin{equation*}
+\int \frac{x+1}{\sqrt{x^2 + x + 1}} dx = \sqrt{x^2+x+1} + \ln | \sqrt{4(x^2+4x+1)-3}+2 | + C
+\end{equation*}
+
+*** 9
+\begin{equation*}
+\int \sqrt{3+4x-4x^2} dx = \arcsin (x-\frac{1}{2}) + \sin (x-\frac{1}{2}) \sqrt{1-\left(x-\frac{1}{2}\right)^2} + C
+\end{equation*}

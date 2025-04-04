@@ -1,0 +1,464 @@
+#+TITLE: 12.2 & 12.6 math
+#+AUTHOR: 2024110144
+
+# Thomas 5.5 1-80 被9整除
+# 导论 4.2 1 2 3 5 奇数
+
+* Question 1
+Since $df(x) = f'(x)dx$, we have
+\begin{align*}
+\int \frac{f'(x)}{f(x)} dx &= \int \frac{1}{f(x)} d(f(x))\\
+&= \ln f(x) + C
+\end{align*}
+** Question (1)
+Applying the discovery, we get $\frac{1}{2} \ln \left(1 + x^2\right)$
+** Question (3)
+Similarly, we have $-\ln \cos x$
+** Question (5)
+The answer is $\frac{1}{2} \ln \left(1 + e^{2x}\right)$
+
+* Question 2
+** Question (1)
+\begin{align*}
+\int (2x - 3)^{100} dx &= \frac{1}{2} \int (2x - 3)^{100} d(2x - 3)\\
+&= \frac{1}{2} \int (2x - 3)^{100} d(2x - 3)\\
+&= \frac{1}{202} (2x - 3)^{101} + C
+\end{align*}
+** Question (3)
+Since $d\frac{1}{x} = -\frac{1}{x^2} dx$
+
+We have
+\begin{align*}
+\int \cos \frac{1}{x} \cdot \frac{1}{x^2} dx &= -\int \cos \frac{1}{x} d\frac{1}{x}\\
+&= -\sin \frac{1}{x} + C
+\end{align*}
+** Question (5)
+\begin{align*}
+\int \frac{1}{\sin^2 \left(2x + \frac{\pi}{4}\right)} dx \\
+&= \frac{1}{2} \int \frac{1}{\sin^2 \left(2x + \frac{\pi}{4}\right)} d\left(2x + \frac{\pi}{4}\right)\\
+&= -\frac{1}{2} \cot \left(2x + \frac{\pi}{4}\right) + C
+\end{align*}
+** Question (7)
+\begin{align*}
+\int \frac{dx}{\sqrt{x} (1 + x)} &= 2 \int \frac{d\sqrt{x}}{1 + x}\\
+&= \frac{2}{\tan \sqrt{x}} + C
+\end{align*}
+** Question (9)
+TBCL
+** Question (11)
+\begin{align*}
+\int \frac{1}{x\ln x \ln (\ln x)} dx &= \int \frac{1}{\ln x \ln (\ln x)} d\ln x\\
+&= \int \frac{1}{\ln (\ln x)} d\ln (\ln x)\\
+&= \int 1 d\ln [\ln (\ln x)]\\
+&= \ln [\ln (\ln x)] + C
+\end{align*}
+** Question (13)
+\begin{align*}
+\int \frac{1}{\sqrt{x+1}+\sqrt{x-1}} dx &= \int \frac{\sqrt{x+1}-\sqrt{x-1}}{2} dx\\
+&= \frac{1}{2} \left(\int \sqrt{x+1} dx - \int \sqrt{x-1} dx\right)\\
+&= \frac{1}{3} \left((x+1)^{\frac{2}{3}} - (x-1)^{\frac{2}{3}}\right) + C
+\end{align*}
+* Question 3
+** Question (1)
+Consider $x = \sin \theta$
+
+The integral becomes $\int \tan \theta d\sin \theta = \int \sin \theta d\theta = -\cos \theta + C$
+** Question (3)
+$\int \frac{x^3}{\sqrt{x^8 - 4}} dx = \frac{1}{4} \int \frac{1}{\sqrt{x^8 - 4}} dx^4$
+
+Think of $x^4 = 2\sec \theta$, where $x \neq 0$
+
+Thus the integral can further become $\frac{1}{2} \int \frac{1}{2 | \tan \theta |} d\sec theta$
+
+Since integral doesn't mind the symbol, we have
+
+$\frac{1}{2} \int \frac{1}{2 \tan \theta } d\sec theta = \frac{1}{4} \int \sec \theta d\theta$
+
+Which means the answer of $\frac{1}{4} \ln | \sec \theta + \tan \theta | + C$
+
+Which is $\frac{1}{4} \ln | \frac{x^4}{2} + \tan \arcsec \frac{x^4}{2} | + C$
+** Question (5)
+\begin{align*}
+\int \frac{\sin 2x}{\sqrt{2 - \sin^4 x}} dx &= - \int \frac{1}{\sqrt{2 - \sin^4 x}} d\cos 2x\\
+&= -2 \int \frac{1}{\sqrt{2 - \sin^4 x}} d\cos^2 x\\
+&= -2 \int \frac{1}{\sqrt{2 - (1-\cos^2 x)^2}} d\cos^2 x\\
+&= 2 \int \frac{1}{\sqrt{2 - (1-\cos^2 x)^2}} d(1-\cos^2 x)\\
+\end{align*}
+Let $1 - \cos^2 x = \sqrt{2} \sin \theta$, applying the suitable domain
+
+Then we have $2\sqrt{2} \int \frac{1}{\sqrt{2}} d\theta$
+
+Which is $\theta + C$, $\arcsin \frac{\sqrt{2}}{2} \left(1 - \cos^2 x\right) + C$
+** Question (7)
+\begin{align*}
+\int \frac{\sqrt{\tan x}}{\cos^2 x} dx &= \int \sqrt{\tan x} d\tan x\\
+&= \frac{2}{3} \tan^{\frac{2}{3}} x + C
+\end{align*}
+** Question (9)
+Consider $x = \sin t$
+\begin{align*}
+\int \sqrt{\frac{\arcsin x}{1 - x^2}} dx &= \int t \cos t dt\\
+&= t \sin t + \cos t + C\\
+&= x \arcsin x + \sqrt{1 - x^2} + C
+\end{align*}
+** Question (11)
+\begin{align*}
+\int \cot \frac{x}{a-b} dx &= (a-b) \cot \frac{x}{a-b} d\frac{x}{a-b}\\
+&= (a-b) \ln | \sin \frac{x}{a-b} | + C
+\end{align*}
+** Question (13)
+\begin{align*}
+\int e^{2x^2 + \ln x} dx &= \frac{1}{2} \int e^{2x^2} dx^2\\
+&= \frac{1}{4} \int e^{2x^2} d2x^2\\
+&= \frac{1}{4} e^{2x^2} + C
+\end{align*}
+** Question (15)
+\begin{align*}
+\int \sqrt{\frac{\ln\left(x + \sqrt{x^2 + 1}\right)}{1 + x^2}} dx \\
+$= \int \sqrt{\frac{\sinh^{(-1)} x}{1 + x^2}} dx\\
+&= \frac{2}{3} (\sinh^{(-1)} x)^{\frac{3}{2}} + C
+\end{align*}
+** Question (17)
+Consider $x = a \sin \theta$
+\begin{align*}
+\int \frac{1}{(a^2 - x^2)^{\frac{3}{2}} dx &= \frac{1}{a^2} \int \sec^2 \theta d\theta\\
+&= \frac{1}{a^2} \tan \theta + C\\
+&= \frac{x}{a^2 \sqrt{a^2 - x^2}} + C
+\end{align*}
+** Question (19)
+Let $m = 1 + x^3$
+\begin{align*}
+\int x^5 \root 3 \of{(1 + x^3)^2} dx &= \frac{1}{3} \left(\int u^{\frac{5}{3}} du \\
+- \int u^{\frac{2}{3}} du\right)\\
+&= \frac{1}{3} \left(\frac{3}{8} u^{\frac{8}{3}} - \frac{3}{5} u^{\frac{5}{3}}\right) + C\\
+&= \frac{1}{8}\left(1 + x^3\right)^{\frac{8}{3}} - \frac{1}{5}\left(1 + x^3\right)^{\frac{5}{3}} + C
+\end{align*}
+** Question (21)
+Consider $x = 2\sin \theta$
+\begin{align*}
+\int \frac{\sqrt{4 - x^2}}{x^4} dx &= \frac{1}{4} \int \frac{\cos^2 \theta}{\sin^4 \theta} d\theta\\
+&= \frac{1}{4} \left(\int \csc^4 \theta d\theta - \int \csc^2 \theta d \theta\right)\\
+&= \frac{1}{12} \cot^3 \theta + C\\
+&= \frac{1}{12} \frac{(4 - x^2)^{\frac{3}{2}}}{x^3} + C
+\end{align*}
+* Question 5
+** Question (1)
+\begin{align*}
+\int x \sin 2x dx &= -\frac{1}{2} \int x d\cos 2x\\
+&= -\frac{1}{2} \left(x\cos 2x - \int \cos 2x dx\right)\\
+&= -\frac{1}{2} x \cos 2x + \frac{1}{4} \sin 2x + C
+\end{align*}
+** Question (3)
+\begin{align*}
+\int x^2 \cos 5x dx &= \frac{1}{5} \int x^2 d\sin 5x\\
+&= \frac{1}{5} \left(x^2 \sin 5x - \int \sin 5x dx^2\right)\\
+&= \frac{1}{5} \left(x^2 \sin 5x - \int 2x \sin 5x dx\right)\\
+&= \frac{1}{5} x^2 \sin 5x - \frac{2}{5} \int x \sin 5x dx\\
+&= \frac{1}{5} x^2 \sin 5x + \frac{2}{25} \int x d\cos 5x\\
+&= \frac{1}{5} x^2 \sin 5x + \frac{2}{25} \left(x \cos 5x - \int \cos 5x dx\right)\\
+&= \frac{1}{5} x^2 \sin 5x + \frac{2}{25} x \cos 5x - \frac{2}{125} \sin 5x + C
+\end{align*}
+** Question (5)
+\begin{align*}
+\int x \sinh x dx &= \int x d\cosh x\\
+&= x \cosh x - \int \cosh x dx\\
+&= x \cosh x - \sinh x + C
+\end{align*}
+** Question (7)
+\begin{align*}
+\int x^2 \ln (1+x) dx &= \frac{1}{3} \int \ln (1+x) dx^3\\
+&= \frac{1}{3} \left(x^3 \ln (1+x) - \int \frac{x^3}{1+x} dx\right)\\
+&= \frac{1}{3} x^3 \ln (1+x) - \frac{x^3}{9} + \frac{x}{3} - \frac{\ln(1+x)}{3} + C
+\end{align*}
+** Question (9)
+\begin{align*}
+\int x \arcsinx dx &= \frac{1}{2} \int \arcsin x dx^2\\
+&= \frac{1}{2} x^2 \arcsin x - \frac{1}{2} \int x^2 d \arcsin x\\
+&= \frac{1}{2} x^2 \arcsin x - \frac{1}{2} \int \frac{x^2}{\sqrt{1-x^2}} dx\\
+&= \frac{1}{2} x^2 \arcsin x - \frac{1}{4} \left(\arcsin x - x\sqrt{1-x^2\right}) + C
+\end{align*}
+** Question (11)
+\begin{align*}
+\int \sin (\ln x) dx &= x \sin (\ln x) - \int \cos (\ln x) dx\\
+&= x \sin (\ln x) - x \cos (\ln x) - \int \sin (\ln x) dx
+\end{align*}
+Thus we have the integral as $\frac{1}{2} \left(x \sin (\ln x) - x \cos (\ln x)\right) + C$
+** Question (13)
+\begin{align*}
+\int \frac{x}{\sqrt{1 + 2x}} dx &= \frac{1}{4} \int \left((1+2x)^{\frac{1}{2}} \\
+- (1+2x)^{-\frac{1}{2}}\right) d(1+2x)\\
+&= \frac{1}{6} (1+2x)^{\frac{3}{2}} - \frac{1}{2} (1+2x)^{\frac{1}{2}} + C
+\end{align*}
+** Question (15)
+\begin{align*}
+\int \sin x \ln (\tan x) dx &= -\cos x \ln \tan x + \int \frac{1}{\sin x} dx\\
+&= -\cos x \ln \tan x + \ln (\csc x + \cot x) + C
+\end{align*}
+** Question (17)
+\begin{align*}
+\int \sinh ax \sin bx dx &= \frac{1}{4i} \int \left(e^{(a+bi)x} - e^{(a-bi)x} \\
+- e^{(-a+bi)x} + e^{(-a-bi)x}\right) dx\\
+&= \frac{1}{a^2+b^2} \left(b\sinh (ax) - a \sinh (bx)\right) + C
+\end{align*}
+** Question (19)
+\begin{align*}
+\int \frac{x^2}{(1 + x^2)^2} dx &=  \int \left(\frac{1}{1+x^2} - \frac{1}{(1+x^2)^2}\right) dx\\
+&= \frac{1}{2} \tan^{-1} x - \frac{x}{2+2x^2} + C
+\end{align*}
+** Question (21)
+\begin{align*}
+\int \frac{x^2 e^x}{(x+2)^2} dx &= \int \frac{x^2}{(x+2)^2} de^x\\
+&= \frac{x^2 e^x}{(x+2)^2} - 4 \int \frac{e^x}{(x+2)^4} dx + C\\
+&= \frac{x^2 e^x}{(x+2)^2} - \sum_{n=2}^{\infty} \frac{C_n e^x}{(x+2)^{n+2}} + C
+\end{align*}
+** Question (23)
+\begin{align*}
+\int \frac{\arctan e^x}{e^x} dx &= -e^{-x} \arctan e^x + \int \frac{1}{1 + e^{2x}} dx\\
+&= -e^{-x} \arctan e^x + \frac{1}{2} \tan^{-1} e^x + C
+\end{align*}
+
+* Thomas 5.5
+** Question 9
+\begin{align*}
+\int \sec 2t \tan 2t dt &= \frac{1}{2} \int \sec u \tan u du\\
+&= -\frac{1}{2} \int \sec^2 u d\cos u\\
+&= \frac{1}{2} \sec u + C\\
+&= \frac{1}{2} \sec 2t + C
+\end{align*}
+** Question 18
+\begin{align*}
+\int \frac{1}{\sqrt{5s+4}} ds &= \frac{1}{5} \int \frac{1}{\sqrt{5s+4}} d(5s+4)\\
+&=  \frac{2}{5} \sqrt{5s+4} + C\\
+\end{align*}
+** Question 27
+\begin{align*}
+\int r^2 \left(\frac{r^3}{18} - 1\right)^5 dr &= \frac{1}{3} \int \left(\frac{r^3}{18} - 1\right)^5 dr^3\\
+&= 6 \int \left(\frac{r^3}{18} - 1\right)^5 d\left(\frac{r^3}{18} - 1\right)\\
+&= \left(\frac{r^3}{18} - 1\right)^6 + C
+\end{align*}
+** Question 36
+\begin{align*}
+\int \frac{\cos\sqrt{\theta}}{\sqrt{\theta}\sin^2 \sqrt{\theta}} d\theta \\
+&= 2 \int \frac{\cos\sqrt{\theta}}{\sin^2 \sqrt{\theta}} d\sqrt{\theta}\\
+&= 2 \int \frac{1}{\sin^2 \sqrt{\theta}} d\sin\sqrt{\theta}\\
+&= -\frac{2}{\sin \sqrt{\theta}} + C 
+\end{align*}
+** Question 45
+\begin{align*}
+\int (x+1)^2 (1-x)^5 dx &= \int (x^2 + 2x + 1) (1 - 5x + 10x^2 - 10x^3 + 5x^4 - x^5) dx\\
+&= -\frac{1}{6} (x+1)^2 (1-x)^6 + C
+\end{align*}
+** Question 54
+\begin{align*}
+\int \frac{1}{x^2} e^{\frac{1}{x}} \sec\left(1+e^{\frac{1}{x}}\right) \tan\left(1+e^{\frac{1}{x}}\right) dx \\
+&= -\int e^{\frac{1}{x}} \sec\left(1+e^{\frac{1}{x}}\right) \tan\left(1+e^{\frac{1}{x}}\right) d\frac{1}{x}\\
+&= \int \sec\left(1+e^{\frac{1}{x}}\right) \tan\left(1+e^{\frac{1}{x}}\right) d e^{\frac{1}{x}}\\
+&= \int \sec\left(1+e^{\frac{1}{x}}\right) \tan\left(1+e^{\frac{1}{x}}\right) d \left(e^{\frac{1}{x}} \\
++ 1\right)\\
+&= -\int \sec^2 \left(1+e^{\frac{1}{x}}\right) d \cos\left(e^{\frac{1}{x}} + 1\right)\\
+&= \sec \left(1+e^{\frac{1}{x}}\right) + C
+\end{align*}
+** Question 63
+Think of $x = \sin \theta$ where $-1 < x < 1$ and $0 \leq theta \leq 2\pi$
+
+\begin{align*}
+\int \frac{(\sin^{-1} x)^2 dx}{\sqrt{1-x^2}} &= \int \frac{(\arcsin x)^2 dx}{\sqrt{1-x^2}}\\
+&= \int \frac{\theta^2 d\sin \theta}{\cos \theta}\\
+&= \int \theta^2 d\theta\\
+&= \frac{\theta^3}{3} + C\\
+&= \frac{\arcsin^3 x}{3} + C
+\end{align*}
+** Question 72
+\begin{align*}
+\int \csc x dx &= \int \csc x \cdot \frac{\csc x + \cot x}{\csc x + \cot x} dx\\
+&= \int \frac{\csc^2 x + \csc x \cot x}{\csc x + \cot x} dx\\
+&= - \int \frac{1}{\csc x + \cot x} d(\csc x + \cot x)\\
+&= - \ln (\csc x + \cot x) + C
+\end{align*}
+
+# 导论 4.2 3 5偶数
+* Question 3
+** Question (2)
+\begin{align*}
+\int x^2 \root 3 \of{1 + x^3} dx &= \frac{1}{3} \int \root 3 \of{1 + x^3} dx^3\\
+&= \frac{1}{3} \int \root 3 \of{1 + x^3} d\left(1 + x^3\right)\\
+&= \frac{1}{4} (1 + x^3)^{\frac{4}{3}} + C
+\end{align*}
+** Question (4)
+\begin{align*}
+\int \frac{6x - 5}{2 \sqrt{3x^2 - 5x + 6}} dx &= \frac{1}{2} \int \frac{1}{\sqrt{3x^2 - 5x + 6}} d(3x^2 - 5x)\\
+&= \sqrt{3x^2 - 5x + 6} + C
+\end{align*}
+** Question (6)
+\begin{align*}
+\int \frac{\sin x}{\sqrt{\cos^3 x}} dx &= -\int \frac{1}{\sqrt{\cos^3 x}} d\cos x\\
+&= \frac{2}{\sqrt{\cos x}} + C
+\end{align*}
+** Question (8)
+\begin{align*}
+\int \frac{\arcsin \frac{\pi}{2}}{\sqrt{4-x^2}} dx \\
+&= \arcsin\left(\frac{\pi}{2}\right) \int \frac{1}{\sqrt{4 - x^2}} dx\\
+&= \arcsin\left(\frac{\pi}{2}\right) \cdot \arcsin\left(\frac{x}{2}\right) + C
+\end{align*}
+** Question (10)
+\begin{align*}
+\int \frac{\arctan \sqrt{x}}{\sqrt{x}} \cdot \frac{1}{1+x} dx \\
+&= \int \frac{\arctan(\sqrt{x})}{\sqrt{x}(1+x)} dx\\
+&= \int \frac{\arctan(u)}{u(1+u^2)} \cdot 2u du\\
+&= 2 \int \frac{\arctan(u)}{1+u^2} du\\
+&= 2 \left( u \arctan(u) - \int u \cdot \frac{1}{1+u^2} du \right)\\
+&= 2 \left( u \arctan(u) - \ln(1+u^2) \right) + C\\
+&= 2 \left( \sqrt{x} \arctan(\sqrt{x}) - \ln(1+x) \right) + C
+\end{align*}
+** Question (12)
+\begin{align*}
+\int e^{e^x +x} dx &= \int e^{e^x} e^x dx\\
+&= \int e^{e^x} e^x dx\\
+&= \int e^{v} dv\\
+&= e^{v} + C\\
+&= e^{e^x} + C
+\end{align*}
+** Question (14)
+\begin{align*}
+\int (e^x + 1)^3 e^x dx &= \int (u)^3 du\\
+&= \frac{u^4}{4} + C\\
+&= \frac{(e^x + 1)^4}{4} + C
+\end{align*}
+** Question (16)
+\begin{align*}
+\int \frac{x^2}{\sqrt{a^2 - x^2}} dx &= \int x^2 (a^2 - x^2)^{-1/2} dx\\
+&= -\int (a^2 - x^2)^{1/2} d(a^2 - x^2)\\
+&= -\frac{1}{3} (a^2 - x^2)^{3/2} + C\\
+&= -\frac{1}{3} \sqrt{(a^2 - x^2)^3} + C
+\end{align*}
+** Question (18)
+\begin{align*}
+\int \frac{1}{(x^2 + a^2)^{\frac{3}{2}}} dx \\
+&= \frac{1}{a^2} \int \frac{1}{\left(1 + \left(\frac{x}{a}\right)^2\right)^{\frac{3}{2}}} dx\\
+&= \frac{1}{a^2} \int \frac{a}{(1 + u^2)^{\frac{3}{2}}} du\\
+&= \frac{1}{a} \int \frac{1}{(1 + u^2)^{\frac{3}{2}}} du\\
+&= \frac{1}{a} \cdot \frac{u}{\sqrt{1 + u^2}} + C\\
+&= \frac{1}{a} \cdot \frac{\frac{x}{a}}{\sqrt{1 + \left(\frac{x}{a}\right)^2}} + C\\
+&= \frac{x}{a^2 \sqrt{x^2 + a^2}} + C
+\end{align*}
+\end{align*}
+** Question (20)
+\begin{align*}
+\int \frac{1}{x^2 \sqrt{x^2+9}} dx &= \int \frac{1}{\sqrt{x^2 + 9}} \cdot \frac{1}{x^2}  dx\\
+&= \int \frac{1}{\sqrt{9 + x^2}} \cdot \frac{1}{x^2}  dx \\
+&= \int \frac{1}{3} \cdot \frac{1}{\left(\frac{x}{3}\right)^2 + 1} \cdot \frac{1}{x^2}  dx \\
+&= \frac{1}{3} \int \frac{1}{\left(\frac{x}{3}\right)^2 + 1} \cdot \frac{1}{x^2}  dx \\
+&= \frac{1}{3} \int \frac{1}{\left(\frac{x}{3}\right)^2 + 1} \cdot \frac{9}{x^2} d\left(\frac{x}{3}\right)\\
+&= \frac{1}{3} \cdot 3 \int \frac{1}{u^2 + 1} du \\
+&= \tan^{-1}\left(\frac{x}{3}\right) + C
+\end{align*}
+** Question (22)
+\begin{align*}
+\int \frac{1}{\sqrt{5 + x - x^2}} dx &= \int \frac{1}{\sqrt{-(x^2 - x - 5)}} dx\\
+&= \int \frac{1}{\sqrt{-\left(x^2 - x + \frac{1}{4} - \frac{21}{4}\right)}} dx \\
+&= \int \frac{1}{\sqrt{-\left(\left(x - \frac{1}{2}\right)^2 - \frac{21}{4}\right)}} dx \\
+&= \int \frac{1}{\sqrt{\frac{21}{4} - \left(x - \frac{1}{2}\right)^2}} dx\\
+&= \int \frac{1}{\sqrt{\left(\frac{\sqrt{21}}{2}\right)^2 - \left(x - \frac{1}{2}\right)^2}} dx \\
+&= \arcsin\left(\frac{2\left(x - \frac{1}{2}\right)}{\sqrt{21}}\right) + C
+\end{align*}
+* Question 5
+** Question (2)
+\begin{align*}
+\int x e^{-x} dx &= -x e^{-x} - \int -e^{-x} dx\\
+&= -x e^{-x} + \int e^{-x} dx\\
+&= -x e^{-x} - e^{-x} + C\\
+&= -e^{-x}(x + 1) + C
+\end{align*}
+** Question (4)
+\begin{align*}
+\int x^2 a^x dx &= \frac{x^2 a^x}{\ln a} - \int \frac{a^x}{\ln a} (2x) dx\\
+&= \frac{x^2 a^x}{\ln a} - \frac{2}{\ln a} \int x a^x dx\\
+&= \frac{x^2 a^x}{\ln a} - \frac{2}{\ln a} \left( \frac{x a^x}{\ln a} - \frac{a^x}{(\ln a)^2} \right)\\
+&= \frac{x^2 a^x}{\ln a} - \frac{2x a^x}{(\ln a)^2} + \frac{2a^x}{(\ln a)^3} + C
+\end{align*}
+** Question (6)
+\begin{align*}
+\int x \arctan x dx &= \frac{x^2}{2} \arctan x - \int \frac{x^2}{2} \cdot \frac{1}{1+x^2} dx\\
+&= \frac{x^2}{2} \arctan x - \frac{1}{2} \int \frac{x^2}{1+x^2} dx\\
+&= \frac{x^2}{2} \arctan x - \frac{1}{2} \int \left( 1 - \frac{1}{1+x^2} \right) dx\\
+&= \frac{x^2}{2} \arctan x - \frac{1}{2} \left( x - \arctan x \right) + C\\
+&= \frac{x^2}{2} \arctan x - \frac{x}{2} + \frac{1}{2} \arctan x + C\\
+&= \left( \frac{x^2}{2} + \frac{1}{2} \right) \arctan x - \frac{x}{2} + C
+\end{align*}
+** Question (8)
+\begin{align*}
+\int \arctan \sqrt{x} dx &= x \arctan \sqrt{x} - \int x \cdot \frac{1}{1+x} \cdot \frac{1}{2\sqrt{x}} dx \\
+&= x \arctan \sqrt{x} - \frac{1}{2} \int \frac{\sqrt{x}}{1+x} dx \\
+&= x \arctan \sqrt{x} - \frac{1}{2} \int \frac{x^{1/2}}{1+x} dx \\
+&= x \arctan \sqrt{x} - \frac{1}{2} \int \frac{(u-1)^{1/2}}{u} du \\
+&= x \arctan \sqrt{x} - \frac{1}{2} \left( \int (u-1)^{1/2} u^{-1} du \right) \\
+&= x \arctan \sqrt{x} - \frac{1}{2} \left( \int u^{-1/2} du - \int u^{-3/2} du \right) \\
+&= x \arctan \sqrt{x} - \frac{1}{2} \left( 2\sqrt{u} + \frac{2}{\sqrt{u}} \right) + C \\
+&= x \arctan \sqrt{x} - \left( \sqrt{1+x} + \frac{1}{\sqrt{1+x}} \right) + C
+\end{align*}
+** Question (10)
+\begin{align*}
+\int x^n \ln x dx &= \frac{x^{n+1}}{n+1} \ln x - \int \frac{x^{n+1}}{n+1} \cdot \frac{1}{x}  dx \\
+&= \frac{x^{n+1}}{n+1} \ln x - \frac{1}{n+1} \int x^n  dx \\
+&= \frac{x^{n+1}}{n+1} \ln x - \frac{1}{n+1} \cdot \frac{x^{n+1}}{n+1} + C \\
+&= \frac{x^{n+1}}{n+1} \ln x - \frac{x^{n+1}}{(n+1)^2} + C \\
+&= \frac{x^{n+1}}{n+1} \left( \ln x - \frac{1}{n+1} \right) + C
+\end{align*}
+** Question (12)
+\begin{align*}
+\int \frac{x}{\cos^2 x} dx &=  \int x \sec^2 x dx \\
+&= x \tan x - \int \tan x dx \\
+&= x \tan x - \ln |\sec x + \tan x| + C
+\end{align*}
+** Question (14)
+\begin{align*}
+\int x \sin x \cos x dx &= \int x \cdot \frac{1}{2} \sin(2x) dx \\
+&= \frac{1}{2} \int x \sin(2x)  dx \\
+&= -\frac{1}{2} x \cdot \frac{1}{2} \cos(2x) + \frac{1}{2} \cdot \frac{1}{2} \int \cos(2x)  dx \\
+&= -\frac{x}{4} \cos(2x) + \frac{1}{4} \cdot \frac{1}{2} \sin(2x) + C \\
+&= -\frac{x}{4} \cos(2x) + \frac{1}{8} \sin(2x) + C
+\end{align*}
+** Question (16)
+\begin{align*}
+\int x \ln \frac{1+x}{1-x} dx &= \int x \left( \ln(1+x) - \ln(1-x) \right)  dx \\
+&= \int x \ln(1+x)  dx - \int x \ln(1-x)  dx \\
+&= \frac{x^2}{2} \ln(1+x) - \int \frac{x^2}{2(1+x)}  dx - \left( -\frac{x^2}{2} \ln(1-x) - \\
+\int \frac{x^2}{2(1-x)}  dx \right) \\
+&= \frac{x^2}{2} \ln(1+x) - \frac{1}{2} \int \frac{x^2}{1+x}  dx + \frac{x^2}{2} \ln(1-x) + \\
+\frac{1}{2} \int \frac{x^2}{1-x}  dx \\
+&= \frac{x^2}{2} \ln(1+x) + \frac{x^2}{2} \ln(1-x) - \frac{1}{2} \\
+\left( \int x^2 \left( \frac{1}{1+x} + \frac{1}{1-x} \right)  dx \right) \\
+&= \frac{x^2}{2} \ln(1+x) + \frac{x^2}{2} \ln(1-x) - \frac{1}{2} \int x^2 \left( \frac{2}{1-x^2} \right)  dx\\
+&= \frac{x^2}{2} \ln(1+x) + \frac{x^2}{2} \ln(1-x) - \int \frac{x^2}{1-x^2}  dx \\
+&= \frac{x^2}{2} \ln(1+x) + \frac{x^2}{2} \ln(1-x) - \int \left( 1 + \frac{1}{1-x^2} \right)  dx \\
+&= \frac{x^2}{2} \ln(1+x) + \frac{x^2}{2} \ln(1-x) - \left( x + \frac{1}{2} \ln |1-x^2| \right) + C
+\end{align*}
+** Question (18)
+\begin{align*}
+\int \ln \left(x + \sqrt{1+x^2}\right) dx\\
+&= x \ln \left(x + \sqrt{1+x^2}\right) - \int x \cdot \frac{1}{x + \sqrt{1+x^2}} \\
+\cdot \left(1 + \frac{x}{\sqrt{1+x^2}}\right) dx\\
+&= x \ln \left(x + \sqrt{1+x^2}\right) - \int \frac{x + x^2}{\sqrt{1+x^2}} dx\\
+&= x \ln \left(x + \sqrt{1+x^2}\right) - \int \frac{x}{\sqrt{1+x^2}} dx - \int \frac{1}{\sqrt{1+x^2}} dx\\
+&= x \ln \left(x + \sqrt{1+x^2}\right) - \sqrt{1+x^2} + \ln \left| \sqrt{1+x^2} + x \right| + C\\
+&= x \ln \left(x + \sqrt{1+x^2}\right) - \sqrt{1+x^2} + \ln \left| x + \sqrt{1+x^2} \right| + C
+\end{align*}
+** Question (20)
+\begin{align*}
+\int \arcsin^2 x dx &= x \arcsin^2 x - \int 2 \arcsin x \cdot \frac{1}{\sqrt{1-x^2}} dx \\
+&= x \arcsin^2 x - 2 \int \arcsin x \cdot \frac{1}{\sqrt{1-x^2}}  dx \\
+&= x u^2 - 2 \int u  du \\
+&= x \arcsin^2 x - u^2 + C \\
+&= x \arcsin^2 x - \frac{2}{3} \arcsin^3 x + C
+\end{align*}
+** Question (22)
+\begin{align*}
+\int \frac{x\cos x}{\sin^3 x} dx &= \int x \cos x \cdot \csc^3 x dx \\
+&= \int x \cos x \cdot \frac{1}{\sin^3 x} dx \\
+&= \int x \cos x \cdot \frac{1}{\sin^2 x} \cdot \frac{1}{\sin x} dx \\
+&= \int x \cot^2 x \cdot \csc x dx \\
+&= x \left(-\frac{1}{2\sin^2 x}\right) - \int -\frac{1}{2\sin^2 x} dx\\
+&= -\frac{x}{2\sin^2 x} + \frac{1}{2} \int \csc^2 x dx\\
+&= -\frac{x}{2\sin^2 x} + \frac{1}{2} (-\cot x) + C\\
+&= -\frac{x}{2\sin^2 x} - \frac{1}{2} \cot x + C
+\end{align*}

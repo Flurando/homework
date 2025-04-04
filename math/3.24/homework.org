@@ -1,0 +1,476 @@
+#+TITLE: Week 3.24 Math Homework
+#+AUTHOR: 2024110144
+#+LATEX_CLASS: article
+#+LATEX_CLASS_OPTIONS: [a4paper,10pt]
+#+LATEX_HEADER: \usepackage[margin=0.5in]{geometry}
+#+OPTIONS: \n:t toc:nil num:nil date:nil
+
+#+begin_comment
+3.24
+thomas 14.10 1-12 even
+导论下 6.3 7,9,11,12,13
+3.26
+thomas 14.7 1-74 mod 6
+3.28
+thomas 14.8 1-54 mod 6
+#+end_comment
+
+* 3.24 Thomas
+** 2
+$$w=x^2+y-z+\sin t$$
+$$x+y=t$$
+*** a
+$$\begin{align*}
+\left(\frac{\delta w}{\delta y}\right)_{x,z} &= \left(\frac{\delta x^2+y-z+\sin (x+y)}{\delta y}\right)_{x,z}\\
+&= 1 + \cos (x+y)
+\end{align*}$$
+*** b
+$$\begin{align*}
+\left(\frac{\delta w}{\delta y}\right)_{z,t} &= \left(\frac{\delta (t-y)^2+y-z+\sin t}{\delta y}\right)_{z,t}\\
+&= -2(t-y) + 1
+\end{align*}$$
+*** c
+$$\begin{align*}
+\left(\frac{\delta w}{\delta z}\right)_{x,y} &= \left(\frac{\delta x^2+y-z+\sin (x+y)}{\delta z}\right)_{x,y}\\
+&= -1
+\end{align*}$$
+*** d
+still $-1$ because $z$ is unrelated with $x,y,t$
+*** e
+$$\begin{align*}
+\left(\frac{\delta w}{\delta t}\right)_{x,z} &= \left(\frac{\delta x^2+(t-x)-z+\sin t}{\delta t}\right)_{x,z}\\
+&= 1 + \cos t
+\end{align*}$$
+*** f
+$$\begin{align*}
+\left(\frac{\delta w}{\delta t}\right)_{y,z} &= \left(\frac{\delta (t-y)^2+y-z+\sin t}{\delta t}\right)_{y,z}\\
+&= 2(t-y) + \cos t
+\end{align*}$$
+** 4
+$$w=x^2+y^2+z^2$$
+$$y\sin z + z\sin x=0$$
+at point $(x,y,z)\,=\,(0,1,\pi)$
+*** a
+$$\begin{align*}
+\left(\frac{\delta w}{\delta x}\right)_y &= \left(\frac{\delta w}{\delta z}\right)_y \cdot \left(\frac{\delta z}{\delta x}\right)_y\\
+&= 2z+ 2\arcsin \frac{y\sin z}{-z} \cdot \frac{1}{\sqrt{1-\left(\frac{y\sin z}{-z}\right)^2} \cdot y \cdot \frac{z\cos z-\sin z}{z^2} \cdot \left(\frac{\delta z}{\delta x}\right)_y\\
+&= 2z+ 2\arcsin \frac{y\sin z}{-z} \cdot \frac{1}{\sqrt{1-\left(\frac{y\sin z}{-z}\right)^2} \cdot y \cdot \frac{z\cos z-\sin z}{z^2} \cdot \left(\frac{\delta x}{\delta z}\right)_y^{-1}\\
+&= 2z+ 2\arcsin \frac{y\sin z}{-z} \cdot \frac{1}{\sqrt{1-\left(\frac{y\sin z}{-z}\right)^2} \cdot y \cdot \frac{z\cos z-\sin z}{z^2} \cdot \left(\frac{\delta \arcsin \frac{y\sin z}{-z}}{\delta z}\right)_y^{-1}\\
+&= 2z+ 2\arcsin \frac{y\sin z}{-z} \cdot \frac{1}{\sqrt{1-\left(\frac{y\sin z}{-z}\right)^2} \cdot y \cdot \frac{z\cos z-\sin z}{z^2} \cdot \left(\frac{1}{\sqrt{1-\left(\frac{y\sin z}{-z}\right)^2}}\right) \cdot y \cdot \frac{z\cos z-\sin z}{z^2}
+\end{align*}$$
+*** b
+$$\begin{align*}
+\left(\frac{\delta w}{\delta z}\right)_y &= \left(\frac{\delta \left(\arcsin \frac{y\sin z}{-z}\right)^2 + y^2 + z^2}{\delta z}\right)_y\\
+&= 2z+ 2\arcsin \frac{y\sin z}{-z} \cdot \frac{1}{\sqrt{1-\left(\frac{y\sin z}{-z}\right)^2} \cdot y \cdot \frac{z\cos z-\sin z}{z^2}
+\end{align*}$$
+** 6
+# find (\delta u/\delta y)_x at point (u,v)=(\sqrt{2},1) if x=u^2+v^2 and y=uv
+when $u=\sqrt{2}$, $v=1$
+we have $x=3$ and $y=\sqrt{2}$
+acknowledging that $x+2y=(u+v)^2$ and $x-2y=(u-v)^2$
+and when $x$ is close to $3$, $y$ is close to $\sqrt{2}$
+it is obvious $x\pm 2y\geq 0$
+and $u\geq v$
+so we can represent $u$ with $x$ and $y$ only
+which means $u=\frac{\sqrt{x+2y}+\sqrt{x-2y}}{2}$
+so the question becomes
+$$\left(\frac{\delta u}{\delta y}\right)_x \,\text{at point}\, (x,y)=(3,\sqrt{2})$$
+$$\begin{align*}
+\left(\frac{\delta u}{\delta y}\right)_x &= \left(\frac{\delta \frac{\sqrt{x+2y}+\sqrt{x-2y}}{2}}{\delta y}\right)_x\\
+&= \frac{1}{\sqrt{x+2y}} + \frac{1}{\sqrt{x-2y}}
+\end{align*}$$
+assigning the values of $x,y$
+we have the answer as $\frac{1}{\sqrt{3+2\sqrt{2}}}+\frac{1}{\sqrt{3-2\sqrt{2}}}$
+which can be simplified to $6$
+** 8
+- when $y,z$ are independent
+  $t=25-x-2z$
+  $w=x^2-y^2+4z+25-x-2z$
+  $\frac{\delta w}{\delta x} = 2x-1$
+- when $y,t$ are independent
+  $z=\frac{1}{2} \cdot (25-x-t)$
+  $w=x^2-y^2+50-2x-2t+t$
+  $\frac{\delta w}{\delta x} = 2x-2$
+** 10
+$$\begin{equation*}
+x\frac{\delta z}{\delta x} = x \cdot \left(1+ y \cdot f'(u)\right)
+\end{equation*}$$
+$$\begin{equation*}
+y\frac{\delta z}{\delta y} &= y \cdot x \cdot f'(u)
+\end{equation*}$$
+so the difference is indeed $x$
+** 12 ???
+* 3.24 DL
+# 6.3
+** 7
+$$u=e^{a\theta}\cos (a\ln r)$$
+#+begin_comment
+show that
+$$\frac{\delta^2 u}{\delta r^2} + \frac{1}{r^2} \frac{\delta^2 u}{\delta \theta^2} + \frac{1}{r} \frac{\delta u}{\delta r}=0$$
+#+end_comment
+$$\begin{align*}
+\frac{\delta u}{\delta r} &= \frac{\delta e^{a\theta}\cos (a\ln r)}{\delta r}\\
+&= -e^{a\theta} \sin (a\ln r) \cdot a \cdot \frac{1}{r}\\
+&= - \frac{a}{r} \cdot e^{a\theta} \sin (a\ln r)
+\end{align*}$$
+$$\begin{align*}
+\frac{\delta^2 u}{\delta r^2} &= \frac{\delta - \frac{a}{r} \cdot e^{a\theta} \sin (a\ln r)}{\delta r}\\
+&= - \frac{\delta \frac{a}{r} \cdot e^{a\theta} \sin (a\ln r)}{\delta r}\\
+&= - e^{a\theta} \cdot \left(- \frac{a}{r^2} \cdot \sin (a\ln r) + \frac{a}{r} \cdot \cos (a\ln r) \cdot \frac{a}{r}\right)\\
+&= - e^{a\theta} \frac{a}{r^2} \cdot \left(- \sin (a\ln r) + a \cos (a\ln r)\right)
+\end{align*}$$
+$$\begin{align*}
+\frac{\delta^2 u}{\delta \theta^2} &= a \cdot \frac{\delta u}{\delta \theta}\\
+&= a^2 \cdot \frac{\delta u}{\delta \theta}
+\end{align*}$$
+$$\begin{align*}
+\frac{\delta^2 u}{\delta r^2} &+ \frac{1}{r^2} \frac{\delta^2 u}{\delta \theta^2} + \frac{1}{r} \frac{\delta u}{\delta r}\\
+&= - e^{a\theta} \frac{a}{r^2} \cdot \left(- \sin (a\ln r) + a \cos (a\ln r)\right)\\
+&+ \frac{a^2}{r^2} \cdot e^{a\theta}\cos (a\ln r)\\
+&- \frac{a}{r^2} \cdot e^{a\theta} \sin (a\ln r)\\
+&= e^{a\theta} \frac{a}{r^2} \sin (a\ln r) - \frac{a}{r^2} \cdot e^{a\theta} \sin (a\ln r)\\
+&+ \frac{a^2}{r^2} \cdot e^{a\theta}\cos (a\ln r) - e^{a\theta} \frac{a}{r^2} \cdot a \cos (a\ln r)\\
+&= 0 + 0\\
+&= 0
+\end{align*}$$
+** 9 ???
+** 11 ???
+** 12
+suppose $z=x^2 y+y^2+C(x)$
+we want $2x^4+C(x)=1$ for any $x$ to remain true
+so $C(x)=1-2x^4$
+meaning $z=z(x,y)=x^2 y+y^2+1-2x^4$
+** 13 ???
+the tangent plane at $(x_0,x_0^2,1)$ is
+$$f(x,y)-1=x(x-x_0)+\frac{\delta u}{\delta y} (y-x_0^2)$$
+really can not think of more:(
+* 3.26
+** 6
+$$f(x,y)=x^2-4xy+y^2+6y+2$$
+$$\begin{align*}
+\frac{\delta f}{\delta x} &= 2x-4y+0\\
+&= 2x-4y
+\end{align*}$$
+$$\begin{align*}
+\frac{\delta f}{\delta y} &= 0-4x+2y+6+0\\
+&= -4x+2y+6
+\end{align*}$$
+let the two partial derivatives being $0$
+we have
+$$\left{\begin{align*}
+&2x-4y=0\\
+&-4x+2y+6=0
+\end{align*}\right .$$
+the solution is
+$$\left{\begin{align*}
+&x=2\\
+&y=1
+\end{align*}\right .$$
+so the saddle point is $(2,1)$
+on the saddle point, the value is $5$
+since $f(x,y)=(x-2y)^2-3(y-1)^2+5$
+it has no global maximum or minimum
+but it might have local maximum or minimum if we restrict the range of $x,y$
+
+** 12
+$$f(x,y)=1-\sqrt[3]{x^2+y^2}$$
+$$\begin{align*}
+\frac{\delta f}{\delta x} &= -\frac{1}{3} (x^2+y^2)^{-\frac{2}{3}} \cdot 2x\\
+&= -\frac{2}{3} x (x^2+y^2)^{-\frac{2}{3}}
+\end{align*}$$
+$$\begin{align*}
+\frac{\delta f}{\delta y} &= -\frac{1}{3} (x^2+y^2)^{-\frac{2}{3}} \cdot 2y\\
+&= -\frac{2}{3} y (x^2+y^2)^{-\frac{2}{3}}
+\end{align*}$$
+by assign the partial derivatives both $0$
+we have $x=y=0$ as the only solution
+so the saddle point is $(0,0)$
+at this point the value of the function is $1$
+since $x^2+y^2\geq 0$, we know the local maximum is $1$
+** 18
+$$f(x,y)=2x^3+2y^3-9x^2+3y^2-12y$$
+$$\begin{align*}
+\frac{\delta f}{\delta x} &= 6x^2+0-18x+0\\
+&= 6x^2-18x
+\end{align*}$$
+$$\begin{align*}
+\frac{\delta f}{\delta y} &= 0+6y^2-0+6y-12\\
+&= 6y^2+6y-12
+\end{align*}$$
+applying similar tactic, we have $x=3,0$ and $y=-2,1$
+so there is $4$ saddle points
+namely $(3,-2),(3,1),(0,-2),(0,1)$
+their values are $-7,-34,20,-7$ respectively
+so local maximum is $20$
+local minimum is $-34$
+** 24
+$$f(x,y)=e^{2x} \cos y$$
+$$\frac{\delta f}{\delta x} = 2 e^{2x} \cos y$$
+$$\frac{\delta f}{\delta y} = -e^{2x} \sin y$$
+since it is impossible for the two partial derivatives to be $0$ simutaniously
+there is no requirement on $x,y$, no saddle point, never to say local extreme points
+
+** 30
+$$f(x,y)=\ln (x+y) + x^2 - y$$
+$$\frac{\delta f}{\delta x} = \frac{1}{x+y} + 2x$$
+$$\frac{\delta f}{\delta y} = \frac{1}{x+y} - y$$
+requiring both partial derivatives to be $0$
+we know $+2x=-y$
+which means $x+y=-x$
+since $x+y\geq 0$ (otherwise $\ln (x+y)$ would be meaningless)
+we know $x\leq 0$
+so $2x=\frac{1}{x}$, giving $x=-\frac{\sqrt{2}}{2}$
+then $y=\sqrt{2}$
+so the saddle point is $(-\frac{\sqrt{2}}{2},\sqrt{2})$
+the value at this point is $\ln \frac{\sqrt{2}}{2} + \frac{1}{2} - \sqrt{2}$
+the function has no local extreme point since it obviously has no border
+** 36
+$$f(x,y)=48xy-32x^3-24y^2\quad 0\leq x\leq 1,0\leq y\leq 1$$
+$$\frac{\delta f}{\delta x} = 48y-96x^2$$
+$$\frac{\delta f}{\delta y} = 48x-48y$$
+so we have the saddle point as $(\frac{1}{2},\frac{1}{2})$
+where the value is $2$
+when $x=0$, $f(0,y)=-24y^2$ has minimum $-24$ and maximum $0$
+when $x=1$, $f(1,y)=48y-32-24y^2$ has minimum $-32$ and maximum $-8$
+when $y=0$, $f(x,0)=-32x^3$ has minimum $-32$ and maximum $0$
+when $y=1$, $f(x,1)=48x-32x^3-24$ has minimum $-3$ and maximum $2\sqrt{2}-3$
+so the absolute maximum is $2$, the absolute minimum is $-32$
+** 42
+$$f(x,y)=xy+2x-\ln x^2y$$
+$$\frac{\delta f}{\delta x} = y+2-\frac{2}{x}$$
+$$\frac{\delta f}{\delta y} = x-\frac{1}{y}$$
+asking the partial derivatives to be $0$
+we have
+$$\begin{align*}
+y+2-\frac{2}{x} &= 0\\
+x-\frac{1}{y} &= 0
+\end{align*}$$
+so $x=\frac{1}{2},y=2$
+the critical point is $(\frac{1}{2},2)$
+it is obvious that the point suits the requirement $x,y>0$
+the value at this point is $2+\ln 2$
+so we have the tangent surface
+$$g(x,y)=(y+2-\frac{2}{x})\cdot (x-\frac{1}{2}) + (x-\frac{1}{y}) \cdot (y-2) + 2-\ln 2$$
+simplify $g$ to $g(x,y)=2xy - y/2 + 1/x - 2 + 2/y - \ln 2$
+near $(\frac{1}{2},2)$, consider $F(x,y)=g(x,y)-f(x,y)$
+we have
+$$\begin{align*}
+F(x,y) &= 2xy - y/2 + 1/x - 2 + 2/y - \ln 2 - (xy+2x-\ln x^2y)\\
+&= xy - y/2 + 1/x - 2 + 2/y - \ln2 - 2x + \ln x^2 y
+\end{align*}$$
+$$F'(\frac{1}{2},y)=\frac{1}{2} + \frac{1}{y} - \frac{2}{y^2}$$
+$$F'(x,2)=-\frac{1}{x^2} + \frac{2}{x}$$
+assigning $y=2$ and $x=\frac{1}{2}$
+we get $\frac{1}{2}$ and $0$ respectively
+they are both non-negative
+so it is a local minimal point
+
+** 48
+first, $f_x (a,b)=f_y (a,b)=0$
+second, the saddle point $(a,b)$ is not an extreme point
+Reason:
+I just judged that from illustration
+think about a surface around $(a,b)$
+by the x axis and y axis
+one is going from smaller to bigger
+the other is going from bigger to smaller
+so the saddle point is critical, but not extreme
+** 54
+suppose they are $a,b,c$
+we know $a+b+c=3$, having to get an assignment so that $abc$ is largest
+$$3=a+b+c\geq 3\sqrt[3]{abc}$$
+so $abc$ is max when $a=b=c=1$
+** 60
+suppose $x+y=k$
+we have $g(k)=k^2-k+1$ and $0\leq k\leq 2$
+so the minimum value is $g(\frac{1}{2}) = \frac{3}{4}$
+and the absolute maximum is $g(2) = 3$
+** 66
+#+name: point-list
+| -2 | 0 |
+|  0 | 2 |
+|  2 | 3 |
+
+#+begin_src scheme :var pl=point-list :var pred-x=4 :exports both
+  (define (^2 x)
+    (* x x))
+
+  (define (sum:x x)
+    (apply + x))
+
+  (define (sum:x^2 x)
+    (apply + (map (lambda (element) (^2 element)) x)))
+
+  ;; use pair to represent a dot (x,y)
+  (define (point x y) (cons x y))
+  (define (point-x random-point) (car random-point))
+  (define (point-y random-point) (cdr random-point))
+
+  (define (point-list-processor point-list)
+    (map (lambda (lst) (point (car lst)
+			      (cadr lst)))
+	 point-list))
+
+  (define (calc:m&b points)
+    "calculate a list of points for the value of m and b"
+    (if (null? points)
+	(error "required non-empty input")
+	(let ((n (length points))
+	      (x_ks (map (lambda (p) (point-x p))
+			 points))
+	      (y_ks (map (lambda (p) (point-y p))
+			 points)))
+	  (let* ((m (/ (- (* (sum:x x_ks) (sum:x y_ks))
+			  (* n (sum:x (map (lambda (p) (* (point-x p) (point-y p))) points))))
+		       (- (^2 (sum:x x_ks))
+			  (* n (sum:x^2 x_ks)))))
+		 (b (/ (- (sum:x y_ks)
+			  (* m (sum:x x_ks)))
+		       n)))
+	    (values m b)))))
+
+  (define (make-line m b)
+    (values (format #f "y=~ax+~a" m b)
+	    (lambda* (#:key x)
+	      (+ b (* m x)))))
+
+  (call-with-values (lambda () (call-with-values (lambda () (calc:m&b (point-list-processor pl)))
+				 make-line))
+    (lambda (formula predicate)
+      (list (list "formula" formula)
+	    (list "prediction" (predicate #:x pred-x)))))
+#+end_src
+
+#+RESULTS:
+| formula    | y=3/4x+5/3 |
+| prediction | 14/3       |
+
+** 72 ???
+
+* 3.28
+** 6
+$$x^2y=2$$
+the distance to the origin can be represented as $\sqrt{x^2+y^2}$
+further to be $x^2+y^2$ because square root function increases as $x^2+y^2$ increases
+then from the equation, we know $x^2=\frac{2}{y}$
+so the problem turns out to getting the $y$ that maximize $\frac{2}{y}+y^2$
+it is just $\frac{1}{y} + \frac{1}{y} + y^2$
+so we have $\frac{1}{y} + \frac{1}{y} + y^2 \geq 3\sqrt[3]{\frac{1}{y}\cdot\frac{1}{y}\cdot y^2}$
+thus the shortest distance is $3$
+and the points are  $(\pm \sqrt{2}, 1)$
+** 12
+suppose a corner of the rectangle is $(a\cos \theta, b\sin \theta)$
+then the perimeter is $4\cdot (a\cos \theta + b \sin \theta)$
+we have to get the largest $\theta$ so that $a\cos \theta + b \sin \theta$ is maximized
+rewrite it to be $\sqrt{a^2+b^2} \cdot \sin (\theta+\rho)$
+where $\rho$ is a supplementary angle
+now it is clear that the largest perimeter is $4\sqrt{a^2+b^2}$
+** 18
+the sphere has center as $(0,0,0)$ and radius as $2$
+the point $(1,-1,1)$ has $\sqrt{3}$ long from the center
+which is shorter than the radius
+so the point is inside the closure defined by the sphere
+consider $c=(0,0,0),p=(1,-1,1)$
+we know $\vec{pc}=(-1,1,-1)$
+suppose the desired point is $q$
+we know $\vec{cq}=\frac{2}{\sqrt{3}} \cdot \vec{pc}$
+which tells us $q=(-\frac{2\sqrt{3}}{3},\frac{2\sqrt{3}}{3},-\frac{2\sqrt{3}}{3})$
+** 24
+the sphere has center as $(0,0,0)$ and radius as $5$
+we have $g(x,y,z)=x^2+y^2+z^2-25$
+where $\nabla g=(2x,2y,2z)$
+suppose $\lambda$ that $\nabla f=\lambda \cdot \nabla g$
+knowing that $\nabla f=(1,2,3)$
+we know
+$$\begin{align*}
+1 &= \lambda 2x\\
+2 &= \lambda 2y\\
+3 &= \lambda 2z
+\end{align*}$$
+so we can represent $x,y,z$ with $\lambda$
+that is
+$$\begin{align*}
+x &= \frac{1}{2\lambda}\\
+y &= \frac{1}{\lambda}\\
+z &= \frac{3}{2\lambda}
+\end{align*}$$
+so the equation $g(x,y,z)=0$ becomes $(\frac{1}{2\lambda})^2+(\frac{1}{\lambda})^2+(\frac{3}{2\lambda})^2-25=0$
+which is $25\lambda^2 = \frac{1}{4} + 1 + \frac{9}{4}$
+the right part evaluates to $\frac{7}{2}$
+so we have $\lambda=\pm \frac{\sqrt{7}}{5\sqrt{2}}$
+which is $\lambda=\pm \frac{\sqrt{14}}{10}$
+so we have two points here
+$(\frac{5\sqrt{14}}{14},\frac{5\sqrt{14}}{7},\frac{15\sqrt{14}}{14})$ and $(-\frac{5\sqrt{14}}{14},-\frac{5\sqrt{14}}{7},-\frac{15\sqrt{14}}{14})$
+it is obvious that one of them is maximum point and the other is minimum
+so we have to assign these two points back
+we have $5\sqrt{14}$ for the first point and $-5\sqrt{14}$ for the second
+so the first point is the maximum point and the second is minimum
+** 30
+we have $g(x,y,z)=x^2+y^2+z^2-1$
+suppose $f(x,y,z)=T$ and $\nabla f=\lambda \nabla g$
+since $\nabla f=(400yz^2,400xz^2,800xyz)$ and $\nabla g=(2x,2y,2z)$
+it becomes
+$$\begin{align*}
+200yz^2 &= \lambda x\\
+200xz^2 &= \lambda y\\
+400xyz &= \lambda z
+\end{align*}$$
+we can see that unless $z$ or $\lambda$ is zero
+there should be $x=y$ and $400xy=\lambda$
+since the $\lambda$ should work for any valid input
+we can assume $x,y,z\neq 0$ then $\lambda\neq 0$ as well
+now we know $x^2=y^2$, $400x^2=\lambda$ and $200z^2=\lambda$
+so $x=\pm y=\pm \frac{\sqrt{2}}{2} z$
+assigning this relation back, we have $4x^2-1=0$ meaning $x=\pm\frac{1}{2}$
+so there are many points, $(\pm\frac{1}{2},\pm\frac{1}{2},\pm\frac{\sqrt{2}}{2})$
+assigning them to $f$ OR $T$
+we get $50$ as the magnitude of each and the sign can be $+$ or $-$
+so the highest is $50$, the lowest is $-50$
+and they are reached at $(\frac{1}{2},-\frac{1}{2},\pm\frac{\sqrt{2}}{2}),(-\frac{1}{2},\frac{1}{2},\pm\frac{\sqrt{2}}{2})$ and $(\frac{1}{2},\frac{1}{2},\pm\frac{\sqrt{2}}{2}),(-\frac{1}{2},-\frac{1}{2},\pm\frac{\sqrt{2}}{2})$ respectively
+** 36
+we have $g(x,y,z)=x^2+y^2+z^2-36$
+we want $\nabla M = \lambda \nabla g$
+since $\nabla M = (6+z,2y,x)$
+that is just
+$$\begin{align*}
+6+z &= 2\lambda x\\
+y &= \lambda y\\
+x &= 2\lambda z
+\end{align*}$$
+because we have to satisfy situations where $y\neq 0$
+we get $\lambda=1, x=4, y=4, z=2$
+so I will put the telescope at $(4,4,2)$
+** 42
+*** a
+we have to calculate the line first
+it is defined by
+$$\left{\begin{align*}
+& x+y+z=40\\
+& x+y-z=0
+\end{align*}\right .$$
+so the line is $x+y=20, z=20$
+so we can just assign $z=20$ to $w$ in order to find the desired answer
+the new $w$ is $w=20xy$ ($w$ is still $xyz$, but we only consider $z=20$)
+and we have $x+y-20=0$
+suppose $w_{z=20}$ is $f(x,y)$ and $g(x,y)=x+y-20$
+we want $\nabla f(x,y)=\lambda \nabla g(x,y)$
+which is exactly $(20y,20x)=\lambda (1,1)$
+so $x=y=10$ and $\lambda=200$
+this indicates that the maximum is $2000$
+*** b
+the steps in $a$ indeed fail to show that why the special point is maximum
+we can consider $100-xy$ where $x+y=20$
+it is obvious that $20=x+y\geq 2\sqrt{xy}$
+so $xy\leq 100$, meaning we really have found a maximum point instead of a minimum one
+** 48
+Using Couchy Inequation, we know $\sum_{i=1}^n a_i \cdot \sum_{i=1}^n x_i \geq (\sum_{i=1}^n a_i x_i)^2$
+which indicates the maximum to be $\sqrt{\sum_{i=1}^n a_i}$
+** 54
+think of it as $x=y-1$ and $x=y^2$
+(if not comfortable, just think like we flipped the whole plane by $x=y$, with the axises)
+then we calc the "tangent" and asks it to be $1$
+which means $2y=1$
+so the tangent point is $(\frac{1}{4},\frac{1}{2})$
+the "tangent" line is $x=y+\frac{1}{4}$
+now by the x-axis, the two lines have a "distance" of $\frac{5}{4}$
+so the desired real distance is $\frac{5\sqrt{2}}{8}$

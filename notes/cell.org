@@ -1,0 +1,97 @@
+* largest bacterium ever discoverd
+https://www.science.org/content/article/largest-bacterium-ever-discovered-has-unexpectedly-complex-cells
+Ca. Thiomargarita magnifica
+
+* the eukaryotic cell
+- the cytoskeleton细胞骨架 is responsible for directed cell movements
+  + actin filaments
+  + microtubules
+  + intermediate filaments
+- where did eukaryotes come from?
+  see 演化树
+
+* model organics
+cells in culture often display properties that reflect their origin
+
+* chemical in cells
+** bacterial cell
+- flagellum
+- ribosomes in cytosol
+- outer membrane
+- DNA
+- plasma memberane
+- cell wall
+*** some def
+1. mole
+   $6\times 10^{23}$.
+2. one molar solution
+   1 mole -> 1 liter
+*** some words
+- ethane 乙烷
+- propane 丙烷
+- ethylene 乙烯
+- acetylene 乙炔
+- hydroxyl
+- sulfhydryl
+- carbonyl
+- aidehyde
+- benzene
+** plant cell
+** animal cell
+** polar / nonpolar(neutral)
++ water
+  polar bond
++ oxygen
+  nonpolar bond
+** hydrogen bond氢键
+commonly between H and N/O
+** 酸碱
+*** acids
+- Def
+  substances that release hydrogen ions into solution are called acids
+- hydrogen ion exchange
+  + hydrogen ion $H^+$.
+  + hydroxyl ion $OH^-$.
+- pH
+  $pH = -\log_{10}[H^+]$.
+  for pure water, $[H^+]=10^{-7}$.
+** small molecules in cells
+cells contain four major families of small organic molecules, CHON
+** aldoses醛糖和ketoses酮糖
+** fatty acids脂肪酸
+hydrophilic arboxylic acid head
+hydrophobic hydrocarbon tail
+** the amino acid氨基酸
+*** amino group \(-NH_3\)
+*** carb... group \(-COOH\)
+*** urabil尿嘧啶,cytosine,thymine
+*** nucleotides核苷酸
+they are the subunits of the nucleic acids核酸
+*** ATCG
+- adenine guanine sytosine uracil thymine碱基
+- adenosine guanosine cytidine uridine thymidine核苷酸
+**** examples
+- AMP
+*** 光合作用
+**** photosynthesis光合作用
+**** cell respiration细胞呼吸
+*** ATP
+2 phosphoester bond磷酸键->很好的分子开关
+*** chaperone proteins 伴侣蛋白
+他们可以帮助肽链折叠
+*** DNA mismatch repair + DNA proofread
+*** tRNA molecules are molecular adaptors, linking amino acids to codons
+*** ribosomes are located in the cytoplasm of eukaryotic cells
+endoplasmic reticulum糙面内质网
+装载是要消耗能量的（用GTP）
+*** the ribosome核糖体 is a ribozyme核酶
+*** specific codons in an mRNA signal the ribosome where to start and to stop ..
+人类常见从aug开始
+*** proteins are produced on poly..
+*** proteins are synthesized on polyribosomes多聚核糖体
+*** antibiotics抗生素
+- tetracycline
+- streptomycin
+- chloramphenicol
+- cycloheximide
+- rifamycin

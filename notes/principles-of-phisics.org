@@ -1,0 +1,43 @@
+#+COMMENT: 电磁部分
+
+* 电磁
+- *矢量分析*
+- *麦克斯韦方程组*
+  4个
+** Coulomb's Law
+- Charging by rubbing
+  + silk rub glass
+    silk -
+    glass +
+  + fur rub plastic
+    fur +
+    plastic -
+- Outermost electrons in conductors导体 and insulators绝缘体
+- electrically induced net charge
+- 电磁感应
+  charged objects attract isolated neutral conductors
+*** formula
+#+begin_src latex
+  \begin{equation}
+    F = k \cdot \frac{|q_1||q_2|}{r^2}
+  \end{equation}
+  $k=\frac{1}{4\pi\epsilon_0}$.
+  k is about $8.99 \times 10^9 N m^2 / C^2$.
+#+end_src
+interestingly it has the same form as the gravitational force.
+*** the inverse square law
+*** e
+$1.6*10^{-19}$.
+*** the electric field lines电场线条
+*** the electric field due to an electric dipole
+when distance doubled
+- only a single
+  $\times 4$
+- a dipole
+  $\times 8
+*** the elctric field due to a line of charge
+*** flux流量 of an electric field
+**** Gauss Law
+electric flux through any closed surface=chatge inside the surface
+$$\epsilon_0 \Delta = q_{\text{enc}}$$
+$$\epsilon_0 ? \vec{E} \cdot d\vec{A} = ..$$

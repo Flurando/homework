@@ -1,0 +1,375 @@
+#+TITLE: Math Homework
+#+AUTHOR: 2024110144
+#+LATEX_CLASS: article
+#+LATEX_CLASS_OPTIONS: [a4paper]
+#+LATEX_HEADER: \usepackage{amsmath}
+#+OPTIONS: \n:t
+
+# 2.24 Thomas 12.1 1-66 mod 6 = 0
+# 2.26 Thomas 12.2 1-56 mod 6 = 0
+#             12.3 1-30 mod 6 = 0
+# 2.28 Thomas 12.3 31-50 mod 6 = 0
+#             12.4 1-34 mod 6 = 0
+
+* 2.24
+** 6
+It is a circle lying horizonally below the $xOy$ surface.
+** 12
+It is a circle, created by a surface ($y=4$) intersecting with a sphere (0,1,0,r=2). 
+** 18
++ a
+  everything between the surface $x=0$ and $x=1$
+  we can see this as an infinitely large wall, 1 unit thick
++ b
+  this is an infinitely long stick with width and thickness both being 1 unit.
++ c
+  this is a small cube with the volumn of 1 unit.
+** 24
++ a
+  this is a surface created by moving a line back and forth.
++ b
+  just a curve with its middle point placed at $(2,0,0)$.
+** 30
+The sphere is $(x+3)^2 + (y-4)^2 + (z-1)^2 = 1$.
+- a
+  The circle is $(x+3)^2 + (y-4)^2 = 1, z = 1$.
+- b
+  The circle is $x = -3, (y-4)^2 + (z-1)^2 = 1$.
+- c
+  The circle is $(x+3)^2 + (z-1)^2 = 1, y = 4$.
+** 36
+$0 <= x <= 2, 0 <= y <= 2, 0 <= z <= 2$
+** 42
+$P_1 (-1,1,5)$,
+$P_2 (2,5,0)$,
+The distance between the two points are
+\begin{align}
+d_{P_1, P_2} &= \sqrt{(-1-2)^2 + (1-5)^2 + (5-0)^2}\\
+&= 5\sqrt{2}
+\end{align}
+** 48
+The center is $(1,-\frac{1}{2},-3)$,
+and the radii is $5$.
+** 54
+$x^2 + (y+7)^2 + z^2 = 49$.
+** 60
+using $||$ or $ams()$ to represent absolute value
+we have:
+- a
+  $|z|$.
+- b
+  $|x|$.
+- c
+  $|y|$.
+** 66
+the first 3 points tells us that
+the point $(x_0,y_0,z_0)$ has $x_0 = 1.5$ and $y_0 = 2$.
+suppose $z_0 = m$,
+we have $m^2 + 6.25 = 0.25 + (m+3)^2$.
+solving this we get $m = -0.5$,
+so the point is $(1.5,2,-0.5)$.
+
+* 2.26
+** 12.2
+*** 6
+- component form
+  $(-16,29)$.
+- magnitude length
+  #+begin_src scheme :exports both
+    (define (square x)
+      (* x x))
+
+    (define (magnitude-length . nums)
+      (sqrt (apply + (map square nums))))
+
+    (magnitude-length -16 29)
+  #+end_src
+
+  #+RESULTS:
+  : 33.12099032335839
+
+  Thus the length is about 33.
+  
+*** 12
+\begin{align}
+\vec{AB} &= (1,1)\\
+\vec{CD} &= (-1,-1)\\
+\vec{AB}+\vec{CD} &= 0
+\end{align}
+*** 18
+since $\vec{P_1 P_2} = (-4,-2,5)$,
+we have $\vec{P_1 P_2} = -4\vec{i} + -2\vec{j} + 5\vec{k}$.
+*** 24
+#+begin_src gnuplot :file Thomas-12.2-24.png :exports both
+  set xrange [-3:3]
+  set yrange [-3:3]
+  set xlabel "X"
+  set ylabel "Y"
+  set title "Thomas-12.4-12"
+
+  set arrow from 0,0 to 1,0
+  set arrow from 0,0 to -1,2
+  set arrow from 0,0 to -1,-2
+
+  set arrow from -1,2 to 1,0
+  set arrow from -1,2 to 0,-2
+  set arrow from -1,2 to 2,0
+  set arrow from 0,0 to -1,0
+
+  plot NaN notitle
+#+end_src
+
+#+RESULTS:
+[[file:Thomas-12.2-24.png]]
+
+*** 30
+The vector is $\frac{\sqrt{3}}{9} \cdot (1, 1, 1)$.
+*** 36
+$\vec{P_1 P_2} = (3,-6,2)$.
+- a
+  the direction of $\vec{P_1 P_2}$,
+  #+begin_src scheme :exports both
+    (let* ((vector-len (magnitude-length 3 -6 2))
+	   (direction (map-in-order (lambda (num)
+				      (/ num vector-len))
+				    '(3 -6 2))))
+      direction)
+  #+end_src
+
+  #+RESULTS:
+  | 3/7 | -6/7 | 2/7 |
+
+  Thus the direction is $(\frac{3}{7},-\frac{6}{7},\frac{2}{7})$.
+
+- b
+  the midpoint of line segment,
+  The answer is $(2.5,1,6)$.
+
+*** 42
+suppose two scalars $a$ and $b$,
+considering $\vec{u} = a \cdot \vec{v} + b \cdot \vec{w}$,
+we have to solve a linear system as below,
+\begin{align}
+2a+b &= 1\\
+3a+b &= -2
+\end{align}
+the solution is $a=-3,b=7$.
+so we can write that as $\vec{u} = (-6\vec{i} - 9\vec{j}) + (7\vec{i} + 7\vec{j})$.
+*** 48
+since $\sin \alpha = \frac{\frac{25}{2}}{75} = \frac{1}{6}$,
+we have $\alpha = \arcsin \frac{1}{6}$.
+*** 54
+since the sum won't vary when we rotate the polygon,
+we can make one of the corner on the x-axis.
+then for n-sided polygon where n is odd,
+the symmetric view is self explainable.
+for that where n is even,
+we can rotate to make it symmetric about x-axis as well.
+** 12.3
+*** 6
+$\vec{v}=-\vec{i}+\vec{j}$,
+$\vec{u}=\sqrt{2}\vec{i}+\sqrt{3}\vec{j}+2\vec{k}$.
+
+- a
+  + $\vec{v}\cdot\vec{u}=\sqrt{3}-\sqrt{2}$.
+  + $|\vec{v}|=\sqrt{2}$.
+  + $|\vec{u}|=3$.
+    
+- b
+  $\cos\theta = \frac{\vec{v}\cdot\vec{u}}{|\vec{v}|\cdot|\vec{u}|} = \frac{\sqrt{3} - \sqrt{2}}{3\sqrt{2}}$.
+- c
+  Just the magnitude length of d $Proj_v u$.
+- d
+  the projection is
+  $\vec{u} \cdot \cos \theta = \frac{\sqrt{3} - \sqrt{2}}{3\sqrt{2}} \cdot \sqrt{2}\vec{i}+\sqrt{3}\vec{j}+2\vec{k}$.
+*** 12
+\begin{align}
+\vec{u} &= \vec{i} + \sqrt{2} \vec{j} - \sqrt{2} \vec{k}\\
+\vec{v| &= -\vec{i} + \vec{j} + \vec{k}\\
+\vec{u}\cdot\vec{v} &= -1\\
+\left | \vec{u} \right | &= \sqrt{5}\\
+\left | \vec{v} \right | &= \sqrt{3}\\
+\left | \vec{u} \right | \cdot \left | \vec{v} \right | &= \sqrt{15}\\
+\cos \theta &= \frac{\vec{u}\cdot\vec{v}}{\left | \vec{u} \right | \cdot \left | \vec{v} \right |}\\
+&= -\frac{\sqrt{15}}{15}
+\end{align}
+#+begin_src scheme :exports both
+  ;; calculate theta to the nearest hundreds of a radian
+  (define cos-theta (- (/ 1 (sqrt 15))))
+  (acos cos-theta) 
+#+end_src
+
+#+RESULTS:
+: 1.831953737697921
+
+Thus, the angle is about $1.83$.
+
+*** 18
+\begin{align}
+\vec{CA} \cdot \vec{CB} &= (-\vec{v}-\vec{u}) \cdot (-\vec{v}+\vec{u})\\
+&= \vec{v} \cdot \vec{v} - \vec{v} \cdot \vec{u} + \vec{u} \cdot \vec{v} - \vec{u} \cdot \vec{u}\\
+&= 1 - 1\\
+&= 0
+\end{align}
+thus they are orthogonal.
+*** 24
+suppose $2.5 lb$ is about $1.13 kg$,
+and is about $11.3 N$ in weight.
+#+begin_src scheme :exports both
+  (define pi 3.1415926)
+  (define (d->r num)
+    (* (/ num 180) pi))
+
+  (define f1 (* 11.3 (sin (d->r 15))))
+  (define w-f1-angle (- 33 15))
+
+  (/ f1 (cos (d->r w-f1-angle)))
+#+end_src
+
+#+RESULTS:
+: 3.075164415270255
+
+Thus the force is about $3.075 N$.
+
+*** 30
+\begin{align}
+\vec{F} &= 2\vec{i} + \vec{j} - 3\vec{k}\\
+\vec{v} &= 3\vec{i} - \vec{j}\\
+\vec{F} \cdot \vec{v} &= 5\\
+\left | \vec{F} \right | &= \sqrt{14}\\
+\left | \vec{v} \right | &= \sqrt{10}\\
+\left | \vec{F} \right | \cdot \left | \vec{v} \right | &= 2\sqrt{35}\\
+\cos \theta &= \frac{\sqrt{35}}{14}\\
+Proj_{\vec{v}} \vec{F} &= \vec{F} \cdot \cos \theta\\
+&= \frac{\sqrt{35}}{7} \vec{i} + \frac{\sqrt{35}}{14} \vec{j} - \frac{3\sqrt{35}}{14} \vec{k}\\
+Parallel_{vector} &= \vec{F} - Proj_{\vec{v}} \vec{F}\\
+&= \left(2-\frac{\sqrt{35}}{7}\right) \vec{i} + \left(1-\frac{\sqrt{35}}{14}\right) \vec{j} + \left(\frac{3\sqrt{35}}{14}-3\right) \vec{k}
+\end{align}
+
+* 2.28
+** 12.3
+*** 36
+we want a line through P with direction of $3\vec{i}+2\vec{j}$.
+so the line is $2x-3y+8=0$.
+#+BEGIN_SRC gnuplot :file Thomas-12.3-36.png :exports both
+  set term png size 300,300
+  set xrange [-10:10]
+  set yrange [-10:10]
+  set xlabel "X"
+  set ylabel "Y"
+  set title "Thomas-12.3-36"
+
+  set arrow from 0,0 to 2,-3
+
+  f(x) = (2.0/3)*x + 8.0/3
+
+  plot f(x) title "2x-3y+8=0"
+#+END_SRC
+
+#+RESULTS:
+[[file:Thomas-12.3-36.png]]
+
+*** 42
+#+begin_src scheme :exports both
+  (* 602148 (* 605 1000))
+#+end_src
+
+#+RESULTS:
+: 364299540000
+
+so it is about $364299540000 J$.
+
+*** 48
+\begin{align}
+x + \sqrt{3} y &= 1\\
+(1-\sqrt{3}) x + (1+\sqrt{3}) y &= 8
+\end{align}
+their slopes are $-\frac{\sqrt{3}}{3}$ and $-\frac{1-\sqrt{3}}{1+\sqrt{3}}$ respectively.
+so the angle is about $10.1^\circ$.
+** 12.4
+*** 6
+\begin{align}
+\vec{u} &= \vec{k}\\
+\vec{v} &= \vec{i}\\
+\vec{u}\times \vec{v} &= \vec{j}\\
+\vec{v}\times \vec{u} &= -\vec{j}
+\end{align}
+Thus, we have
+- $\vec{u}\times \vec{v}$.
+  + length
+    1
+  + direction
+    $\vec{j}$.
+- $\vec{v}\times \vec{u}$.
+  + length
+    1
+  + direction
+    $-\vec{j}$.
+*** 12
+\begin{align}
+\vec{u} &= 2\vec{i}-\vec{j}\\
+\vec{v} &= \vec{i} + 2\vec{j}
+\end{align}
+the sketch of $u,v,u \times v$ is
+#+begin_src gnuplot :file Thomas-12.4-12.png :exports both
+  set term png size 200,200
+  set xrange [-6:6]
+  set yrange [-6:6]
+  set zrange [-6:6]
+  set xlabel "X"
+  set ylabel "Y"
+  set zlabel "Z"
+  set title "Thomas-12.4-12"
+
+  set arrow from 0,0,0 to 2,-1,0
+  set arrow from 0,0,0 to 1,2,0
+  set arrow from 0,0,0 to 0,0,5
+
+  splot NaN notitle
+#+end_src
+
+#+RESULTS:
+[[file:Thomas-12.4-12.png]]
+
+*** 18
+\begin{align}
+P &(-2,2,0)\\
+Q &(0,1,-1)\\
+R &(-1,2,-2)
+\end{align}
+**** a
+$\vec{PQ} = (2,-1,-1)$.
+$\left | \vec{PQ} \right | = \sqrt{6}$.
+$\vec{QR} = (-1,1,-1)$.
+$\left | \vec{QR} \right | = \sqrt{3}$.
+$S_{\bigtriangleup PQR} = \frac{1}{2} \left | \vec{PQ} \times \vec{QR} \right |$.
+the latter stuff in magnitude can be written as
+\begin{vmatrix}
+i & j & k\\
+2 & -1 & -1\\
+-1 & 1 & -1
+\end{vmatrix}
+
+which is $(2,3,1)$.
+the final area is $\frac{\sqrt{14}}{2}$.
+**** b
+$\left | (2,3,1) \right | = \sqrt{14}$.
+so the unit vector is $\left( \frac{2}{\sqrt{14}}, \frac{3}{\sqrt{14}}, \frac{1}{\sqrt{14}} \right)$.
+*** 24
+None of them are parallel,
+but \( \vec{u} \) and \( \vec{v} \),
+\( \vec{u} \) and \( \vec{w} \),
+\( \vec{v} \) and \( \vec{w} \),
+\( \vec{v} \) and \( \vec{r} \),
+\( \vec{w} \) and \( \vec{r} \),
+are perpendicular.
+*** 30
+\begin{align}
+(i\times j)\times j &= k \times j\\
+&= -i
+\end{align}
+\begin{align}
+i \times (j\times j) &= i \times 0\\
+&= 0
+\end{align}
+conclusion: the cross product doesn't comply with exchange rule.

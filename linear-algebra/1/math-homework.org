@@ -1,0 +1,151 @@
+#+TITLE: Linear Algebra Assignment 1
+#+AUTHOR: 
+#+LATEX_CLASS: article
+#+LATEX_CLASS_OPTIONS: [a4paper,12pt]
+#+LATEX_HEADER: \usepackage[margin=1in]{geometry}
+#+LATEX_HEADER: \pdfcompresslevel=9
+#+OPTIONS: \n:t toc:nil num:nil date:nil
+
+#+begin_center
+Please submit by 5:00 PM on March 21st to the email address: 2592793289@qq.com
+#+end_center
+
+* Problem 1
+Solve the following system of linear equations and analyze how the parameter $\alpha$ affects the solutions:
+$$\left\{\begin{align*}
+&x_1+2x_2-x_3=1\\
+&2x_1+\alpha x_2+3x_3=4\\
+&4x_1+4x_2+\left(\alpha+2\right)x_3=6
+\end{align*}\right .$$
+** Solution 1
+$$\left[\begin{array}{ccc|c}
+1 & 2 & -1 & 1\\
+2 & \alpha & 3 & 4\\
+4 & 4 & \left(\alpha+2\right) & 6
+\end{array}\right]$$
+substruct 2 times of row 1 from row 2
+$$\left[\begin{array}{ccc|c}
+1 & 2 & -1 & 1\\
+0 & \alpha-4 & 5 & 2\\
+4 & 4 & \left(\alpha+2\right) & 6
+\end{array}\right]$$
+substract 4 times of row 1 from row 3
+$$\left[\begin{array}{ccc|c}
+1 & 2 & -1 & 1\\
+0 & \alpha-4 & 5 & 2\\
+0 & -4 & \left(\alpha+6\right) & 2
+\end{array}\right]$$
+when $\alpha=0$, the solution is
+$$\left\{\begin{align*}
+x_1 &= 2\\
+x_2 &= -\frac{1}{2}\\
+x_3 &= 0
+\end{align*}\right .$$
+when $\alpha\neq 0$, substract $-\frac{4}{\alpha-4}$ times of row 2 from row 3
+$$\left[\begin{array}{ccc|c}
+1 & 2 & -1 & 1\\
+0 & \alpha-4 & 5 & 2\\
+0 & 0 & \left(\alpha+6\right)+\frac{20}{\alpha-4} & \frac{8}{\alpha-4}
+\end{array}\right]$$
+the solution is
+$$\left\{\begin{align*}
+x_1 &= 7+\alpha+\frac{20}{\alpha-4}-\frac{4\alpha+24}{\alpha^2+2\alpha-4}\\
+x_2 &= \frac{2\alpha+12}{\alpha^2+2\alpha-4}\\
+x_3 &= \frac{8}{\alpha^2+2\alpha-4}
+\end{align*}\right .$$
+as we can see, there is no solution when $\alpha=\pm \sqrt{5}-1$
+
+* Problem 2
+Let $A,B$ be matrices and $c$ a scalar. Power the following properties of matrix transpose:
+(a)$\left(A+B\right)^T=A^T+B^T$ (where $A$ and $B$ are both $m\times n$)
+(b)$\left(cA)^T=cA^T$
+** Solution 2
+*** (a)
+for $i,j$ in range, we know $a_{ji}+b_{ji}=a_{ji}+b_{ji}$.
+acturally since plusing doesn't change relative positions and transpose doesn't as well,
+the equality is obvious
+*** (b)
+since multiplying a scalar involves multiplying each element with th escalar in place
+without changing the relevant position
+it doesn't matter we do the transpose before or after such execution
+* Problem 3
+Consider the homogeneous system:
+$$\left\{\begin{align*}
+&x_1+3x_2-2x_3+x_4=0\\
+&2x_1+6x_2-4x_3+3x_4=0\\
+&kx_1+3kx_2-2kx_3+kx_4=0
+\end{align*}\right .$$
+Find all values of k for which the system has nontrival solutions.
+** Solution 3
+$$\left[\begin{array}{cccc|c}
+1 & 3 & -2 & 1 & 0\\
+2 & 6 & -4 & +3 & 0\\
+k & 3 & -2k & k & 0
+\end{array}\right]$$
+substract 2 times of row 1 from row 2
+$$\left[\begin{array}{cccc|c}
+1 & 3 & -2 & 1 & 0\\
+0 & 0 & 0 & 1 & 0\\
+k & 3 & -2k & k & 0
+\end{array}\right]$$
+switch row 2 and row 3
+$$\left[\begin{array}{cccc|c}
+1 & 3 & -2 & 1 & 0\\
+k & 3 & -2k & k & 0\\
+0 & 0 & 0 & 1 & 0
+\end{array}\right]$$
+substract k times of row 1 from row 2
+$$\left[\begin{array}{cccc|c}
+1 & 3 & -2 & 1 & 0\\
+0 & 3-3k & 0 & 0 & 0\\
+0 & 0 & 0 & 1 & 0
+\end{array}\right]$$
+from row 3, we can see $x_4=0$.
+if we wish for an existance of nontrival solution
+we need $3-3k= 0$ for $x_2$ not to be fixed on $0$.
+so $k=1$ is the only value suitable
+otherwise, $x_2=x_4=0$ and $x_1=2x_2$ 
+* Problem 4
+Transform the following augumented matrix into row echelon form (REF)
+and reduced row echelon form (RREF).
+Determine the consistency of the corresponding linear system:
+$$\left[\begin{array}{cccc|c}
+1 & -2 & 3 & 1 & 5\\
+2 & -4 & 7 & 2 & 9\\
+-1 & 2 & -1 & 3 & -4
+\end{array}\right]$$
+** Solution 4
+substract 2 times of row 1 from row 2
+$$\left[\begin{array}{cccc|c}
+1 & -2 & 3 & 1 & 5\\
+0 & 0 & 1 & 0 & -1\\
+-1 & 2 & -1 & 3 & -4
+\end{array}\right]$$
+add row 1 upon row 3
+$$\left[\begin{array}{cccc|c}
+1 & -2 & 3 & 1 & 5\\
+0 & 0 & 1 & 0 & -1\\
+0 & 0 & 2 & 4 & 1
+\end{array}\right]$$
+substract 2 times of tow 2 from tow 3
+$$\left[\begin{array}{cccc|c}
+1 & -2 & 3 & 1 & 5\\
+0 & 0 & 1 & 0 & -1\\
+0 & 0 & 0 & 4 & 3
+\end{array}\right]$$
+the above one is an echelon matrix
+and the corresponding RREF is
+$$\left[\begin{array}{cccc|c}
+1 & -2 & 0 & 0 & \frac{5}{4}\\
+0 & 0 & 1 & 0 & -1\\
+0 & 0 & 0 & 1 & \frac{3}{4}
+\end{array}\right]$$
+* Problem 5
+Given matrix $A=\left[\begin{matrix} 1 & 2 \\ 3 & 4 \end{matrix}\right]$, find matrix $X$ such that :
+$$AX=\left[\begin{matrix} 5 & 6 \\ 11 & 12 \end{matrix}\right]$$
+** Solution 5
+since the result and $A$ are both $2\times 2$,
+$X$ should also be a $2\times 2$ matrix
+suppose $x=\left[x_1\, x_2\right]$ where $x_i (i=1,2)$ is a vector
+we have $x_1=\begin{bmatrix} 1 \\ 2 \end{bmatrix}$ and $x_2=\begin{bmatrix} 0 \\ 3 \end{bmatrix}$
+so $X=\begin{bmatrix} 1 & 0 \\ 2 & 3 \end{bmatrix}$

@@ -1,0 +1,162 @@
+#+TITLE: Week 3.31 Math Homework
+#+AUTHOR: 2024110144
+#+LATEX_CLASS: article
+#+LATEX_CLASS_OPTIONS: [a4paper,10pt]
+#+LATEX_HEADER: \usepackage[margin=0.5in]{geometry}
+#+OPTIONS: \n:t toc:nil num:nil date:nil
+
+#+begin_comment
+3.31
+thomas 15.1 1-36 mod 6
+thomas 15.2 1-24 mod 6
+4.2
+thomas 15.2 25-94 mod 9
+thomas 15.4 1-52 mod 6
+#+end_comment
+
+* 3.31
+** 15.1
+*** 6
+$$\begin{align*}
+\int_0^3 \int_{-2}^0 (x^2 y-2xy) dydx &= \int_0^3 (\frac{x^2}{2} y^2 - x y^2)|_{-2}^0 dx\\
+&= \int_0^3 (-2x^2 + 4x) dx\\
+&= (-\frac{2}{3} x^3 + 2x^2)|_0^3\\
+&= 0
+\end{align*}$$
+*** 12
+$$\begin{align*}
+\inf_{\pi}^{2\pi} \inf_0^{\pi} (\sin x + \cos y) dxdy &= \inf_{\pi}^{2\pi} (-\cos x + x\cos y)|_0^{\pi} dy\\
+&= \inf_{\pi}^{2\pi} (2+\pi \cos y) dy\\
+&= (2y+\pi \sin y)|_{\pi}^{2\pi}\\
+&= 2\pi + 0\\
+&= 2\pi
+\end{align*}$$
+*** 18
+since in $R$, $y\sin (x+y)$ is continuous
+it is integrable
+$$\begin{align*}
+\int\int_R  y\sin (x+y) dA &= \int_0^{\pi} \int_{-\pi}^0 y\sin (x+y) dxdy\\
+&= \int_0^{\pi} -y\cos (x+y)|_{-\pi}^0 dy\\
+&= \int_0^{\pi} -y\cos y + y\cos(y-\pi) dy\\
+&= \int_0^{\pi} -2y\cos y dy\\
+&= \int_0^{\pi} -2y d\sin y\\
+&= -2\int_0^{\pi} y d\sin y\\
+&= -2\int_0^{\pi} (y\sin y - \sin y dy)\\
+&= -2(y\sin y|_0^{\pi} - \int_0^{\pi} \sin y dy)\\
+&= -2(y\sin y|_0^{\pi} + \cos y|_0^{\pi})\\
+&= -2(y\sin y|_0^{\pi} - 2)\\
+&= 4 - 0\\
+&= 4
+\end{align*}$$
+*** 24
+it is clear that $f(x,y)$ is continuous
+so the function is integrable
+$$\begin{align*}
+\int\int_R y\cos xy dA &= \int_0^1 \int_0^{\pi} y\cos xy dxdy\\
+&= \int_0^1 y^2\sin xy|_0^{\pi} dy\\
+&= \int_0^1 y^2\sin \pi y dy\\
+&= \frac{1}{\pi} \int_0^1 y^2\sin \pi y d\pi y\\
+&= -\frac{1}{\pi} \int_0^1 y^2d\cos\pi y\\
+&= -\pi \int_0^{\pi} y^2d\cos y\\
+&= -\pi (y^2\cos y|_0^{\pi} - \int_0^{\pi} \cos y dy^2)\\
+&= -\pi (y^2\cos y|_0^{\pi} - \int_0^{\pi} 2y\cos y dy)\\
+&= \pi^3 + \pi \int_0^{\pi} 2y\cos y dy\\
+&= \pi^3 + \pi \int_0^{\pi} 2yd\sin y\\
+&= \pi^3 + 2\pi (y\sin y|_0^{\pi} - \int_0^{\pi} \sin ydy)\\
+&= \pi^3 - 2\pi \int_0^{\pi} \sin ydy\\
+&= \pi^3 + 2\pi \cos y|_0^{\pi}\\
+&= \pi^3 - 4\pi
+\end{align*}$$
+*** 30
+$$\begin{align*}
+V &= \int_0^1 \int_0^2 z dydx\\
+&= \int_0^1 \int_0^2 (4-y^2) dydx\\
+&= \int_0^1 (4y-\frac{y^3}{3})|_0^2 dx\\
+&= \int_0^1 (8-\frac{8}{3}) dx\\
+&= (8-\frac{8}{3})x|_0^1\\
+&= 8-\frac{8}{3}\\
+&= \frac{16}{3}
+\end{align*}$$
+*** 36
+$F(x,y)$ is actually the integral $(y)$ of the integral $(x)$
+and since $f(x,y)$ is continuous on the disk
+it is equal to the integral $(x)$ of the integral of $(y)$
+so $F_{xy} = F_{yx} = f(x,y)$
+** 15.2
+*** 6
+#+begin_src gnuplot :exports both :file thomas-15.2-6.png :var e=2.718281828459045
+  set term png size 300,300
+  set title "Thomas-15.2-6"
+  set parametric
+  set trange [1:e**2]
+  plot t,log(t) notitle, t,0 notitle, e**2,log(t) notitle
+#+end_src
+
+#+RESULTS:
+[[file:thomas-15.2-6.png]]
+
+*** 12
+1. a
+   $\int_0^2 \int_1^{e^x} dydx$
+2. b
+   $\int_1^{e^2} \int_{\ln y}^2 dxdy$
+*** 18
+1. a
+   $\int_{-1}^2 \int_{x^2}^{x+2} dydx$
+2. b
+   $\int_1^4 \int_{y-2}^{\sqrt{y}} dxdy + \int_0^1 \int_{-\sqrt{y}}^{\sqrt{y}} dxdy$
+*** 24 need-plot
+#+begin_src gnuplot :exports both :file thomas-15.2-24.png :var e=2.718281828459045
+  set term png size 300,300
+  set title "Thomas 15.2 24"
+  set parametric
+  set urange [1:4]
+  set vrange [0:2]
+  set xrange [0:5]
+  set yrange [-1:3]
+  f(x,y)=3.0/2*(e**(y/sqrt(x)))
+  splot u,v,f(u,v) notitle where (v <= sqrt(u))
+#+end_src
+
+#+RESULTS:
+[[file:thomas-15.2-24.png]]
+
+$$\begin{align*}
+\int_1^4 \int_0^{\sqrt{x}} \frac{3}{2} e^{\frac{y}{\sqrt{x}}} dydx &= \int_1^4 \frac{3}{2} \frac{1}{\sqrt{x}} e^{\frac{y}{\sqrt{x}}}|_0^{\sqrt{x}} dx\\
+&= \frac{3}{2} \int_1^4 \frac{1}{\sqrt{x}} e^{\frac{y}{\sqrt{x}}}|_0^{\sqrt{x}} dx\\
+&= \frac{3}{2} \int_1^4 \frac{1}{\sqrt{x}} (e - 1) dx\\
+&= \frac{3}{2} \int_1^4 \frac{e - 1}{\sqrt{x}} dx\\
+&= \frac{3e-3}{4} \sqrt{x}|_1^4\\
+&= \frac{3e-3}{4} (2-1)\\
+&= \frac{3e-3}{4} \cdot 1\\
+&= \frac{3e-3}{4}
+\end{align*}$$
+
+* 4.2
+** 15.2
+*** 27 tbfl
+$$f(u,v)=v-\sqrt{u}$$
+# over the triangular region cut from the first quadrant of the uv-plane by the line
+$$u+v=1$$
+*** 36 need plot
+we just need to concentrate on the range of $x,y$
+the answer is
+$$\int_0^1 \int_{1-y}^{\sqrt{1-y}} dxdy$$
+*** 45 tbfl need plot
+$$\int_0^3 \int_1^{e^y} (x+y) dxdy$$
+the $x$ range is $[1,e^3]$
+then $y$ range is $[0,\ln x]$
+so the answer is
+$$\int_1^{e^3} \int_0^{\ln x} (x+y) dxdy$$
+*** 54 need plot
+
+*** 63
+*** 72
+*** 81
+*** 90
+** 15.4
+*** 6
+*** 12
+*** 18
+*** 24
+*** 30

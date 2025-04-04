@@ -1,0 +1,99 @@
+#+TITLE: 11.27math
+#+AUTHOR: 2024110144
+
+* Question 1
+Suppose $f(x) = x^4 - 5x^3 + x^2 - 3x + 4$
+- $f'(x) = 4x^3 - 15x^2 + 2x - 3$
+- $f"(x) = 12x^2 - 30x + 2$
+- $f^{(3)}(x) = 24x - 30$
+- $f^{(4)} = 24$
+Thus the answer is $-56 + 21(x-4) + 37(x-4)^2 + 11(x-4)^3 + 24(x-4)^4$
+
+* Question 3
+- $y' = \sec^2 x$
+- $y" = 2\sin x \sec^3 x$
+Thus the answer is $y = x$
+
+* Question 5
+- $y' = -{1 \over x^2}$
+- $y" = {2 \over x^3}$
+- $y^{(3)} = -{6 \over x^4}$
+- $y^{(n)} = (-1)^n \frac{n!}{x^{n+1}}$
+Applying Taylor Formula, we get $y = \sum_{i=0}^n \frac{(-1)^n}{x^{n+1}}(x+1)^i$
+
+* Question 7
+My answer is $1 + {1 \over 2} x^2 + ... + {2 \over (2n)!} x^{2n}$
+
+* Question 13
+** Question (1)
+- $(\sin x)' = \cos x$
+- $(\sin x)" = -\sin x$
+- $(\sin x)^{(3)} = -\cos x$
+- $(\sin x)^{(4)} = \sin x$
+Thus we can use the approximation at $x_0$ as \( \sin x = \sin x_0 + \cos x_0 (x - x_0) - \frac{\sin x_0}{2} (x - x_0)^{2} - \frac{\cos x_0}{6} (x - x_0)^{(3)} + ... \)
+
+Take $x_0 = 0$ into the equation we get \( \sin x = x + ... \)
+
+Thus the answer is approximately $0.31459265358979$
+
+The deviation is about $10^{-4}$
+** Question (2)
+Suppose $f(x) = \sqrt{x}$
+
+Then we have
+- $f'(x) = \frac{1}{2\sqrt{x}}$
+- $f"(x) = - \frac{1}{4(\sqrt{x})^3}$
+- $f^{(3)} (x) = \frac{3}{8 x^{\frac{5}{2}}}$
+Thus we have the expansion with $x_0 = 9$ as $f(x) = 3 + \frac{1}{6} (x - 9) - \frac{1}{216} (x - 9)^2 + \frac{1}{3888} (x - 9)^3$
+
+So our approximation would be $3 + \frac{1}{6} - \frac{1}{216} + \frac{1}{3888}$
+
+The deviation is about $10^{-3}$
+** Question (3)
+Suppose $f(x) = \ln (1+x)$
+
+Then we have
+- $f'(x) = \frac{1}{1+x}$
+- $f"(x) = -\frac{1}{(1+x)^2}$
+- $f^{(3)} = \frac{2}{(1+X)^3}$
+Thus we have the expansion with $x_0 = 0$ as $f(x) = x - \frac{1}{2} x^2 + \frac{1}{3} x^3$
+
+So the answer is $0.2 - 0.02 + \frac{0.008}{3}$
+
+Which is about $0.1826666666666667$
+
+The deviation is about $10^{-4}$
+** Question (4)
+Suppose $f(x) = \root 3 \of {x}$
+
+Then we have
+- $f'(x) = \frac{1}{3} x^{-\frac{2}{3}}$
+- $f"(x) = -\frac{2}{9} x^{-\frac{5}{3}}$
+- $f^{(3)}(x) = \frac{10}{27} x^{-\frac{8}{3}}$
+
+Thus we have the expansion with $x_0 = 27$ as $f(x) = 3 + \frac{1}{27} (x-27) - \frac{1}{3^7} (x-27)^2 + \frac{5}{3^{12}} (x-27)^3$
+
+So the answer is $3 + \frac{1}{9} - \frac{1}{3^5} + \frac{5}{3^9}$
+
+Which is about $3.107249911090789$
+
+The deviation is about $10^{-4}$
+* Question 17
+** Question (3)
+The limit equals to $\lim_{x \to 0} \frac{1 - \frac{x^4}{2} + o(x^4) - x^2 + \frac{x^4}{2} - x^2 o(x^2) - 1}{x^2} = \lim_{x \to 0} \frac{o(x^4)}{x^2} = 0$
+** Question (6)
+The limit equals to$\lim_{x \to 0} \frac{1 - e^{\sin x \ln \cos x}}{x^3} = \lim_{x \to 0} - \frac{\sin x \ln \cos x}{x^3}$
+
+$= \lim_{x \to 0} \frac{1 - e^{\frac{x^3}{2} - \frac{x^5}{8} - \frac{x^5}{12} + \frac{x^7}{40}}}{x^3} = \frac{1}{2}$
+** Question (9)
+The limit equals to
+
+$\lim_{x \to 0} \frac{x + \frac{x^3}{3} + o(x^2) - \frac{\left(x + \frac{x^3}{3} + o(x^n)\right)^3}{6} + o \left(x + \frac{x^3}{3} + o(x^n)\right)^n - \left(x - \frac{x^3}{6} + o(x^n)\right) - \frac{\left(x + \frac{x^3}{6} + o(x^n)\right)^3}{3} - o \left(x - \frac{x^3}{6} + o(x^n)\right)^n}{x^7}$
+
+$= -\frac{1}{30}$
+** Question (12)
+The limit equals to
+
+$\lim_{x \to 1} \frac{\alpha^2 \left(\beta x + \beta x^2 + o (x-1)^n\right) - \beta^2 \left(\alpha x + \alpha x^2 + o (x-1)^n\right)}{\left(\alpha x + \alpha x^2 + o (x-1)^n\right)\left(\beta x + \beta x^2 + o (x-1)^n\right)}$
+
+$= \frac{\alpha - \beta}{2}$
