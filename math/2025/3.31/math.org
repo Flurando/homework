@@ -134,21 +134,56 @@ $$\begin{align*}
 
 * 4.2
 ** 15.2
-*** 27 tbfl
+*** 27
 $$f(u,v)=v-\sqrt{u}$$
 # over the triangular region cut from the first quadrant of the uv-plane by the line
 $$u+v=1$$
-*** 36 need plot
+$$\begin{align*}
+V &= \int_0^1 \int_0^{1-u} (v-\sqrt{u}) dvdu\\
+&= \int_0^1 \frac{v^2}{2} - v\sqrt{u} |_0^{1-u} du\\
+&= \int_0^1 \frac{(1-u)^2}{2} - (1-u)\sqrt{u} du\\
+&= \int_0^1 \frac{u^2-2u+1}{2} - (1-u)\sqrt{u} du\\
+&= \frac{u^3}{6} - \frac{u^2}{2} + \frac{u}{2} - \frac{2}{3} u^{\frac{3}{2}} + \frac{2}{5}  u^{\frac{5}{2}} |_0^1\\
+&= \frac{1}{6} - \frac{1}{2} + \frac{1}{2} - \frac{2}{3} + \frac{2}{5}\\
+&= \frac{1}{6} - \frac{2}{3} + \frac{2}{5}\\
+&= \frac{1}{6} + 1\\
+&= \frac{7}{6}
+\end{align*}$$
+*** 36
 we just need to concentrate on the range of $x,y$
 the answer is
 $$\int_0^1 \int_{1-y}^{\sqrt{1-y}} dxdy$$
-*** 45 need plot
+#+begin_src gnuplot :exports both :file thomas-15.2-36.png
+  set title "Thomas-15.2-36"
+  set term png size 300,300
+  set parametric
+  set urange [0:1]
+  set vrange [0:1]
+  splot v,u,1 title "figure" where (v >= (1-u) && (v <= sqrt(1-u))
+#+end_src
+
+#+RESULTS:
+[[file:thomas-15.2-36.png]]
+
+*** 45
 $$\int_0^3 \int_1^{e^y} (x+y) dxdy$$
 the $x$ range is $[1,e^3]$
 then $y$ range is $[0,\ln x]$
 so the answer is
 $$\int_1^{e^3} \int_0^{\ln x} (x+y) dxdy$$
-*** 54 need plot
+#+begin_src gnuplot :exports both :file thomas-15.2-45.png
+  set title "Thomas-15.2-45"
+  set term png size 300,300
+  set parametric
+  set urange [0:3]
+  set vrange [1:exp(3)]
+  splot v,u,(u+v) title "figure" where (v <= exp(u))
+#+end_src
+
+#+RESULTS:
+[[file:thomas-15.2-45.png]]
+
+*** 54
 $$\int_0^8 \int_{\sqrt[3]{x}}^2 \frac{dydx}{y^4+1}$$
 the range of $y$ is $[0,2]$
 the range of $x$ is $[y^3,8]$
@@ -162,6 +197,18 @@ $$\begin{align*}
 since it is hard to integrate, we shall try the original sequence
 the original is also not integratable?
 no idea how to integrate this
+#+begin_src gnuplot :exports both :file thomas-15.2-54.png
+  set title "Thomas-15.2-54"
+  set term png size 300,300
+  set parametric
+  set urange [0:8]
+  set vrange [0:2]
+  splot u,v,1.0/(v**4+1) title "figure" where (v >= u**(1.0/3))
+#+end_src
+
+#+RESULTS:
+[[file:thomas-15.2-54.png]]
+
 *** 63
 # Find the volume of the wedge cut from the first octant by the cylinder $z = 12 - 3y^2$ and the plane $x + y = 2$.
 for $x+y=2,x,y>0$, we want $\int\int_R 12 - 3y^2 dA$
@@ -184,14 +231,15 @@ $$\begin{align*}
 *** 81
 impossible
 because scanning the region vertically or horizonally should output the same result
-*** 90 tbcl using calculator
+*** 90
 $$\int_0^3 \int_{x^2}^9 x\cos (y^2) dydx$$
 when we try to reverse $xy$
 we know the range of $y$ is $[0,9]$
 then the corresponding $x$ is in $[0,\sqrt{y}]$
 so the reverse is
 $$\int_0^9 \int_0^{\sqrt{y}} x\cos (y^2) dxdy$$
-
+by asking ai, the first is about $12.5$
+the second is about $\frac{\sin 81}{4}$
 ** 15.4
 *** 6
 the range of $\theta$ is $[-\frac{\pi}{3},\frac{\pi}{3}]$
@@ -214,7 +262,7 @@ $$\begin{align*}
 &= \int_0^{2\pi} \frac{1}{2} d\theta\\
 &= \pi
 \end{align*}$$
-*** 24 need plot
+*** 24
 $$\begin{align*}
 \int_0^{\frac{\pi}{2}} \int_0^1 r^3\sin\theta\cos\theta drd\theta &= \int_0^{\frac{\pi}{2}} \int_0^1 r^2\sin\theta\cos\theta rdrd\theta\\
 &= \frac{1}{2} \int_0^{\frac{\pi}{2}} \int_0^1 r^2\sin2\theta rdrd\theta\\
@@ -224,6 +272,23 @@ $$\begin{align*}
 &= \frac{1}{8} \int_0^{\pi} \int_0^1 r\sin\theta drd\theta\\
 &= \frac{1}{8} \int_{-1}^1 \int_0^{\sqrt{1-x^2}} dydx
 \end{align*}$$
+#+begin_src gnuplot :exports both :file thomas-15.4-24.png
+  set term png size 300,300
+  set parametric
+  set trange [0:pi/2]
+
+  set xrange [0:1]
+  set yrange [0:1]
+  set xlabel "x"
+  set ylabel "y"
+  set title "Thomas-15.4-24"
+
+  plot cos(t), sin(t) title "Circle"
+#+end_src
+
+#+RESULTS:
+[[file:thomas-15.4-24.png]]
+
 *** 30
 $$\begin{align*}
 S &= \frac{1}{2} \int_0^{2\pi} \frac{4\theta}{3} d\theta\\
