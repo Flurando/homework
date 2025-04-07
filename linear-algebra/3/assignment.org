@@ -1,0 +1,32 @@
+#+TITLE: Linear Algebra Assignment 3
+#+AUTHOR: 2024110144
+#+LATEX_CLASS: article
+#+LATEX_CLASS_OPTIONS: [a4paper,12pt]
+#+LATEX_HEADER: \usepackage[margin=1in]{geometry}
+#+LATEX_HEADER: \pdfcompresslevel=9
+#+OPTIONS: \n:t toc:nil num:nil date:nil
+
+#+begin_center
+Please submit by 5:00 PM on April 18th to the email address: 2592793289@qq.com
+#+end_center
+
+* Problem 1
+Given the matrix
+$$A = \left(\begin{matrix}
+1 & 2 & 3\\
+2 & 4 & 6\\
+-1 & -1 & 0
+\end{matrix}\right)$$
+(a) determine whether the columns of $A$ are linearly independent.
+
+(b) compute the determinant of $A$ (by expansion, row/column operations
+
+* Problem 2
+
+* Problem 3
+
+* Problem 4
+
+* Problem 5
+
+* Extra Problem (Bonus, as an optimal problem)
