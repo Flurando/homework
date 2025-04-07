@@ -1,0 +1,21 @@
+#+TITLE: Week 4.7 Math Homework
+#+AUTHOR: 2024110144
+#+LATEX_CLASS: article
+#+LATEX_CLASS_OPTIONS: [a4paper,10pt]
+#+LATEX_HEADER: \usepackage[margin=0.5in]{geometry}
+#+OPTIONS: \n:t toc:nil num:nil date:nil
+
+#+begin_comment
+3.7
+thomas 15.6 1-20 mod 3
+4.9
+4.11
+#+end_comment
+
+* 3.7
+** 3
+** 6
+** 9
+** 12
+** 15
+** 18
