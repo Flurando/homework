@@ -92,3 +92,29 @@ Show your steps clearly.
 has only the trivial solution or not.)
 
 * Extra Problem (Bonus, as an optimal problem)
+Consider the generalized $n\times n$ Vandermonde matrix:
+$$V_n=\left(\begin{matrix}
+1 & x_1 & x_1^2 & . & . & . & x_1^{n-1}\\
+1 & x_2 & x_2^2 & . & . & . & x_2^{n-1}\\
+. & . & . & . & & & .\\
+. & . & . & & . & & .\\
+. & . & . & & & . & .\\
+1 & x_n & x_n^2 & . & . & . & x_n^{n-1}
+\end{matrix}\right)$$
+
+(a) Prove that the determinant can be expressed as:
+$$det(V_n) = \Pi_{1\leq i < j \leq n} (x_j-x_i)$$
+
+by mathmatical induction.
+
+(b) For the modified matrix
+$$W=\left(\begin{matrix}
+1 & x_1 & x_1^2 & x_1^3\\
+1 & x_2 & x_2^2 & x_2^3\\
+1 & x_3 & x_3^2 & x_3^3\\
+1 & y & y^2 & y^3
+\end{matrix}\right)$$,
+
+where $y\neq x_i$ for $i=1,2,3$.
+Find the condition that makes $det(W)=det(V_4)$,
+where $V_4$ is the standard $4\times 4$ Vandermonde matrix with distinct modes x_1,x_2,x_3,x_4.

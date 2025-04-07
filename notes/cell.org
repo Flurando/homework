@@ -95,3 +95,10 @@ endoplasmic reticulum糙面内质网
 - chloramphenicol
 - cycloheximide
 - rifamycin
+*** 甲基化
+**** formation of 5-methylctosine occurs by methylation of a cytosine base in the DNA double helix
+cytosine --methylation--> 5-methylctosine
+**** maintanance of DNA methylation
+**** post-transcriptional controls
+- mRNAs contain sequences that control their translation
+- Regulary RNAs..
