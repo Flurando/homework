@@ -4,7 +4,7 @@
 #+LATEX_CLASS_OPTIONS: [a4paper,12pt]
 #+LATEX_HEADER: \usepackage[margin=1in]{geometry}
 #+LATEX_HEADER: \pdfcompresslevel=9
-#+OPTIONS: \n:t toc:nil num:nil date:nil
+#+OPTIONS: \n:nil toc:nil num:nil date:nil
 
 #+begin_center
 Please submit by 5:00 PM on April 18th to the email address: 2592793289@qq.com
@@ -19,14 +19,76 @@ $$A = \left(\begin{matrix}
 \end{matrix}\right)$$
 (a) determine whether the columns of $A$ are linearly independent.
 
-(b) compute the determinant of $A$ (by expansion, row/column operations
+(b) compute the determinant of $A$
+(by expansion, row/column operations, or any preferred method)
+and interpret your result:
+how does it connect with your conclusion in part (a)?
 
 * Problem 2
+Let
+$$A=\left(\begin{matrix}
+3 & 2 & 4\\
+1 & -2 & 3\\
+2 & 3 & 2
+\end{matrix}\right)$$.
+
+(a) Find the values of $det(M_{21})$, $det(M_{22})$, $det(M_{23})$.
+
+(b) Find the values of $A_{21}$, $A_{22}$, $A_{23}$.
+
+(c) Use your answers from part (b) to compute $det(A)$.
 
 * Problem 3
+Given
+$$A=\left(\begin{matrix}
+0 & 1 & 2 & 3\\
+1 & 1 & 1 & 1\\
+-2 & -2 & 3 & 3\\
+1 & 2 & -2 & -3
+\end{matrix}\right)$$,
+
+(a) Compute the inverse of $A$, that is, $A^{-1}$,
+and find the solution of $Ax=b$,
+
+where $b^T = (2\,2\,3\,2)$.
+
+(b) Use the elimination method to evaluate $det(A)$.
+
+(c) Use the value of $det(A)$ to evaluate the following determinant:
+$$\left|\begin{matrix}
+0 & 1 & 2 & 3\\
+-2 & -2 & 3 & 3\\
+1 & 2 & -2 & -3\\
+1 & 1 & 1 & 1
+\end{matrix}\right| + \left|\begin{matrix}
+0 & 1 & 2 & 3\\
+1 & 1 & 1 & 1\\
+-2 & -2 & 3 & 3\\
+1 & 2 & -2 & -3
+\end{matrix}\right|$$
 
 * Problem 4
+Consider the $3\times 3$ Vandermode matrix
+$$V=\left(\begin{matrix}
+1 & x_1 & x_1^2\\
+1 & x_2 & x_2^2\\
+1 & x_3 & x_3^2
+\end{matrix}\right)$$.
+
+(a) Show that $det(V) = (x_2-x_1)(x_3-x_1)(x_3-x_2)$.
+
+(b) What conditions must the scalars $x_1,x_2,x_3$ satisfy
+in order for $V$ to be nonsingular?
 
 * Problem 5
+Consider the following vectors in $\mathbb{R}^3$:
+$$v_1=\left(\begin{matrix} 1\\1\\1 \end{matrix}\right),
+v_2=\left(\begin{matrix} 2\\1\\0 \end{matrix}\right),
+v_3=\left(\begin{matrix} 1\\0\\0 \end{matrix}\right)$$
+
+Prove whether these three vectors are linearly independent or linearly dependent.
+Show your steps clearly.
+(Hint: check if $c_1\vec{v_1} + c_2\vec{v_2} + c_3\vec{v_3} = 0$
+has only the trivial solution or not.)
 
 * Extra Problem (Bonus, as an optimal problem)
