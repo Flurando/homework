@@ -210,3 +210,8 @@ let N(A) denote the set of all solutions to the homogeneous system Ax=0
 thus N(A)={x\in R^n | Ax=0}
 **** claim: N(A) is a subspace of R^n
 **** 基向量
+*** linearly independent
+- def
+  $c_1\vec{v_1} + ... + c_n\vec{v_n} = \vec{0}$
+- basis基
+  a minimal spanning set is called a basis

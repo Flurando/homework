@@ -102,3 +102,11 @@ cytosine --methylation--> 5-methylctosine
 **** post-transcriptional controls
 - mRNAs contain sequences that control their translation
 - Regulary RNAs..
+* 演化
+** germ-line cells and somatic cells have fundamentally different functions
+** mutation
+** 编码基因的突变或者编码基因的突变
+** mobile genetic element
+比如转基因玉米
+** 转坐子tranposon
+retrotransposon逆转录转坐子

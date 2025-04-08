@@ -14,6 +14,25 @@ thomas 15.6 1-20 mod 3
 
 * 3.7
 ** 3
+we can describe the region as $\int_0^2 \int_{4-y}^{\frac{y^2}{4}} dxdy$
+to calculate the first moment of $x$
+we have
+$$\begin{align*}
+\int_0^2 \int_{4-y}^{\frac{y^2}{4}} x dxdy &= \int_0^2 \frac{x^2}{2} |_{4-y}^{\frac{y^2}{4}} dy\\
+&= \int_0^2 \frac{y^4}{32} - \frac{(4-y)^2}{2} dy\\
+&= \frac{1}{2} \int_0^2 \frac{y^4}{16} - (4-y)^2 dy\\
+&= \frac{1}{2} \int_0^2 \frac{y^4}{16} - (y^2-8y+16) dy\\
+&= \frac{1}{2} \int_0^2 \frac{y^4}{16} - y^2 + 8y - 16 dy\\
+&= \frac{1}{2} \left(- \frac{y^3}{3} + 4y^2 - 16y |_0^2\right)\\
+&= \frac{1}{2} \left(- \frac{8}{3} + 16 - 32\right)\\
+&= \frac{1}{2} \left(- \frac{8}{3} - 16\right)\\
+&= -\frac{1}{2} \left(\frac{8}{3} + 16\right)\\
+&= - \frac{4}{3} - 8\\
+&= - \frac{28}{3}
+\end{align*}$$
+for the first moment of $y$
+$$\begin{align*}
+\int_0^2 \int_{4-y}^{\frac{y^2}{4}} y dxdy &= \int_0^2 \
 ** 6
 ** 9
 ** 12
