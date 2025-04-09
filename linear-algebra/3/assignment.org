@@ -10,7 +10,7 @@
 Please submit by 5:00 PM on April 18th to the email address: 2592793289@qq.com
 #+end_center
 
-* Problem 1
+* Problem 1 done
 Given the matrix
 $$A = \left(\begin{matrix}
 1 & 2 & 3\\
@@ -24,7 +24,43 @@ $$A = \left(\begin{matrix}
 and interpret your result:
 how does it connect with your conclusion in part (a)?
 
-* Problem 2
+** Solution 1
+
+suppose the columns of $(a)$ are $\vec{x_1},\vec{x_2},\vec{x_3}$
+
+we have
+$$\begin{aligned}
+& \vec{x_1} &= \begin{bmatrix} 1 \\ 2 \\ -1 \end{bmatrix}\\
+& \vec{x_2} &= \begin{bmatrix} 2 \\ 4 \\ -1 \end{bmatrix}\\
+& \vec{x_3} &= \begin{bmatrix} 3 \\ 6 \\ 0 \end{bmatrix}
+\end{aligned}$$
+
+for equation $c_1 \vec{x_1} + c_2 \vec{x_2} + c_3 \vec{x_3} = 0$
+
+we have nontrivial solution of
+$$\begin{align*}
+c_1 &= 2\\
+c_2 &= -1\\
+c_3 &= 0
+\end{align*}$$
+
+which means the columns of $A$ are linearly dependent, so not
+
+the determinant is
+$$\begin{aligned}
+\left|\begin{matrix}
+1 & 2 & 3\\
+2 & 4 & 6\\
+-1 & -1 & 0
+\end{matrix}\right| &= (1\times 4\times 0 + 2\times 6\times (-1) + 3\times 2 \times (-1))\\
+&\quad - (3\times 4\times (-1) + 2\times 2\times 0 + 1\times 6\times (-1))\\
+&= -18 - (-18)\\
+&= 0
+\end{aligned}$$
+
+So linearly dependent matrix with determinant would have the value of the determinant as $0$
+
+* Problem 2 tbcl
 Let
 $$A=\left(\begin{matrix}
 3 & 2 & 4\\
@@ -38,7 +74,9 @@ $$A=\left(\begin{matrix}
 
 (c) Use your answers from part (b) to compute $det(A)$.
 
-* Problem 3
+** Solution 2
+
+* Problem 3 done
 Given
 $$A=\left(\begin{matrix}
 0 & 1 & 2 & 3\\
@@ -67,6 +105,191 @@ $$\left|\begin{matrix}
 1 & 2 & -2 & -3
 \end{matrix}\right|$$
 
+** Solution 3
+*** a-1
+the inverse of $A$ can be found via elementary transformation
+$$\left[\begin{array}{cccc|cccc}
+0 & 1 & 2 & 3 & 1 & 0 & 0 & 0\\
+1 & 1 & 1 & 1 & 0 & 1 & 0 & 0\\
+-2 & -2 & 3 & 3 & 0 & 0 & 1 & 0\\
+1 & 2 & -2 & -3 & 0 & 0 & 0 & 1
+\end{array}\right]$$
+$$\left[\begin{array}{cccc|cccc}
+1 & 1 & 1 & 1 & 0 & 1 & 0 & 0\\
+0 & 1 & 2 & 3 & 1 & 0 & 0 & 0\\
+-2 & -2 & 3 & 3 & 0 & 0 & 1 & 0\\
+1 & 2 & -2 & -3 & 0 & 0 & 0 & 1
+\end{array}\right]$$
+$$\left[\begin{array}{cccc|cccc}
+1 & 1 & 1 & 1 & 0 & 1 & 0 & 0\\
+0 & 1 & 2 & 3 & 1 & 0 & 0 & 0\\
+0 & 0 & 5 & 5 & 0 & 2 & 1 & 0\\
+1 & 2 & -2 & -3 & 0 & 0 & 0 & 1
+\end{array}\right]$$
+$$\left[\begin{array}{cccc|cccc}
+1 & 1 & 1 & 1 & 0 & 1 & 0 & 0\\
+0 & 1 & 2 & 3 & 1 & 0 & 0 & 0\\
+0 & 0 & 5 & 5 & 0 & 2 & 1 & 0\\
+0 & 1 & -3 & -4 & 0 & -1 & 0 & 1
+\end{array}\right]$$
+$$\left[\begin{array}{cccc|cccc}
+1 & 1 & 1 & 1 & 0 & 1 & 0 & 0\\
+0 & 1 & 2 & 3 & 1 & 0 & 0 & 0\\
+0 & 0 & 5 & 5 & 0 & 2 & 1 & 0\\
+0 & 0 & -5 & -7 & -1 & -1 & 0 & 1
+\end{array}\right]$$
+$$\left[\begin{array}{cccc|cccc}
+1 & 1 & 1 & 1 & 0 & 1 & 0 & 0\\
+0 & 1 & 2 & 3 & 1 & 0 & 0 & 0\\
+0 & 0 & 5 & 5 & 0 & 2 & 1 & 0\\
+0 & 0 & 0 & -2 & -1 & 1 & 1 & 1
+\end{array}\right]$$
+$$\left[\begin{array}{cccc|cccc}
+1 & 0 & -1 & -2 & -1 & 1 & 0 & 0\\
+0 & 1 & 2 & 3 & 1 & 0 & 0 & 0\\
+0 & 0 & 5 & 5 & 0 & 2 & 1 & 0\\
+0 & 0 & 0 & -2 & -1 & 1 & 1 & 1
+\end{array}\right]$$
+$$\left[\begin{array}{cccc|cccc}
+1 & 0 & 0 & -1 & -1 & 1.2 & 0.2 & 0\\
+0 & 1 & 2 & 3 & 1 & 0 & 0 & 0\\
+0 & 0 & 5 & 5 & 0 & 2 & 1 & 0\\
+0 & 0 & 0 & -2 & -1 & 1 & 1 & 1
+\end{array}\right]$$
+$$\left[\begin{array}{cccc|cccc}
+1 & 0 & 0 & 0 & -0.5 & 0.7 & -0.3 & -0.5\\
+0 & 1 & 2 & 3 & 1 & 0 & 0 & 0\\
+0 & 0 & 5 & 5 & 0 & 2 & 1 & 0\\
+0 & 0 & 0 & -2 & -1 & 1 & 1 & 1
+\end{array}\right]$$
+$$\left[\begin{array}{cccc|cccc}
+1 & 0 & 0 & 0 & -0.5 & 0.7 & -0.3 & -0.5\\
+0 & 1 & 0 & 1 & 1 & -0.5 & -0.25 & 0\\
+0 & 0 & 5 & 5 & 0 & 2 & 1 & 0\\
+0 & 0 & 0 & -2 & -1 & 1 & 1 & 1
+\end{array}\right]$$
+$$\left[\begin{array}{cccc|cccc}
+1 & 0 & 0 & 0 & -0.5 & 0.7 & -0.3 & -0.5\\
+0 & 1 & 0 & 0 & 0.5 & 0 & 0.25 & 0.5\\
+0 & 0 & 5 & 5 & 0 & 2 & 1 & 0\\
+0 & 0 & 0 & -2 & -1 & 1 & 1 & 1
+\end{array}\right]$$
+$$\left[\begin{array}{cccc|cccc}
+1 & 0 & 0 & 0 & -0.5 & 0.7 & -0.3 & -0.5\\
+0 & 1 & 0 & 0 & 0.5 & 0 & 0.25 & 0.5\\
+0 & 0 & 1 & 1 & 0 & 0.4 & 0.2 & 0\\
+0 & 0 & 0 & -2 & -1 & 1 & 1 & 1
+\end{array}\right]$$
+$$\left[\begin{array}{cccc|cccc}
+1 & 0 & 0 & 0 & -0.5 & 0.7 & -0.3 & -0.5\\
+0 & 1 & 0 & 0 & 0.5 & 0 & 0.25 & 0.5\\
+0 & 0 & 1 & 1 & 0 & 0.4 & 0.2 & 0\\
+0 & 0 & 0 & 1 & 0.5 & -0.5 & -0.5 & -0.5
+\end{array}\right]$$
+$$\left[\begin{array}{cccc|cccc}
+1 & 0 & 0 & 0 & -0.5 & 0.7 & -0.3 & -0.5\\
+0 & 1 & 0 & 0 & 0.5 & 0 & 0.25 & 0.5\\
+0 & 0 & 1 & 0 & -0.5 & 0.9 & 0.7 & 0.5\\
+0 & 0 & 0 & 1 & 0.5 & -0.5 & -0.5 & -0.5
+\end{array}\right]$$
+
+so the inverse of $A$ is
+$$\left(\begin{matrix}
+-0.5 & 0.7 & -0.3 & -0.5\\
+0.5 & 0 & 0.25 & 0.5\\
+-0.5 & 0.9 & 0.7 & 0.5\\
+0.5 & -0.5 & -0.5 & -0.5
+\end{matrix}\right)$$
+
+*** a-2
+the equation is equivalent with
+$$Ax=\begin{bmatrix} 2\\2\\3\\2 \end{bmatrix}$$
+where A is
+$$\left(\begin{matrix}
+0 & 1 & 2 & 3\\
+1 & 1 & 1 & 1\\
+-2 & -2 & 3 & 3\\
+1 & 2 & -2 & -3
+\end{matrix}\right)$$
+we can multiply both sides with $A^{-1}$
+then $A^{-1}Ax=A^{-1}b$
+which means $Ix=A^{-1}b$
+so $x=A^{-1}b$
+we have
+$$\begin{aligned}
+x &= A^{-1}b\\
+&= \left(\begin{matrix}
+-0.5 & 0.7 & -0.3 & -0.5\\
+0.5 & 0 & 0.25 & 0.5\\
+-0.5 & 0.9 & 0.7 & 0.5\\
+0.5 & -0.5 & -0.5 & -0.5
+\end{matrix}\right) \cdot \begin{bmatrix} 2\\2\\3\\2 \end{bmatrix}\\
+&= \left(\begin{matrix}
+(-0.5\times 2 + 0.7\times 2 + (-0.3)\times 3 + (-0.5)\times 2)\\
+(0.5\times 2 + 0\times 2 + 0.25\times 3 + 0.5\times 2)\\
+(-0.5\times 2 + 0.9\times 2 + 0.7\times 3 + 0.5\times 2)\\
+(0.5\times 2 + (-0.5)\times 2 + (-0.5)\times 3 + (-0.5)\times 2)
+\end{matrix}\right)\\
+&= \left(\begin{matrix}
+(-1 + 1.4 + (-0.9) + (-1))\\
+(1 + 0 + 0.75 + 1)\\
+(-1 + 1.8 + 2.1 + 1)\\
+(1 + (-1) + (-1.5) + (-1))
+\end{matrix}\right)\\
+&= \left(\begin{matrix}
+-1.5\\
+2.75\\
+3.9\\
+-2.5
+\end{matrix}\right)
+\end{aligned}$$
+
+*** b
+now we will eleminate $A$ to upper triangular form
+$$\left(\begin{matrix}
+0 & 1 & 2 & 3\\
+1 & 1 & 1 & 1\\
+-2 & -2 & 3 & 3\\
+1 & 2 & -2 & -3
+\end{matrix}\right)$$
+$$A=\left(\begin{matrix}
+1 & 1 & 1 & 1\\
+0 & 1 & 2 & 3\\
+-2 & -2 & 3 & 3\\
+1 & 2 & -2 & -3
+\end{matrix}\right)$$
+$$A=\left(\begin{matrix}
+1 & 1 & 1 & 1\\
+0 & 1 & 2 & 3\\
+0 & 0 & 5 & 5\\
+1 & 2 & -2 & -3
+\end{matrix}\right)$$
+$$A=\left(\begin{matrix}
+1 & 1 & 1 & 1\\
+0 & 1 & 2 & 3\\
+0 & 0 & 5 & 5\\
+0 & 1 & -3 & -4
+\end{matrix}\right)$$
+$$A=\left(\begin{matrix}
+1 & 1 & 1 & 1\\
+0 & 1 & 2 & 3\\
+0 & 0 & 5 & 5\\
+0 & 0 & -5 & -7
+\end{matrix}\right)$$
+$$A=\left(\begin{matrix}
+1 & 1 & 1 & 1\\
+0 & 1 & 2 & 3\\
+0 & 0 & 5 & 5\\
+0 & 0 & 0 & -2
+\end{matrix}\right)$$
+
+so $det(A) = 1\times 1\times 5\times (-2) = -10$
+
+*** c
+from section $b$, we know $det(A)=-10$
+since they are both derived from $A$ with primary row exchanges
+the answer is just $-10 + (-10) = -20$
+
 * Problem 4
 Consider the $3\times 3$ Vandermode matrix
 $$V=\left(\begin{matrix}
@@ -80,6 +303,8 @@ $$V=\left(\begin{matrix}
 (b) What conditions must the scalars $x_1,x_2,x_3$ satisfy
 in order for $V$ to be nonsingular?
 
+** Solution 4
+
 * Problem 5
 Consider the following vectors in $\mathbb{R}^3$:
 $$v_1=\left(\begin{matrix} 1\\1\\1 \end{matrix}\right),
@@ -90,6 +315,8 @@ Prove whether these three vectors are linearly independent or linearly dependent
 Show your steps clearly.
 (Hint: check if $c_1\vec{v_1} + c_2\vec{v_2} + c_3\vec{v_3} = 0$
 has only the trivial solution or not.)
+
+** Solution 5
 
 * Extra Problem (Bonus, as an optimal problem)
 Consider the generalized $n\times n$ Vandermonde matrix:
@@ -118,3 +345,5 @@ $$W=\left(\begin{matrix}
 where $y\neq x_i$ for $i=1,2,3$.
 Find the condition that makes $det(W)=det(V_4)$,
 where $V_4$ is the standard $4\times 4$ Vandermonde matrix with distinct modes x_1,x_2,x_3,x_4.
+
+** Solution Extra

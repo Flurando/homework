@@ -41,3 +41,4 @@ when distance doubled
 electric flux through any closed surface=chatge inside the surface
 $$\epsilon_0 \Delta = q_{\text{enc}}$$
 $$\epsilon_0 ? \vec{E} \cdot d\vec{A} = ..$$
+** Capacitors电容 in parrallel and in series
