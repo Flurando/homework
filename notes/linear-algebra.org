@@ -215,3 +215,17 @@ thus N(A)={x\in R^n | Ax=0}
   $c_1\vec{v_1} + ... + c_n\vec{v_n} = \vec{0}$
 - basis基
   a minimal spanning set is called a basis
+*** v1-vn is a spanning set for a vector space V
+then any collection of m vectors in V, where m>n, is linearly dependent
+*** base基
+1. linearly independent
+2. spans V
+   
+number of base -> dimension
+**** subspace {0} of V
+defined to have dimension 0
+**** finite dimentional
+have a finite set of vectors that spans V
+**** infinite dimentional
+otherwise the above one
+

@@ -10,13 +10,14 @@
 Please submit by 5:00 PM on April 18th to the email address: 2592793289@qq.com
 #+end_center
 
-* Problem 1 done
+* Problem 1
 Given the matrix
 $$A = \left(\begin{matrix}
 1 & 2 & 3\\
 2 & 4 & 6\\
 -1 & -1 & 0
 \end{matrix}\right)$$
+
 (a) determine whether the columns of $A$ are linearly independent.
 
 (b) compute the determinant of $A$
@@ -60,7 +61,7 @@ $$\begin{aligned}
 
 So linearly dependent matrix with determinant would have the value of the determinant as $0$
 
-* Problem 2 tbcl
+* Problem 2
 Let
 $$A=\left(\begin{matrix}
 3 & 2 & 4\\
@@ -75,8 +76,45 @@ $$A=\left(\begin{matrix}
 (c) Use your answers from part (b) to compute $det(A)$.
 
 ** Solution 2
+*** a
+sorry but failed to figure out what does $M$ mean
+*** b
+isn't that just $1,-2,3$?
+*** c
+no idea what this question is about
 
-* Problem 3 done
+I would like to calculate $det(A)$ separately
+$$\begin{aligned}
+det(A) &= \left|\begin{matrix}
+3 & 2 & 4\\
+1 & -2 & 3\\
+2 & 3 & 2
+\end{matrix}\right|\\
+&= \left|\begin{matrix}
+3 & 2 & 4\\
+1 & -2 & 3\\
+0 & 7 & -4
+\end{matrix}\right|\\
+&= \left|\begin{matrix}
+1 & -2 & 3\\
+3 & 2 & 4\\
+0 & 7 & -4
+\end{matrix}\right|\\
+&= \left|\begin{matrix}
+1 & -2 & 3\\
+0 & 8 & -5\\
+0 & 7 & -4
+\end{matrix}\right|\\
+&= \left|\begin{matrix}
+1 & -2 & 3\\
+0 & 8 & -5\\
+0 & 0 & \frac{3}{8}
+\end{matrix}\right|\\
+&= 1\times 8\times \frac{3}{8}\\
+&= 3
+\end{aligned}$$
+
+* Problem 3
 Given
 $$A=\left(\begin{matrix}
 0 & 1 & 2 & 3\\
@@ -211,11 +249,17 @@ $$\left(\begin{matrix}
 -2 & -2 & 3 & 3\\
 1 & 2 & -2 & -3
 \end{matrix}\right)$$
+
 we can multiply both sides with $A^{-1}$
+
 then $A^{-1}Ax=A^{-1}b$
+
 which means $Ix=A^{-1}b$
+
 so $x=A^{-1}b$
+
 we have
+
 $$\begin{aligned}
 x &= A^{-1}b\\
 &= \left(\begin{matrix}
@@ -252,31 +296,31 @@ $$\left(\begin{matrix}
 -2 & -2 & 3 & 3\\
 1 & 2 & -2 & -3
 \end{matrix}\right)$$
-$$A=\left(\begin{matrix}
+$$\left(\begin{matrix}
 1 & 1 & 1 & 1\\
 0 & 1 & 2 & 3\\
 -2 & -2 & 3 & 3\\
 1 & 2 & -2 & -3
 \end{matrix}\right)$$
-$$A=\left(\begin{matrix}
+$$\left(\begin{matrix}
 1 & 1 & 1 & 1\\
 0 & 1 & 2 & 3\\
 0 & 0 & 5 & 5\\
 1 & 2 & -2 & -3
 \end{matrix}\right)$$
-$$A=\left(\begin{matrix}
+$$\left(\begin{matrix}
 1 & 1 & 1 & 1\\
 0 & 1 & 2 & 3\\
 0 & 0 & 5 & 5\\
 0 & 1 & -3 & -4
 \end{matrix}\right)$$
-$$A=\left(\begin{matrix}
+$$\left(\begin{matrix}
 1 & 1 & 1 & 1\\
 0 & 1 & 2 & 3\\
 0 & 0 & 5 & 5\\
 0 & 0 & -5 & -7
 \end{matrix}\right)$$
-$$A=\left(\begin{matrix}
+$$\left(\begin{matrix}
 1 & 1 & 1 & 1\\
 0 & 1 & 2 & 3\\
 0 & 0 & 5 & 5\\
@@ -287,11 +331,14 @@ so $det(A) = 1\times 1\times 5\times (-2) = -10$
 
 *** c
 from section $b$, we know $det(A)=-10$
+
 since they are both derived from $A$ with primary row exchanges
+
 the answer is just $-10 + (-10) = -20$
 
-* Problem 4 done
+* Problem 4
 Consider the $3\times 3$ Vandermode matrix
+
 $$V=\left(\begin{matrix}
 1 & x_1 & x_1^2\\
 1 & x_2 & x_2^2\\
@@ -389,5 +436,7 @@ where $V_4$ is the standard $4\times 4$ Vandermonde matrix with distinct modes x
 
 ** Solution Extra
 *** a
-
+no idea, not even say typing all the "..." out without hope.
 *** b
+we know that $(y-x_1)(y-x_2)(y-x_3)=(x_4-x_1)(x_4-x_2)(x_4-x_3)$
+which is the answer

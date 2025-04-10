@@ -124,18 +124,31 @@ the first moment of $x$ is
 $$\begin{align*}
 \int_{-\infty}^0 \int_0^{e^x} x dydx
 &= \int_{-\infty}^0 x e^x dx\\
-&= \int_{-\infty}^0 (x-1) e^x dx\\
+&= (x-1) e^x|_{-\infty}^0\\
+&= -1 + \infty \cdot e^{-\infty}\\
+&= -1 + 0\\
+&= -1
 \end{align*}$$
 
 the first moment of $y$ is
 $$\begin{align*}
-
+\int_{-\infty}^0 \int_0^{e^x} y dydx
+&= \frac{1}{2} \int_{-\infty}^0 e^{2x} dx\\
+&= \frac{1}{4} e^{2x}|_{-\infty}^0\\
+&= \frac{1}{4} \cdot 1\\
+&= \frac{1}{4}
 \end{align*}$$
 
-so the x-coordinate is
-the y-coordinate is
-the desired coordinate is
+so the x-coordinate is $-1$
+the y-coordinate is $\frac{1}{4}$
+the desired coordinate is $(-1,\frac{1}{4})$
 
 ** 12
+the coordinate of interpolate points are $(3,\pm \frac{\sqrt{3}}{2})$
+so we have
+$$\begin{align*}
+\int_{-\frac{sqrt{3}}{2}}^{\frac{sqrt{3}}{2}} \int_{4y^2}^{\sqrt{12-4y^2}} \delta (x,y) dxdy
+&=
+\end{align*}$$
 ** 15
 ** 18
