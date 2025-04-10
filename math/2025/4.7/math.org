@@ -87,18 +87,55 @@ $$\begin{align*}
 \end{align*}$$
 the first moment of $x$ is
 $$\begin{align*}
-\int_0^{\pi} \int_0^{\sin x} x dydx &= \int_0^{\pi} x\sin x dx\\
+\int_0^{\pi} \int_0^{\sin x} x dydx
 &= \int_0^{\pi} x\sin x dx\\
+&= \int_0^{\pi} x\sin x dx\\
+&= \sin x - x\cos x |_0^{\pi}\\
+&= 0 - \pi (-1)\\
+&= \pi
 \end{align*}$$
 the first moment of $y$ is
 $$\begin{align*}
 \int_0^{\pi} \int_0^{\sin x} y dydx
+&= \int_0^{\pi} \frac{y^2}{2}|_0^{\sin x} dx\\
+&= \int_0^{\pi} \frac{\sin ^2 x}{2} dx\\
+&= \frac{1}{2} \int_0^{\pi} \sin ^2 x dx\\
+&= \frac{1}{4} x-\frac{\sin 2x}{2}|_0^{\pi}\\
+&= \frac{1}{4} \pi\\
+&= \frac{\pi}{4}
 $$\end{align*}
+so the x-coordinate is $\frac{\pi}{2}$
+the y-coordinate is $\frac{\pi}{8}$
+the desired coordinate is $(\frac{\pi}{2},\frac{\pi}{8}$
+
+** 9
+we can describe the region as $\int_{-\infty}^0 \int_0^{e^x} dydx$
+it is
+$$\begin{align*}
+\int_{-\infty}^0 \int_0^{e^x} dydx
+&= \int_{-\infty}^0 e^x dx\\
+&= \lim_{t\to -\infty} e^x |_t^0\\
+&= \lim_{t\to -\infty} 1-e^t\\
+&= 1-0\\
+&= 1
+\end{align*}$$
+
+the first moment of $x$ is
+$$\begin{align*}
+\int_{-\infty}^0 \int_0^{e^x} x dydx
+&= \int_{-\infty}^0 x e^x dx\\
+&= \int_{-\infty}^0 (x-1) e^x dx\\
+\end{align*}$$
+
+the first moment of $y$ is
+$$\begin{align*}
+
+\end{align*}$$
+
 so the x-coordinate is
 the y-coordinate is
 the desired coordinate is
 
-** 9
 ** 12
 ** 15
 ** 18

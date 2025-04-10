@@ -290,7 +290,7 @@ from section $b$, we know $det(A)=-10$
 since they are both derived from $A$ with primary row exchanges
 the answer is just $-10 + (-10) = -20$
 
-* Problem 4
+* Problem 4 done
 Consider the $3\times 3$ Vandermode matrix
 $$V=\left(\begin{matrix}
 1 & x_1 & x_1^2\\
@@ -304,6 +304,39 @@ $$V=\left(\begin{matrix}
 in order for $V$ to be nonsingular?
 
 ** Solution 4
+*** a
+$$\begin{aligned}
+det(V) &= \left|\begin{matrix}
+1 & x_1 & x_1^2\\
+1 & x_2 & x_2^2\\
+1 & x_3 & x_3^2
+\end{matrix}\right|\\
+&= \left|\begin{matrix}
+1 & x_1 & x_1^2\\
+0 & x_2-x_1 & x_2^2-x_1^2\\
+0 & x_3-x_1 & x_3^2-x_1^2
+\end{matrix}\right|\\
+&= \left|\begin{matrix}
+1 & x_1 & x_1^2\\
+0 & x_3-x_1 & (x_2+x_1) (x_3-x_1)\\
+0 & x_3-x_1 & x_3^2-x_1^2
+\end{matrix}\right|\\
+&= \left|\begin{matrix}
+1 & x_1 & x_1^2\\
+0 & x_3-x_1 & (x_2+x_1) (x_3-x_1)\\
+0 & 0 & x_3^2-x_1^2-(x_2+x_1) (x_3-x_1)
+\end{matrix}\right|\\
+&= \left|\begin{matrix}
+1 & x_1 & x_1^2\\
+0 & x_3-x_1 & (x_2+x_1) (x_3-x_1)\\
+0 & 0 & (x_3-x_2) (x_3-x_1)
+\end{matrix}\right|\\
+&= 1\times (x_3-x_1)\times (x_3-x_2) (x_3-x_1)\\
+&= (x_2-x_1)(x_3-x_1)(x_3-x_2)
+\end{aligned}$$
+*** b
+we need $(x_2-x_1)(x_3-x_1)(x_3-x_2) \neq 0$
+which means $x_1,x_2,x_3$ must be of three different values
 
 * Problem 5
 Consider the following vectors in $\mathbb{R}^3$:
@@ -317,6 +350,14 @@ Show your steps clearly.
 has only the trivial solution or not.)
 
 ** Solution 5
+the equation we have to check is
+$$c_1\left(\begin{matrix} 1\\1\\1 \end{matrix}\right)+c_2\left(\begin{matrix} 2\\1\\0 \end{matrix}\right)+c_3\left(\begin{matrix} 1\\0\\0 \end{matrix}\right) = 0$$
+
+we can see that there is no nontrival solution
+
+because the first must be $0$, then the second must be $0$ as well
+
+so all three must be $0$, over!
 
 * Extra Problem (Bonus, as an optimal problem)
 Consider the generalized $n\times n$ Vandermonde matrix:
@@ -347,3 +388,6 @@ Find the condition that makes $det(W)=det(V_4)$,
 where $V_4$ is the standard $4\times 4$ Vandermonde matrix with distinct modes x_1,x_2,x_3,x_4.
 
 ** Solution Extra
+*** a
+
+*** b
