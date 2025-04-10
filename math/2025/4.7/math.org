@@ -6,7 +6,7 @@
 #+OPTIONS: \n:t toc:nil num:nil date:nil
 
 #+begin_comment
-3.7
+3.7 done
 thomas 15.6 1-20 mod 3
 4.9
 4.11
@@ -148,7 +148,107 @@ the coordinate of interpolate points are $(3,\pm \frac{\sqrt{3}}{2})$
 so we have
 $$\begin{align*}
 \int_{-\frac{sqrt{3}}{2}}^{\frac{sqrt{3}}{2}} \int_{4y^2}^{\sqrt{12-4y^2}} \delta (x,y) dxdy
-&=
+&= \int_{-\frac{sqrt{3}}{2}}^{\frac{sqrt{3}}{2}} \int_{4y^2}^{\sqrt{12-4y^2}} 5x dxdy\\
+&= \int_{-\frac{sqrt{3}}{2}}^{\frac{sqrt{3}}{2}} \frac{5}{2} x^2 |_{4y^2}^{\sqrt{12-4y^2}} dy\\
+&= 5 \int_{-\frac{sqrt{3}}{2}}^{\frac{sqrt{3}}{2}} 6-2y^2-8y^4 dy\\
+&= 5 (6y-\frac{2}{3}y^3-\frac{8}{5}y^5) |_{-\frac{sqrt{3}}{2}}^{\frac{sqrt{3}}{2}}\\
+&= 30y-\frac{10}{3}y^3-8y^5 |_{-\frac{sqrt{3}}{2}}^{\frac{sqrt{3}}{2}}\\
+&= 30\sqrt{3}-\frac{5\sqrt{3}}{2}-\frac{9\sqrt{3}}{2}\\
+&= 30\sqrt{3}-\frac{14\sqrt{3}}{2}\\
+&= 23\sqrt{3}
 \end{align*}$$
+
 ** 15
+the total mass is
+$$\begin{align*}
+\int_0^6 \int_0^1 \delta (x,y) dydx
+&= \int_0^6 \int_0^1 (x+y+1) dydx\\
+&= \int_0^6 (x+\frac{3}{2}) dx\\
+&= \int_0^6 x dx + 9\\
+&= \frac{x^2}{2}_0^6 + 9\\
+&= 18 + 9\\
+&= 27
+\end{align*}$$
+the first moment of $x$ is
+$$\begin{align*}
+\int_0^6 \int_0^1 x \delta (x,y) dydx
+&= \int_0^6 \int_0^1 x (x+y+1) dydx\\
+&= \int_0^6 x \int_0^1 (x+y+1) dydx\\
+&= \int_0^6 x (x+\frac{3}{2}) dx\\
+&= \int_0^6 x^2 + \frac{3}{2} x dx\\
+&= \frac{1}{3} x^3 + \frac{3}{4} x^2 |_0^6\\
+&= 72 + 27\\
+&= 99
+\end{align*}$$
+the first moment of $y$ is
+$$\begin{align*}
+\int_0^6 \int_0^1 y \delta (x,y) dydx
+&= \int_0^6 \int_0^1 y (x+y+1) dydx\\
+&= \int_0^6 \frac{x+1}{2} y^2 + \frac{1}{3} y^3 |_0^1 dx\\
+&= \int_0^6 \frac{x+1}{2} + \frac{1}{3} dx\\
+&= \frac{1}{2} \int_0^6 (x+1) dx + 2\\
+&= \frac{1}{2} \int_0^6 x dx + 5\\
+&= \frac{1}{4} x^2 |_0^6 + 5\\
+&= 9 + 5\\
+&= 14
+\end{align*}$$
+so the center of the mass is $(\frac{11}{3},\frac{14}{27})$
+then we shall consider the moment of inertia about the y-axis
+so we are rotating the thin rectangle by a stick of $x=\frac{11}{3}$
+now, $0\leq x\leq 6$
+we have
+$$\begin{align*}
+INERTIA_{y-axis} &= \int_0^6 \int_0^1 \delta (x,y) dy (x-\frac{11}{3})^2 dx\\
+&= \int_0^6 (x+\frac{3}{2}) \cdot (x-\frac{11}{3})^2 dx\\
+&= \int_0^6 (x+\frac{3}{2}) \cdot (x^2-\frac{22x}{3}+\frac{121}{9}) dx\\
+&= \int_0^6 (x^3+\frac{3x^2}{2}-\frac{22x^2}{3}-11x+\frac{121x}{9}+\frac{121}{6}) dx\\
+&= \int_0^6 (x^3-\frac{35x^2}{6}+\frac{22x}{9}+\frac{121}{6}) dx\\
+&= (\frac{x^4}{4}-\frac{35x^3}{18}+\frac{11x^2}{9}+\frac{121x}{6})|_0^6\\
+&= 324-420+44+121\\
+&= 368-420+121\\
+&= 489-420\\
+&= 69
+\end{align*}$$
+
 ** 18
+the total mass
+$$\begin{align*}
+\int_0^{20} \int_{-1}^1 \delta (x,y) dydx
+&= \int_0^{20} \int_{-1}^1 (1+\frac{x}{20}) dydx\\
+&= \int_0^{20} (2+\frac{x}{10}) dx\\
+&= (2x+\frac{x^2}{20})|_0^{20}\\
+&= 40+20\\
+&= 60
+\end{align*}$$
+the first moment of $x$
+$$\begin{align*}
+\int_0^{20} \int_{-1}^1 x\delta (x,y) dydx
+&= \int_0^{20} \int_{-1}^1 (x+\frac{x^2}{20}) dydx\\
+&= 2 \int_0^{20} (x+\frac{x^2}{20}) dx\\
+&= 2 (\frac{x^2}{2}+\frac{x^3}{60})|_0^{20}\\
+&= 2 (200+1200)\\
+&= 2800
+\end{align*}$$
+the first moment of $y$
+$$\begin{align*}
+\int_0^{20} \int_{-1}^1 y\delta (x,y) dydx
+&= \int_0^{20} \int_{-1}^1 (y+\frac{xy}{20}) dydx\\
+&= \int_0^{20} (1+\frac{x}{20}) \int_{-1}^1 y dydx\\
+&= \frac{1}{2} \int_0^{20} (1+\frac{x}{20}) y^2 |_{-1}^1 dx\\
+&= \frac{1}{2} \int_0^{20} (1+\frac{x}{20}) 0 dx\\
+&= 0
+\end{align*}$$
+the center of mass locates at $(\frac{140}{3},0)$
+$$\begin{align*}
+INERTIA_{y-axis} &= \int_0^{20} (x-\frac{140}{3})^2 \int_{-1}^1 \delta (x,y) dydx\\
+&= 2 \int_0^{20} (x-\frac{140}{3})^2 (1+\frac{x}{20}) dx\\
+&= 2 \frac{(x-\frac{140}{3})^3}{3} |_0^{20} + \frac{1}{10} \int_0^{20} x(x-\frac{140}{3})^2 dx\\
+&= \frac{496000}{9} + \frac{1}{10} \int_0^{20} (x^3-\frac{280x^2}{3}+\frac{19600x}{9}) dx\\
+&= \frac{496000}{9} + \frac{1}{10} (\frac{x^4}{4}-\frac{280x^3}{9}+\frac{9800x^2}{9})|_0^{20}\\
+&= \frac{496000}{9} + \frac{1}{10} (40000-\frac{2240000}{9}+\frac{3920000}{9})\\
+&= \frac{496000}{9} + \frac{1}{10} (40000+\frac{1680000}{9})\\
+&= \frac{496000}{9} + \frac{1}{10} (40000+\frac{560000}{3})\\
+&= \frac{496000}{9} + \frac{1}{10} \frac{680000}{3}\\
+&= \frac{496000}{9} + \frac{68000}{3}\\
+&= \frac{700000}{9}
+\end{align*}$$
