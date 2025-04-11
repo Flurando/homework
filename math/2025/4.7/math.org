@@ -387,7 +387,18 @@ so the integral is $0.125$
 
 * 4.11
 ** 15.7
-*** 6
+*** 6 tbfl sin^2 integral?
+$$\begin{align*}
+\int_0^{2\pi} \int_0^1 \int_{-\frac{1}{2}}^{\frac{1}{2}} (r^2\sin^2 \theta + z^2) dz rdr d\theta
+&= \int_0^{2\pi} \int_0^1 (zr^2\sin^2 \theta + \frac{z^3}{3})|_{-\frac{1}{2}}^{\frac{1}{2}} rdr d\theta\\
+&= 2 \int_0^{2\pi} \int_0^1 (zr^2\sin^2 \theta + \frac{z^3}{3})|_0^{\frac{1}{2}} rdr d\theta\\
+&= \int_0^{2\pi} \int_0^1 (r^2\sin^2 \theta + \frac{1}{12}) rdr d\theta\\
+&= \frac{1}{2} \int_0^{2\pi} \int_0^1 (r^2\sin^2 \theta + \frac{1}{12}) dr^2 d\theta\\
+&= \frac{1}{2} \int_0^{2\pi} \int_0^1 (r\sin^2 \theta + \frac{1}{12}) dr d\theta\\
+&= \frac{1}{4} \int_0^{2\pi} (r^2\sin^2 \theta + \frac{r}{6})|_0^1 d\theta\\
+&= \frac{1}{4} \int_0^{2\pi} (\sin^2 \theta + \frac{1}{6}) d\theta\\
+&= \frac{1}{4} \int_0^{2\pi} (\sin^2 \theta + \frac{\theta}{6}) d\theta\\
+\end{align*}$$
 *** 12
 *** 18
 *** 24
