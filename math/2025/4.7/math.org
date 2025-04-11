@@ -8,14 +8,15 @@
 #+OPTIONS: \n:t toc:nil num:nil date:nil
 
 #+begin_comment
-3.7 done
+4.7 done
 thomas 15.6 1-20 mod 3
 4.9
+thomas 15.5 1-52 mod 5
 4.11
 #+end_comment
 
 #+begin_comment
-3.7 template
+4.7 template
 
 we can describe the region as
 it is
@@ -37,7 +38,7 @@ the y-coordinate is
 the desired coordinate is
 #+end_comment
 
-* 3.7
+* 4.7
 ** 3
 we can describe the region as $\int_0^2 \int_{4-y}^{\frac{y^2}{4}} dxdy$
 which is
@@ -254,3 +255,30 @@ INERTIA_{y-axis} &= \int_0^{20} (x-\frac{140}{3})^2 \int_{-1}^1 \delta (x,y) dyd
 &= \frac{496000}{9} + \frac{68000}{3}\\
 &= \frac{700000}{9}
 \end{align*}$$
+
+* 4.9
+** 5
+$$\int_{-2\sqrt{2}}^{2\sqrt{2}} \int_{-\sqrt{8-x^2}}^{\sqrt{8-x^2}} \left| \int_{x^2+y^2}^{8-x^2-y^2} dz \right| dydx$$
+$$\int_{-2\sqrt{2}}^{2\sqrt{2}} \int_{-\sqrt{8-y^2}}^{\sqrt{8-y^2}} \left| \int_{x^2+y^2}^{8-x^2-y^2} dz \right| dxdy$$
+$$\int_{-2\sqrt{2}}^{2\sqrt{2}} \left| \int_{x^2}^{8-x^2} \int_{z-x^2}^{8-x^2-z} dydz \right| dx$$
+$$\int_{-2\sqrt{2}}^{2\sqrt{2}} \left| \int_{y^2}^{8-y^2} \int_{z-y^2}^{8-y^2-z} dxdz \right| dy$$
+$$\int_0^8 \int_{-\sqrt{8-z}}^{\sqrt{8-z}} \int_{-\sqrt{8-x^2-z}}^{\sqrt{8-x^2-z}} dydxdz$$
+$$\int_0^8 \int_{-\sqrt{8-z}}^{\sqrt{8-z}} \int_{-\sqrt{8-y^2-z}}^{\sqrt{8-y^2-z}} dxdydz$$
+we would calculate the last one
+$$\begin{align*}
+\int_0^8 \int_{-\sqrt{8-z}}^{\sqrt{8-z}} \int_{-\sqrt{8-y^2-z}}^{\sqrt{8-y^2-z}} dxdydz
+&= 2 \int_0^4 \pi z^2 dz\\
+&= \frac{2\pi}{3} z^3 |_0^4\\
+&= \frac{128\pi}{3}
+\end{align*}$$
+** 10
+** 15
+** 20
+** 25
+** 30
+** 35
+** 40
+** 45
+** 50
+
+* 4.11
