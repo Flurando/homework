@@ -1,0 +1,25 @@
+#+begin_src latex :file test.png :results raw file
+  \sqrt{x}
+#+end_src
+
+#+RESULTS:
+[[file:test.png]]
+
+* 三重积分换元法
+Jaccobian
+
+$$\left|\begin{matrix}
+x_u & y_u & z_u \\
+x_v & y_v & z_v \\
+x_w & y_w & z_w
+\end{matrix}\right|$$
+
+球坐标变换
+$$\left{\begin{align*}
+u &= \rho \sin\phi \cos\theta\\
+v &= \rho \sin\phi \sin\theta\\
+w &= \rho \cos\phi
+\end{align*}\right .$$
+
+$\left . \begin{align*} & \text{柱坐标系下的三重积分}\\ & \text{球坐标系下的三重积分} \end{align*}\right} \rightarrow \text{三重积分的换元法}$
+

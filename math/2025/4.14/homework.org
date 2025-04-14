@@ -1,0 +1,73 @@
+#+TITLE: Week 4.7 Math Homework
+#+AUTHOR: 2024110144 陈有骏
+#+LATEX_COMPILER: xelatex
+#+LATEX_CLASS: article
+#+LATEX_CLASS_OPTIONS: [a4paper,10pt]
+#+LATEX_HEADER: \usepackage[margin=0.5in]{geometry}
+#+LATEX_HEADER: \usepackage{xeCJK}
+#+OPTIONS: \n:t toc:nil num:nil date:nil
+
+#+begin_comment
+4.14
+导论 下 7.2 1,2,3中奇数小题
+#+end_comment
+
+* 4.14
+** 1
+*** 1
+$$\iiint_V xydxdydz$$
+$$V:1\leq x\leq 2,\,-2\leq y\leq 1,\,0\leq z\leq \frac{1}{2}$$
+because $xy$ is continuous in $\mathbb{R}^3$
+we can use triple integral to calculate
+note that $y$ crosses $0$ but volumn should always be non-negative
+we should add $y$ for $[-2,0],[0,1]$ separately
+$$\begin{align*}
+\iiint_V xydxdydz
+&= \int_0^{\frac{1}{2}} (\int_{-2}^1)_{special} \int_1^2 xy dxdydz\\
+&= \int_0^{\frac{1}{2}} (\int_{-2}^1)_{special} \frac{x^2y}{2} |_1^2 dydz\\
+&= \int_0^{\frac{1}{2}} (\int_{-2}^1)_{special} \frac{3y}{2} dydz\\
+&= \frac{3}{2} \int_0^{\frac{1}{2}} (\int_{-2}^1)_{special} y dydz\\
+&= \frac{3}{2} \int_0^{\frac{1}{2}} \frac{y^2}{2} (|_{-2}^1)_{special} dz\\
+&= \frac{3}{2} \int_0^{\frac{1}{2}} \frac{5}{2} dz\\
+&= \frac{15}{4} \int_0^{\frac{1}{2}} dz\\
+&= \frac{15}{4} \cdot \frac{1}{2}\\
+&= \frac{15}{8}
+\end{align*}$$
+*** 3
+$$\iiint_V xy^2z^3dxdydz$$
+$$V:\text{由}z=xy,y=x,x=1,z=0\text{围成}$$
+
+*** 5
+$$\iiint_V (x+y) dxdydz$$
+$$V:\text{由}z=1-x^2-y^2,z=0\text{围成}$$
+** 2
+*** 1
+$$\begin{align*}
+\int_0^2 dx \int_0^{\sqrt{2x-x^2}} dy int_0^a z\sqrt{x^2+y^2} dz
+&=\int_0^2 dx \int_0^{\sqrt{2x-x^2}} dy int_0^a z\sqrt{x^2+y^2} dz\\
+\end{align*}$$
+*** 3
+$$\begin{align*}
+\int_0^1 dx \int_0^{\sqrt{1-x^2}} dy \int_0^{\sqrt{1-x^2-y^2}} \sqrt{x^2+y^2+z^2} dz
+&= \int_0^1 dx \int_0^{\sqrt{1-x^2}} dy \int_0^{\sqrt{1-x^2-y^2}} \sqrt{x^2+y^2+z^2} dz\\
+\end{align*}$$
+** 3
+*** 1
+$$\iiint_V (x^2+y^2) dxdydz$$
+$$V:\text{由}x^2+y^2=2z,z=2\text{围成}$$
+
+*** 3
+$$\iiint_V xdxdydz$$
+$$V:\text{由}x^2+y^2=z^2,x^2+y^2=1\text{围成}$$
+
+*** 5
+$$\iiint_V z dxdydz$$
+$$V:\text{由}z=\sqrt{4-x^2-y^2},x^2+y^2=3z\text{围成}$$
+
+*** 7
+$$\iiint_V \left| x^2+y^2+z^2-1 \right| dxdydz$$
+$$V:\text{由}x^2+y^2+z^2\leq 4\text{围成}$$
+
+*** 9
+$$\iiint_V \frac{z\ln(x^2+y^2+z^2+1)}{x^2+y^2+z^2+1} dxdydz$$
+$$V:\text{由}x^2+y^2+z^2\leq 1\text{围成}$$
