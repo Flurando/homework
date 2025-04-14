@@ -44,7 +44,10 @@ $$V:\text{由}z=1-x^2-y^2,z=0\text{围成}$$
 *** 1
 $$\begin{align*}
 \int_0^2 dx \int_0^{\sqrt{2x-x^2}} dy int_0^a z\sqrt{x^2+y^2} dz
-&=\int_0^2 dx \int_0^{\sqrt{2x-x^2}} dy int_0^a z\sqrt{x^2+y^2} dz\\
+&= \int_0^2 dx \int_0^{\sqrt{2x-x^2}} dy \frac{z^2}{2} \sqrt{x^2+y^2} |_0^a\\
+&= \int_0^2 dx \int_0^{\sqrt{2x-x^2}} dy \frac{a^2}{2} \sqrt{x^2+y^2}\\
+&= \frac{a^2}{2} \int_0^2 dx \int_0^{\sqrt{2x-x^2}} dy \sqrt{x^2+y^2}\\
+&= \frac{a^2}{2} \int_0^2 dx \int_0^{\sqrt{2x-x^2}} dy \sqrt{x^2+y^2}\\
 \end{align*}$$
 *** 3
 $$\begin{align*}
