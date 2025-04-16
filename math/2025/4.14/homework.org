@@ -10,7 +10,20 @@
 #+begin_comment
 4.14
 导论 下 7.2 1,2,3中奇数小题
+1 3
+2 1,3
+3 3,5,7,9
 #+end_comment
+
+* some additional
+** $xyz \rightarrow zr\theta$
+$r\cos\theta r\sin\theta z$
+
+| 0              | 0               | 1 |
+| $\cos\theta$   | $\sin\theta 0$  | 0 |
+| $-r\sin\theta$ | $r\cos\theta 0$ | 0 |
+
+the jacobbi determant equals to $r$
 
 * 4.14
 ** 1
@@ -40,6 +53,20 @@ $$V:\text{由}z=xy,y=x,x=1,z=0\text{围成}$$
 *** 5
 $$\iiint_V (x+y) dxdydz$$
 $$V:\text{由}z=1-x^2-y^2,z=0\text{围成}$$
+we can see this as $z=1-r^2,z=0$
+and $\iiint_V r(\cos\theta + \sin\theta) r dzdrd\theta$
+$$\begin{align*}
+\iiint_V r(\cos\theta + \sin\theta) dzdrd\theta
+&= \int_0^{2\pi} \int_0^1 \int_0^{1-r^2} r^2 (\cos\theta + \sin\theta) dzdrd\theta\\
+&= \int_0^{2\pi} \int_0^1 (1-r^2)r^2(\cos\theta + \sin\theta) drd\theta\\
+&= \int_0^{2\pi} \int_0^1 (r^2-r^4)(\cos\theta + \sin\theta) drd\theta\\
+&= \int_0^{2\pi} (\frac{r^3}{3}-\frac{r^5}{5})|_0^1 (\cos\theta + \sin\theta) d\theta\\
+&= \int_0^{2\pi} \frac{2}{15} (\cos\theta + \sin\theta) d\theta\\
+&= \frac{2}{15} \int_0^{2\pi} (\cos\theta + \sin\theta) d\theta\\
+&= \frac{2}{15} (\sin\theta - \cos\theta)|_0^{2\pi}\\
+&= \frac{2}{15} \cdot 0\\
+&= 0
+\end{align*}$$
 ** 2
 *** 1
 $$\begin{align*}
@@ -47,7 +74,8 @@ $$\begin{align*}
 &= \int_0^2 dx \int_0^{\sqrt{2x-x^2}} dy \frac{z^2}{2} \sqrt{x^2+y^2} |_0^a\\
 &= \int_0^2 dx \int_0^{\sqrt{2x-x^2}} dy \frac{a^2}{2} \sqrt{x^2+y^2}\\
 &= \frac{a^2}{2} \int_0^2 dx \int_0^{\sqrt{2x-x^2}} dy \sqrt{x^2+y^2}\\
-&= \frac{a^2}{2} \int_0^2 dx \int_0^{\sqrt{2x-x^2}} dy \sqrt{x^2+y^2}\\
+&= \frac{a^2}{2} \int_0^2 dx \int_0^{\sqrt{2x-x^2}} \sqrt{x^2+y^2} dy\\
+&= \frac{a^2}{2} \int_0^2 dx \int_0^{\sqrt{2x-x^2}} \sqrt{x^2+y^2} dy\\
 \end{align*}$$
 *** 3
 $$\begin{align*}
@@ -58,10 +86,23 @@ $$\begin{align*}
 *** 1
 $$\iiint_V (x^2+y^2) dxdydz$$
 $$V:\text{由}x^2+y^2=2z,z=2\text{围成}$$
-
+we can use $x^2+y^2=r^2$
+so
+$$\begin{align*}
+\iiint_V (x^2+y^2) dxdydz
+&= \iiint_V r^2 dzdrd\theta\\
+&= \int_0^{2\pi} \int_0^2 \int_{\frac{r^2}{2}}^2 r^2 dzdrd\theta\\
+&= \int_0^{2\pi} \int_0^2 (2-\frac{r^2}{2})r^2 drd\theta\\
+&= \int_0^{2\pi} \int_0^2 (2r^2-\frac{r^4}{2}) drd\theta\\
+&= \int_0^{2\pi} (\frac{2r^3}{3}-\frac{r^5}{10}) |_0^2 d\theta\\
+&= \int_0^{2\pi} (\frac{16}{3}-\frac{16}{5}) d\theta\\
+&= \frac{32\pi}{3}-\frac{32\pi}{5}\\
+&= \frac{64\pi}{15}
+\end{align*}$$
 *** 3
 $$\iiint_V xdxdydz$$
 $$V:\text{由}x^2+y^2=z^2,x^2+y^2=1\text{围成}$$
+we have $r^2=z^2,r^2=1$
 
 *** 5
 $$\iiint_V z dxdydz$$

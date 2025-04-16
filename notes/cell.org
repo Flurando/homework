@@ -110,3 +110,8 @@ cytosine --methylation--> 5-methylctosine
 比如转基因玉米
 ** 转坐子tranposon
 retrotransposon逆转录转坐子
+** CRISPER
+cas9 enzyme
+* 细胞膜的结构
+** amphipathic phospholipids form a bilayer in water
+| water | liquid bilayer | water |

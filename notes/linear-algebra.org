@@ -228,4 +228,7 @@ defined to have dimension 0
 have a finite set of vectors that spans V
 **** infinite dimentional
 otherwise the above one
-
+**** standard basis
+${v_1,v_2.v_3}$
+because it is natural to be used in $\mathbb{R}^3$
+*** 转移矩阵（过渡矩阵）
