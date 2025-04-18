@@ -1,4 +1,4 @@
-#+TITLE: Week 4.7 Math Homework
+#+TITLE: Week 4.14 Math Homework
 #+AUTHOR: 2024110144 陈有骏
 #+LATEX_COMPILER: xelatex
 #+LATEX_CLASS: article
@@ -11,18 +11,33 @@
 4.14
 导论 下 7.2 1,2,3中奇数小题
 2 1
-3 5,7,9
+3 7,9
 #+end_comment
 
 * some additional
 ** $xyz \rightarrow zr\theta$
-$r\cos\theta r\sin\theta z$
+$r\cos\theta \, r\sin\theta \, z$
 
 | 0              | 0               | 1 |
 | $\cos\theta$   | $\sin\theta 0$  | 0 |
 | $-r\sin\theta$ | $r\cos\theta 0$ | 0 |
 
 the jacobbi determant equals to $r$
+** $xyz \rightarrow \phi\rho\theta$
+for simplicity, we require $\rho \in (-\frac{\pi}{2},\frac{\pi}{2})$
+so $xyz$ is $\rho \cos \phi \cos \theta \, \rho \cos \phi \sin \theta \, \rho \sin \phi$
+
+| \cos \phi \cos \theta        | \cos \phi \sin \theta        | \sin \phi      |
+| - \rho \sin \phi \cos \theta | - \rho \sin \phi \sin \theta | \rho \cos \phi |
+| - \rho \cos \phi \sin \theta | \rho \cos \phi \cos \theta   | 0              |
+
+$$\begin{align*}
+J &= 0 - \rho^2 (\cos^3 \phi \sin^2 \theta + \sin^2 \phi \cos \phi \cos^2 \theta)\\
+&\quad - \rho^2 \sin^2 \phi \cos \phi \sin^2 \theta - \rho^2 \cos^3 \phi \cos^2 \theta\\
+&= - \rho^2 (\cos^3 \phi + \sin^2 \phi \cos \phi)\\
+&= - \rho^2 (\sin\phi + \cos\phi)
+\end{align*}$$
+so we need to multiply $\rho^2 |\sin\phi+\cos\phi|$
 
 * 4.14
 ** 1
@@ -141,11 +156,51 @@ $$\begin{align*}
 *** 5
 $$\iiint_V z dxdydz$$
 $$V:\text{由}z=\sqrt{4-x^2-y^2},x^2+y^2=3z\text{围成}$$
+since $z$ is continuous, we can change the order
+$z=\sqrt{4-r^2},z=\frac{r^2}{3}$
+when changed to $r,\theta,z$
+the ranges becom $(0,2),(0,2\pi),(\sqrt{4-r^2},\frac{r^2}{3})$
+$$\begin{align*}
+\iiint_V z dxdydz
+&= \int_{-2}^2 \int_{-\sqrt{4-x^2}}^{\sqrt{4-x^2}} \int_{\sqrt{4-x^2-y^2}}^{\frac{x^2+y^2}{3}} z dxdydz\\
+&= \int_0^{2\pi} \int_0^2 \int_{\sqrt{4-r^2}}^{\frac{r^2}{3}} zr dzdrd\theta\\
+&= \int_0^{2\pi} \int_0^2 \frac{z^2}{2} |_{\sqrt{4-r^2}}^{\frac{r^2}{3}} rdrd\theta\\
+&= \frac{1}{2} \int_0^{2\pi} \int_0^2 z^2 |_{\sqrt{4-r^2}}^{\frac{r^2}{3}} rdrd\theta\\
+&= \frac{1}{2} \int_0^{2\pi} \int_0^2 \frac{r^5}{9}-(4r-r^3) drd\theta\\
+&= \frac{1}{2} \int_0^{2\pi} \frac{r^6}{54}-2r^2+\frac{r^4}{4} |_0^2 d\theta\\
+&= \frac{1}{2} \int_0^{2\pi} \frac{32}{27}-8+4 d\theta\\
+&= \pi \cdot \left(\frac{32}{27}-4\right)\\
+&= -\frac{76\pi}{27}
+\end{align*}$$
+#+begin_src scheme :exports both
+  (- 32/27 4)
+#+end_src
+
+#+RESULTS:
+: -76/27
 
 *** 7
 $$\iiint_V \left| x^2+y^2+z^2-1 \right| dxdydz$$
 $$V:\text{由}x^2+y^2+z^2\leq 4\text{围成}$$
-
+we shall change this to $\rho,\phi,\theta$ system
+where $\rho \in [0,2]$
+$$\begin{align*}
+\iiint_V \left| x^2+y^2+z^2-1 \right| dxdydz
+&= \iiint_{V'} \left| \rho^2 - 1 \right| \rho^2 |\sin\phi+\cos\phi| d\rho d\phi d\theta\\
+&= \int_0^{2\pi} \int_{-\frac{\pi}{2}}^{\frac{\pi}{2}} \int_0^2 \left| \rho^2 - 1 \right| \rho^2 |\sin\phi+\cos\phi| d\rho d\phi d\theta\\
+&= \int_0^{2\pi} \int_{-\frac{\pi}{2}}^{\frac{\pi}{2}} |\sin\phi+\cos\phi| \int_0^2 \left| \rho^2 - 1 \right| \rho^2 d\rho d\phi d\theta\\
+&= \int_0^{2\pi} \int_{-\frac{\pi}{2}}^{\frac{\pi}{2}} |\sin\phi+\cos\phi| \left(\int_0^1 \left(1 - \rho^2\right) \rho^2 + \int_1^2 \left(\rho^2 - 1\right) \rho^2\right) d\rho d\phi d\theta\\
+&= \int_0^{2\pi} \int_{-\frac{\pi}{2}}^{\frac{\pi}{2}} |\sin\phi+\cos\phi| \left(\int_0^1 \rho^2 - \rho^4 + \int_1^2 \rho^4 - \rho^2\right) d\rho d\phi d\theta\\
+&= \int_0^{2\pi} \int_{-\frac{\pi}{2}}^{\frac{\pi}{2}} |\sin\phi+\cos\phi| \left(\int_0^1 \rho^2 - \rho^4 d\rho + \int_1^2 \rho^4 - \rho^2 d\rho\right) d\phi d\theta\\
+&= \int_0^{2\pi} \int_{-\frac{\pi}{2}}^{\frac{\pi}{2}} |\sin\phi+\cos\phi| \left(\frac{\rho^3}{3} - \frac{\rho^5}{5} |_0^1 + \frac{\rho^5}{5} - \frac{\rho^3}{3} |_1^2\right) d\phi d\theta\\
+&= \int_0^{2\pi} \int_{-\frac{\pi}{2}}^{\frac{\pi}{2}} |\sin\phi+\cos\phi| \left(\frac{1}{3} - \frac{1}{5} + \frac{31}{5} - \frac{7}{3}\right) d\phi d\theta\\
+&= \int_0^{2\pi} \int_{-\frac{\pi}{2}}^{\frac{\pi}{2}} |\sin\phi+\cos\phi| \left(6 - 2\right) d\phi d\theta\\
+&= \int_0^{2\pi} \int_{-\frac{\pi}{2}}^{\frac{\pi}{2}} |\sin\phi+\cos\phi| \cdot 4 d\phi d\theta\\
+&= 4 \int_0^{2\pi} \int_{-\frac{\pi}{2}}^{\frac{\pi}{2}} |\sin\phi+\cos\phi| d\phi d\theta\\
+&= 4 \int_0^{2\pi} \left(\int_{-\frac{\pi}{2}}^{-\frac{\pi}{4}} -(\sin\phi+\cos\phi) d\phi + \int_{-\frac{\pi}{4}}^{\frac{\pi}{2}} (\sin\phi + \cos\phi) d\phi\right) d\theta\\
+&= 4 \int_0^{2\pi} \left(\int_{-\frac{\pi}{4}}^{-\frac{\pi}{2}} (\sin\phi+\cos\phi) d\phi + \int_{-\frac{\pi}{4}}^{\frac{\pi}{2}} (\sin\phi + \cos\phi) d\phi\right) d\theta\\
+&= 4 \int_0^{2\pi} \left((\sin\phi-\cos\phi) |_{-\frac{\pi}{4}}^{-\frac{\pi}{2}} + (\sin\phi - \cos\phi) |_{-\frac{\pi}{4}}^{\frac{\pi}{2}}\right) d\theta\\
+&= 4 \int_0^{2\pi} \left((\sin\phi-\cos\phi) |_{-\frac{\pi}{4}}^{-\frac{\pi}{2}} + (\sin\phi - \cos\phi) |_{-\frac{\pi}{4}}^{\frac{\pi}{2}}\right) d\theta\\
 *** 9
 $$\iiint_V \frac{z\ln(x^2+y^2+z^2+1)}{x^2+y^2+z^2+1} dxdydz$$
 $$V:\text{由}x^2+y^2+z^2\leq 1\text{围成}$$

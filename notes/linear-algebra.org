@@ -231,4 +231,11 @@ otherwise the above one
 **** standard basis
 ${v_1,v_2.v_3}$
 because it is natural to be used in $\mathbb{R}^3$
-*** 转移矩阵（过渡矩阵）
+*** transition matrix转移矩阵（过渡矩阵）
+怎么求？
+*** change of basis for a general vector space
+- def
+  let V be a vector space and let $E={v_1,v_2,...,v_n}$ be an ordered basis for V.
+  if v is any element of V, then V can be written in the form
+  $v=c_1v_1+...+c_nv_n$ where $c_1,...,c_n$ are scalars
+  thus we can associate with each vector $v$ a *unique* vector $c$
