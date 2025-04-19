@@ -112,6 +112,7 @@ $$\begin{align*}
 &= \frac{a^2}{2} \int_0^2 dx \int_0^{\sqrt{2x-x^2}} \sqrt{x^2+y^2} dy\\
 &= \frac{a^2}{2} \int_0^2 dr \int_0^{\sqrt{2x-x^2}} r^2 d\theta\\
 \end{align*}$$
+failed to proceed:(
 *** 3
 $$\begin{align*}
 \int_0^1 dx \int_0^{\sqrt{1-x^2}} dy \int_0^{\sqrt{1-x^2-y^2}} \sqrt{x^2+y^2+z^2} dz
