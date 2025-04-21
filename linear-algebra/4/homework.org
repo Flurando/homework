@@ -1,0 +1,11 @@
+#+TITLE: Linear Algebra Assignment 4
+#+AUTHOR: 2024110144
+#+LATEX_CLASS: article
+#+LATEX_CLASS_OPTIONS: [a4paper,12pt]
+#+LATEX_HEADER: \usepackage[margin=1in]{geometry}
+#+LATEX_HEADER: \pdfcompresslevel=9
+#+OPTIONS: \n:nil toc:nil num:nil date:nil
+
+#+begin_center
+Please submit by 5:00 PM on May 2rd to the email address: 2592793289@qq.com
+#+end_center

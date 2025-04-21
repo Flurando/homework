@@ -1,0 +1,113 @@
+#+TITLE: 向量值函数与曲线运动/曲线运动与曲线积分
+#+LATEX_COMPILER: xelatex
+#+LATEX_CLASS: article
+#+LATEX_CLASS_OPTIONS: [a4paper,10pt]
+#+LATEX_HEADER: \usepackage[margin=0.5in]{geometry}
+#+LATEX_HEADER: \usepackage{xeCJK}
+#+OPTIONS: \n:t toc:nil num:nil date:nil
+
+* 曲线运动示例
+$$\begin{align*}
+v=r\omega &\rightarrow \vec{v}=\vec{\omega} \times \vec{r}\\
+a=v\omega &\rightarrow ..
+\end{align*}$$
+
+:ask:
+#+begin_src latex :file test.png :results raw file
+  
+#+end_src
+:end:
+
+** 数学要研究一般性质
+是否可导？而不是物理意义。
+
+** 径向加速度
+位置向量$r$ 径向单位向量$e_r$不断变化
+$\vec{r}=r\vec{e_r}$速度与加速度分解？
+横向单位向量$e_{\phi}$
+
+$$\begin{align*}
+\vec{v} &= \vec{v}_r+\vec{v}_{\phi}\\
+&= \vec{v}_r\vec{e_r} + \vec{v}_{\phi} \vec{e_{\phi}}
+\end{align*}$$
+
+:tip:
+只要是单位向量，求导后与本身垂直
+:end:
+
+** 空间运动退化为平面运动
+运动位置 $\vec{r}(t) = \vec{r}_0 + \vec{v}_0 t + \frac{1}{2} \vec{a} t^2$
+- 初始加速度与后续相同
+  直线
+- 不同
+  加速度和速度确定平面$\pi$
+  约化为在平面$\pi$上的运动
+
+* 向量值函数的变化趋势
+** 曲线运动抽象成向量值函数
+** 一元函数极限推广
+$$ \lim_{x\to c} f(x) = L $$
+$$|f(x)-L|\text{要多小有多小}$$
+
+变成向量值函数，变成模长要多小有多小
+* 向量值函数极限性质
+注意，没有保号性
+- 唯一性
+- 局部有界
+- 四则运算
+- 复合运算
+** 唯一性证明
+反证法
+设有两个
+$\epsilon = \frac{|| L_2-L_1 ||}{2} > 0$
+** 有界性证明
+$\text{取}\epsilon=1,\exists \delta>0,\text{当}0<|t-c|<\delta\text{时},\text{有}||F(t)-L|| < \epsilon = 1$
+:question:
+如何计算向量值函数的向量积
+:end:
+
+* 数量积、向量积与极限运算
+** 向量值函数极限的数量积法则
+#+begin_export latex
+\begin{align*}
+  ||F(t)G(t)-LM||
+  &= || F(t)G(t)-F(t)M+F(t)M-LM ||\\
+  &\leq || F(t)G(t) -F(t)M || + || F(t)M - LM ||\\
+  &\leq ||F(t)|| ||G(t)-M|| + ||M|| ||F(t)-L||
+\end{align*}
+#+end_export
+这里$||M||$可以任意小
+
+** 向量函数极限的代数观点
+
+* 小结
+一元函数极限 拓展 向量值函数的极限
+一元函数极限性质 类比 向量值函数极限的性质
+
+* 向量值函数的极限
+** 一元函数的连续性
+** 向量值函数的连续性
+靠近用起点相同时终点画半径$\epsilon$邻域来刻画
+** 向量值函数连续性的代数观点
+:question:
+连续向量值函数的模长还连续吗？
+:end:
+用向量模长的三角不等式证，而差的模长是要多小有多小的
+:question:
+数量积还是连续的吗？
+:end:
+:question:
+向量积呢？
+:end:
+都是通过加一项减一项来做
+:question:
+混合积，二重向量积……
+:end:
+* 小结
+* 向量值函数导数
+** 空间曲线的切线
+两点割线$PM$
+** 切线方程
+$$\lim_{t\to t_0} \frac{\vec{r}(t)-\vec{r}(t_0)}{t-t_0} = \vec{T}$$
+** 空间曲线切线示例
+
