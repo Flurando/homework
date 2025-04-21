@@ -4,8 +4,49 @@
 #+LATEX_CLASS_OPTIONS: [a4paper,12pt]
 #+LATEX_HEADER: \usepackage[margin=1in]{geometry}
 #+LATEX_HEADER: \pdfcompresslevel=9
-#+OPTIONS: \n:nil toc:nil num:nil date:nil
+#+OPTIONS: \n:t toc:nil num:nil date:nil
 
 #+begin_center
 Please submit by 5:00 PM on May 2rd to the email address: 2592793289@qq.com
 #+end_center
+
+* Problem 1
+In $\mathbb{R}^4$, let
+$$v_1=(1,1,1,1),\quad v_2=(2,1,-1,0),\quad v_3=(0,2,1,3),\quad v_4=(1,-2,3,4).$$
+Prove that ${v_1,v_2,v_3,v_4} is a linearly independent set.
+
+* Problem 2
+Consider the $3\times 3$ matrix
+$$A=\left(\begin{matrix}
+1  & 2  & 3\\
+2  & 4  & 6\\
+-1 & -1 & 0
+\end{matrix}\right)$$.
+1. Compute $det(A)$ by any method you prefer (e.g., expansion, row operations, etc.).
+2. Based on the value of $det(A)$, determine whether the columns of $A$ are linearly independent or dependent.
+3. Briefly explain how the determinant relates to linear independence.
+   
+* Problem 3
+Let $P_2(\mathbb{R})$ be the vector space of real polynomials of degree at most $2$. Consider the standard basis $??? = {1,x,x^2}$ and another basis $??? = {1+x, x+x^2, 1-x^2}$.
+1. For $p(x) = 2+3x-x^2$, find its coordinate vector $[p]_{???}.
+2. Find the transition matrix from $???$ to $???$.
+3. Let $q(x) = x+2x^2$. Compute $[q]_{???}$.
+
+* Problem 4
+Let $U$ and $V$ be subspaces of a vector space $W$. Recall the definition
+$$ U+V = { z | z=u+v, u \in U, v \in V } $$
+Suppose $dim(U)=3$ and $dim(V)=4$.
+1. Prove that $U+V$ is a subspace of $W$.
+2. If $dim(U ??? V)=2$, determine $dim(U+V)$. (Hint: use the formula $dim(U+V)=dim(U)+dim(V)-dim(U ??? V)$).
+
+* Problem 5
+Let
+$$B=\left(\begin{matrix}
+1  & 3  & 0 & 2\\
+2  & 6  & 1 & 4\\
+-1 & -3 & 2 & 0\\
+0  & 0  & 1 & 1
+\end{matrix}\right)$$.
+1. Find the basis for the null space of $B$.
+2. Determine the dimension of the columne space of $B$.
+3. Verify the Rank-Nullity Theorem for this matrix.
