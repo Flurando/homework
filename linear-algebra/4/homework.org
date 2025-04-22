@@ -14,6 +14,30 @@ Please submit by 5:00 PM on May 2rd to the email address: 2592793289@qq.com
 In $\mathbb{R}^4$, let
 $$v_1=(1,1,1,1),\quad v_2=(2,1,-1,0),\quad v_3=(0,2,1,3),\quad v_4=(1,-2,3,4).$$
 Prove that ${v_1,v_2,v_3,v_4} is a linearly independent set.
+** Solution 1
+for the equation
+$$c_1v_1+c_2v_2+c_3v_3+c_4v_4=(0,0,0,0)$$
+so we have the equations as
+$$\begin{align*}
+& c_1 + 2c_2 + c_4 &= 0\\
+& c_1 + c_2 + 2c_3 - 2c_4 &= 0\\
+& c_1 - c_2 + c_3 + 3c_4 &= 0\\
+& c_1 + 3c_3 + 4c_4 &= 0
+\end{align*}$$
+adding the second and third equation
+we get
+$$ 2c_1 + 3c_3 + c_4 = 0 $$
+then we substract the fourth one from it
+$$ c_1 - 3c_4 = 0 $$
+so $c_1=3c_4$
+suppose $c_1=c$ then $c_4=3c$
+and from the first equation we have $c_2=-2c$
+furthermore we have $c_3=-12c$ from the third
+and $c_3=3.5c$ from the fourth
+so $c=0$
+which means $c_1=c_2=c_3=c_4=0$ as the only solution
+this is trival
+so they are linearly independent
 
 * Problem 2
 Consider the $3\times 3$ matrix
@@ -25,13 +49,46 @@ $$A=\left(\begin{matrix}
 1. Compute $det(A)$ by any method you prefer (e.g., expansion, row operations, etc.).
 2. Based on the value of $det(A)$, determine whether the columns of $A$ are linearly independent or dependent.
 3. Briefly explain how the determinant relates to linear independence.
-   
+** Solution 2
+*** 1
+$$\left(\begin{matrix}
+1  & 2  & 3\\
+2  & 4  & 6\\
+-1 & -1 & 0
+\end{matrix}\right)$$
+$$\left(\begin{matrix}
+1  & 2  & 3\\
+0  & 0  & 0\\
+-1 & -1 & 0
+\end{matrix}\right)$$
+$$\left(\begin{matrix}
+1  & 2  & 3\\
+-1 & -1 & 0\\
+0  & 0  & 0
+\end{matrix}\right)$$
+$$\left(\begin{matrix}
+1 & 2 & 3\\
+0 & 1 & 0\\
+0 & 0 & 0
+\end{matrix}\right)$$
+so $det(A)=0$
+*** 2
+since it is zero, they are linearly dependent
+*** 3
+the determinant would be zero when linearly dependent
+nonzero when linearly independent
+this is because when determinant is zero,
+we can always use row operations to make a row to be all zeros
 * Problem 3
 Let $P_2(\mathbb{R})$ be the vector space of real polynomials of degree at most $2$. Consider the standard basis $??? = {1,x,x^2}$ and another basis $??? = {1+x, x+x^2, 1-x^2}$.
 1. For $p(x) = 2+3x-x^2$, find its coordinate vector $[p]_{???}.
 2. Find the transition matrix from $???$ to $???$.
 3. Let $q(x) = x+2x^2$. Compute $[q]_{???}$.
+** Solution 3
+*** 1
 
+*** 2
+*** 3
 * Problem 4
 Let $U$ and $V$ be subspaces of a vector space $W$. Recall the definition
 $$ U+V = { z | z=u+v, u \in U, v \in V } $$

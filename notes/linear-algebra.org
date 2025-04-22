@@ -239,3 +239,22 @@ because it is natural to be used in $\mathbb{R}^3$
   if v is any element of V, then V can be written in the form
   $v=c_1v_1+...+c_nv_n$ where $c_1,...,c_n$ are scalars
   thus we can associate with each vector $v$ a *unique* vector $c$
+** 2 row equivalent matrices have the same row space
+- def
+  the rank秩 of a matrix A, denoted rank(A), is the dimension of the row space of A
+*** how to determine the rank?
+we can reduce the matrix to row echelon form
+then the nonzero rows of the row echelon matrix will form a basis for the row space
+** Linear Systems
+*** consistency theorem for linear system
+A linear system Ax=b is consistent if and only if b is in the column space of A
+**** theorem
+Let A be an m\times n matrix
+the linear system Ax=b is consistent for every
+b \in \mathbb{R}^m if and only if the column vectors of A span \mathbb{R}^m
+the system Ax=b has at most one solution for every b \in \mathbb{R}^m
+if and only if the column vectors of A are linearly independent
+**** corollary
+an x\times n matrix A is nonsignular if and only if the column vectors form a basis for \mathbb{R}^m
+*** the Rank Nullity theorem
+if A is an mxn matrix, then the rank of A plis ther nullity零度 of A equals n

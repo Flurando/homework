@@ -115,3 +115,10 @@ cas9 enzyme
 * 细胞膜的结构
 ** amphipathic phospholipids form a bilayer in water
 | water | liquid bilayer | water |
+** sars 为何能在肺细胞感染
+膜上特殊蛋白质
+** 运输
+通道蛋白channel
+转运蛋白transit
+*** 跨膜方式
+分主被动
