@@ -8,5 +8,17 @@
 #+OPTIONS: \n:t toc:nil num:nil date:nil
 
 #+begin_comment
-
+4.21
+Thomas 13.1 1-40 mod 5
 #+end_comment
+
+* 13.1
+** 5
+
+** 10
+** 15
+** 20
+** 25
+** 30
+** 35
+** 40
