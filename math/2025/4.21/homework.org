@@ -10,13 +10,30 @@
 #+begin_comment
 4.21
 Thomas 13.1 1-40 mod 5
+15 20 25 30 35 40
 #+end_comment
 
-* 13.1
-** 5
-
+* 4.21
+** 5 need plot
+$v(t)=(\cos t)\vec{i}-(\sin t)\vec{j}$
+$a(t)=-(\sin t)\vec{i}-(\cos t)\vec{j}$
+assigning $t=\frac{\pi}{4},\frac{\pi}{2}$
+we have $v=\frac{\sqrt{2}}{2}\vec{i}-\frac{\sqrt{2}}{2}\vec{j}$, $a=-\frac{\sqrt{2}}{2}\vec{i}-\frac{\sqrt{2}}{2}\vec{j}$
+and
+$v=-\vec{j}$, $a=-\vec{i}$
 ** 10
+$r(t)=(1+t)\vec{i}+\frac{t^2}{\sqrt{2}}\vec{j}+\frac{t^3}{3}\vec{k}$
+$v(t)=\vec{i}+t\vec{j}+t^2\vec{k}$
+%a(t)=\vec{j}+2t\vec{k}$
+speed is $\vec{i}+\vec{j}+\vec{k}$
+which is $\sqrt{3}$ with a direction of $\frac{\sqrt{3}}{3} (\vec{i}+\vec{j}+\vec{k})$
 ** 15
+$r(t)=(3t+1)\vec{i}+\sqrt{3}t\vec{j}+t^2\vec{k}$
+$v(t)=3\vec{i}+\sqrt{3}\vec{j}+2t\vec{k}$
+$a(t)=2\vec{k}$
+when $t=0$, we have $v=3\vec{i}+\sqrt{3}\vec{j}$
+and $a=2\vec{k}$
+
 ** 20
 ** 25
 ** 30
