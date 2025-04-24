@@ -126,9 +126,15 @@ Suppose $dim(U)=3$ and $dim(V)=4$.
 ** Solution 4
 *** 1
 Suppose the statement is not true
-we know there exists a $w \in W$ so that
-$w$ does not belong to $U+V$
+we know there exists a $w \in U+V$ so that
+$w$ does not belong to $W$
+which means there is two elements in $W$
+whose sum does not belong to $W$
+which is impossible
+so the statement is true
 *** 2
+using the formula
+we know that $dim(U+V)=3+4-2=5$
 * Problem 5
 Let
 $$B=\left(\begin{matrix}
@@ -140,3 +146,8 @@ $$B=\left(\begin{matrix}
 1. Find the basis for the null space of $B$.
 2. Determine the dimension of the columne space of $B$.
 3. Verify the Rank-Nullity Theorem for this matrix.
+** Solution 5
+*** 1
+
+*** 2
+*** 3
