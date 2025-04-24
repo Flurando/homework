@@ -10,17 +10,31 @@
 #+begin_comment
 4.21
 Thomas 13.1 1-40 mod 5
-35 40
+5(need manual drawing after print)
+4.23
+Thomas 13.6 1-16 mod 4
+4 8 12 16
 #+end_comment
 
 * 4.21
-** 5 need plot
+** 5
 $v(t)=(\cos t)\vec{i}-(\sin t)\vec{j}$
 $a(t)=-(\sin t)\vec{i}-(\cos t)\vec{j}$
 assigning $t=\frac{\pi}{4},\frac{\pi}{2}$
 we have $v=\frac{\sqrt{2}}{2}\vec{i}-\frac{\sqrt{2}}{2}\vec{j}$, $a=-\frac{\sqrt{2}}{2}\vec{i}-\frac{\sqrt{2}}{2}\vec{j}$
 and
 $v=-\vec{j}$, $a=-\vec{i}$
+#+begin_src gnuplot :file thomas-13.1-5.png :exports both
+  set term png size 300,300
+  set title "Thomas-13.1-5"
+  set parametric
+  set trange [0:2*pi]
+  plot sin(t),cos(t) title "r(t)"
+#+end_src
+
+#+RESULTS:
+[[file:thomas-13.1-5.png]]
+
 ** 10
 $r(t)=(1+t)\vec{i}+\frac{t^2}{\sqrt{2}}\vec{j}+\frac{t^3}{3}\vec{k}$
 $v(t)=\vec{i}+t\vec{j}+t^2\vec{k}$
@@ -65,11 +79,55 @@ $$\begin{align*}
 \end{align*}$$
 ** 35
 $$r(t)=(\sin t-t\cos t)\vec{i}
-+(\cos t + t\sin t)\vec{j}+t^2l$$
++(\cos t + t\sin t)\vec{j}+t^2\vec{k}$$
+$$r'(t)=t\sin t\vec{i} + t\cos t\vec{j} + 2t\vec{k}$$
+assigning $t=\frac{3\pi}{2}$
+we have $r'(t)=-\frac{3\pi}{2}\vec{i}+3\pi\vec{k}$
+and the vector there is $-\vec{i}-\frac{3\pi}{2}\vec{j}+\frac{9\pi^2}{4}\vec{k}$
 #+begin_src gnuplot :file thomas-13.1-35.png :exports both
   set term png size 300,300
-  set parametric
   set title "Thomas-13.1-35"
-  
+  set parametric
+  set urange [0:6*pi]
+  splot sin(u)-u*cos(u),cos(u)+u*sin(u),u**2 title "r(t)",\
+	-1-1.5*pi*u,-1.5*pi,2.25*(pi**2)+3*pi*u title "tangent line"
 #+end_src
+
+#+RESULTS:
+[[file:thomas-13.1-35.png]]
+
 ** 40
+$$r(t)=(\cos at)\vec{i}+(\sin at)\vec{j}+bt\vec{k}$$
+$$r'(t)=-\sin (at) \vec{i} + \cos (at) \vec{j} + b\vec{k}$$
+assigning $t=\frac{3\pi}{2}$
+we have $r'=\vec{i}+b\vec{k}$ and vector $(\cos a\frac{3\pi}{2})\vec{i}+(\sin a\frac{3\pi}{2})\vec{j}+b\frac{3\pi}{2}\vec{k}$
+#+begin_src gnuplot :file thomas-13.1-40.png :exports both
+  set term png size 500,500
+  set title "Thomas-13.1-40"
+  set parametric
+  set urange [0:6*pi]
+  a = 1
+  splot cos(u*a),sin(u*a),0.25*u title "b=0.25",\
+	1+cos(a*1.5*pi), sin(a*1.5*pi), (1+1.5*pi)*0.25 notitle,\
+	cos(u*a),sin(u*a),0.5*u title "b=0.5",\
+	1+cos(a*1.5*pi), sin(a*1.5*pi), (1+1.5*pi)*0.5 notitle,\
+	cos(u*a),sin(u*a),2*u title "b=2",\
+	1+cos(a*1.5*pi), sin(a*1.5*pi), (1+1.5*pi)*2 notitle,\
+	cos(u*a),sin(u*a),4*u title "b=4",\
+	1+cos(a*1.5*pi), sin(a*1.5*pi), (1+1.5*pi)*4 notitle
+#+end_src
+
+#+RESULTS:
+[[file:thomas-13.1-40.png]]
+
+It seems like the larger $b$ is, the more it is like a spring
+and the smaller $b$ is, the more it is close to a circle
+
+* 4.23
+** 4
+$$r=a(1+\sin t)$$
+$$\theta=1-e^{-t}$$
+
+** 8
+** 12
+** 16
