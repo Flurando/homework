@@ -10,7 +10,7 @@
 #+begin_comment
 4.21
 Thomas 13.1 1-40 mod 5
-15 20 25 30 35 40
+35 40
 #+end_comment
 
 * 4.21
@@ -35,7 +35,41 @@ when $t=0$, we have $v=3\vec{i}+\sqrt{3}\vec{j}$
 and $a=2\vec{k}$
 
 ** 20
+$$r(t)=t^2\vec{i} + (2t-1)\vec{j} + t^3 \vec{k}, t_0=2$$
+$$v(t)=2t\vec{i} + 2\vec{j} + 3t^2 \vec{k}$$
+the point is at $(4,3,8)$
+so the tangent line is
+$$\begin{align*}
+x &= 4+4t\\
+y &= 3+2t\\
+z &= 8+12t
+\end{align*}$$
+where $t$ is the parameter
 ** 25
+according to the question
+we know the magnitude of the velocity
+is $5$
+then we need to calculate the direction
+the derivation in the x direction
+is $2$
+and that of y
+is $\frac{1}{2}$
+so the velocity is
+$$\frac{20\sqrt{17}}{17}\vec{i}+\frac{5\sqrt{17}}{17}\vec{j}$$
 ** 30
+$$\begin{align*}
+(\vec{u}+\vec{v})' &= (u_x\vec{i}+u_y\vec{j}+v_x\vec{i}+v_y\vec{j})'\\
+&= ((u_x+v_x)\vec{i} + (u_y+v_y)\vec{j})'\\
+&= (u_x+v_x)'\vec{i} + (u_y+v_y)'\vec{j}\\\
+&= \vec{u}'+\vec{v}'
+\end{align*}$$
 ** 35
+$$r(t)=(\sin t-t\cos t)\vec{i}
++(\cos t + t\sin t)\vec{j}+t^2l$$
+#+begin_src gnuplot :file thomas-13.1-35.png :exports both
+  set term png size 300,300
+  set parametric
+  set title "Thomas-13.1-35"
+  
+#+end_src
 ** 40
