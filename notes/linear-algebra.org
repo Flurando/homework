@@ -258,3 +258,4 @@ if and only if the column vectors of A are linearly independent
 an x\times n matrix A is nonsignular if and only if the column vectors form a basis for \mathbb{R}^m
 *** the Rank Nullity theorem
 if A is an mxn matrix, then the rank of A plis ther nullity零度 of A equals n
+** 列向量
