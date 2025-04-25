@@ -111,3 +111,7 @@ $\text{取}\epsilon=1,\exists \delta>0,\text{当}0<|t-c|<\delta\text{时},\text{
 $$\lim_{t\to t_0} \frac{\vec{r}(t)-\vec{r}(t_0)}{t-t_0} = \vec{T}$$
 ** 空间曲线切线示例
 
+* 第一型曲线积分
+弧长元
+** 性质
+保序性

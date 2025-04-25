@@ -1,4 +1,4 @@
-#+TITLE: Week 4.21 Math Homework
+\#+TITLE: Week 4.21 Math Homework
 #+AUTHOR: 2024110144 陈有骏
 #+LATEX_COMPILER: xelatex
 #+LATEX_CLASS: article
@@ -13,7 +13,7 @@ Thomas 13.1 1-40 mod 5
 5(need manual drawing after print)
 4.23
 Thomas 13.6 1-16 mod 4
-4 8 12 16
+8 12 16
 #+end_comment
 
 * 4.21
@@ -127,7 +127,32 @@ and the smaller $b$ is, the more it is close to a circle
 ** 4
 $$r=a(1+\sin t)$$
 $$\theta=1-e^{-t}$$
-
+with a direction of $1-e^{-t}$ and $\frac{\pi}{2}+1-e^{-t}$
+$$|u_r| = |u_{\theta}| = a(1+\cos t)$$
 ** 8
+$r$ with dot is the velovity magnitude
+the left part is just calculating a mini area of triangle
+which is just $dA$ in $dt$ duration
 ** 12
+#+begin_src scheme :exports both
+  (define T1 84)
+  (define T0 1.881)
+  (define A0 22.78)
+  (define calc-a
+    (lambda (a0 t0 t1)
+      (let ((c (/ (* a0 a0 a0) (* t0 t0))))
+	(expt (* c (* t1 t1)) 1/3))))
+  (calc-a A0 T0 T1)
+#+end_src
+
+#+RESULTS:
+: 286.73500366130844
+
+so about $3\times 10^{12}$ meter
+
 ** 16
+#+begin_src scheme :exports both
+  (define p 2360550)
+#+end_src
+
+#+RESULTS:
