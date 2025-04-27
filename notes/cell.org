@@ -1,4 +1,4 @@
-* largest bacterium ever discoverd
+* largest bacterium ever discovered
 https://www.science.org/content/article/largest-bacterium-ever-discovered-has-unexpectedly-complex-cells
 Ca. Thiomargarita magnifica
 
@@ -122,3 +122,5 @@ cas9 enzyme
 转运蛋白transit
 *** 跨膜方式
 分主被动
+*** glycolysis糖酵解
+net energy: 2ATP 2NADH

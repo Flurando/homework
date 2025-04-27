@@ -1,0 +1,102 @@
+#+TITLE: Week 4.27 Math Homework
+#+AUTHOR: 2024110144 陈有骏
+#+LATEX_COMPILER: xelatex
+#+LATEX_CLASS: article
+#+LATEX_CLASS_OPTIONS: [a4paper,10pt]
+#+LATEX_HEADER: \usepackage[margin=0.5in]{geometry}
+#+LATEX_HEADER: \usepackage{xeCJK}
+#+OPTIONS: \n:t toc:nil num:nil date:nil
+
+#+begin_comment
+4.27 Thomas 16.1 1-46 mod 6
+left: 24 42 (both failed to integrate)
+#+end_comment
+
+* 4.27
+** 6
+the answer is $b$
+because firstly, the graph should be a straight line
+secondarily, the graph should be only in $yz$ plain
+** 12
+$$r(t)=(4\cos t)\vec{i} + (4\sin t)\vec{j} + 3t\vec{k}$$
+$$r'(t)=-4\sin t \vec{i} + 4\cos t \vec{j} +3\vec{k}$$
+$$||r'(t)||=5$$
+$$-2\pi\leq t \leq 2\pi$$
+$$\begin{align*}
+\int_C \sqrt{x^2+y^2} ds
+&= 5 \int_C \sqrt{x^2+y^2} dt\\
+&= 5 \int_C 4 dt\\
+&= 20 \int_C dt\\
+&= 20 \times 4\pi\\
+&= 80\pi
+\end{align*}$$
+** 18
+we can see that $x$ is $0$ on the circle
+so we just need to calculate with $x=0$
+$$\int_C -\sqrt{x^2+z^2} ds
+&= -\int_C \sqrt{z^2} ds\\
+&= -a\int_C a |\sin t| dt\\
+&= -a\int_0^{2\pi} a |\sin t| dt\\
+&= -a^2\int_0^{2\pi} |\sin t| dt\\
+&= -2a^2\int_0^{\pi} \sin t dt\\
+&= -2a^2 \cos t |_0^{\pi}\\
+&= -2a^2 \times (-2)\\
+&= 4a^2
+\end{align*}$$
+** 24
+$$r'(t)=3t^2\vec{i}+4t^3\vec{j}$$
+$$||r'(t)||=\sqrt{9t^4+16t^9}$$
+$$\begin{align*}
+\int_C \frac{\sqrt{y}}{x} ds
+&= \int_C \frac{1}{t} \cdot \sqrt{9t^4+16t^9} dt\\
+&= \int_C \sqrt{9t^2+16t^7} dt\\
+&= \int_C t \cdot \sqrt{9+16t^5} dt\\
+&= \frac{1}{2} \int_C \sqrt{9+16t^5} dt^2\\
+&= \frac{1}{2} \int_{\frac{1}{2}}^1 \sqrt{9+16t^5} dt^2\\
+&= \frac{1}{2} \int_{\frac{1}{4}}^1 \sqrt{9+16t^{2.5}} dt
+\end{align*}$$
+no idea how to integrate this
+** 30
+$$r(t)=2\cos t \vec{i} + 2\sin t \vec{j}$$
+t range: $[0,\frac{\pi}{2}]$
+$$r'(t)=-2\sin t \vec{i} + 2\cos t \vec{j}$$
+$$||r'(t)||=2$$
+$$\begin{align*}
+\int_C (x^2-y) ds
+&= \int_C (4\cos^2 t - 2\sin t) \cdot 2 dt\\
+&= 4\int_C (2\cos^2 t - \sin t) dt\\
+&= 4\int_0^{\frac{\pi}{2}} (2\cos^2 t - \sin t) dt\\
+&= 8\int_0^{\frac{\pi}{2}} \cos^2 t dt + 4\cos t |_0^{\frac{\pi}{2}}\\
+&= 8\int_0^{\frac{\pi}{2}} \cos^2 t dt - 4\\
+&= 8\int_0^{\frac{\pi}{2}} \frac{1+\cos 2t}{2} dt - 4\\
+&= 4\int_0^{\frac{\pi}{2}} \frac{1+\cos 2t}{2} d2t - 4\\
+&= 4\int_0^{\pi} \frac{1+\cos t}{2} dt - 4\\
+&= 2(t+\sin t |_0^{\pi}) - 4\\
+&= 2\pi - 4
+\end{align*}$$
+** 36
+$$r'(t)=\vec{i}+2\vec{j}+\sqrt{t}\vec{k}$$
+$$||r'(t)||=\sqrt{5+t}$$
+$$\begin{align*}
+\int_0^2 3\times (5+t) dt
+&= 3\int_0^2 5+t dt\\
+&= 3 (5t+\frac{t^2}{2} |_0^2)\\
+&= 3 (10+2)\\
+&= 36
+\end{align*}$$
+** 42
+$$r(t)=t\vec{i}+\frac{2\sqrt{2}}{3}t^{\frac{3}{2}}\vec{j}+\frac{t^2}{2}\vec{k}$$
+$$r'(t)=\vec{i}+\sqrt{2t}\vec{j}+t\vec{k}$$
+$$||r'(t)||=\sqrt{1+5t^2}$$
+$$\begin{align*}
+M
+&= \int_0^2 \frac{\sqrt{1+5t^2}}{t+1} dt\\
+&= \int_1^3 \frac{\sqrt{1+5(t-1)^2}}{t} dt\\
+&= \int_1^3 \frac{\sqrt{1+5(t^2-2t+1)}}{t} dt\\
+&= \int_1^3 \frac{\sqrt{5t^2-10t+6}}{t} dt\\
+&= \int_1^3 \sqrt{5-\frac{10}{t}+\frac{6}{t^2}} dt
+\end{align*}$$
+well, again failed to integrate this
+the step left is to calculate $\int_0^2 \frac{\sqrt{1+5t^2}}{t+1} x dt$
+and $\int_0^2 \frac{\sqrt{1+5t^2}}{t+1} y dt$
+then divide with $x$,$y$ respectively
