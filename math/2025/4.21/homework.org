@@ -1,4 +1,4 @@
-\#+TITLE: Week 4.21 Math Homework
+#+TITLE: Week 4.21 Math Homework
 #+AUTHOR: 2024110144 陈有骏
 #+LATEX_COMPILER: xelatex
 #+LATEX_CLASS: article
@@ -13,6 +13,9 @@ Thomas 13.1 1-40 mod 5
 left: 5(need manual drawing after print)
 4.23
 Thomas 13.6 1-16 mod 4
+left: nil
+4.25
+Thomas 13.3 1-22 mod 4
 left: nil
 #+end_comment
 
@@ -38,7 +41,7 @@ $v=-\vec{j}$, $a=-\vec{i}$
 ** 10
 $r(t)=(1+t)\vec{i}+\frac{t^2}{\sqrt{2}}\vec{j}+\frac{t^3}{3}\vec{k}$
 $v(t)=\vec{i}+t\vec{j}+t^2\vec{k}$
-%a(t)=\vec{j}+2t\vec{k}$
+$a(t)=\vec{j}+2t\vec{k}$
 speed is $\vec{i}+\vec{j}+\vec{k}$
 which is $\sqrt{3}$ with a direction of $\frac{\sqrt{3}}{3} (\vec{i}+\vec{j}+\vec{k})$
 ** 15
@@ -160,3 +163,48 @@ so about $3\times 10^{12}$ meter
 : 383169467.76859224
 
 so it is about $3.8\times 10^8$ meter
+
+* 4.25
+** 4
+$$r'(t)=\vec{i}-\vec{j}+\vec{k}$$
+$$||r'(t)||=\sqrt{1^2+(-1)^2+1^2}=\sqrt{3}$$
+the unit tangent vector is
+$$(\frac{\sqrt{3}}{3},-\frac{\sqrt{3}}{3},\frac{\sqrt{3}}{3})$$
+the length is
+$$\int_0^3 ||r'(t)|| dt = \sqrt{3} (3-0) = 3\sqrt{3}$$
+** 8
+$$\sqrt{2}\leq t\leq 2$$
+$$r(t)=(t\sin t+\cos t) \vec{i} + (t\cos t-\sin t)\vec{j}$$
+$$r'(t)=t\cos t \vec{i} - t\sin t \vec{j}$$
+$$||r'(t)||=t$$
+the unit tangent vector is
+$$(\cos t, -\sin t)$$
+the length is
+$$\begin{align*}
+\int_{\sqrt{2}}^2 ||r'(t)|| dt
+&= \int_{\sqrt{2}}^2 t dt\\
+&= \frac{t^2}{2} |_{\sqrt{2}}^2\\
+&= 1
+\end{align*}$$
+** 12
+$$v(t)=t\cos t \vec{i} + t\sin t \vec{j}$$
+$$\begin{align*}
+s &= \int_0^t |v(\phi)| d\phi\\
+&= \int_0^t t d\phi\\
+&= t^2
+\end{align*}$$
+$$\begin{align*}
+L &= \int_{\frac{\pi}{2}}^{\pi} s dt\\
+&= \int_{\frac{\pi}{2}}^{\pi} t^2 dt\
+&= \frac{t^3}{3} |_{\frac{\pi}{2}}^{\pi}\\
+&= \frac{7\pi^3}{24}
+\end{align*}$$
+** 16
+just drop the bottom and cap
+then cut vertically passing a point of the arc
+flat the holly bottle in the end
+** 20
+$$r'(t)=t\cos t\vec{i} + t\sin t\vec{j}$$
+$$||r'(t)||=t$$
+so the unit tangent vector is
+$$(\cos t,\sin t)$$
