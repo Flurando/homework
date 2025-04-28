@@ -10,6 +10,8 @@
 #+begin_comment
 4.27 Thomas 16.1 1-46 mod 6
 left: 24 42 (both failed to integrate)
+4.28 Thomas 16.2 1-60 mod 6
+left: 30 36 42 48 54 60
 #+end_comment
 
 * 4.27
@@ -100,3 +102,127 @@ well, again failed to integrate this
 the step left is to calculate $\int_0^2 \frac{\sqrt{1+5t^2}}{t+1} x dt$
 and $\int_0^2 \frac{\sqrt{1+5t^2}}{t+1} y dt$
 then divide with $x$,$y$ respectively
+
+* 4.28
+** 6
+at $(0,0)$, $F=\vec{0}$
+at $(a,b)$ where $a,b$ won't be $0$ at the same time
+$F=(a+b,b-a)-(a,b)$
+so $F=(b,-a)$
+then $F=b\vec{i}-a\vec{j}$
+** 12
+$$\vec{F}=(y+z)\vec{i}+(x+z)\vec{j}+(x+y)\vec{k}$$
+*** a
+$$\frac{dr}{dt}=\vec{i}+\vec{j}+\vec{k}$$
+$$\begin{align*}
+\int_{C_1} \vec{F} dr
+&= \int_{C_1} \vec{F} \cdot \frac{dr}{dt} dt\\
+&= \int_{C_1} \vec{F} \cdot (\vec{i}+\vec{j}+\vec{k}) dt\\
+&= \int_{C_1} \left((y+z)\vec{i}+(x+z)\vec{j}+(x+y)\vec{k}\right) \cdot (\vec{i}+\vec{j}+\vec{k}) dt\\
+&= \int_0^1 \left((y+z)\vec{i}+(x+z)\vec{j}+(x+y)\vec{k}\right) \cdot (\vec{i}+\vec{j}+\vec{k}) dt\\
+&= \int_0^1 \left((y+z)+(x+z)+(x+y)\right) dt\\
+&= \int_0^1 6t dt\\
+&= 3 t^2 |_0^1\\
+&= 3
+\end{align*}$$
+*** b
+$$\frac{dr}{dt}=\vec{i}+2t\vec{j}+4t^3\vec{k}$$
+$$\begin{align*}
+\int_{C_1} \vec{F} dr
+&= \int_{C_1} \vec{F} \cdot \frac{dr}{dt} dt\\
+&= \int_{C_1} \vec{F} \cdot (\vec{i}+2t\vec{j}+4t^3\vec{k}) dt\\
+&= \int_0^1 \vec{F} \cdot (\vec{i}+2t\vec{j}+4t^3\vec{k}) dt\\
+&= \int_0^1 ((y+z)\vec{i}+(x+z)\vec{j}+(x+y)\vec{k}) \cdot (\vec{i}+2t\vec{j}+4t^3\vec{k}) dt\\
+&= \int_0^1 ((y+z)+2t(x+z)+4t^3(x+y)) dt\\
+&= \int_0^1 (2t+4t^2+8t^4) dt\\
+&= (t^2+\frac{4t^3}{3}+\frac{8t^5}{5})|_0^1\\
+&= 1+\frac{4}{3}+\frac{8}{5}\\
+&= \frac{7}{3}+\frac{8}{5}\\
+&= \frac{35}{15}+\frac{24}{15}\\
+&= \frac{59}{15}
+\end{align*}$$
+*** c
+$$C_3:\, r_3 (t)=t\vec{i}+t\vec{j}$$
+$$C_4:\, r_4 (t)=t\vec{k}$$
+$$\frac{dr_3}{dt}=\vec{i}+\vec{j}$$
+$$\frac{dr_4}{dt}=\vec{k}$$
+$$\begin{align*}
+\int_{C_3 \cup C_4} \vec{F} dr
+&= \int_{C_3} \vec{F} dr_3 + \int_{C_4} \vec{F} dr_4\\
+&= \int_{C_3} ((y+z)\vec{i}+(x+z)\vec{j}+(x+y)\vec{k}) dr_3 + \int_{C_4} ((y+z)\vec{i}+(x+z)\vec{j}+(x+y)\vec{k}) dr_4\\
+&= \int_{C_3} ((y+z)+(x+z)) dt + \int_{C_4} (x+y) dt\\
+&= \int_0^1 ((y+z)+(x+z)) dt + \int_0^1 (x+y) dt\\
+&= \int_0^1 (y+x) dt + \int_0^1 2 dt\\
+&= \int_0^1 2t dt + \int_0^1 2 dt\\
+&= t^2 |_0^1 + 2t |_0^1\\
+&= 1 + 2\\
+&= 3
+\end{align*}$$
+** 18
+$$r(t)=(\cos t)\vec{i}+(\sin t)\vec{j}-(\cos t)\vec{k},\,0\leq t\leq \pi$$
+$$r'(t)=-\sin t \vec{i} + \cos t \vec{j} + \sin t \vec{k}$$
+*** a
+$$\begin{align*}
+\int_C xz dx
+&= \int_C xz \cdot \frac{dx}{dt} dt\\
+&= \int_0^{\pi} -\cos^2 t \cdot -\sin t dt\\
+&= \int_0^{\pi} \cos^2 t \sin t dt\\
+&= -\int_0^{\pi} \cos^2 t d\cos t\\
+&= -\int_1^{-1} t^2 dt\\
+&= \int_{-1}^1 t^2 dt\\
+&= \frac{t^3}{3}|_{-1}^1\\
+&= \frac{2}{3}
+\end{align*}$$
+*** b
+$$\begin{align*}
+\int_C xz dy
+&= \int_C xz \cdot \frac{dy}{dt} dt\\
+&= \int_0^{\pi} -\cos^2 t \cdot \cos t dt\\
+&= -\int_0^{\pi} \cos^3 t dt\\
+&= -\int_0^{\pi} \cos^2 t d\sin t\\
+&= -\int_0^{\pi} (1-\sin^2 t) d\sin t\\
+&= -2\int_0^{\frac{\pi}{2}} (1-\sin^2 t) d\sin t\\
+&= -2\int_0^1 (1-t^2) dt\\
+&= -2(t-\frac{t^3}{3})|_0^3\\
+&= -2(3-9)\\
+&= 12
+\end{align*}$$
+*** c
+$$\begin{align*}
+\int_C xyz dz
+&= \int_C xyz \cdot \frac{dz}{dt} dt\\
+&= \int_0^{\pi} -\cos^2 t \sin t \cdot \sin t dt\\
+&= -\int_0^{\pi} \cos^2 t \sin^2 t dt\\
+&= -\frac{1}{4} \int_0^{\pi} \sin^2 2t dt\\
+&= -\frac{1}{8} \int_0^{\pi} \sin^2 2t d2t\\
+&= -\frac{1}{8} \int_0^{2\pi} \sin^2 t dt\\
+&= -\frac{1}{8} \int_0^{2\pi} \frac{1-\cos 2t}{2} dt\\
+&= -\frac{1}{16} \int_0^{2\pi} \frac{1-\cos 2t}{2} d2t\\
+&= -\frac{1}{16} \int_0^{4\pi} \frac{1-\cos t}{2} dt\\
+&= -\frac{1}{32} \int_0^{4\pi} 1-\cos t dt\\
+&= -\frac{1}{32} (t-\sin t) |_0^{4\pi}\\
+&= -\frac{1}{32} 4\pi\\
+&= -\frac{\pi}{8}\\
+\end{align*}$$
+** 24
+$$\begin{align*}
+& C_1 &: r_1(t)=t\vec{i}\\
+& C_2 &: r_2(t)=-t\vec{i}+t\vec{j}\\
+& C_3 &: r_3(t)=-t\vec{j}
+\end{align*}$$
+where $0\leq t\leq 1$
+$$\begin{align*}
+\int_C (x-y)dx+(x+y)dy
+&= \int_{C_1} (x-y)dx+(x+y)dy + \int_{C_2} (x-y)dx+(x+y)dy + \int_{C_3} (x-y)dx+(x+y)dy\\
+&= \int_0^1 t dt + \int_0^1 2t dt + \int_0^1 t dt\\
+&= \int_0^1 4t dt\\
+&= 2\int_0^1 2t dt\\
+&= 2 t^2 |_0^1\\
+&= 2
+\end{align*}$$
+** 30
+** 36
+** 42
+** 48
+** 54
+** 60
