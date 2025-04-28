@@ -11,7 +11,7 @@
 4.27 Thomas 16.1 1-46 mod 6
 left: 24 42 (both failed to integrate)
 4.28 Thomas 16.2 1-60 mod 6
-left: 60
+left: 54 (failed to integrate)
 #+end_comment
 
 * 4.27
@@ -35,7 +35,8 @@ $$\begin{align*}
 ** 18
 we can see that $x$ is $0$ on the circle
 so we just need to calculate with $x=0$
-$$\int_C -\sqrt{x^2+z^2} ds
+$$\begin{align*}
+\int_C -\sqrt{x^2+z^2} ds
 &= -\int_C \sqrt{z^2} ds\\
 &= -a\int_C a |\sin t| dt\\
 &= -a\int_0^{2\pi} a |\sin t| dt\\
@@ -206,9 +207,9 @@ $$\begin{align*}
 \end{align*}$$
 ** 24
 $$\begin{align*}
-& C_1 &: r_1(t)=t\vec{i}\\
-& C_2 &: r_2(t)=(1-t)\vec{i}+t\vec{j}\\
-& C_3 &: r_3(t)=(1-t)\vec{j}
+& C_1 :& r_1(t)=t\vec{i}\\
+& C_2 :& r_2(t)=(1-t)\vec{i}+t\vec{j}\\
+& C_3 :& r_3(t)=(1-t)\vec{j}
 \end{align*}$$
 where $0\leq t\leq 1$
 $$\begin{align*}
@@ -262,7 +263,8 @@ $$\begin{align*}
 where $0\leq t\leq 1$
 $$\begin{align*}
 \int_C (x+y)dx-(x^2+y^2)dy
-&= \int_{C_1} (x+y)dx-(x^2+y^2)dy + \int_{C_2} (x+y)dx-(x^2+y^2)dy + \int_{C_3} (x+y)dx-(x^2+y^2)dy + \int_{C_4} (x+y)dx-(x^2+y^2)dy\\
+&= \int_{C_1} (x+y)dx-(x^2+y^2)dy + \int_{C_2} (x+y)dx-(x^2+y^2)dy\\
+&\quad + \int_{C_3} (x+y)dx-(x^2+y^2)dy + \int_{C_4} (x+y)dx-(x^2+y^2)dy\\
 &= \int_{C_1} (x+y)dx + \int_{C_2} (x+y)dx + \int_{C_3} (x+y)dx-(x^2+y^2)dy + \int_{C_4} (x+y)dx-(x^2+y^2)dy\\
 &= \int_0^1 (2t-1) dt + \int_{C_3} (x+y)dx-(x^2+y^2)dy + \int_{C_4} (x+y)dx-(x^2+y^2)dy\\
 &= \int_0^1 (2t-1) dt + \int_0^1 2(-t^2+t-1) dt + \int_0^1 2t^2 dt\\
@@ -320,7 +322,7 @@ $$\begin{align*}
 F &= \int_C y^2z^3\vec{i}+2xyz^3\vec{j}+3xy^2z^2\vec{k} dr\
 &= \int_{C_1} y^2z^3\vec{i}+2xyz^3\vec{j}+3xy^2z^2\vec{k} dr + \int_{C_2} y^2z^3\vec{i}+2xyz^3\vec{j}+3xy^2z^2\vec{k} dr\\
 &= \int_0^1 dt - \int_0^1 12(1-2t)^2 dt\\
-&= 1 - \int_0^1 12(1-2t)^2 dt\
+&= 1 - \int_0^1 12(1-2t)^2 dt\\
 &= 1 - 12\int_0^2 (1-t)^2 dt\\
 &= 1 + 12\int_0^2 (1-t)^2 d(1-t)\\
 &= 1 + 12\int_1^{-1} t^2 dt\\
@@ -377,3 +379,11 @@ F_along_path = (sym)
 
 flux = (sym) π
 #+end_example
+
+:note:
+the last symbol $\pi$ in unicode is not shown in pdf export
+but it is $pi$
+you might check this at the source file by following this link:
+[[https://github.com/Flurando/homework/blob/main/math/2025/4.27/homework.org][https://github.com/Flurando/homework/blob/main/math/2025/4.27/homework.org]]
+I left the description same with link in case the format is invalid for clicking
+:end:
