@@ -11,7 +11,7 @@
 4.27 Thomas 16.1 1-46 mod 6
 left: 24 42 (both failed to integrate)
 4.28 Thomas 16.2 1-60 mod 6
-left: 30 36 42 48 54 60
+left: 36 42 48 54 60
 #+end_comment
 
 * 4.27
@@ -207,21 +207,64 @@ $$\begin{align*}
 ** 24
 $$\begin{align*}
 & C_1 &: r_1(t)=t\vec{i}\\
-& C_2 &: r_2(t)=-t\vec{i}+t\vec{j}\\
-& C_3 &: r_3(t)=-t\vec{j}
+& C_2 &: r_2(t)=(1-t)\vec{i}+t\vec{j}\\
+& C_3 &: r_3(t)=(1-t)\vec{j}
 \end{align*}$$
 where $0\leq t\leq 1$
 $$\begin{align*}
 \int_C (x-y)dx+(x+y)dy
 &= \int_{C_1} (x-y)dx+(x+y)dy + \int_{C_2} (x-y)dx+(x+y)dy + \int_{C_3} (x-y)dx+(x+y)dy\\
-&= \int_0^1 t dt + \int_0^1 2t dt + \int_0^1 t dt\\
-&= \int_0^1 4t dt\\
-&= 2\int_0^1 2t dt\\
-&= 2 t^2 |_0^1\\
-&= 2
+&= \int_0^1 t dt + \int_0^1 2t dt + \int_0^1 t-1 dt\\
+&= \int_0^1 4t-1 dt\\
+&= 2\int_0^1 2t dt - 1\\
+&= 2 t^2 |_0^1 - 1\\
+&= 2 - 1\\
+&= 1
 \end{align*}$$
 ** 30
+$$r(t)=a\cos t \vec{i} + a\sin t \vec{j}$$
+$$r'(t)=-a\sin t \vec{i} + a\cos t \vec{j}$$
+we use $Flux$ to denote flux
+then
+$$\begin{align*}
+Flux_1
+&= \int_C \vec{F}_1 dr\\
+&= \int_0^{2\pi} (2x\vec{i}-3y\vec{j}) \cdot (-a\sin t \vec{i} + a\cos t \vec{j}) dt\\
+&= \int_0^{2\pi} (2a\cos t \vec{i}-3a\sin t\vec{j}) \cdot (-a\sin t \vec{i} + a\cos t \vec{j}) dt\\
+&= \int_0^{2\pi} -2.5a^2\sin 2t dt\\
+&= \frac{5}{2} \int_0^{2\pi} a^2\sin 2t dt\\
+&= \frac{5}{4} \int_0^{4\pi} a^2\sin t dt\\
+&= \frac{5}{4}  a^2\cos t |_0^{4\pi}\\
+&= 0
+\end{align*}$$
+$$\begin{align*}
+Flax_2
+&=  \int_C \vec{F}_1 dr\\
+&=  \int_0^{2\pi} (2x\vec{i}+(x-y)\vec{j}) \cdot (-a\sin t \vec{i} + a\cos t \vec{j}) dt\\
+&=  \int_0^{2\pi} (2a\cos t \vec{i}+a(\cos t-\sin t)\vec{j}) \cdot (-a\sin t \vec{i} + a\cos t \vec{j}) dt\\
+&=  \int_0^{2\pi} -0.5a^2\sin 2t+a^2 \cos^2 t dt\\
+&=  a^2 \int_0^{2\pi} -0.5\sin 2t+\cos^2 t dt\\
+&=  a^2 \int_0^{2\pi} -0.5\sin 2t+\frac{1+\cos 2t}{2} dt\\
+&=  a^2 \int_0^{2\pi} 0.5(-\sin 2t+\cos 2t + 1) dt\\
+&=  a^2 \int_0^{4\pi} 0.5(-\sin t+\cos t + 1) dt\\
+&= \frac{1}{2} a^2 \int_0^{4\pi} (-\sin t+\cos t + 1) dt\\
+&= \frac{1}{2} a^2 (\cos t+\sin t+t)|_0^{4\pi}\\
+&= \frac{1}{2} a^2 \left(4\pi + (\cos t+\sin t)|_0^{4\pi}\right)\\
+&= 2\pi a^2
+\end{align*}$$
 ** 36
+$$\begin{align*}
+& C_1 &: r_1(t)=(1-t)\vec{i}\\
+& C_2 &: r_2(t)=-t\vec{i}\\
+& C_3 &: r_3(t)=(1-t)\vec{i}+t\vec{j}\\
+& C_4 &: r_4(t)=-t\vec{i}+(1-t)\vec{j}
+\end{align*}$$
+where $0\leq t\leq 1$
+$$\begin{align*}
+\int_C (x+y)dx-(x^2+y^2)dy
+&= \int_{C_1} (x+y)dx-(x^2+y^2)dy + \int_{C_2} (x+y)dx-(x^2+y^2)dy + \int_{C_3} (x+y)dx-(x^2+y^2)dy + \int_{C_4} (x+y)dx-(x^2+y^2)dy\\
+&= \int_{C_1} (x+y)dx-(x^2+y^2)dy + \int_{C_2} (x+y)dx-(x^2+y^2)dy + \int_{C_3} (x+y)dx-(x^2+y^2)dy + \int_{C_4} (x+y)dx-(x^2+y^2)dy\\
+\end{align*}$$
 ** 42
 ** 48
 ** 54
