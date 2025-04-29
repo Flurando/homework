@@ -257,5 +257,11 @@ if and only if the column vectors of A are linearly independent
 **** corollary
 an x\times n matrix A is nonsignular if and only if the column vectors form a basis for \mathbb{R}^m
 *** the Rank Nullity theorem
-if A is an mxn matrix, then the rank of A plis ther nullity零度 of A equals n
+if A is an mxn matrix, then the rank of A plus their nullity零度 of A equals n
 ** 列向量
+*** the Image and Kernel
+Let L:V->W be a linear transformation. We consider the effect that L has on subspaces of V
+Of particular importance is the set of vectors in V that get mapped into the zero vector of W.
+Definition: Let L: V-> W be a linear transformation.
+The kernel of L, denoted kel(L)
+is defined by kel(L)={v\in V | L(V)=0_w}
