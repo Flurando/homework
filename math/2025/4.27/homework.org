@@ -12,6 +12,10 @@
 left: 24 42 (both failed to integrate)
 4.28 Thomas 16.2 1-60 mod 6
 left: 54 (failed to integrate)
+5.7 Thomas 16.5 1-56 mod 6
+left: 24 30 36 42 48 54
+Thomas 16.6 1-48 mod 6
+left: 6 12 18 24 30 36 42 48
 #+end_comment
 
 * 4.27
@@ -385,5 +389,89 @@ the last symbol $\pi$ in unicode is not shown in pdf export
 but it is $pi$
 you might check this at the source file by following this link:
 [[https://github.com/Flurando/homework/blob/main/math/2025/4.27/homework.org][https://github.com/Flurando/homework/blob/main/math/2025/4.27/homework.org]]
-I left the description same with link in case the format is invalid for clicking
 :end:
+
+* 5.7
+** 16.5
+*** 6
+for the sphere, we have
+$$\begin{align*}
+x &= r \cos \phi \sin \theta\\
+y &= r \cos \phi \cos \theta\\
+z &= r \sin \phi
+\end{align*}$$
+since $x^2+y^2+z^2=4$, we have $r=2$
+then
+$$\begin{align*}
+x &= 2 \cos \phi \sin \theta\\
+y &= 2 \cos \phi \cos \theta\\
+z &= 2 \sin \phi
+\end{align*}$$
+since in the first octat, $\phi > 0, \theta \in (0,\frac{\pi}{2})$
+and because of the cone which has $\phi=\frac{\pi}{4}$
+we have $0<\phi\leq\frac{\pi}{4}$ and $0<\theta<\frac{\pi}{2}$$
+all in all,
+$$\begin{align*}
+x &= 2 \cos \phi \sin \theta\\
+y &= 2 \cos \phi \cos \theta\\
+z &= 2 \sin \phi
+\end{align*}$$
+$$0<\phi\leq\frac{\pi}{4},\,0<\theta<\frac{\pi}{2}$$
+*** 12
+we can express the cylinder between $y=\pm 2$ as
+$$\begin{align*}
+x &= 2 \cos \phi\\
+y &\in (-2,2)\\
+z &= 2 \sin \phi
+\end{align*}$$
+since we need above the $xy$-plane, or $z>0$
+we have $\sin \phi > 0$ which means $0<\phi<\pi$ (multiple turns are meaningless)
+so, in one word, we have
+$$\begin{align*}
+x &= 2 \cos \phi\\
+y &= t\\
+z &= 2 \sin \phi
+\end{align*}$$
+where
+$$t \in (-2,2),\, \phi \in (0,\pi)$$
+*** 18
+we can see from top that it is a circle
+but stretched like $1$ to $\sqrt{2}$
+so the answer should be $4\sqrt{2}\pi$
+we will use this to check the answer derived from required steps
+the parametric representation is
+$$\begin{align*}
+x &= u\\
+y &= v\\
+z &= -u
+\end{align*}$$
+where $u^2+v^2\leq 4$
+so the surface area is
+$$\begin{align*}
+S &= 4 \int_0^2 \int_0^{\sqrt{4-v^2}} \sqrt{2} dudv\\
+&= 4\sqrt{2} \int_0^2 \int_0^{\sqrt{4-v^2}} dudv\\
+&= 4\sqrt{2}\pi
+\end{align*}$$
+*** 24
+use parametric representation
+$$\begin{align*}
+x &= r\cos \theta\\
+y &= r\sin \theta\\
+z &= r^2
+\end{align*}$$
+where $1\leq r^2\leq 4$
+$$\begin{align*}
+*** 30
+*** 36
+*** 42
+*** 48
+*** 54
+** 16.6
+*** 6
+*** 12
+*** 18
+*** 24
+*** 30
+*** 36
+*** 42
+*** 48

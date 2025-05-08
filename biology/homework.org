@@ -1,7 +1,49 @@
-#+TITLE: notitle
-#+AUTHOR: 2024110144
+#+TITLE: The Living Forever
 
 #+begin_comment
 ddl: May 20th
 #+end_comment
+
+#+begin_center
+a brief and gnomic insight about tardigrades
+#+end_center
+
+* What are tardigrades
+Called as water bear(水熊虫) sometimes, they are the very creature who hardly dies.
+
+No matter how harsh the environment is, they can insist on the status of =alive= for years!
+
+Good! Seems the slower the movement is, the longer the lives are!
+
+* So what?
+Looking at such a special animal, people of course wonder how come they could survive even in the outspace.
+For some gene enthusiasts, they can't help but ask each other, "how come their DNA doesn't break down when normally it should,
+you know, under that extreme conditions.
+
+Interestingly, there have already been some breakthroughs, but in doubt.
+Mainly about whether the genes about protecting DNA stuff is invented by tardigrades or borrowed from other stuff
+
+Which, percisely in a tech tone, is about whether the reason lays in Horizontal Gene Transfer(abbrv. HGT).
+
+For example, in an article called Comparative transcriptomics suggest unique molecular adaptations within tardigrade lineages\\
+by Maria Kamilari1, Aslak Jørgensen1, Morten Schiøtt2 and Nadja Møbjerg posted in 2019
+
+They found that tardigrades have a lot of stress related genes
+
+which is reasonable but still exciting to be proved
+
+So the question becomes the one we noted before -- How come they got there?
+
+* A closer look
+They do have unique proteins, which are not found in other species until then\\
+namely CAHS, SAHS, MAHS, RvLEAM
+
+These proteins, while strangely named, more or less contributed to locking water.
+
+By "locking", I mean they can combine water and release them later, effectively\\
+let water bears to dry themselves like a corpse in extreme conditions but return to life 10 years later
+
+They are also related to DNA repairing funtionalities
+
+which make them resistant against Ultraviolet stuff. See [[https://bmcgenomics.biomedcentral.com/articles/10.1186/s12864-019-5912-x][https://bmcgenomics.biomedcentral.com/articles/10.1186/s12864-019-5912-x]] for details
 
