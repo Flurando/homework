@@ -41,9 +41,13 @@ namely CAHS, SAHS, MAHS, RvLEAM
 These proteins, while strangely named, more or less contributed to locking water.
 
 By "locking", I mean they can combine water and release them later, effectively\\
-let water bears to dry themselves like a corpse in extreme conditions but return to life 10 years later
+let water bears dry themselves like a corpse in extreme conditions but return to life 10 years later
+
+which is unbelievable for other animals
 
 They are also related to DNA repairing funtionalities
 
-which make them resistant against Ultraviolet stuff. See [[https://bmcgenomics.biomedcentral.com/articles/10.1186/s12864-019-5912-x][https://bmcgenomics.biomedcentral.com/articles/10.1186/s12864-019-5912-x]] for details
+which make them resistant against Ultraviolet stuff.
+
+See [[https://bmcgenomics.biomedcentral.com/articles/10.1186/s12864-019-5912-x][https://bmcgenomics.biomedcentral.com/articles/10.1186/s12864-019-5912-x]] for details
 
