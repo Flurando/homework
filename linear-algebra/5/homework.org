@@ -1,0 +1,37 @@
+#+TITLE: Linear Algebra Assignment 5
+#+AUTHOR: 2024110144
+#+LATEX_CLASS: article
+#+LATEX_CLASS_OPTIONS: [a4paper,12pt]
+#+LATEX_HEADER: \usepackage[margin=1in]{geometry}
+#+LATEX_HEADER: \pdfcompresslevel=9
+#+OPTIONS: \n:t toc:nil num:nil date:nil
+
+#+begin_center
+Please submit by 5:00 PM on May 16th to the email address: 2592793289@qq.com
+#+end_center
+
+* Problem 1
+Let $L: \mathbb{R}^3\rightarrow \mathbb{R}^2$ be defined by
+$$L(x_1,x_2,x_3)=(2x_1-x_3,x_2+3x_3)^T$$.
+1. Prove that $L$ is a linear transformation using the definition.
+2. Find the standard matrix reoresentation $A$ of $L$.
+3. Calculate $L(1,-2,3)$ using matrix $A$.
+
+* Problem 2
+Consider the matrix
+$$A=\[\begin{matrix}
+1 & -2 & 3\\
+2 & -5 & 1\\
+1 & -4 & -7
+\end{matrix}\]$$
+1. Reduce $A$ to (reduced) row-echelon form.
+2. Using your result in (1), find a basis for the column space of $A$.
+3. Determine rank($A$).
+
+* Problem 3
+Let $B=\{\[\begin{matrix}1\\1\end{matrix}\],\[\begin{matrix}1\\-1\end{matrix}\]\}$ and $C=\{\[\begin{matrix}1\\0\\0\end{matrix}\],\[\begin{matrix}1\\1\\0\end{matrix}\],\[\begin{matrix}1\\1\\1\end{matrix}\]\}$ be basis for $\mathbb{R}^2$ and $\mathbb{R}^3$ respectively.
+Let $L:\mathbb{R}^2\rightarrow\mathbb{R}^3$ be defined by $L(x)=(x_1,x_1+x_2,x_2)^T$.
+Find the matrix $A$ representing $L$ with repect to bases $B$ and $C$.
+
+* Problem 4
+Let $L:\mathbb{R}^2\rightarrow\mathbb{R}^2$ be a linear operator with standard
