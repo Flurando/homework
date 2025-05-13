@@ -51,3 +51,14 @@ which make them resistant against Ultraviolet stuff.
 
 See [[https://bmcgenomics.biomedcentral.com/articles/10.1186/s12864-019-5912-x][https://bmcgenomics.biomedcentral.com/articles/10.1186/s12864-019-5912-x]] for details
 
+* example
+According to [[https://www.britannica.com/animal/tardigrade][link toward relevant page on a website]], there is real example
+
+in an experiment, tardigrades are kept in vacuum for more than a week,
+
+then in unbreathable air and extremely low temperature,
+
+ending in a "revival" when brought back to normal conditions
+
+This is truly impressive since most human like us can't even insist in water for a minute!
+
