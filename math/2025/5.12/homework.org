@@ -9,12 +9,23 @@
 
 #+begin_comment
 Thomas 16.3 1-38 mod 6
-left: 6 12 18 24 30 36
+left: 12 18 24 30 36
 #+end_comment
 
 * 5.12
 ** 6
+$$F=(e^x\cos y)\vec{i}-(e^x\cos y)\vec{j}+z\vec{k}$$
+the curl of $F$ is
+$$\begin{align*}
+\left(\frac{\delta z}{\delta y}-\frac{\delta z}{\delta x}\right)\vec{i}
++ \left(\frac{\delta (e^x\cos y)}{\delta z}-\frac{\delta z}{\delta x}\right)\vec{j}
++ \left(\frac{\delta -(e^x\cos y)}{\delta x}-\frac{\delta (e^x\cos y)}{\delta y}\right)\vec{k}
+&= (0-0)\vec{i} + (0-0)\vec{j} + e^x(\sin y-\cos y) \vec{k}
+&\neq 0
+\end{align*}$$
+so it is not conservative
 ** 12
+
 ** 18
 ** 24
 ** 30
