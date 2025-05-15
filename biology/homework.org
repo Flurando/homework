@@ -5,7 +5,7 @@
 #+LATEX_CLASS_OPTIONS: [a4paper,10pt]
 #+LATEX_HEADER: \usepackage[margin=0.5in]{geometry}
 #+LATEX_HEADER: \usepackage{xeCJK}
-#+OPTIONS: \n:t toc:nil num:nil date:nil
+#+OPTIONS: \n:t toc:t num:t date:nil
 
 #+begin_comment
 ddl: May 20th
@@ -16,6 +16,7 @@ a brief and gnomic insight about tardigrades
 #+end_center
 
 * What are tardigrades
+
 Called as water bear(水熊虫) sometimes, they are the very creature who hardly dies.
 
 No matter how harsh the environment is, they can insist on the status of =alive= for years!
@@ -23,6 +24,7 @@ No matter how harsh the environment is, they can insist on the status of =alive=
 Good! Seems the slower the movement is, the longer the lives are!
 
 * So what?
+
 Looking at such a special animal, people of course wonder how come they could survive even in the outspace.
 For some gene enthusiasts, they can't help but ask each other, "how come their DNA doesn't break down when normally it should,
 you know, under that extreme conditions.
@@ -42,6 +44,7 @@ which is reasonable but still exciting to be proved
 So the question becomes the one we noted before -- How come they got there?
 
 * A closer look
+
 They do have unique proteins, which are not found in other species until then\\
 namely CAHS, SAHS, MAHS, RvLEAM
 
@@ -59,6 +62,7 @@ which make them resistant against Ultraviolet stuff.
 See [[https://bmcgenomics.biomedcentral.com/articles/10.1186/s12864-019-5912-x][https://bmcgenomics.biomedcentral.com/articles/10.1186/s12864-019-5912-x]] for details
 
 * example
+
 According to [[https://www.britannica.com/animal/tardigrade][link toward relevant page on a website]], there is real example
 
 in an experiment, tardigrades are kept in vacuum for more than a week,
@@ -68,4 +72,8 @@ then in unbreathable air and extremely low temperature,
 ending in a "revival" when brought back to normal conditions
 
 This is truly impressive since most human like us can't even insist in water for a minute!
+
+* conclusion
+
+All in all, tardigrades have fine tuned gene sets for persisting their life and stablizing their DNA
 
