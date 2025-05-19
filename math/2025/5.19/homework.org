@@ -1,0 +1,16 @@
+#+TITLE: Week 5.19 Math Homework
+#+AUTHOR: 2024110144 陈有骏
+#+LATEX_COMPILER: xelatex
+#+LATEX_CLASS: article
+#+LATEX_CLASS_OPTIONS: [a4paper,10pt]
+#+LATEX_HEADER: \usepackage[margin=0.5in]{geometry}
+#+LATEX_HEADER: \usepackage{xeCJK}
+#+OPTIONS: \n:t toc:nil num:nil date:nil
+
+#+begin_comment
+5.19
+left: 
+#+end_comment
+
+* 5.19
+**
