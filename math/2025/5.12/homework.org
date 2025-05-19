@@ -9,7 +9,7 @@
 
 #+begin_comment
 Thomas 16.3 1-38 mod 6
-left: 12 18 24 30 36
+left: 24 30 36
 #+end_comment
 
 * 5.12
@@ -17,7 +17,7 @@ left: 12 18 24 30 36
 $$F=(e^x\cos y)\vec{i}-(e^x\cos y)\vec{j}+z\vec{k}$$
 the curl of $F$ is
 $$\begin{align*}
-\left(\frac{\delta z}{\delta y}-\frac{\delta z}{\delta x}\right)\vec{i}
+\left(\frac{\delta z}{\delta y}+\frac{\delta e^x\cos y}{\delta z}\right)\vec{i}
 + \left(\frac{\delta (e^x\cos y)}{\delta z}-\frac{\delta z}{\delta x}\right)\vec{j}
 + \left(\frac{\delta -(e^x\cos y)}{\delta x}-\frac{\delta (e^x\cos y)}{\delta y}\right)\vec{k}
 &= (0-0)\vec{i} + (0-0)\vec{j} + e^x(\sin y-\cos y) \vec{k}
@@ -25,8 +25,76 @@ $$\begin{align*}
 \end{align*}$$
 so it is not conservative
 ** 12
-
+$$\vec{F}=\frac{y}{1+x^2y^2}\vec{i}+\left(\frac{x}{1+x^2y^2}+\frac{z}{\sqrt{1-y^2z^2}}\right)\vec{j}+\left(\frac{y}{\sqrt{1-y^2z^2}+\frac{1}{z}\right)\vec{k}$$
+$$\begin{align*}
+P &= \frac{y}{1+x^2y^2}\\
+Q &= \frac{x}{1+x^2y^2}+\frac{z}{\sqrt{1-y^2z^2}}\\
+R &= \frac{y}{\sqrt{1-y^2z^2}+\frac{1}{z}
+\end{align*}$$
+the curl is $\left(\frac{\delta R}{\delta y}-\frac{\delta Q}{\delta z},\frac{\delta P}{\delta z}-\frac{\delta R}{\delta x},\frac{\delta Q}{\delta x}-\frac{\delta P}{\delta y}\right)$
+since we have
+$$\begin{align*}
+\frac{\delta R}{\delta x} &= 0\\
+\frac{\delta R}{\delta y} &= \frac{1}{\sqrt{1-y^2z^2}}+\frac{yz^2}{(1-y^2z^2)^{\frac{3}{2}}}\\
+\frac{\delta Q}{\delta x} &= \frac{1}{1+x^2y^2}-\frac{2x^2y}{(1+x^2y^2)^2}\\
+\frac{\delta Q}{\delta z} &= \frac{1}{\sqrt{1-y^2z^2}}+\frac{yz^2}{(1-y^2z^2)^{\frac{3}{2}}}\\
+\frac{\delta P}{\delta y} &= \frac{1-x^2y^2}{(1+x^2y^2)^2}\\
+\frac{\delta P}{\delta z} &= 0
+\end{align*}$$
+so the curl is not $0$ on z-axis, meaning the field doesn't have a potential function
 ** 18
+$$\int_{(0,2,1)}^{(1,\frac{\pi}{2},2)} 2\cos y dx + \left(\frac{1}{y}-2x\sin y\right) dy + \frac{1}{z} dz$$
+suppose the potential function is $f(x,y,z)$
+then we have
+$$\begin{align*}
+f(x,y,z) &= \int P dx\\
+&= \int 2\cos y dx\\
+&= 2\cos y \cdot x + g(y,z)
+\end{align*}$$
+now we can differenciate the half baken function with respect to $y$
+getting $-2x\sin y + \frac{\delta g(y,z)}{\delta y} = Q$
+which means $-2x\sin y + \frac{\delta g(y,z)}{\delta y} = \frac{1}{y}-2x\sin y$
+so $\frac{\delta g(y,z)}{\delta y} = \frac{1}{y}$
+integrating this outputs $g(y,z) = \ln |y| + m(z)$
+then we can differenciate $f(x,y,z)$ with respect to $z$
+getting $m(z)=\ln |z| + C$ where $C$ is a constant
+so, all in all, we have $f(x,y,z)=2x\cos y+\ln |y|+\ln |z|+C$
+then we can calculate the integral as
+$$f(1,\frac{\pi}{2},2)-f(0,2,1)$$
+which evaluates to $\ln \frac{\pi}{2}$
 ** 24
+$$\int_{(0,0,0)}^{(0,3,4)} x^2 dx + yz dy + \frac{y^2}{2} dz$$
+suppose the potential function is $f(x,y,z)$
+then we have
+$$\begin{align*}
+f(x,y,z) &= \int P dx\\
+&= \int x^2 dx\\
+&= \frac{x^3}{3} + g(y,z)
+\end{align*}$$
+now we can differenciate the half baken function with respect to $y$
+getting $\frac{\delta g(y,z)}{\delta y} = Q$
+which means $\frac{\delta g(y,z)}{\delta y} = yz$
+integrating outputs $g(y,z) = \frac{y^2z}{2} + m(z)$
+now $f(x,y,z)=\frac{x^3}{3} + \frac{y^2z}{2} + m(z)$
+then we can differenciate $f(x,y,z)$ with respect to $z$
+getting $\frac{y^2}{2}+m'(z)$ and this is equal to $\frac{y^2}{2}$
+so $m'(z)=0$
+integrating this outputs $m(z)=C$
+so $f(x,y,z)=\frac{x^3}{3} + \frac{y^2z}{2} + C$
+then we have $f(0,3,4)-f(0,0,0)=18$
+thus the answer is $18$
 ** 30
+$$\vec{F}=e^{yz}\vec{i}+(xze^{xz}+z\cos y)\vec{j}+(xye^yz+\sin y)\vec{k}$$
+*** a
+since $x$ is always $1$ under this condition
+we can just substitude $x$ with $1$
+getting $\vec{F'}=(ze^{z}+z\cos y)\vec{j}+(ye^yz+\sin y)\vec{k}$
+and the trend in y and z axises is straight from $(0,1)$ to $(\frac{\pi}{2},0)$
+so we have
+$$\begin{align*}
+work
+&= \int_{(0,1)}^{(\frac{\pi}{2},0)} (ze^{z}+z\cos y)\vec{j}+(ye^yz+\sin y)\vec{k} dA\\
+&= \int_{(0,1)}^{(\frac{\pi}{2},0)} (ze^{z}+z\cos y)\vec{j}+(ye^yz+\sin y)\vec{k} dA\\
+*** b
+*** c
 ** 36
