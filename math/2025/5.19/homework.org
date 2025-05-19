@@ -8,9 +8,39 @@
 #+OPTIONS: \n:t toc:nil num:nil date:nil
 
 #+begin_comment
-5.19
-left: 
+5.19 Thomas 16.8 1-32 mod 4
+left: 4 12 16 20 24 28 32
 #+end_comment
 
 * 5.19
-**
+** 4
+** 8
+$$F=x^2\vec{i}+xz\vec{j}+3z\vec{k}$$
+$$D:\,x^2+y^2+z^2\leq 4$$
+$$\begin{align*}
+\iint_S F dS
+&= \iiint_V \nabla \cdot F dV\\
+&= \iiint_V (2x+0+3) dV\\
+&= \iiint_V (2x+3) dV\\
+&= \iiint_V (2z+3) dV\\
+&= \int_{-2}^{2}\int_{-\sqrt{4-z^2}}^{\sqrt{4-z^2}}\int_0^{2\pi} (2z+3) d\theta dr dz\\
+&= 2\pi \int_{-2}^{2}\int_{-\sqrt{4-z^2}}^{\sqrt{4-z^2}}(2z+3)dr dz\\
+&= 2\pi \int_{-2}^{2} 2\sqrt{4-z^2} (2z+3) dz\\
+&= 4\pi \int_{-2}^{2} \sqrt{4-z^2} (2z+3) dz\\
+&= 4\pi \int_{-2}^{2} 3\sqrt{4-z^2} dz\\
+&= 12\pi \int_{-2}^{2} \sqrt{4-z^2} dz\\
+&= 12\pi 2\pi\\
+&= 24\pi^2
+\end{align*}$$
+** 12
+$$F=x^3\vec{i}+y^3\vec{j}+z^3\vec{k}$$
+$$D:\,x^2+y^2+z^2\leq a^2$$
+$$\nabla \cdot F = 3(x^2+y^2+z^2)$$
+$$\begin{align*}
+
+\end{align*}$$
+** 16
+** 20
+** 24
+** 28
+** 32
