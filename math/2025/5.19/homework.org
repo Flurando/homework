@@ -49,6 +49,7 @@ $$\begin{align*}
 &= \frac{12a^5\pi}{5}
 \end{align*}$$
 ** 16
+$$F=\ln (x^2+y^2)\vec{i}-\left(\frac{2z}{x}\tan^{-1}\frac{y}{x}\right)\vec{j}+z\sqrt{x^2+y^2}\vec{k}$$
 
 ** 20
 ** 24
