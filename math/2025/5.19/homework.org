@@ -5,6 +5,8 @@
 #+LATEX_CLASS_OPTIONS: [a4paper,10pt]
 #+LATEX_HEADER: \usepackage[margin=0.5in]{geometry}
 #+LATEX_HEADER: \usepackage{xeCJK}
+#+LATEX_HEADER: \usepackage{fontspec}
+#+LATEX_HEADER: \setCJKmainfont{WenQuanYi Zen Hei}
 #+OPTIONS: \n:t toc:nil num:nil date:nil
 
 #+begin_comment
