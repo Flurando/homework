@@ -265,3 +265,7 @@ Of particular importance is the set of vectors in V that get mapped into the zer
 Definition: Let L: V-> W be a linear transformation.
 The kernel of L, denoted kel(L)
 is defined by kel(L)={v\in V | L(V)=0_w}
+** orthogonality正交性
+we can think of *orthogonality* as a generation of the concepto of *perpendicuarity* to any vector space with a scalar product.
+*** the scalr product in \mathbb{R}^n
+*** fundamental subspace theorem基本子空间定理

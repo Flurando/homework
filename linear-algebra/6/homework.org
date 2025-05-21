@@ -17,7 +17,8 @@ Let $\vec{x}=(3,4)^T$ and $\vec{y}=(1,1)^T$.
    $$ \cos \theta = \frac{\vec{x}^T\vec{y}}{||\vec{x}||||\vec{y}||} $$,
    find the angle $\theta$ between $\vec{x}$ and $\vec{y}$.
 3. Verify the Cauchy-Schewarz inequality for this pair of vectors.
-
+** Solution 1
+$(\vec{x},\vec{y})
 * Problem 2
 Let $\vec{u}=(1,2)^T$ and $\vec{v}=(4,1)^T$.
 1. Find the scalar projection $\alpha$ of $\vec{v}$ onto $\vec{u}$.
