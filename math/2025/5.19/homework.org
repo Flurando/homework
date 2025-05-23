@@ -12,6 +12,7 @@
 #+begin_comment
 5.19 Thomas 16.8 1-32 mod 4
 left: 4 16 20 24 28 32
+5.21 导论 7.7 二三四五六和二十一中奇数题
 #+end_comment
 
 * 5.19
