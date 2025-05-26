@@ -13,6 +13,7 @@
 5.19 Thomas 16.8 1-32 mod 4
 left: 4 16 20 24 28 32
 5.21 导论 7.7 二三四五六和二十一中奇数题
+5.23 Thomas 8.8 1-64 mod 4 无穷积分
 #+end_comment
 
 * 5.19
@@ -51,8 +52,139 @@ $$\begin{align*}
 \end{align*}$$
 ** 16
 $$F=\ln (x^2+y^2)\vec{i}-\left(\frac{2z}{x}\tan^{-1}\frac{y}{x}\right)\vec{j}+z\sqrt{x^2+y^2}\vec{k}$$
-
+$$D:\,1\leq x^2+y^2 \leq 2, -1\leq z \leq 2$$
+$$\nabla \cdot F = \frac{2x}{x^2+y^2} - \frac{2z}{x^2+y^2} + \sqrt{x^2+y^2}$$
+$$\begin{align*}
+\iint_S FdS
+&= \iiint_V \nabla \cdot F dV\\
+&= \iiint_V \frac{2x-2z}{x^2+y^2} + \sqrt{x^2+y^2} dV\\
+&= \int_0^{2\pi} \int_{-1}^2 \int_1^{\sqrt{2}} \left(2\cos \theta + r - \frac{2z}{r}\right) rdr dz d\theta\\
+&= \int_0^{2\pi} \int_{-1}^2 \int_1^{\sqrt{2}} \left(r - \frac{2z}{r}\right) rdr dz d\theta\\
+&= \int_0^{2\pi} \int_{-1}^2 \int_1^{\sqrt{2}} \left(r - \frac{2z}{r}\right) rdr dz d\theta\\
+&= -3\pi (\sqrt{2}-1) + 2\pi(2\sqrt{2}-1)\\
+&= \pi \sqrt{2} + \pi
+\end{align*}$$
 ** 20
 ** 24
 ** 28
 ** 32
+
+* 5.21
+
+* 5.23
+** 12
+suppose $a>2$
+$$\begin{align*}
+\int_2^{\infty} \frac{2dt}{t^2-1}
+&= \lim_{a\to \infty} \int_2^a \frac{2dt}{t^2-1}\\
+&= \lim_{a\to \infty} \int_2^a \frac{2}{t^2-1} dt\\
+&= \lim_{a\to \infty} \int_2^a \frac{1}{t-1}-\frac{1}{t+1} dt\\
+&= \lim_{a\to \infty} (\int_2^a \frac{1}{t-1} dt - \int_2^a \frac{1}{t+1} dt)\\
+&= \lim_{a\to \infty} (\int_1^{a-1} \frac{1}{t} dt - \int_3^{a+1} \frac{1}{t} dt)\\
+&= \lim_{a\to \infty} (\ln t |_1^{a-1} - \ln t |_3^{a+1})\\
+&= \lim_{a\to \infty} (\ln (a-1) - \ln (a+1) + \ln 3)\\
+&= \lim_{a\to \infty} (\ln \frac{a-1}{a+1} + \ln 3)\\
+&= \ln 3
+\end{align*}$$
+** 20
+$$\int_0^{\infty} \frac{16\tan^{-1} x}{1+x^2} dx$$
+suppose $a>0$
+then
+$$\begin{align*}
+\int_0^{\infty} \frac{16\tan^{-1} x}{1+x^2} dx
+&= \lim_{a\to \infty} \int_0^a \frac{16\tan^{-1} x}{1+x^2} dx\\
+&= \lim_{a\to \infty} 16 \int_0^a \frac{\tan^{-1} x}{1+x^2} dx\\
+&= \lim_{a\to \infty} 16 \int_0^a \frac{\tan^{-1} x}{1+x^2} dx
+\end{align*}$$
+Can't integrate this
+** 24
+$$\int_{-\infty}^{\infty} 2xe^{-x^2} dx$$
+we suppose $a<0,b>0$
+then
+$$\begin{align*}
+\int_{-\infty}^{\infty} 2xe^{-x^2} dx
+&= \lim_{a\to -\infty, b\to \infty} \int_a^0 2xe^{-x^2} dx + \int_0^b 2xe^{-x^2} dx\\
+&= \lim_{a\to -\infty, b\to \infty} \int_a^0 e^{-x^2} dx^2 + \int_0^b e^{-x^2} dx^2\\
+&= \lim_{a\to -\infty, b\to \infty} \int_{a^2}^0 e^{-x} dx + \int_0^{b^2} e^{-x} dx\\
+&= \lim_{a\to -\infty, b\to \infty} \int_0^{a^2} e^x dx - \int_0^{b^2} e^x dx\\
+&= \lim_{a\to -\infty, b\to \infty} e^{a^2} - e^{b^2}\\
+&= \lim_{a\to -\infty, b\to \infty} e^{a^2} - e^{b^2}
+&= 0
+\end{align*}$$
+well, it is reasonable since the function is odd
+
+** 48
+$$\int_4^{\infty} \frac{dx}{\sqrt{x}-1}$$
+suppose $a>4$,
+we have
+$$\begin{align*}
+\int_4^{\infty} \frac{dx}{\sqrt{x}-1}
+&= \lim_{a\to\infty} \int_4^a \frac{dx}{\sqrt{x}-1}\\
+&= \lim_{a\to\infty} \int_2^{\sqrt{a}} \frac{2ydy}{y-1}\\
+&= \lim_{a\to\infty} \int_2^{\sqrt{a}} \frac{2y}{y-1} dy\\
+&= \lim_{a\to\infty} \int_2^{\sqrt{a}} 2+\frac{2}{y-1} dy\\
+&= \lim_{a\to\infty} \int_2^a 2+\frac{2}{y-1} dy\\
+&= \lim_{a\to\infty} (\int_2^a 2dy + \int_2^a \frac{2}{y-1} dy)\\
+&= \lim_{a\to\infty} (2a-4 + 2\int_2^a \frac{1}{y-1} dy)\\
+&= \lim_{a\to\infty} (2a-4 + 2\int_1^{a-1} \frac{1}{z} dz)\\
+&= \lim_{a\to\infty} (2a-4 + 2\int_1^a \frac{1}{z} dz)\\
+&= \lim_{a\to\infty} (2a-4 + 2\ln z |_1^a)\\
+&= \lim_{a\to\infty} (2a-4 + 2\ln a - 0)\\
+&= \lim_{a\to\infty} (2a-4+2\ln a)\\
+&= \infty
+\end{align*}$$
+
+** 52
+$$\int_2^{\infty} \frac{dx}{\sqrt{x^2-1}}$$
+suppose $a>2$
+we have
+$$\begin{align*}
+\int_2^{\infty} \frac{dx}{\sqrt{x^2-1}}
+&= \lim_{a\to\infty} \int_2^a \frac{dx}{\sqrt{x^2-1}}\\
+&= \lim_{a\to\infty} \int_{\sec^{-1} 2}^{\sec^{-1} a} \sec\theta d\theta\\
+&= \lim_{a\to\infty} \ln (\sec\theta+\tan\theta) |_{\sec^{-1} 2}^{\sec^{-1} a}\\
+&= \lim_{a\to\infty} \ln \frac{\left| a+\sqrt{a^2-1} \right|}{2+\sqrt{3}}\\
+&= \infty
+\end{align*}$$
+
+** 56
+$$\int_{\pi}^{\infty} \frac{1+\sin x}{x^2} dx$$
+suppose $a>\pi$
+then
+$$\begin{align*}
+\int_{\pi}^{\infty} \frac{1+\sin x}{x^2} dx
+&= \lim_{a\to\infty} \int_{\pi}^a \frac{1+\sin x}{x^2} dx\\
+&= \lim_{a\to\infty} (\int_{\pi}^a \frac{1}{x^2} dx + \int_{\pi}^a \frac{\sin x}{x^2} dx)\\
+&= \lim_{a\to\infty} (-\frac{1}{x} |_{\pi}^a + \int_{\pi}^a \frac{\sin x}{x^2} dx)\\
+&= \lim_{a\to\infty} (\frac{1}{\pi} - \frac{1}{a} + \int_{\pi}^a \frac{\sin x}{x^2} dx)\\
+&= \frac{1}{\pi} + \lim_{a\to\infty} (- \frac{1}{a} + \int_{\pi}^a \frac{\sin x}{x^2} dx)\\
+&= \frac{1}{\pi} + \lim_{a\to\infty} (\int_{\pi}^a \frac{\sin x}{x^2} dx)
+\end{align*}$$
+since the latter has $|\frac{\sin x}{x^2}|\leq |\frac{1}{x^2}|$
+and we know $\frac{1}{\pi^2}$
+integrating this outputs $\frac{1}{\pi}$
+which means the answer is a finite constant
+it is just I failed to work it out
+
+** 60
+$$\int_{e^e}^{\infty} \ln \ln x dx$$
+suppose $a>e^e$
+then
+$$\begin{align*}
+\int_{e^e}^{\infty} \frac{1+\sin x}{x^2} dx
+&= \lim_{a\to\infty} \int_{e^e}^a \ln \ln x dx\\
+&= \lim_{a\to\infty} (x\ln \ln x - \int \frac{1}{\ln x} dx) |_{e^e}^a\\
+&= \lim_{a\to\infty} a - e^e - \int_{e^e}^a \frac{1}{\ln x} dx\\
+&= \infty
+\end{align*}$$
+
+** 64
+$$\int_{-\infty}^{\infty} \frac{dx}{e^x+e^{-x}}$$
+suppose $a<0,b>0$
+then
+$$\begin{align*}
+\int_{-\infty}^{\infty} \frac{dx}{e^x+e^{-x}}
+&= \lim_{a\to -\infty, b\to \infty} (\int_a^0 \frac{dx}{e^x+e^{-x}} + \int_0^b \frac{dx}{e^x+e^{-x}})\\
+&= \frac{1}{2} (\frac{\pi}{2}+\frac{\pi}{2})\\
+&= \frac{\pi}{2}
+\end{align*}$$
