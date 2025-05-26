@@ -1,0 +1,33 @@
+#+TITLE: Week 5.26 Math Homework
+#+AUTHOR: 2024110144 陈有骏
+#+LATEX_COMPILER: xelatex
+#+LATEX_CLASS: article
+#+LATEX_CLASS_OPTIONS: [a4paper,10pt]
+#+LATEX_HEADER: \usepackage[margin=0.5in]{geometry}
+#+LATEX_HEADER: \usepackage{xeCJK}
+#+LATEX_HEADER: \usepackage{fontspec}
+#+LATEX_HEADER: \setCJKmainfont{WenQuanYi Zen Hei}
+#+OPTIONS: \n:t toc:nil num:nil date:nil
+
+#+begin_comment
+5.26 Thomas 8.8 1-64 mod 4 瑕积分
+left: 4 8 16 28 32 36 40 44
+#+end_comment
+
+* 5.26
+** 4
+$$ \int_0^4 \frac{dx}{\sqrt{4-x}} $$
+** 8
+$$ \int_0^1 \frac{dr}{r^{0.999}} $$
+** 16
+$$ \int_0^2 \frac{s+1}{\sqrt{4-s^2}} ds $$
+** 28
+$$ \int_0^1 \frac{4rdr}{\sqrt{1-r^4}} $$
+** 32
+$$ \int_0^2 \frac{dx}{\sqrt{|x-1|}} $$
+** 36
+$$ \int_0^{\frac{\pi}{2}} \cot \theta d\theta $$
+** 40
+$$ \int_0^1 \frac{e^{-\sqrt{x}}}{\sqrt{x}} dx $$
+** 44
+$$ \int_0^2 \frac{dx}{1-x} $$
