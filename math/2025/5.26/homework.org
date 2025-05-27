@@ -17,8 +17,19 @@ left: 4 8 16 28 32 36 40 44
 * 5.26
 ** 4
 $$ \int_0^4 \frac{dx}{\sqrt{4-x}} $$
+$$\begin{align*}
+\int_0^4 \frac{dx}{\sqrt{4-x}}
+&= \lim_{b\to 4^-} \int_0^b \frac{dx}{\sqrt{4-x}}\\
+&= \lim_{b\to 4^-} \int_0^b \frac{1}{\sqrt{4-x}} dx\\
+&= \lim_{b\to 4^-} \int_0^b -\frac{1}{\sqrt{4-x}} d(4-x)\\
+&= \lim_{b\to 4^-} \int_{4-b}^4 \frac{1}{\sqrt{y}} dy\\
+&= \lim_{b\to 4^-} 2\sqrt{y}|_{4-b}^4\\
+&= \lim_{b\to 4^-} 4-2\sqrt{4-b}\\
+&= 4
+\end{align*}$$
 ** 8
 $$ \int_0^1 \frac{dr}{r^{0.999}} $$
+$$\begin{align*}
 ** 16
 $$ \int_0^2 \frac{s+1}{\sqrt{4-s^2}} ds $$
 ** 28
