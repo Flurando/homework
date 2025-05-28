@@ -11,7 +11,7 @@
 
 #+begin_comment
 5.26 Thomas 8.8 1-64 mod 4 瑕积分
-left: 4 8 16 28 32 36 40 44
+left: 16 28 32 36 40 44
 #+end_comment
 
 * 5.26
@@ -30,8 +30,22 @@ $$\begin{align*}
 ** 8
 $$ \int_0^1 \frac{dr}{r^{0.999}} $$
 $$\begin{align*}
+\int_0^1 \frac{dr}{r^{0.999}}
+&= \lim_{a\to 0^+} \int_a^1 \frac{dr}{r^{0.999}}\\
+&= \lim_{a\to 0^+} \int_a^1 r^{-0.999} dr\\
+&= \lim_{a\to 0^+} 1000r^{0.001} |_a^1\\
+&= \lim_{a\to 0^+} 1000-1000a^{0.001}\\
+&= 1000
+\end{align*}$$
 ** 16
 $$ \int_0^2 \frac{s+1}{\sqrt{4-s^2}} ds $$
+$$\begin{align*}
+\int_0^2 \frac{s+1}{\sqrt{4-s^2}} ds
+&= \lim_{a\to b^-} \int_0^a \frac{s+1}{\sqrt{4-s^2}} ds\\
+&= \lim_{a\to b^-} (\int_0^a \frac{s}{\sqrt{4-s^2}} ds + \int_0^a \frac{1}{\sqrt{4-s^2}} ds)\\
+&= \lim_{a\to b^-} (\frac{1}{2} \int_0^a \frac{1}{\sqrt{4-s^2}} d(s^2) + \int_0^a \frac{1}{\sqrt{4-s^2}} ds)\\
+&= \lim_{a\to b^-} (\frac{1}{2} \int_0^{a^2} \frac{1}{\sqrt{4-s}} ds + \int_0^a \frac{1}{\sqrt{4-s^2}} ds)\\
+\end{align*}$$
 ** 28
 $$ \int_0^1 \frac{4rdr}{\sqrt{1-r^4}} $$
 ** 32
