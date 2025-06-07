@@ -141,7 +141,13 @@ $$\begin{align*}
 so when $n\to \infty$ the ratio approaches $0$
 so the origin serie converges
 *** 12
-
+we can ignore the minor symbol
+it gives $\left(\ln (e^2+\frac{1}{n})\right)^{n+1}$
+then we can apply the root test
+just check $\left(\ln (e^2+\frac{1}{n})\right)^{1+\frac{1}{n}}$
+suppose $m=1+\frac{1}{n}$, $m\to 1^+$
+we have $\left(\ln (e^2-1+m)\right)^m$
+it approaches $2^-$, so the origin serie diverges
 *** 18
 *** 24
 *** 30
