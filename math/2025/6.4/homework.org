@@ -79,19 +79,69 @@ bd is just the case in $55$
 c is because $\ln (n^3) > \ln n$ then apply the same operations in a
 ** 10.4
 *** 8
-$$\sum_{n=1}^{\infty}
+$$\sum_{n=1}^{\infty} \frac{\sqrt{n}+1}{\sqrt{n^2+3}}$$
+since when $n$ is large enough,
+we have $\frac{\sqrt{n}+1}{\sqrt{n^2+3}} < \frac{\sqrt{n}+1}{n}$
+and the latter approaches $0$ when $n\to\infty$
+we know it converges
 *** 16
+$$\sum_{n=1}^{\infty} \ln \left(1+\frac{1}{n^2}\right)$$
+the d/c is the same with that of $\sum_{n=1}^{\infty} \frac{1}{n^2}$
+because when $n\to\infty$, $\frac{1}{n^2}\to 0$,
+and $\ln (1+x) \to x$ when $x\to 0$
+applying the knowledge that $\sum_{n=1}^{\infty} \frac{1}{n^2}$ converges
+we know the serie converges
 *** 24
+$$\begin{align*}
+\sum_{n=3}^{\infty} \frac{5n^3-3n}{n^2(n-2)(n^2+5)}
+&= \sum_{n=3}^{\infty} \frac{5n^2-3}{n(n-2)(n^2+5)}\\
+&= \sum_{n=3}^{\infty} \frac{5n^2-3}{(n^2-2n)(n^2+5)}\\
+&= 5 \sum_{n=3}^{\infty} \frac{n^2-0.6}{(n^2-2n)(n^2+5)}\\
+&< 5 \sum_{n=3}^{\infty} \frac{n^2+5}{(n^2-2n)(n^2+5)}\\
+&= 5 \sum_{n=3}^{\infty} \frac{1}{n^2-2n}
+\end{align*}$$
+since $\sum_{n=3}^{\infty} \frac{1}{n^2-2n}$ converges
+we know the origin converges
 *** 32
+we can just examine $\sum_{n=3}^{\infty} \frac{\ln n}{n}$
+since $\frac{\ln x}{x}\to 0$ then
+it is convergent
 *** 40
+when $n$ is large enough
+we only care about $0.75^n$
+since $0.75<1$, it goes towards $0$
+thus it converges
 *** 48
+$$\sum_{n=1}^{\infty} \frac{\sec^{-1} n}{n^{1.3}}$$
+when $n\to \infty$, $\sec^{-1} n\to \ln n$
+so we can examine $\frac{\ln n}{n^{1.3}}$
+since when n approaches infinity
+$$\ln n << n^{1.3}$$
+we know the origin converges
 *** 56
+also converges, because $\frac{a_n}{n}<a_n$ and the $a_n$ serie itself converges
 *** 64
+there must exists a $N$ that for $n>N$, $a_n<\epsilon$
+where $\epsilon$ is a predefined positive value that can be any small near $0^+$
+of course we acquire an $\epsilon<1$
+then for $n>N$ we have $\sin (a_n) < a_n$
+since the $a_n$ serie converges, we know $sin(a_n)$ converges as well
 *** 72
+no idea
 * 6.6
 ** 10.5
 *** 6
+suppose $a_n=\frac{3^{n+2}}{\ln n}$
+$$\begin{align*}
+\frac{a_{n+1}}{a_n}
+&= \frac{3\ln n}{\ln (n+1)}\\
+&= 3\ln \frac{n}{n+1}\\
+&= 3\ln (1-\frac{1}{n+1})
+\end{align*}$$
+so when $n\to \infty$ the ratio approaches $0$
+so the origin serie converges
 *** 12
+
 *** 18
 *** 24
 *** 30
