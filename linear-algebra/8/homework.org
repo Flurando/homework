@@ -1,0 +1,56 @@
+#+TITLE: Linear Algebra Assignment 8
+#+AUTHOR: 2024110144 陈有骏
+#+LATEX_COMPILER: xelatex
+#+LATEX_CLASS: article
+#+LATEX_CLASS_OPTIONS: [a4paper,12pt]
+#+LATEX_HEADER: \usepackage[margin=1in]{geometry}
+#+LATEX_HEADER: \usepackage{xeCJK}
+#+OPTIONS: \n:t toc:nil num:nil date:nil
+
+#+begin_center
+Please submit by 5:00 PM on June 27th to the email address: 2592793289@qq.com
+#+end_center
+
+* Problem 1
+Let
+$$A=\begin{bmatrix}
+4 & 0 & 0\\
+2 & 2 & 0\\
+0 & 2 & 2
+\end{bmatrix}.$$
+1. Compute the characteristic polynomia of $A$ and find all eigenvalues.
+2. For each eigenvalue, determine basis for the corresponding eigenspace.
+* Problem 2
+Consider
+$$B=\begin{bmatrix}
+3 & 1\\
+0 & 3
+\end{bmatrix}.$$
+1. Find the eigenvalues of $B$ and state their algebraic multiplicities.
+2. Find the basis for each eigenspace and give the geometric multiplies.
+3. Decide whether $B$ is diagonlizable. Briefly justify your answer in one sentence.
+
+* Problem 3
+Let
+$$C=\begin{bmatrix}
+4 & 2\\
+2 & 5
+\end{bmatrix}.$$
+1. Verify that $C$ is symmetric and compute its eigenvalues.
+2. Find an orthonormal set of eigenvectors and form the orthogonal matrix $Q$ whose columns are these vectors.
+3. Check that $Q^TCQ$ is diagonal and list the diagonal entries.
+* Problem 4
+Let
+$$D=\begin{bmatrix}
+0 & 3\\
+4 & 0
+\end{bmatrix}.$$
+1. Compute the singular values of $D$ without fully diagonizing $D^TD$
+   (hint: note the $D^TD$ is diagonal)
+2. Give one unit right singular vector and one unit left singular vector corresponding to the largest singular value.
+3. Write a compat $SVD$ of the form $D=U\sum V^T$ using your vectors from part 2 and the singular value from part 1.
+* Problem 5
+Using the $SVD$ obtained in Problem 4.
+1. Construct the best rank-1 approximation $D_1=\epsilon_1\vec{u}_1\vec{v}_1^T$.
+2. Compute the Frobenius norm of the error $||D-D_1||_F$ (note that this equals the second singular value).
+3. In one or two sentences, explain why part 2 follows from the Eckart-Young(Th 6.5.3) theorem.
