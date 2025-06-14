@@ -20,6 +20,43 @@ $$A=\begin{bmatrix}
 \end{bmatrix}.$$
 1. Compute the characteristic polynomia of $A$ and find all eigenvalues.
 2. For each eigenvalue, determine basis for the corresponding eigenspace.
+
+** Solution 1
+*** 1
+$$A-\lambda I=\begin{bmatrix}
+4-\lambda & 0 & 0\\
+2 & 2-\lambda & 0\\
+0 & 2 & 2-\lambda
+\end{bmatrix}$$
+the determinant of this is
+$$det = (4-\lambda)(2-\lambda)(2-\lambda)$$
+so the eigenvalues are $4$ and $2$
+*** 2
+for eigenvalue $4$
+the equation is $(A-4I)\vec{basis}=\vec{0}$
+which means $\begin{bmatrix}
+0 & 0 & 0\\
+2 & -2 & 0\\
+0 & 2 & -2
+\end{bmatrix} \cdot \begin{bmatrix}
+x\\y\\z
+\end{bmatrix} = \begin{bmatrix}
+0\\0\\0
+\end{bmatrix}$
+so we have the basis as $\begin{bmatrix}x\\x\\x\end{bmatrix}$ where $x\in\mathbb{R}$
+for eigenvalue $2$
+the equation is $(A-2I)\vec{basis}=\vec{0}$
+which means $\begin{bmatrix}
+2 & 0 & 0\\
+2 & 0 & 0\\
+0 & 2 & 0
+\end{bmatrix} \cdot \begin{bmatrix}
+x\\y\\z
+\end{bmatrix} = \begin{bmatrix}
+0\\0\\0
+\end{bmatrix}$
+so we have the basis as $\begin{bmatrix}0\\0\\x\end{bmatrix}$ where $x\in\mathbb{R}$
+
 * Problem 2
 Consider
 $$B=\begin{bmatrix}
@@ -29,7 +66,24 @@ $$B=\begin{bmatrix}
 1. Find the eigenvalues of $B$ and state their algebraic multiplicities.
 2. Find the basis for each eigenspace and give the geometric multiplies.
 3. Decide whether $B$ is diagonlizable. Briefly justify your answer in one sentence.
-
+** Solution 2
+*** 1
+$$\begin{aligned}
+det(B-\lambda I) &= det\left(\begin{bmatrix}
+3-\lambda & 1\\
+0 & 3-\lambda
+\end{bmatrix}\right)\\
+&= (3-\lambda)^2
+\end{aligned}$$
+so the eigenvalue is $3$, with the algebraic multiplicity as $2$
+*** 2
+for $3$
+we have $\begin{bmatrix}0&1\\0&0\end{bmatrix} \cdot \vec{basis} = \vec{0}$
+which yields the basis as $\begin{bmatrix}1\\0\end{bmatrix}$
+with the geometrix multiplies (as the free variable of basis in RREF) $1$
+*** 3
+the algebraic multiplicity of $\lambda=3$ is $2$, while the geometric multiplicity is $1$.
+Since these multiplicities do not match, the matrix $B$ is not diagonalizable.
 * Problem 3
 Let
 $$C=\begin{bmatrix}
@@ -39,6 +93,60 @@ $$C=\begin{bmatrix}
 1. Verify that $C$ is symmetric and compute its eigenvalues.
 2. Find an orthonormal set of eigenvectors and form the orthogonal matrix $Q$ whose columns are these vectors.
 3. Check that $Q^TCQ$ is diagonal and list the diagonal entries.
+
+** Solution 3
+*** 1
+since $C=C^T$, it is symmetric
+$$\begin{aligned}
+det(C-\lambda I)
+&= det\left(\begin{bmatrix}
+4-\lambda & 2\\
+2 & 5-\lambda
+\end{bmatrix}\right)\\
+&= 20-9\lambda+\lambda^2-4\\
+&= \lambda^2-9\lambda+16
+\end{aligned}$$
+the eigenvalues are $\frac{9\pm\sqrt{17}}{2}$
+*** 2
+the corresponding eigenvectors are $\begin{bmatrix}4\\1\pm\sqrt{17}\end{bmatrix}$
+their magnitudes are $\sqrt{34\pm 2\sqrt{17}}$
+so $Q$ is $\begin{bmatrix}
+\frac{4}{\sqrt{34+2\sqrt{17}}} & \frac{4}{\sqrt{34-2\sqrt{17}}}\\
+\frac{1+\sqrt{17}}{\sqrt{34+2\sqrt{17}}} & \frac{1-\sqrt{17}}{\sqrt{34-2\sqrt{17}}}
+\end{bmatrix}$
+*** 3
+$$\begin{aligned}
+Q^TCQ
+&= \begin{bmatrix}
+\frac{4}{\sqrt{34+2\sqrt{17}}} & \frac{1+\sqrt{17}}{\sqrt{34+2\sqrt{17}}}\\
+\frac{4}{\sqrt{34-2\sqrt{17}}} & \frac{1-\sqrt{17}}{\sqrt{34-2\sqrt{17}}}
+\end{bmatrix} \cdot \begin{bmatrix}
+4 & 2\\
+2 & 5
+\end{bmatrix} \cdot \begin{bmatrix}
+\frac{4}{\sqrt{34+2\sqrt{17}}} & \frac{4}{\sqrt{34-2\sqrt{17}}}\\
+\frac{1+\sqrt{17}}{\sqrt{34+2\sqrt{17}}} & \frac{1-\sqrt{17}}{\sqrt{34-2\sqrt{17}}}
+\end{bmatrix}\\
+&= \begin{bmatrix}
+4\cdot\frac{4}{\sqrt{34+2\sqrt{17}}}+2\cdot\frac{1+\sqrt{17}}{\sqrt{34+2\sqrt{17}}} & 2\cdot\frac{4}{\sqrt{34+2\sqrt{17}}}+5\cdot\frac{1+\sqrt{17}}{\sqrt{34+2\sqrt{17}}}\\
+4\cdot\frac{4}{\sqrt{34-2\sqrt{17}}}+2\cdot\frac{1-\sqrt{17}}{\sqrt{34-2\sqrt{17}}} & 2\cdot\frac{4}{\sqrt{34-2\sqrt{17}}}+5\cdot\frac{1-\sqrt{17}}{\sqrt{34-2\sqrt{17}}}
+\end{bmatrix} \cdot \begin{bmatrix}
+\frac{4}{\sqrt{34+2\sqrt{17}}} & \frac{4}{\sqrt{34-2\sqrt{17}}}\\
+\frac{1+\sqrt{17}}{\sqrt{34+2\sqrt{17}}} & \frac{1-\sqrt{17}}{\sqrt{34-2\sqrt{17}}}
+\end{bmatrix}\\
+&= \begin{bmatrix}
+\frac{18+2\sqrt{17}}{\sqrt{34+2\sqrt{17}}} & \frac{13+5\sqrt{17}}{\sqrt{34+2\sqrt{17}}}\\
+\frac{18-2\sqrt{17}}{\sqrt{34-2\sqrt{17}}} & \frac{13-5\sqrt{17}}{\sqrt{34-2\sqrt{17}}}
+\end{bmatrix} \cdot \begin{bmatrix}
+\frac{4}{\sqrt{34+2\sqrt{17}}} & \frac{4}{\sqrt{34-2\sqrt{17}}}\\
+\frac{1+\sqrt{17}}{\sqrt{34+2\sqrt{17}}} & \frac{1-\sqrt{17}}{\sqrt{34-2\sqrt{17}}}
+\end{bmatrix}\\
+&= \begin{bmatrix}
+\frac{4\cdot(18+2\sqrt{17}) + (1+\sqrt{17})\cdot(13+5\sqrt{17})}{34+2\sqrt{17}} & \frac{4\cdot(18-2\sqrt{17}) + (1+\sqrt{17})\cdot(3-5\sqrt{17})}{\sqrt{34-2\sqrt{17}}\sqrt{34+2\sqrt{17}}}\\
+\frac{4\cdot(18+2\sqrt{17}) + (1+\sqrt{17})\cdot(13-5\sqrt{17})}{\sqrt{34-2\sqrt{17}}\sqrt{34+2\sqrt{17}} & \frac{4\cdot(18-2\sqrt{17}) + (1-\sqrt{17})\cdot(13-5\sqrt{17})}{34-2\sqrt{17}}
+\end{bmatrix}\\
+
+
 * Problem 4
 Let
 $$D=\begin{bmatrix}
