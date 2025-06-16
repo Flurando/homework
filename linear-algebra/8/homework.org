@@ -141,10 +141,11 @@ Q^TCQ
 \frac{4}{\sqrt{34+2\sqrt{17}}} & \frac{4}{\sqrt{34-2\sqrt{17}}}\\
 \frac{1+\sqrt{17}}{\sqrt{34+2\sqrt{17}}} & \frac{1-\sqrt{17}}{\sqrt{34-2\sqrt{17}}}
 \end{bmatrix}\\
-&= \begin{bmatrix}
-\frac{4\cdot(18+2\sqrt{17}) + (1+\sqrt{17})\cdot(13+5\sqrt{17})}{34+2\sqrt{17}} & \frac{4\cdot(18-2\sqrt{17}) + (1+\sqrt{17})\cdot(3-5\sqrt{17})}{\sqrt{34-2\sqrt{17}}\sqrt{34+2\sqrt{17}}}\\
-\frac{4\cdot(18+2\sqrt{17}) + (1+\sqrt{17})\cdot(13-5\sqrt{17})}{\sqrt{34-2\sqrt{17}}\sqrt{34+2\sqrt{17}} & \frac{4\cdot(18-2\sqrt{17}) + (1-\sqrt{17})\cdot(13-5\sqrt{17})}{34-2\sqrt{17}}
-\end{bmatrix}\\
+&= \begin{matrix}
+\frac{4(18+2\sqrt{17}) + (1+\sqrt{17})(13+5\sqrt{17})}{34+2\sqrt{17}}
+& \frac{4(18+2\sqrt{17}) + (1-\sqrt{17})(13+5\sqrt{17})}{\sqrt{34^2-4\times 17}}\\
+& 
+\end{matrix}
 
 
 * Problem 4
