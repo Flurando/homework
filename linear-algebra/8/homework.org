@@ -144,9 +144,23 @@ Q^TCQ
 &= \begin{matrix}
 \frac{4(18+2\sqrt{17}) + (1+\sqrt{17})(13+5\sqrt{17})}{34+2\sqrt{17}}
 & \frac{4(18+2\sqrt{17}) + (1-\sqrt{17})(13+5\sqrt{17})}{\sqrt{34^2-4\times 17}}\\
-& 
+& \frac{4(18-2\sqrt{17}) + (1+\sqrt{17})(13-5\sqrt{17})}{\sqrt{34^2-4\times 17}}
+& \frac{4(18-2\sqrt{17}) + (1-\sqrt{17})(13-5\sqrt{17})}{34-2\sqrt{17}}
 \end{matrix}
-
+&= \begin{matrix}
+\frac{170+26\sqrt{17}}{34+2\sqrt{17}}
+& 0\\
+& 0
+& \frac{170-26\sqrt{17}}{34-2\sqrt{17}}
+\end{matrix}
+&= \begin{matrix}
+\frac{85+13\sqrt{17}}{17+\sqrt{17}}
+& 0\\
+& 0
+& \frac{85-13\sqrt{17}}{17-\sqrt{17}}
+\end{matrix}
+\end{aligned}$$
+so it is indeed diagonal and the entries are the two fractions
 
 * Problem 4
 Let
@@ -158,8 +172,12 @@ $$D=\begin{bmatrix}
    (hint: note the $D^TD$ is diagonal)
 2. Give one unit right singular vector and one unit left singular vector corresponding to the largest singular value.
 3. Write a compat $SVD$ of the form $D=U\sum V^T$ using your vectors from part 2 and the singular value from part 1.
+** Solution 4
+
 * Problem 5
 Using the $SVD$ obtained in Problem 4.
 1. Construct the best rank-1 approximation $D_1=\epsilon_1\vec{u}_1\vec{v}_1^T$.
 2. Compute the Frobenius norm of the error $||D-D_1||_F$ (note that this equals the second singular value).
 3. In one or two sentences, explain why part 2 follows from the Eckart-Young(Th 6.5.3) theorem.
+
+** Solution 5
