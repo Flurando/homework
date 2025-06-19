@@ -157,6 +157,17 @@ $$D=\begin{bmatrix}
    (hint: note the $D^TD$ is diagonal)
 2. Give one unit right singular vector and one unit left singular vector corresponding to the largest singular value.
 3. Write a compat $SVD$ of the form $D=U\sum V^T$ using your vectors from part 2 and the singular value from part 1.
+** Solution 4
+*** 1
+$$D^TD=\begin{bmatrix}
+16 & 0\\
+0 & 9
+\end{bmatrix}$$
+indeed diagonal, meaning the eigenvalues being $16,9$
+so singular values are $4,3$ which are the square root of eigenvalues.
+*** 2
+$$D^TD\vec{v}=eigenvalue\cdot\vec{v}
+*** 3
 * Problem 5
 Using the $SVD$ obtained in Problem 4.
 1. Construct the best rank-1 approximation $D_1=\epsilon_1\vec{u}_1\vec{v}_1^T$.
