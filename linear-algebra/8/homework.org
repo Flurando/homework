@@ -181,7 +181,14 @@ $$D^TD=\begin{bmatrix}
 indeed diagonal, meaning the eigenvalues being $16,9$
 so singular values are $4,3$ which are the square root of eigenvalues.
 *** 2
-$$D^TD\vec{v}=eigenvalue\cdot\vec{v}
+$$D^TD\vec{v}=eigenvalue\cdot\vec{v}$$
+when eigenvalue is $16$
+$$\begin{bmatrix}
+16 & 0\\
+0 & 9
+\end{bmatrix}\vec{v}=16\vec{v}$$
+so we have $\begin{bmatrix}1\\0\end{bmatrix}$
+the other is $\begin{bmatrix}0\\1\end{bmatrix}$
 *** 3
 * Problem 5
 Using the $SVD$ obtained in Problem 4.
