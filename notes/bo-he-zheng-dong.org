@@ -1,3 +1,4 @@
 #+TITLE: 波与震动
 
 * SHM （simple harmonic motion 简谐振动）
+余弦形式等三种表达形式都符合微分方程，重要
