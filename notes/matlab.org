@@ -1,0 +1,10 @@
+#+TITLE: MATLAB INTRO
+
+#+begin_src octave :exports results
+  n = [1:10];
+  x = 5*n+4;
+  ans = x
+#+end_src
+
+#+RESULTS:
+| 9 | 14 | 19 | 24 | 29 | 34 | 39 | 44 | 49 | 54 |

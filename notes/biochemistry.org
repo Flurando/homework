@@ -1,0 +1,52 @@
+#+TITLE: Biochemistry
+
+# 主要第4-7章
+
+* Chapter 1
+The Facts of Life
+** 4 levels
+| proteins                                | structures              | organisms | ecosystem |
+| this is the basis                       | biomolecules controlled |           |           |
+| lipids and carbohydrates also important | functional purposes     |           |           |
+| but not basic                           |                         |           |           |
+*** energy source sunlight
+** What is life?
+- Organisms complicated + hightly organized
+- Biological structures serve functional purposes
+- Living systems are actively engaged in energy transformations
+- LIving systems have a remarkable capacity for self-replication
+
+** Biomolecules
+:example:
++ Nucleotide -> DNA/RNA
++ Amino acids -> protein
++ Carbonhydrates -> sugar
++ Fatty acid -> lipid
+:end:
+*** they all have "direction"
+*** CHON
+covalent bond共价键
+这几个之间的共价键能量高，更稳定
+** the Structual Organization of Complex Biomolecules
+:example:
+Cholesterol 胆固醇
+$\beta$-carotene 胡萝卜素
+Chlorophyll a 叶绿素
+:end:
+*** they have different sizes
+** Properties of some important biomolecules
+*** a sense or directionality
+dna/rna 5'-3'
+Protein: N-terminal - C-terminal
+*** Informational
+*** three dimensional architecture
+*** biomolecular interactions
+**** weak forces
+Covalent bonds -> strong force
+:example:
+C-C bond 343kJ/mol
+:end:
+
+weak forces 0.4-40kJ/mol => decide which of them can form bonds
+
+** the Organization and Structure of Cells

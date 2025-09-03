@@ -1,0 +1,14 @@
+#+TITLE: Week 9.1 Math Homework
+#+AUTHOR: 2024110144 陈有骏
+#+LATEX_COMPILER: xelatex
+#+LATEX_CLASS: article
+#+LATEX_CLASS_OPTIONS: [a4paper,10pt]
+#+LATEX_HEADER: \usepackage[margin=0.5in]{geometry}
+#+LATEX_HEADER: \usepackage{xeCJK}
+#+LATEX_HEADER: \usepackage{fontspec}
+#+LATEX_HEADER: \setCJKmainfont{WenQuanYi Zen Hei}
+#+OPTIONS: \n:t toc:nil num:nil date:nil
+
+#+begin_comment
+9.1 1.1 Problems 1-25 mod 5
+#+end_comment

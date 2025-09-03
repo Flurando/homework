@@ -1,0 +1,3 @@
+#+TITLE: 波与震动
+
+* SHM （simple harmonic motion 简谐振动）

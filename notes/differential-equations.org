@@ -1,0 +1,42 @@
+#+TITLE: Differential Equations 微分方程
+
+* Introduction
+
+** Definition
+equations containing differences
+:example:
+$F=m\frac{dv}{dt}$
+$F=mg-kv$
+kill $F$ we get $mg-kv=m\frac{dv}{dt}$
+which is a differential equation
+:end:
+
+** Step
+1. Construction of the Model
+   :example:
+   physical principles
+   to
+   mathematical expressions
+   :end:
+   1. Identify independent & dependent variables
+   2. Choose the units of measurement for each variable
+2. Analysis of the Model
+3. Comparison with Experiment or Observation
+
+** Type
+*** Ordinary D.E.
+abbre. as O.D.E
+*** Partial D.E.
+
+** Meaning 方向场的几何意义
+e.g.
+$\frac{dv}{dt} = 9.8 - \frac{v}{5}$
+shows a *direction field* or a *slope field*
+
+$\frac{dv}{dt} = f(t,y)$
+(t,y) given point
+each point t,y : short line segment : group of solution
+
+*** two observatons
+1. constructing a direction field *need not* solve equation
+2. Computer or other computational or graphical aid are well suited
