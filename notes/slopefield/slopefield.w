@@ -1,5 +1,5 @@
 #!/usr/bin/env sh
-exec guile -x .w --language=wisp --auto-compile -s "$0" "$@"
+exec guile -L ./ -x .w --language=wisp --auto-compile -e "(@ (slopefield) main)" -s "$0" "$@"
 !#
 
 define-module : slopefield
@@ -26,15 +26,30 @@ define : int num
       . n
 
 define : range min max
-  "only consider situation where min max are all integers and min<max pre-satisfied"
+  . "only consider situation where min max are all integers and min<max pre-satisfied"
   let loop : : stepper min
     if : > stepper max
       . '()
       cons stepper : loop : 1+ stepper
 
+define : cross-map proc list1 list2
+  . "every element in one list should pair with all element in the other list once"
+  let loop : : e1 list1
+    if : null? e1
+      . '()
+      cons
+        let inner-loop : : e2 list2
+          if : null? e2
+            . '()
+            cons
+              proc : car e1
+                     car e2
+              inner-loop : cdr e2
+        loop : cdr e1
+        
 define : main args
   define file : open-output-file "data.txt"
-  map
+  cross-map
     lambda : x1 y1
       define x : * x1 x-scl
       define y : * y1 y-scl
@@ -56,7 +71,9 @@ define : main args
             int : / x-max x-scl
     range : int : / y-min y-scl
             int : / y-max y-scl
-           
+  
+  close-port file
+
   system : string-append "gnuplot -e \"set terminal png size 800,600; set xrange [" (number->string x-min) ":" (number->string x-max) "]; set yrange [" (number->string y-min) ":" (number->string y-max) "]; set output 'output.png'; plot 'data.txt' using 1:2:3:4 with vectors\""
   
 ;;; Local Variables:
