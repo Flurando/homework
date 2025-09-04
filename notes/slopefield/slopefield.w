@@ -47,7 +47,7 @@ define : cross-map proc list1 list2
               inner-loop : cdr e2
         loop : cdr e1
         
-define : write-data dy/dx
+define* : write-data dy/dx #:optional (x-min x-min) (x-max x-max) (y-min y-min)  (y-max y-max) (x-scl x-scl) (y-scl y-scl) (distance distance)
   define file : open-output-file "data.txt"
   cross-map
     lambda : x1 y1
@@ -74,7 +74,7 @@ define : write-data dy/dx
   
   close-port file
 
-define : draw-data
+define* : draw-data #:optional (x-min x-min) (x-max x-max) (y-min y-min)  (y-max y-max)
   system : string-append "gnuplot -e \"set terminal png size 800,600; set xrange [" (number->string x-min) ":" (number->string x-max) "]; set yrange [" (number->string y-min) ":" (number->string y-max) "]; set output 'output.png'; plot 'data.txt' using 1:2:3:4 with vectors\""
 
 define : main args

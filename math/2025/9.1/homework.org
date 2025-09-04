@@ -11,4 +11,141 @@
 
 #+begin_comment
 9.1 1.1 Problems 1-25 mod 5
+9.3 1.2 Problems 1-14 mod 3
 #+end_comment
+
+* 9.1
+** 5
+$\frac{dy}{dx}=3y-2$
+** 10
+[[file:images/9.1-10/output.png]]
+the code to draw this is
+#+begin_src wisp
+  #!/usr/bin/env sh
+  exec guile -L ../../../../../notes/slopefield/ -x .w --language=wisp --no-auto-compile -s "$0" "$@"
+  !#
+
+  use-modules : slopefield
+
+  define : square x
+    * x x
+  
+  define : dy/dx x y
+    * y : square : - y 2
+
+  ;; by default, x-min=y-min=-8
+  ;; x-max=y-max=8
+  ;; x-scl=y-scl=1
+  ;; distance=0.4
+
+  ;; write-data <the function dy/dx> (optional arguments in order: x-min x-max y-min y-max x-scl y-scl
+  ;; distance)
+  write-data dy/dx -16 8
+
+  ;; draw-data (optional arguments in order: x-min x-max y-min y-max)
+  draw-data -16 8
+#+end_src
+# this code block is not evaluable now, if you can make it work, please send email to teach me!
+
+we can see that it does depends on $y$ at $t=0$,
+if then $y_{t=0}=2,\quad 0$, we know $y$ would not change
+else when $y_{t=0}\in (2,\quad 0)$, $y$ will appoach to $2$
+at last, when $y_{t=0}<0$, y would become negative infinity
+and when $y_{t=0}>2$, y would become positive infinity
+
+** 15
+we can see at $y=3, 0$, there are sharp changes
+so $e$ or $h$
+from the picture, we know $y' < 0$ when $y<0$
+so it is $h$
+
+** 20
+we assume $y$ as the amount of drug present
+and $t$ as time passed
+for $t$, the patient gets $0.5g/h$  inside but have a consumption rate of 40% every hour
+so $\frac{dy}{dt} = 0.5 - 0.4y$
+after a really long time, it must come to a static level
+where the consumptioned equals to breathed
+which means $0.4y=0.5$, giving $y=1.25$ which means $1.25g$
+
+** 25
+[[file:images/9.1-25/output.png]]
+y does not have dependence on $y_{t=0}$ because the whole field is "rotating"
+
+* 9.3
+** 3
+$$\frac{dy}{dt} = -ay+b$$
+$$e^{at}\frac{dy}{dt} = (-ay+b)e^{at}$$
+$$e^{at}\frac{dy}{dt}+ae^{at}y = be^{at}$$
+$$\frac{d(e^{at}y)}{dt} = be^{at}$$
+$$e^{at}y = \frac{b}{a} e^{at} + C$$
+$$y = \frac{b}{a} + Ce^{-at}$$
+sorry for the absense of sketch but I don't have a sketch pad configured here
+and it is extremelly complicated for me to transfer a photo on phone to the computer
+after $a$ increases, the solution start line goes down, and the whole picture becomes flatter
+after $b$ increases, the solution start line goes up
+after bothe $a,b$ increase with a constant ratio, the whole picture is flattened
+
+** 6
+$$\frac{dy}{dt} = -ay$$
+$$\frac{dy}{dt} + ay = 0$$
+$$e^{at}\frac{dy}{dt} + ae^{at} y = 0$$
+$$\frac{de^{at}y}{dt} = 0$$
+$$e^{at}y=C$$
+$$y=Ce^{-at}$$
+suppose $y=C_0+Ce^{-at}$
+$$-aC^{-at} = -aC_0 -aC^{-at} +b$$
+$$C_0=\frac{b}{a}$$
+so $y=\frac{b}{a}+Ce^{-at}$
+
+** 9
+unsure what $a$ is about
+$$245\frac{dv}{dt} = 49^2-v^2$$
+$$\frac{245dv}{(49+v)dt} = 49-v$$
+$$\frac{245d\ln(49+v)}{dt}+(49+v) = 98$$
+suppose $w=\ln(49+v)$
+$$\frac{245dw}{dt}+e^w=98$$
+$$\frac{245dw}{dt}=-e^w+98$$
+$$\frac{dw}{98-e^w}=\frac{dt}{245}$$
+$$-\ln |98-e^w|+C_1 = \frac{t}{245}+C_2$$
+$$\ln |98-e^w| = -\frac{t}{245}+C$$
+$$98-e^w = \pm e^{-\frac{t}{245}+C}$$
+$$v=49\pm e^{-\frac{t}{245}+C}$$
+
+here taking the initial direction as positive direction
+since $49\pm e^C=0$
+we know $v=49-e^{-\frac{t}{245}+2\ln7}$
+it is plotted like
+#+begin_src gnuplot :file images/9.3-9/output.png :exports both
+  set term png size 300,300
+  set xrange [0:600]
+  set yrange [0:50]
+  set xlabel "X"
+  set ylabel "Y"
+  set notitle
+
+  f(x) = 49-exp(2*log(7)-x/245)
+
+  plot f(x) title "v"
+#+end_src
+
+#+RESULTS:
+[[file:images/9.3-9/output.png]]
+
+don't understand what these two drag forces mean, making the curve instead of a line?
+in that way, we need $x=\int_0^t v dt$
+so $x=49t+245e^{-\frac{t}{245}+2\ln7}$
+now $300=49t+245e^{-\frac{t}{245}+2\ln7}$
+so $\frac{300}{49}=t+245e^{-\frac{t}{245}}$
+let $f=\frac{t}{245}$
+we have $\frac{60}{49^2}=f+e^{-f}$
+so $f<0$, impossible. can't solve this.
+
+** 12
+$$\frac{du}{dt} = -ku +kT$$
+using the universal solution we got earlier,
+$$u=T+Ce^{-kt}$$
+since $T+C=u_0$, we have $C=u_0-T$
+so $u=T+(u_0-T)e^{-kt}$
+$$2e^{-k\rho} = 1$$
+
