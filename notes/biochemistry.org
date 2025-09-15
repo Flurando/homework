@@ -182,4 +182,43 @@ Native protein (N) to/from Denatured protein (D)
 *** Dihedral Angles
 The amide or peptide bond plans are joinded by the tetrahedral bonds of the $\alpha$-carbon
 The rotation parameters are $\phi$ (N-ter) and $\psi$ (C-ter).
-They are decided by 支链
+*They are decided by 支链*
+肽键张角omega永远是180度，是个平面
+后面的二级结构其实就是平面如何耦合，靠那个连接处的C
+*** Classes of Secondary Structure 二级结构
+Alpha helices
+Other helices
+Beta sheet (composed of "beta strands")
+..
+**** $\alpha$-helix
+$\psi=-45^{\circ}, \phi=-60^{\circ}$
+*stablized by H bonds*
+H被氨拉走，本身桥有O，生成氢键
+本身又有一个H和O，一共两个氢键
+这也是靠支链来的，所以不是任何氨基酸结合都生成alpha helix
+现在只是链内相邻的作用
+***** numbers to know
+3.6 residues per turn
+1.5 Angstroms (0.15nm) rise per residue
+:angstroms:
+埃
+量度单位，等于$10^{-10}$米，0.1纳米，表示波长之类的
+:end:
+..
+***** exposed N-H and C=O groups at the ends of an alpha helix can be "capped"
+**** $\beta$-Pleated Sheet
+$\psi=130^{\circ}, \phi=-140^{\circ}$
+大于90度，不转弯，拉得比较平
+相邻条头尾是反的，这样O和H刚好更靠近，生成氢键。
+这样相反的叫 *反平衡结构* ， 是氢键让它在生成链的转弯（可能是很大的"弯"）时将其稳住
+***** Spider Silk
+蛛丝蛋白就有这样的beta sheet结构
+**** Alpha-turn
+** how do polypeptides fold into three dimensional protein structures?
+*** proteins fold so as to form the most stable structures
+Formations of large numbers of intramolecular hydrogen bonds
+Reduction in the surface area accessible to solvent that occurs upon folding
+(not all aa are polar/hydrophilic, next slide)
+*** fibrous proteins胶原蛋白
+single axis
+mechanically strong

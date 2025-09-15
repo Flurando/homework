@@ -4,3 +4,4 @@
 余弦形式等三种表达形式都符合微分方程，重要
 ** 方程表达
 sin，cos波那种
+** recall harmonic oscillations

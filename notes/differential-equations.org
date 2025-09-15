@@ -64,3 +64,13 @@ each point t,y : short line segment : group of solution
 ** 一阶线性非齐次方程
 $P(t)\frac{dy}{dt}+Q(t)y=G(t)$
 $\frac{dy}{dt}+ay=g(t)$ -> $e^{at}$
+** LVP带有初始条件的常微分方程
+** implicit or explicit 隐式或显式
+** 0次homogenous齐次等式
+xy同时翻倍不影响微分值
+** $\frac{dy}{dx}=\frac{a_1x+b_1y+c_1}{a_2x+b_2y+c_2}$
+** Linear vs Nonlinear
+*** Existence & Uniqueness Theorem for $1^{st}$ Linear D.E.
+*** $\exists !$ Theorem for $1^{st}$ Nonlinear D.E.
+$\frac{dy}{dt} = f(t,y), y(t_0)=y_0$
+???这里不知所云
