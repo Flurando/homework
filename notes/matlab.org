@@ -1,6 +1,6 @@
 #+TITLE: MATLAB INTRO
 
-#+begin_src octave :exports results
+#+begin_src octave :results value :exports both
   n = [1:10];
   x = 5*n+4;
   ans = x
@@ -8,3 +8,87 @@
 
 #+RESULTS:
 | 9 | 14 | 19 | 24 | 29 | 34 | 39 | 44 | 49 | 54 |
+
+可以用的命令：（都可以当成函数）
+1. cd
+2. help
+   help command/function返回command/function的帮助文件
+3. home 帮你把一切翻上去，从显示的第一行开始
+4. clc 清空command window
+
+经常用的函数：
+1. sqrt
+2. nextpow2
+3. abs
+4. conj 求复数共轭
+5. round 四舍五入取整（floor和ceil上下取整）
+6. mod 求余数（对比rem除后余数）
+7. sign 返回符号，只有1，0，-1三种可能
+
+当计算器，+-*/^
+优先级：
+1. 圆括号()
+2. 幂函数^
+3. 乘除*/
+4. 加减+-
+
+format用法
+format 同 format short，小数点后四位
+format long
+format shortE
+format longE
+format shortG
+format longG
+format rat 输出rational number，比如一个分数而不是近似小数
+format compact
+format loose
+#+begin_src octave :results output :exports both
+  format long
+  pi
+  format short
+  pi
+#+end_src
+
+#+RESULTS:
+: ans = 3.141592653589793
+: ans = 3.1416
+
+复数的输入
+#+begin_src octave :results output :exports both
+  3+4i
+  complex(3, 4)
+  abs(3+4i)
+  angle(3+4i)
+  imag(3+4i)
+  real(3+4i)
+  conj(3+4i)
+#+end_src
+
+#+RESULTS:
+: ans =  3 + 4i
+: ans =  3 + 4i
+: ans = 5
+: ans = 0.9273
+: ans = 4
+: ans = 3
+: ans =  3 - 4i
+
+可以除以0，但只要超过它能表达的上限就算无穷大，特别的，0除以0啊无穷大和无穷大减除都不算数
+#+begin_src octave :results output :exports both
+  3.1/0
+  exp(1000)
+  0/0
+  Inf-Inf
+  Inf/Inf
+  Inf*0
+#+end_src
+
+#+RESULTS:
+: ans = Inf
+: ans = Inf
+: ans = NaN
+: ans = NaN
+: ans = NaN
+: ans = NaN
+
+

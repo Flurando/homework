@@ -48,5 +48,138 @@ C-C bond 343kJ/mol
 :end:
 
 weak forces 0.4-40kJ/mol => decide which of them can form bonds
+further *deside protein structure*
 
 ** the Organization and Structure of Cells
+
+* chapter 2
+** water
+*** hydrophobic interaction
+fatty acid in water as example
+cage -> four becomes one, use less water molecules
+
+**** hydrophobic interaction *decide*
+1. which amino acid to be placed here or there
+2. which protein to be set inside a cell or on the surface
+
+*** the solvent properties of water derive from its polar nature
+
+** pH
+*** enzyme activity is influenced by pH
+*** K_a酸度系数
+$K_a=\frac{[H^+][A^-]}{[HA]}$
+**** pK_a
+加$p$就是$-log_{10}$
+*** the dissociation behavior weak
+** what are Buffers and what do they do
+
+* chapter 4
+Amino acids
+** structures and properties of amino acids
+四面体tetrahedral structure
+必定有-NH_2（可能和H^+结合） amino group
+必定有-COOH（可能失去H^+） carboxyl group
+
+支链决定氨基酸是碱性还是酸性
+
+:note:
+alpha C means the C in middle of an amino acid
+:end:
+
+contain a central tetrahedral carbon atom
+some amino acids are not found in proteins
+
+the 20 common amino acids
+S还是很重要（只用4种顶多16个）=> 启动子就是含S的氨基酸
+
+ATCG
+G用于转弯
+有O和-NH_2时很可能是个偶极polar氨基酸
+
+disulfide bridge二硫键 很稳定
+
+** titrations of polyprotic amino acids
+等电点
+** Nucleophilic substitution reaction of carboxylic acids亲核取代反应
+*** 亲核体（有机化学内容）
+** reactions of amino acids
+e.g. Edman reagent Phenylisothiocyanate aggrv. PITC
+*** this edman degradation can be used to N-terminal protein sequencing
+N端第一个氨基酸可以分离出来，叫PITC，和？？结合后叫PTH，可以得到第一个到底是什么
+循环可以测序
+*** 当两个-SH靠得很近，会发生氧化反应
+生成-S-S-共价键
+用于稳定蛋白的三维结构（单个多肽链自己钉起来学术来说是三级结构，当两个多肽链靠这个结合，就是四级结合）
+*** Rules for Description of Chiral Centers in the R,S System逆时针还是顺时针
+Right-handed -> D type
+Left-handed -> L type
+对称的是AA
+*** Spectroscopic Properties
+看UV吸收谱，蛋白质吸收谱在280，如果提取的DNA吸收谱在280有峰，说明样品被蛋白质污染了
+** Seperation of amino acids
+*** chromatography 色谱
+1. stationary固定相
+2. mobile phase
+**** HPLC amino acid analysis
+吸流，壁带有负电荷，这样不同氨基酸通过速度不同，可以分离
+要取出带正电荷被吸住的氨基酸通过ION EXCHANG CHROMATOGRAPHY，添加更强的阳离子把氨基酸替出来，如NaCl溶液
+*** NMR 核磁共振
+** What is the Fundamental Structural Pattern in Proteins?
+Peptide肽 的生成
+多肽里有几个氨基酸，只要数-N-C_a-C_b-排列的个数
+N is the amide nitrogen of the amino acid
+C_a is the alpha cabon
+C_b is
+*** amino acids join via peptide bonds肽键
+loss of a water molecule脱一个水分子
+*** 肽键为何是一个平板结构
+(false) a pure double bond between C and O would permit free rotation around the C-N bond
+the true election density is intermediate
+其有trans顺时针和cis逆时针两种摆法，使得即便它是固定的平板，氨基酸也可以动
+就是顺逆时针的区别，这样需要的能量最少
+*** Peptides
+residue残基
+dipeptide
+tripeptide
+oligopeptide
+*** Protein
+One polypeptide多肽 chain链: a monometic protein
+more than one: multimeric protein(subunites)
+Homomultimer: one kind of chain
+Heteromultimer: two or more different chains
+Tetramultimer: four or more different chains
+**** Insulin 胰岛素
+hexa- 六合
+* Chapter 6
+Protein
+原意来自希腊海神，有不同形态出现
+** outline
+一级结构 Primary Structure - amino acid sequence
+二级结构 Secondary Structure - folding of polypetide chain
+三级结构 Tertiary Structure - 3D folding
+四级结构 Quaternary Structure - interation of different polypeptide chain
+** Protein Structure and Function are Tightly Linked
+** What Noncovalent Interactions Stabilize the Higher Levels of Protein Structures
+weak force
+e.g.
+van der Waals 0.4-4kJ/mol
+hydrogen bonds 12-39kJ/mol
+ionic bonds 20kJ/mol
+hydrophobic interactions <40kJ/mol
+*** secondary , tertiary and qua.. are formed and stablized by weak forces.
+van der Waals is ubi..
+*** Electrostatic interactions in Proteins
+** What Role Does the Amino Acid Sequence Play in Protein Structure?
+*** The meaning of $\delta H^\circ$
+Unfolding process:
+Native protein (N) to/from Denatured protein (D)
+1. breaking of hydrogen bonds
+2. exposure of hydrophobic groups
+3. raise the energy of the solution
+4. ..
+
+** What are the elements of Secondary Structure in Proteins, ..
+*** Dihedral Angles
+The amide or peptide bond plans are joinded by the tetrahedral bonds of the $\alpha$-carbon
+The rotation parameters are $\phi$ (N-ter) and $\psi$ (C-ter).
+They are decided by 支链

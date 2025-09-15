@@ -41,3 +41,26 @@ each point t,y : short line segment : group of solution
 *** two observatons
 1. constructing a direction field *need not* solve equation
 2. Computer or other computational or graphical aid are well suited
+
+* first differential equations
+** 求解微分方程的难易程度
+非线性方程比线性方程难
+高阶方程比低阶方程难
+方程组比单个方程难
+大部分未必有显式解
+** Questions
+*** Question of existence of a solution存在性s
+**** Solvable first equations
+- linear equation线性方程
+- separable equation可分离变量方程
+- exact equation恰当方程
+  形式上很像已知
+**** important applications
+- numerical computation
+- theoretical computation
+- differencial equations差分方程
+*** Question of uniqueness唯一性
+*** How to find a solution of the given equation计算
+** 一阶线性非齐次方程
+$P(t)\frac{dy}{dt}+Q(t)y=G(t)$
+$\frac{dy}{dt}+ay=g(t)$ -> $e^{at}$
