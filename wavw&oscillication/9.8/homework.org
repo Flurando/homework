@@ -1,0 +1,40 @@
+#+TITLE: 1 Wave and Oscillation Homework
+#+AUTHOR: 2024110144 陈有骏
+#+LATEX_COMPILER: xelatex
+#+LATEX_CLASS: article
+#+LATEX_CLASS_OPTIONS: [a4paper,10pt]
+#+LATEX_HEADER: \usepackage[margin=0.5in]{geometry}
+#+LATEX_HEADER: \usepackage{xeCJK}
+#+LATEX_HEADER: \usepackage{fontspec}
+#+LATEX_HEADER: \setCJKmainfont{WenQuanYi Zen Hei}
+#+OPTIONS: \n:t toc:nil num:nil date:nil
+
+* 1
+taking downward as positive direction
+we can see from the picture that
+$\lambda=0.05, A=7.5$
+so the function to describe the oscillation can be written as
+$a(t)=7.5\sin (\frac{0.05}{2\pi} t)$
+so *the amplitude of the acceleration* is $7.5cm/s^2$
+*the period* is $0.05s$
+*the angular frequency* is $\frac{0.05}{2\pi}rad/s$
+the velocity can be written as $v(t)=\int_0^t a(t) dt$
+which is $v(t)=-\frac{7.5\times 0.05}{2\pi} \cos (\frac{0.05}{2\pi} t)$
+so *the amplitude of the velocity* is $\frac{7.5\times 0.05}{2\pi}cm/s$
+further more, *the amplitude of the displacement* is $\frac{7.5\times 0.0025}{4\pi^2}cm$
+* 2
+taking leftward as positive direction
+$v(0)=v_0, x(0)=x_0$
+suppose $y(t)=y_0\sin (\omega t)$
+$F(t)=-k(x-x_0)-c(v-\frac{dy}{dt})$
+since $F=ma$, we have $\frac{m}{k}a+\frac{c}{k}v+x=y+\frac{c}{k}\frac{dy}{dt}$
+and *nature frequency* is $\sqrt{\frac{k}{m}}$
+*damping coefficient* $\frac{c}{2\sqrt{km}}$
+since I don't have the handy list of solution by hand
+do not know how to solve the ODE here..
+* 3
+$m\frac{d^2 x}{dt^2}=F(t)-kx-c\frac{dx}{dt}$
+$\frac{m}{k} \frac{d^2 x}{dt^2} + \frac{c}{k}\frac{dx}{dt} + x = 0$
+we can let *nature frequency* to be $\sqrt{\frac{k}{m}}$
+and *damping coefficient* to be $\frac{c}{2\sqrt{km}}$
+then check the list to have $x(t)$ solution..
