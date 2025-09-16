@@ -74,3 +74,17 @@ xy同时翻倍不影响微分值
 *** $\exists !$ Theorem for $1^{st}$ Nonlinear D.E.
 $\frac{dy}{dt} = f(t,y), y(t_0)=y_0$
 ???这里不知所云
+*** general solution
+**** Linear D.E.
+General Solution contains one arbitrary constant
+all possible solutions follow by specifying values for the costant
+**** Nonlinear D.E.
+May be other solutions that cannot be obtained by giving values to this constant
+** Bernoulli Equations
+$y'+p(t)y=q(t)y^n$ for $n\neq 0,1$ normally
+$n=1$ is Linear D.E.
+$n>1$ is Nonlinear D.E.
+when $y\neq 0$, $y^{-n}y'+p(t)y^{1-n}=q(t)$
+since $y^{-n}y'=\frac{1}{1-n}\frac{dy^{1-n}}{dt}$
+..
+

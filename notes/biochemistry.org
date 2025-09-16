@@ -219,6 +219,44 @@ $\psi=130^{\circ}, \phi=-140^{\circ}$
 Formations of large numbers of intramolecular hydrogen bonds
 Reduction in the surface area accessible to solvent that occurs upon folding
 (not all aa are polar/hydrophilic, next slide)
-*** fibrous proteins胶原蛋白
+** 三级结构
+*** fibrous proteins
 single axis
 mechanically strong
+**** Lys-Lys crosslinking
+将所有核氨酸固定，只能在细胞外催化。
+**** Collagen and bone formation
+骨头去掉钙，剩下几乎都是胶原蛋白纤维，形成很多坑洞。
+"hole regions"-they contain carbonhydrate..
+**** Structural basis of the collagen triple helix
+Interchain H bonds of HyP -> stabilizing
+intrachain lysine-lysine and interchain hydroxypyndinium crosslinks (covalent bond)
+*** Globular Proteins 一坨
+Globular proteins much more than fibrous proteins
+内部其实也有很多二级结构（如alpha helix和beta sheet）
+**** some design principles
+Helices and sheets make up the core of most globular proteins
+Most polar residures face the outside
+Most hydrophobic residues face the interior
+Close association between aa
+*empty space exists* because ratio of vander Waals' volume to total (actual) volume is only 0.72 to 0.77
+The empty space is in the form of small cavities
+空间可以用于接受底物之类的，而且它自身在振动，需要这些空隙
+能量最低最稳定，暴露在外的疏水部分越少能量越低，除非有二硫键
+内部的N-C-C骨架的稳定性靠二级结构的氢键反平衡结构来解决N的偶极问题
+**** protein core versus protein surface
+- core
+  typically constant and conserved
+  in different organisms
+  in sequence and structure
+- surface
+  loops and turns that connect the helices and sheets of the core
+
+a comlex landscape of different structure elements
+intereact with small molecules or with other proteins
+they are the basis for interactions:
++ enzyme-substrate interactions
++ cell signaling
++ immune responses (epitope抗原决定基)
++ ..
+

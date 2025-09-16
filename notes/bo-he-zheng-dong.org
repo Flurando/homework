@@ -5,3 +5,5 @@
 ** 方程表达
 sin，cos波那种
 ** recall harmonic oscillations
+** forced oscillation
+*** under damping or ..
