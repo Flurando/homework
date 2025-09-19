@@ -6,6 +6,7 @@
 #+LATEX_HEADER: \usepackage[margin=0.5in]{geometry}
 #+LATEX_HEADER: \usepackage{xeCJK}
 #+LATEX_HEADER: \usepackage{fontspec}
+#+LATEX_HEADER: \usepackage{amsmath}
 #+LATEX_HEADER: \setCJKmainfont{WenQuanYi Zen Hei}
 #+OPTIONS: \n:t toc:nil num:nil date:nil
 
@@ -49,7 +50,8 @@ we wish there is a $u(t)$ to have $u'(t)=-3u(t)$
 seemingly $u(t)=e^{-3t}$ makes sense
 so $e^{-3t}(y^{-1})'+(e^{-3t})'y^{-1}=-te^{-3t}$
 then the left part can be rewritten as $(e^{-3t}y^{-1})'$
-so $$\begin{align*}
+so
+$$\begin{aligned}
 e^{-3t}y^{-1}  &= \int -te^{-3t} dt\\
 &= \int -t \cdot (-\frac{1}{3}) de^{-3t}\\
 &= \frac{1}{3} \int t \cdot de^{-3t}\\
@@ -58,7 +60,7 @@ e^{-3t}y^{-1}  &= \int -te^{-3t} dt\\
 &= \frac{1}{3} \left(te^{-3t} + 3 e^{-3t} - C\right)\\
 &= \frac{1}{3} (t+3)e^{-3t} + \frac{1}{3}C\\
 &= \frac{1}{3} (t+3)e^{-3t} + C
-\end{align*}$$
+\end{aligned}$$
 so $\frac{1}{y}=1 + \frac{t}{3} + Ce^{3t}$
 when $y(0)=y_0$, we know $\frac{1}{y_0}=1 + C$
 giving $C= \frac{1}{y_0}-1$
@@ -88,10 +90,11 @@ when $y_0<1$, of course it is smaller, even negative
 
 ** 20
 given $\phi '(t) + p(t)\phi (t)=0$
-then $$\begin{align*}
+then
+$$\begin{aligned}
 (c\phi (t))' + p(t) (c\phi (t)) &= c\phi '(t) + cp(t)\phi (t)\\
 &= c(\phi '(t) + p(t)\phi (t))
-\end{align*}$$
+\end{aligned}$$
 when $c=0$, of course
 when $c\neq 0$, since $\phi '(t) + p(t)\phi (t)=0$, still zero
 
@@ -99,12 +102,13 @@ when $c\neq 0$, since $\phi '(t) + p(t)\phi (t)=0$, still zero
 $y^{-3}y'-\epsilon y^{-2}=-\delta$
 since $(y^{-2})' = -2y^{-3}y'$
 so $(y^{-2})'+2\epsilon y^{-2}=2\delta$
-then $$\begin{align*}
+then
+$$\begin{aligned}
 y^{-2}e^{2\epsilon t}
 &= \int 2\delta e^{2\epsilon t} dt\\
 &= 2\delta \int e^{2\epsilon t} dt\\
 &= \frac{\delta}{\epsilon} e^{2\epsilon t} + C
-\end{align*}$$
+\end{aligned}$$
 so $y^{-2}=\frac{\delta}{\epsilon} + Ce^{-2\epsilon t}$
 
 * 9.17
@@ -120,7 +124,7 @@ what is "f(y)"?
 when $y\neq 1$, $y'=k(1-y)^2>0$, meaning $y(t)$ is increasing
 *** c
 $$\frac{dy}{(1-y)^2}=kdt, k>0$$
-let $m=1-y
+let $m=1-y$
 $$-\int \frac{dm}{m^2}=kt+C$$
 $$\frac{1}{m}=kt+C$$
 $$\frac{1}{1-y}=kt+C$$
@@ -151,26 +155,27 @@ take $C$ in, we have $\frac{y}{1-\frac{y}{k}} = \frac{y_0}{1-\frac{y_0}{k}}e^{rt
 when $y=0$, $y_0=0$
 when $y\neq 0$, $\frac{1}{\frac{1}{y} - \frac{1}{k}}=\frac{y_0}{1-\frac{y_0}{k}}e^{rt}$
 so $\frac{1}{y} - \frac{1}{k}=\frac{1-\frac{y_0}{k}}{y_0e^{rt}}$
-then $\begin{align*}
+then
+$$\begin{aligned}
 \frac{1}{y} &= \frac{k-y_0}{ky_0e^{rt}}+\frac{1}{k}\\
 &= \frac{k-y_0+y_0e^{rt}}{ky_0e^{rt}}
-\end{align*}$
+\end{aligned}$$
 so
-$\begin{align*}
+$\begin{aligned}
 y &= \frac{ky_0e^{rt}}{k-y_0+y_0e^{rt}}\\
 &= \frac{ky_0}{(k-y_0)e^{-rt}+y_0}\\
 &= \frac{ky_0}{y_0 + (k-y_0)e^{-rt}}
-\end{align*}$
+\end{aligned}$
 
 ** 15
 $dy\cdot \frac{1}{y(K-y)} = \frac{r}{K}dt$
 we wish $\frac{1}{y(K-y)}=\frac{A}{y}+\frac{B}{K-y}$
 so $1=KA-yA+yB$
 which requires
-$$\begin{align*}
+$$\begin{aligned}
 A &= \frac{1}{K}\\
 B &= \frac{1}{K}
-\end{align*}$$
+\end{aligned}$$
 so $dy\cdot (\frac{1}{y}+\frac{1}{K-y}) = rdt$
 integrate both sides for $t$
 we have $\ln |y| - \ln |K-y| = rt +C$
@@ -187,7 +192,7 @@ so $y=\frac{K}{1+\frac{1}{e^{rt}+\frac{1}{frac{K}{y_0}-1}-1}}$
 *** a
 $y=\frac{K}{1+\frac{1}{e^{rt}-\frac{1}{2}}}$
 we want $\tau$ that
-$$\begin{align*}
+$$\begin{aligned}
 \frac{2K}{3} &= \frac{K}{1+\frac{1}{e^{r\tau}-\frac{1}{2}}}\\
 \frac{2}{3} &= \frac{1}{1+\frac{1}{e^{r\tau}-\frac{1}{2}}}\\
 2 (e^{r\tau}-\frac{1}{2}) &= 3\\
@@ -195,13 +200,13 @@ e^{r\tau}-\frac{1}{2} &= \frac{3}{2}\\
 e^{r\tau} &= 2\\
 r\tau &= \ln 2\\
 \tau &= \frac{\ln 2}{r}
-\end{align*}$$
+\end{aligned}$$
 when $r=0.025$,  $\tau=40\ln 2$
 which is about $27.725887222397812$ by calculator
 *** b
 $y=\frac{K}{1+\frac{1}{e^{rt}+\frac{1}{\frac{1}{\alpha}-1}-1}}$
 apply the condition, we have
-$$\begin{align*}
+$$\begin{aligned}
 \beta &= \frac{1}{1+\frac{1}{e^{rT}+\frac{1}{\frac{1}{\alpha}-1}-1}}\\
 \frac{1}{\beta} &= 1+\frac{1}{e^{rT}+\frac{1}{\frac{1}{\alpha}-1}-1}\\
 \frac{1}{\beta}-1 &= \frac{1}{e^{rT}+\frac{1}{\frac{1}{\alpha}-1}-1}\\
@@ -212,7 +217,7 @@ $$\begin{align*}
 e^{rT} &= \frac{1-2\alpha+\alpha\beta}{(1-\alpha)(1-\beta)}\\
 rT &= \ln |\frac{1-2\alpha+\alpha\beta}{(1-\alpha)(1-\beta)}|\\
 T &= \frac{1}{r} \ln |\frac{1-2\alpha+\alpha\beta}{(1-\alpha)(1-\beta)}|
-\end{align*}$$
+\end{aligned}$$
 when $\alpha\to 0$, $T\to \frac{1}{r} \ln |1-\beta|$
 further more, when $\beta\to 1$, $T\to \infty$
 applying the values
@@ -221,27 +226,27 @@ which evaluates to $T=40\ln 89 - 80\ln 3$
 which is approximately $91.65647169583681$ by calculator
 
 ** 20
-$$\begin{align*}
+$$\begin{aligned}
 y' &= ry-\frac{r}{K}y^2-h\\
 y^{-2}y'-ry^{-1} &= -\frac{r}{K}-hy^{-2}\\
 (y^{-1})'+ry^{-1} &= \frac{r}{K}+hy^{-2}\\
 \frac{d(y^{-1}e^{rt})}{dt} &= e^{rt}\frac{r}{K}+hy^{-1}\cdot y^{-1}e^{rt}
-\end{align*}$$
+\end{aligned}$$
 suppose $m=y^{-1}e^{rt}$, $C_1=e^r\frac{r}{K}$, $C_2=he^{-r}$
 $$\frac{dm}{dt} = C_1 e^t + C_2 m^2 e^{-t}$$
 this is not linear, not knowing how to solve this
 *** a
-$$\begin{align*}
-(1-\frac{y}{K})y &= h\
+$$\begin{aligned}
+(1-\frac{y}{K})y &= h\\
 (K-y)y &= Kh\\
 y^2-Ky+Kh &= 0
-\end{align*}$$
+\end{aligned}$$
 since $\delta=K^2-4Kh>0$
 we know there are two equilibrium points
-$$\begin{align*}
+$$\begin{aligned}
 y_1 &= \frac{K-\sqrt{K^2-4Kh}}{2}\\
 y_2 &= \frac{K+\sqrt{K^2-4Kh}}{2}
-\end{align*}$$
+\end{aligned}$$
 *** b
 when $y<y_1$, $y'<0$
 when $y_2>y>y_1$, $y'>0$
