@@ -260,3 +260,12 @@ they are the basis for interactions:
 + immune responses (epitope抗原决定基)
 + ..
 
+**** protein surfaces are complex
+
+**** water and protein surface
+- hydrophilic outside rule
+- protein surface interact with water by H-bond
+
+**** 蛋白质表面的二级结构
+**** Diseases of Protein Folding
+

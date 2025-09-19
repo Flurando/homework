@@ -15,6 +15,8 @@
    help command/function返回command/function的帮助文件
 3. home 帮你把一切翻上去，从显示的第一行开始
 4. clc 清空command window
+5. whos 显示现在有的变量，可用clear清理
+6. what 显示当前工作文件夹下有哪些.m文件
 
 经常用的函数：
 1. sqrt
@@ -91,4 +93,6 @@ format loose
 : ans = NaN
 : ans = NaN
 
-
+命令行输入非已知命令，如“q1”，会尝试运行“q1.m”文件内的matlab代码。
+用%开头的是注释。
+“.m”脚本文件开头的连续注释行会在help命令中被返回，用空行与正文区分。

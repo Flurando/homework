@@ -7,3 +7,16 @@ sin，cos波那种
 ** recall harmonic oscillations
 ** forced oscillation
 *** under damping or ..
+** $Ax+Bx+Cx=0$ O.D.E.
+$\begin{align*}
+x(t)
+&= Acos(\omega t+\phi)\\
+&= ce^{i\omega t}+ce^{-i\omega t}
+\end{align*}$
+** E
+若不考虑相位$\phi$
+$\begin{align*}
+E &= \frac{1}{2}kx^2+\frac{1}{2}mv^2\\
+&= \frac{1}{2}k[A\cos \omega t]^2+\frac{1}{2}m[-A\omega\sin\omega t]^2\\
+&= \frac{1}{2}kA^2
+\end{align*}$

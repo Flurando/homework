@@ -87,4 +87,20 @@ $n>1$ is Nonlinear D.E.
 when $y\neq 0$, $y^{-n}y'+p(t)y^{1-n}=q(t)$
 since $y^{-n}y'=\frac{1}{1-n}\frac{dy^{1-n}}{dt}$
 ..
+** $\frac{dy}{dt}=r(1-\frac{y}{K})y$
+it can become $\ln |y| - \ln |1-\frac{y}{k}| = rt + C$
+这里K也叫环境承载量
+$C=\frac{y_0}{1-\frac{y_0}{K}}$
+$y(t)=\frac{y_0K}{y_0+(K-y_0)e^{-rt}}$
 
+解有
+- $y_0=0$
+- $y_0=K$
+- $y_0>0$
+  when $t\to +\infty$, $y(t) \to K$
+
+*** a critical threshold
+$\frac{dy}{dt} = -r \left(1-\frac{y}{T}\right) y$
+$f(y)$ is a parabola 抛物线
+Equilibrium solutions $y=0, T$
+*** semistable equilibruim solutions
