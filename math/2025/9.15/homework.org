@@ -155,7 +155,8 @@ then $\begin{align*}
 \frac{1}{y} &= \frac{k-y_0}{ky_0e^{rt}}+\frac{1}{k}\\
 &= \frac{k-y_0+y_0e^{rt}}{ky_0e^{rt}}
 \end{align*}$
-so $\begin{align*}
+so
+$\begin{align*}
 y &= \frac{ky_0e^{rt}}{k-y_0+y_0e^{rt}}\\
 &= \frac{ky_0}{(k-y_0)e^{-rt}+y_0}\\
 &= \frac{ky_0}{y_0 + (k-y_0)e^{-rt}}
@@ -165,10 +166,11 @@ y &= \frac{ky_0e^{rt}}{k-y_0+y_0e^{rt}}\\
 $dy\cdot \frac{1}{y(K-y)} = \frac{r}{K}dt$
 we wish $\frac{1}{y(K-y)}=\frac{A}{y}+\frac{B}{K-y}$
 so $1=KA-yA+yB$
-which requires $\begin{align*}
+which requires
+$$\begin{align*}
 A &= \frac{1}{K}\\
 B &= \frac{1}{K}
-\end{align*}$
+\end{align*}$$
 so $dy\cdot (\frac{1}{y}+\frac{1}{K-y}) = rdt$
 integrate both sides for $t$
 we have $\ln |y| - \ln |K-y| = rt +C$
@@ -209,7 +211,7 @@ $$\begin{align*}
 \frac{\alpha-\beta}{(1-\alpha)(1-\beta)} &= 1-e^{rT}\\
 e^{rT} &= \frac{1-2\alpha+\alpha\beta}{(1-\alpha)(1-\beta)}\\
 rT &= \ln |\frac{1-2\alpha+\alpha\beta}{(1-\alpha)(1-\beta)}|\\
-T &= \frac{1}{r} \ln |\frac{1-2\alpha+\alpha\beta}{(1-\alpha)(1-\beta)}|\\
+T &= \frac{1}{r} \ln |\frac{1-2\alpha+\alpha\beta}{(1-\alpha)(1-\beta)}|
 \end{align*}$$
 when $\alpha\to 0$, $T\to \frac{1}{r} \ln |1-\beta|$
 further more, when $\beta\to 1$, $T\to \infty$
@@ -224,7 +226,7 @@ y' &= ry-\frac{r}{K}y^2-h\\
 y^{-2}y'-ry^{-1} &= -\frac{r}{K}-hy^{-2}\\
 (y^{-1})'+ry^{-1} &= \frac{r}{K}+hy^{-2}\\
 \frac{d(y^{-1}e^{rt})}{dt} &= e^{rt}\frac{r}{K}+hy^{-1}\cdot y^{-1}e^{rt}
-\end{align*}
+\end{align*}$$
 suppose $m=y^{-1}e^{rt}$, $C_1=e^r\frac{r}{K}$, $C_2=he^{-r}$
 $$\frac{dm}{dt} = C_1 e^t + C_2 m^2 e^{-t}$$
 this is not linear, not knowing how to solve this
@@ -263,4 +265,42 @@ when $y\neq y_0$, $y'<0$, so it is semistable
 $\frac{dy}{dt}=ay-y^3=y(a-y^2)$
 when $a \leq 0$, there is only one critical point, $y=0$
 when $a > 0$, there are two, $y=0$ or $y=\sqrt{a}$
+*** a
+not having effective way to draw phase line, so jump now, sorry.
+*** b
+$y^{-3}y'-ay^{-2}=0$
+$-2y^{-3}y'+2ay^{-2}=0$
+$(y^{-2})'+2ay^{-2}=0$
+$e^{2at}(y^{-2})'+2ae^{2at}y^{-2}=0$
+$e^{2at}y^{-2}=C$
+$e^{at}y^{-1}=C$
+$y=Ce^{at}$
+#+begin_src gnuplot :file 9.17-2.5-25-b.png :exports both
+  set xrange [0:0.5]
+  set yrange [0:40]
+  set xlabel "x"
+  set ylabel "y"
+  set title "9.17-2.5-25-b"
 
+  plot exp(-x), 2*exp(-x), 5*exp(-x), exp(x), 2*exp(x), 5*exp(x), exp(3*x), 2*exp(3*x), 5*exp(3*x)
+#+end_src
+
+#+RESULTS:
+[[file:9.17-2.5-25-b.png]]
+
+*** c
+#+begin_src gnuplot :file 9.17-2.5-25-c.png :exports both
+  set xrange [0:10]
+  set yrange [-5:5]
+  set xlabel "x"
+  set ylabel "y"
+  set title "9.17-2.5-25-c"
+
+  f(x)= x==0?0:sqrt(x)
+  f2(x) = x==0?0:-sqrt(x)
+
+  plot f(x) notitle, f2(x) notitle
+#+end_src
+
+#+RESULTS:
+[[file:9.17-2.5-25-c.png]]
