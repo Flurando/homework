@@ -1,0 +1,149 @@
+#+TITLE: Week 9.22 Math Homework
+#+AUTHOR: 2024110144 陈有骏
+#+LATEX_COMPILER: xelatex
+#+LATEX_CLASS: article
+#+LATEX_CLASS_OPTIONS: [a4paper,10pt]
+#+LATEX_HEADER: \usepackage[margin=0.5in]{geometry}
+#+LATEX_HEADER: \usepackage{xeCJK}
+#+LATEX_HEADER: \usepackage{fontspec}
+#+LATEX_HEADER: \usepackage{amsmath}
+#+LATEX_HEADER: \setCJKmainfont{WenQuanYi Zen Hei}
+#+OPTIONS: \n:t toc:nil num:nil date:nil
+
+#+begin_comment
+9.22 2.6 1-22 mod 3 2.7 1-15 mod 5
+2.6 starts from P84, problems at P89
+#+end_comment
+
+* 9.22
+** 2.6
+*** 3
+$(3x^2-2xy+2)dx+(6y^2-x^2+3)dy=0$
+$\frac{d(3x^2-2xy+2)}{dy}=-2x, \frac{d(6y^2-x^2+3)}{dx}=-2x$
+since they are equal, we know this is an exact equation
+suppose $u(x,y)$ suits $\frac{du}{dx}=3x^2-2xy+2$ and $\frac{du}{dy}=6y^2-x^2+3$
+then there is $\frac{d^2 u}{dxdy}=0$
+(since $\frac{d^2 u}{dxdy} = \frac{d^2 u}{dydx}$)
+so $u(x,y)=x^3-x^2y+2x+f(y)$
+then $-x^2+f'(y)=6y^2-x^2+3$
+giving $f'(y)=6y^2+3$
+so $f(y)=2y^3+3y+C$
+then $u(x, y)=x^3-x^2y+2x+2y^3+3y+C$
+combining $\frac{d^2 u}{dxdy}=0$, we know the solution is $x^3-x^2y+2x+2y^3+3y=C$
+*** 6
+$(ye^{xy}\cos 2x-2e^{xy}\sin 2x+2x)dx + (xe^{xy}\cos 2x-3)dy=0$
+$\frac{d(ye^{xy}\cos 2x-2e^{xy}\sin 2x+2x)}{dy}=(xy+1)e^{xy}\cos 2x-2xe^{xy}\sin 2x, \frac{d(xe^{xy}\cos 2x-3)}{dx}=(xy+1)e^{xy}\cos 2x+2xe^{xy}\sin 2x$
+they are different, so this is not an exact equation
+*** 9
+$(2x-y)+(2y-x)y'=0, y(1)=3$
+$\frac{d(2x-y)}{dy}=-1, \frac{2y-x}{dx}=-1$
+this is an exact equation
+suppose $u(x,y)$ suits $\frac{du}{dx}=2y-x, \frac{du}{dy}=2x-y$
+so $u(x,y)=2xy-\frac{1}{2}x^2-\frac{1}{2}y^2+C$
+the solution is $2xy-\frac{1}{2}x^2-\frac{1}{2}y^2=C$
+apply initial conditon, $6-5=C$
+so $C=1$, $2xy-\frac{1}{2}x^2-\frac{1}{2}y^2-1=0$
+*** 12
+$\frac{d(ye^{2xy}+x)}{dy}=(2xy+1)e^{2xy}$
+$\frac{d(bxe^{2xy})}{dx}=b(1+2xy)e^{2xy}$
+so we need $b=1$
+with integration, we have $u(x,y)=\frac{1}{2}e^{2xy}+\frac{1}{2}x^2+C$
+so solutions are $\frac{1}{2}e^{2xy}+\frac{1}{2}x^2=C$
+*** 15
+$\frac{d(x^2y^3)}{dy}=3x^2y^2$
+$\frac{d(x(1+y^2))}{dx}=1+y^2$
+not equal, not exact.
+after multiplied by the integrating factor
+$\frac{dx}{dy}=0$
+$\frac{\frac{1+y^2}{y^3}}{dx}=0$
+both zero, exact.
+so $f(x,y)=\frac{1}{2}x^2-\frac{1}{2}y^{-2}+\ln y + C$
+so $\frac{1}{2}x^2-\frac{1}{2}y^{-2}+\ln y = C$
+*** 18
+suppose that is $u(x,y)$
+then $\frac{d(u(x,y)(3x^2y+2xy+y^3))}{dy}=\frac{d(u(x,y)(x^2+y^2))}{dx}$
+$\frac{d(u(x,y))}{dy}(3x^2y+2xy+y^3)+u(x,y)\frac{d(3x^2y+2xy+y^3)}{dy}=\frac{d(u(x,y))}{dx}(x^2+y^2)+u(x,y)\frac{d(x^2+y^2)}{dx}$
+$\frac{d(u(x,y))}{dy}(3x^2y+2xy+y^3)+u(x,y)(3x^2+3y^2)=\frac{d(u(x,y))}{dx}(x^2+y^2)$
+don't know how to construct this $u(x,y)$
+*** 21
+$y+(2xy-e^{-2y})y'=0$
+can't guess the integrating factor either..
+** 2.7
+*** 5
+$y'=5-3\sqrt{y}$
+the image is
+[[file:images/9.22-2.7-5/output.png]]
+
+seemingly it converges
+
+*** 10
+$y'=y(3-ty), y(0)=0.5$
+$y_{n+1}=y_n+h(y_n(3-t_ny_n))$
+$y_0=0.5, t_0=0$
+
+#+begin_src scheme :results value :exports both
+  (define (f t y)
+    (* y (- 3 (* t y))))
+  (define y0 0.5) ; initial y value when t is the first element in t-lst
+  (define t-lst '(0.5 1.0 1.5 2.0 2.5 3.0)) ; where we want to get the y value
+  (define h-lst '(0.1 0.05 0.025 0.01)) ; this is for different h exploring
+
+  (define (get-y-next y-current h t-current)
+    (+ y-current (* h (- 3 (* t-current y-current)))))
+
+  (define (gen-y-lst h)
+    (let loop ((y-current-lst (list y0))
+	       (t-current-lst t-lst))
+      (if (< (length y-current-lst) (1+ (length t-lst)))
+	  (loop (cons
+		 (get-y-next (car y-current-lst) h (car t-current-lst))
+		 y-current-lst)
+		(cdr t-current-lst))
+	  (cons (format #f "h=~a" h) y-current-lst))))
+
+  (map-in-order gen-y-lst h-lst)
+#+end_src
+
+#+RESULTS:
+| h=0.1   |          1.1496075 |           1.213725 |             1.2183 |       1.147875 |     0.9975 |   0.775 | 0.5 |
+| h=0.05  |  0.957330498046875 | 0.9498005859374999 |       0.9140578125 |    0.848953125 |   0.755625 |  0.6375 | 0.5 |
+| h=0.025 | 0.7703782630920409 |  0.751760284423828 | 0.7218776367187499 | 0.680923828125 | 0.62953125 | 0.56875 | 0.5 |
+| h=0.01  | 0.6194216860068751 |    0.6076512226875 |       0.5924627925 |    0.573941625 |   0.552225 |  0.5275 | 0.5 |
+
+*** 15
+**** a
+
+$y'=1-t+y, y(t_0)=y_0$
+$y'-y=1-t$
+$e^{-t}y'-e^{-t}y=(1-t)e^{-t}$
+$e^{-t}y=\int e^{-t}(1-t) dt$
+
+since
+$$\begin{aligned}
+\int e^{-t}(1-t) dt &= -e^{-t}-\int te^{-t}dt\\
+&= -e^{-t}+\int t d(e^{-t})\\
+&= -e^{-t}+ te^{-t} - \int e^{-t} dt\\
+&= -e^{-t}+ te^{-t} + e^{-t} + C\\
+&= te^{-t} + C
+\end{aligned}$$
+
+we have $y=t+Ce^t$
+apply $y(t_0)=y_0$, we have $C=(y_0-t_0)e{-t_0}$
+so $y=t+(y_0-t_0)e{t-t_0}$
+**** b
+
+$y_k=y_{k-1}+h(1-t_{k-1}+y_{k-1})=(1+h)y_{k-1}+h-ht_{k-1}$
+**** c
+
+if $y_{k-1}=(1+h)^{k-1}(y_0-t_0)+t_{k-1}$
+then $y_k=(1+h)y_{k-1}+h-ht_k-1$
+which is $(1+h)\left((1+h)^{k-1}(y_0-t_0)+t_{k-1}\right)+h-ht_{k-1}$
+which simplifies to $(1+h)^k(y_0-t_0)+t_{k-1}+h$
+which is just $(1+h)^k(y_0-t_0)+t_k$
+and we have $y_0$ as a start, over
+**** d
+
+$y_n=(1+\frac{t-t_0}{n})^n(y_0-t_0)+t$
+when $n\to \infty$
+we have $y_n\to (y_0-t_0)+t$
+which, as $e^{t-t_0}=e^0=1$, is exactly $\phi (t)$
