@@ -96,3 +96,26 @@ format loose
 命令行输入非已知命令，如“q1”，会尝试运行“q1.m”文件内的matlab代码。
 用%开头的是注释。
 “.m”脚本文件开头的连续注释行会在help命令中被返回，用空行与正文区分。
+
+if elseif else
+for
+switch case otherwise
+try catch
+
+eq ge gt le lt ne 它的不等于是~= isequal isequaln
+
+一个for循环的示例，来自老师
+#+begin_src octave :results output :exports both
+  n=10000;
+  s=0;
+  for k=1:n
+    x=rand*100;
+    if ((x<20) && (x>10))||((x<80) && (x>70))
+      s=s+1;
+    end
+  end
+  s
+#+end_src
+
+#+RESULTS:
+: s = 1887

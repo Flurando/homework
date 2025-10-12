@@ -1,0 +1,343 @@
+#+TITLE: Week 9.29 Math Homework
+#+AUTHOR: 2024110144 陈有骏
+#+LATEX_COMPILER: xelatex
+#+LATEX_CLASS: article
+#+LATEX_CLASS_OPTIONS: [a4paper,10pt]
+#+LATEX_HEADER: \usepackage[margin=0.5in]{geometry}
+#+LATEX_HEADER: \usepackage{xeCJK}
+#+LATEX_HEADER: \usepackage{fontspec}
+#+LATEX_HEADER: \usepackage{amsmath}
+#+LATEX_HEADER: \setCJKmainfont{WenQuanYi Zen Hei}
+#+OPTIONS: \n:t toc:nil num:nil date:nil
+
+#+begin_comment
+2.8 1-18 mod 3 (P104)
+第二章复习题 1-17 mod 3
+#+end_comment
+
+* 2.8
+** 3
+*** a
+$y'=2(y+1), y(0)=0$
+we have $\phi_0(t)=0, y_0=0, t_0=0, f(y,t)=2(y+1)$
+$$\begin{aligned}
+\phi_1(t)
+&= y_0 + \int_{t_0}^t f(\phi_0(s), s) ds\\
+&= 0 + \int_0^t 2(0+1) ds\\
+&= 0 + \int_0^t 2 ds\\
+&= 2t
+\end{aligned}$$
+$$\begin{aligned}
+\phi_2(t)
+&= \int_0^t 2(2s+1) ds\\
+&= 2t + 2t^2
+\end{aligned}$$
+$$\begin{aligned}
+\phi_3(t)
+&= \int_0^t 2(2s + 2s^2 +1) ds\\
+&= 2t + 2t^2  + \frac{4}{3} t^3
+\end{aligned}$$
+seemingly when $n\geq 2$,
+$$\phi_n(t) = 2t + 2t^2 + \sum_{i=3}^{n+1} \frac{2^i}{i!} t^i$$
+suppose $k\geq 3$ and we already know $k$ suits this
+then
+$$\begin{aligned}
+\phi_{k+1}(t) &= \int_0^t 2(\phi_k(s) +1) ds\\
+&= 2t + 2\int_0^t \phi_k(s) ds\\
+&= 2t + 2t^2 + \frac{4}{3} t^3 + \sum_{i=3}^{k+1} \frac{2^{i+1}}{i!\cdot (i+1)} t^{i+1}\\
+&= 2t + 2t^2 + \frac{4}{3} t^3 + \sum_{i=4}^{(k+1)+1} \frac{2^i}{i!} t^i\\
+&= 2t + 2t^2 + \sum_{i=3}^{(k+1)+1} \frac{2^i}{i!} t^i
+\end{aligned}$$
+compared with the version of just subsituting $k$ with $k+1$
+we know this is correct
+combined with the known $\phi_0(t), \phi_1(t), \phi_2(t)$
+there is indeed
+$$\phi_0(t)=0$$
+$$\phi_1(t)=2t$$
+$$\phi_2(t)=2t+2t^2$$
+and for $n\geq 3$
+$$\phi_n(t)=2t + 2t^2 + \sum_{i=3}^{n+1} \frac{2^i}{i!} t^i$$
+*** b
+#+begin_src gnuplot :file 9.29-2.8-3-b.png :exports both
+    set xrange [-10:10]
+    set xlabel "X"
+    set ylabel "Y"
+    set title "9.29-2.8-3-b"
+
+    single_phi(n, t) = (n == 0) ? 0 : ((n == 1) ? 2*t : ((n == 2) ? \
+		  2*t*t : single_phi(n-1, t) * 2 / (n+1) * t))
+    phi(n, t) = (n == 0) ? 0 : ((n == 1) ? 2*t : ((n == 2) ? 2*t+2*t*t : phi(n-1, t) + single_phi(n, t)))
+
+    plot phi(1, x) title "1" , phi(2, x) title "2", phi(3, x) title "3", phi(4,x) title "4"
+#+end_src
+
+#+RESULTS:
+[[file:9.29-2.8-3-b.png]]
+
+seemingly, yes, because the "cup" becomes smaller and smaller comparatively
+*** c
+$$\begin{aligned}
+\phi(t)
+&= \lim_{n\to \infty} \phi_n(t)\\
+&= \lim_{n\to \infty} 2t + 2t^2 + \sum_{i=3}^{n+1} \frac{2^i}{i!} t^i\\
+&= \lim_{n\to \infty} 2t + 2t^2 + \sum_{i=3}^{n+1} \frac{1}{i!} (2t)^i\\
+&= 2t + 2t^2 + \sum_{i=3}^{\infty} \frac{1}{i!} (2t)^i
+\end{aligned}$$
+as we know, $e^{2t} = 1 + 2t + 2t^2 + \sum_{i=3}^{\infty} \frac{1}{i!} (2t)^i$
+so $\phi(t) = e^{2t} - 1$
+*** d
+#+begin_src gnuplot :file 9.29-2.8-3-d.png :exports both
+    set xrange [0:2]
+    set xlabel "X"
+    set ylabel "Y"
+    set title "9.29-2.8-3-d"
+
+    single_phi(n, t) = (n == 0) ? 0 : ((n == 1) ? 2*t : ((n == 2) ? \
+		  2*t*t : single_phi(n-1, t) * 2 / (n+1) * t))
+    phi(n, t) = (n == 0) ? 0 : ((n == 1) ? 2*t : ((n == 2) ? 2*t+2*t*t : phi(n-1, t) + single_phi(n, t)))
+    real_phi(t) = exp(2*t) - 1
+
+    f1(x) = abs(real_phi(x)-phi(1,x))
+    f2(x) = abs(real_phi(x)-phi(2,x))
+    f3(x) = abs(real_phi(x)-phi(3,x))
+    f4(x) = abs(real_phi(x)-phi(4,x))
+
+    plot f1(x) title "1" , f2(x) title "2", f3(x) title "3", f4(x) title "4"
+#+end_src
+
+#+RESULTS:
+[[file:9.29-2.8-3-d.png]]
+
+for $n=1$, $t<0.2$
+for $n=2$, $t<0.5$
+for $n=3$, $t<0.6$
+for $n=4$, $t<0.75$
+
+** 6
+*** a
+$y'= t^2y-t, y(0)=0$
+we have $\phi_0(t)=0, y_0=0, t_0=0, f(t, y)=t^2y-t$
+$$\begin{aligned}
+\phi_1(t)
+&= \int_0^t f(s, \phi_0(s)) ds\\
+&= \int_0^t f(s, 0) ds\\
+&= \int_0^t -s ds\\
+&= -\frac{1}{2} t^2
+\end{aligned}$$
+$$\begin{aligned}
+\phi_2(t)
+&= \int_0^t f(s, \phi_1(s)) ds\\
+&= \int_0^t f(s, -\frac{1}{2} s^2) ds\\
+&= \int_0^t -s-\frac{1}{2} s^4 ds\\
+&= -\frac{1}{2} t^2 - \frac{1}{2}\cdot \frac{1}{5} t^5
+\end{aligned}$$
+$$\begin{aligned}
+\phi_3(t)
+&= \int_0^t f(s, \phi_2(s)) ds\\
+&= \int_0^t s^2\phi_2(s) - s ds\\
+&= -\frac{1}{2} t^2 + \int_0^t s^2\phi_2(s) ds\\
+&= -\frac{1}{2} t^2 - \frac{1}{2} \int_0^t s^4 + \frac{1}{5} s^7 ds\\
+&= -\frac{1}{2} t^2 - \frac{1}{2} \cdot \frac{1}{5} t^5 - \frac{1}{2} \cdot \frac{1}{5} \cdot \frac{1}{8} t^8
+\end{aligned}$$
+seemingly for $n\geq 1$, we have
+$$\phi_n(t)=-\sum_{i=1}^n \frac{t^{3i-1}}{\prod_{j=1}^i (3j-1)}$$
+suppose for $k\geq 1$, it has been proved correct
+then for $k+1$,
+$$\begin{aligned}
+\phi_{k+1}(t)
+&= \int_0^t s^2\phi_k(s) - s ds\\
+&= -\frac{1}{2} t^2 + \int_0^t s^2\phi_k(s) ds\\
+&= -\frac{1}{2} t^2 - \int_0^t s^2\sum_{i=1}^k \frac{s^{3i-1}}{\prod_{j=1}^i (3j-1)} ds\\
+&= -\frac{1}{2} t^2 - \int_0^t \sum_{i=1}^k \frac{s^{3i+1}}{\prod_{j=1}^i (3j-1)} ds\\
+&= -\frac{1}{2} t^2 - \sum_{i=1}^k \int_0^t \frac{s^{3i+1}}{\prod_{j=1}^i (3j-1)} ds\\
+&= -\frac{1}{2} t^2 - \sum_{i=1}^k \frac{t^{3i+2}}{\prod_{j=1}^(i+1) (3j-1)}\\
+&= -\frac{1}{2} t^2 - \sum_{i=2}^(k+1) \frac{t^{3i-1}}{\prod_{j=1}^i (3j-1)}\\
+&= -\sum_{i=1}^(k+1) \frac{t^{3i-1}}{\prod_{j=1}^i (3j-1)}
+\end{aligned}$$
+along with the known $\phi_1, \phi_2, \phi_3$, we know the guess is correct
+$$\phi_0(t)=0$$
+when $n\geq 1$
+$$\phi_n(t)=-\sum_{i=1}^n \frac{t^{3i-1}}{\prod_{j=1}^i (3j-1)}$$
+*** b
+#+begin_src gnuplot :file 9.29-2.8-6-b.png :exports both
+  set xrange [1.5:3]
+  set xlabel "X"
+  set ylabel "Y"
+  set title "9.29-2.8-6-b"
+
+  single_prod(t) = (t == 0) ? 1 : 3*t-1
+  prod(t) = (t == 0) ? 1 : prod(t-1) * single_prod(t)
+  single_phi(n, t) = (n == 0) ? 0 : t**(3*n-1) / prod(n)
+  phi(n, t) = (n == 0) ? 0 : phi(n-1, t) - single_phi(n-1, t)
+
+  plot phi(1, x) title "1" , phi(2, x) title "2", phi(3, x) title "3", phi(4,x) title "4"
+#+end_src
+
+#+RESULTS:
+[[file:9.29-2.8-6-b.png]]
+
+yes, it appears to be converging as $n$ gets bigger
+*** c
+$$\phi_{n+1}(t)-\phi_n(t) = \frac{t^{3n+2}}{\prod_{j=1}^{n+1} (3j-1)}$$
+we suppose $f_t(n) = \frac{t^{3n+2}}{\prod_{j=1}^{n+1} (3j-1)}$
+then $f_t(n) \geq 0$
+and $\frac{f_t(n+1)}{f_t(n)} = \frac{t^3}{3n+2}$
+for $t$ large enough, ${f_t(n)}$ has a positive lower bond
+so ${\phi_n(t)}$ converges
+
+** 9
+*** a
+$y'=-\sin y+1, y(0)=0$
+we have $\phi_0(t)=0, y_0=0, t_0=0, f(t, y)=-\sin y + 1$
+$$\begin{aligned}
+\phi_1(t)
+&= \int_0^t f(s, \phi_0(s)) ds\\
+&= \int_0^t f(s, 0) ds\\
+&= \int_0^t 1 ds\\
+&= t
+\end{aligned}$$
+$$\begin{aligned}
+\phi_2(t)
+&= \int_0^t f(s, \phi_1(s)) ds\\
+&= \int_0^t f(s, s) ds\\
+&= \int_0^t -\sin s + 1 ds\\
+&= t + \cos t
+\end{aligned}$$
+$$\begin{aligned}
+\phi_3(t)
+&= \int_0^t f(s, \phi_2(s)) ds\\
+&= \int_0^t f(s, s+\cos s) ds\\
+&= \int_0^t -\sin (s+\cos s) + 1 ds\\
+&= t - \int_0^t \sin (s+\cos s) ds
+\end{aligned}$$
+$$\begin{aligned}
+\phi_4(t)
+&= \int_0^t f(s, \phi_3(s)) ds\\
+&= \int_0^t f(s, s-\int_0^t \sin (s+\cos s) ds) ds\\
+&= \int_0^t -\sin (s-\int_0^t \sin (s+\cos s) ds) + 1 ds\\
+&= t - \int_0^t \sin (s-\int_0^t \sin (s+\cos s) ds) ds
+\end{aligned}$$
+don't know how to solve these
+*** b
+#+begin_src gnuplot :file 9.29-2.8-9-b.png :exports both
+  set xrange [1.5:3]
+  set xlabel "X"
+  set ylabel "Y"
+  set title "9.29-2.8-9-b"
+
+  plot x title "1" , x+cos(x) title "2"
+#+end_src
+
+#+RESULTS:
+[[file:9.29-2.8-9-b.png]]
+
+don't know because I can't plot the case when $x=4$, or $x=3$
+
+** 12
+*** a
+$\phi_n(x) = 2nxe^{-nx^2}$
+$$\begin{aligned}
+\lim_{n\to\infty} \phi_n(x)
+&= \lim_{n\to\infty} 2nxe^{-nx^2}\\
+&= 2x\lim_{n\to\infty} ne^{-nx^2}\\
+&= 2x\lim_{n\to\infty} \frac{n}{\left(e^{x^2}\right)^n}\\
+&= 2x\lim_{n\to\infty} \frac{n}{C_+^n}\\
+&= 2x \cdot 0\\
+&= 0
+\end{aligned}$$
+*** b
+$$\begin{aligned}
+\int_0^1 2nxe^{-nx^2} dx
+&= 2n \int_0^1 xe^{-nx^2} dx\\
+&= n \int_0^1 e^{-nx^2} d(x^2)\\
+&= n \int_{0^2}^{1^2} e^{-nx} dx\\
+&= -e^{-nx} |_0^1\\
+&= 1-e^{-n}
+\end{aligned}$$
+** 15
+$\frac{dy}{dt}=f(t,y)$
+$|f(t,y_1)-f(t,y_2)|\leq K|y_1-y_2|$
+we need to prove that $|\frac{f(t,\phi_n(t))-f(t,\phi_{n-1}(t))}{\phi_n(t)-\phi_{n-1}(t)}| \leq |frac{f(t,y_1)-f(t,y_2)}{y_1-y_2}|$
+suppose $g(x)=f(t,x)$
+then we just need to show that $|\frac{g(\phi_n(t))-g(\phi_{n-1}(t))}{\phi_n(t)-\phi_{n-1}(t)}| \leq |frac{g(y_1)-g(y_2)}{y_1-y_2}|$
+these are just the slope of two points (total four) on $y=g(x)$
+don't know how to continue anymore..
+** 18
+*** a
+of course due to
+$$\begin{aligned}
+\phi(t) - \psi(t)
+&= \int_0^t f(s,\phi(s)) ds - \int_0^t f(s,\psi(s)) ds\\
+&= \int_0^t \left(f(s,\phi(s)) - f(s,\psi(s))\right) ds
+\end{aligned}$$
+*** b
+already proved when $\phi(t)\geq \psi(t)$
+when $\phi(t)<\psi(t)$, we know $|\phi(t)-\psi(t)|\geq \int_0^t \left(f(s,\phi(s)) - f(s,\psi(s))\right) ds$
+the direction is different from the question's, and I don't know what to do
+*** c
+$\phi(t)$ and $\psi(t)$ are just $y_1$, $y_2$ then
+so the not-equation is correct
+* review
+** 3
+$\frac{dy}{dx} = \frac{2x+y}{3+3y^2-x}, y(0)=0$
+we can rewrite this as $(2x+y) dx + (x-3y^2-3) dy = 0$
+since $\frac{\delta (2x+y)}{\delta y} = 1$ and $\frac{\delta (x-3y^2-3)}{\delta x} = 1$
+they are same, we can try to find $u(x,y)$ that suits
+$$\begin{aligned}
+\frac{\delta u(x,y)}{\delta x} &= 2x+y\\
+\frac{\delta u(x,y)}{\delta y} &= x-3y^2-3
+\end{aligned}$$
+so $u(x,y)=x^2+xy-y^3-3y+C$
+apply $x=0, y=0$
+we have $C=0$
+so $u(x,y)=x^2+xy-y^3-3y$
+
+** 6
+$x\frac{dy}{dx} + xy = 1 - y, y(1)=0$
+when $x=0$, $y=1$
+when $x\neq 0$, $\frac{dy}{dx} + (1+\frac{1}{x}) y = \frac{1}{x}$
+$$\begin{aligned}
+e^{x+\ln x}y &= \int \frac{e^{x+\ln x}}{x} dx\\
+&= \int e^x dx\\
+&= e^x + C
+\end{aligned}$$
+since $0 = e + C$, we know $C=-e$
+so $y = x - \frac{e^{1-x}}{x}$
+
+** 9
+$(x^2y+xy-y) + (x^2y-2x^2) \frac{dy}{dx} = 0$
+try $\frac{\delta x^2y+xy-y}{\delta y} = x^2+x-1$
+$\frac{\delta x^2y-2x^2}{\delta x} = 2xy - 4x$
+they are not equal
+$(x^2+x-1)dx + x^2(1-\frac{1}{y})dy = 0$
+$(1+\frac{1}{x}-\frac{1}{x^2})dx + (1-\frac{1}{y})dy=0$
+now $\frac{\delta (1+\frac{1}{x}-\frac{1}{x^2})}{\delta y} = \frac{\delta (1-\frac{1}{y})}{\delta x} = 0$
+good
+so we just need $u(x,y)=x + \ln x + \frac{1}{x} + y - \ln y + C$
+the answer is $x + \ln x + \frac{1}{x} + y - \ln y = C$ where $C$ is any constant
+
+** 12
+$(e^x+1)\frac{dy}{dx} = y - ye^x$
+$\frac{1}{y} dy = \frac{1-e^x}{1+e^x} dx$
+$$\begin{aligned}
+\ln y
+&= \int \frac{1-e^x}{1+e^x} dx\\
+&= \int 1+\frac{-2e^x}{1+e^x} dx\\
+&= x - 2 \int \frac{e^x}{1+e^x} dx\\
+&= x - 2 \int \frac{1}{1+e^x} de^x\\
+&= x - 2 \int \frac{1}{1+x} dx\\
+&= x - 2 \int \frac{1}{1+x} d(1+x)\\
+&= x - 2 \int \frac{1}{x} dx\\
+&= x - 2 \ln x + C
+\end{aligned}$$
+$$y = C\frac{e^x}{x^2}$$
+
+** 15
+$\frac{dy}{dx} + 2y = e^{-x^2-2x}, y(0) = 3$
+$$\begin{aligned}
+e^{2x}y &= \int e^{-x^2} dx\\
+&= \int \frac{1}{(e^x)^x} dx\\
+&= \int \frac{1}{(e^x)^{x+1}} de^x\\
+&= \int \frac{1}{x^{\ln x+1}} dx
+\end{aligned}$$
+failed to solve this

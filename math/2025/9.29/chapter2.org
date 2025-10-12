@@ -1,0 +1,27 @@
+#+TITLE: chapter 2
+#+AUTHOR: 2024110144 陈有骏
+#+LATEX_COMPILER: xelatex
+#+LATEX_CLASS: article
+#+LATEX_CLASS_OPTIONS: [a4paper,10pt]
+#+LATEX_HEADER: \usepackage[margin=0.5in]{geometry}
+#+LATEX_HEADER: \usepackage{xeCJK}
+#+LATEX_HEADER: \usepackage{fontspec}
+#+LATEX_HEADER: \usepackage{amsmath}
+#+LATEX_HEADER: \setCJKmainfont{WenQuanYi Zen Hei}
+#+OPTIONS: \n:t toc:nil num:nil date:nil
+
+* 常微分方程
+** 是否有解之类
+可分离变量的可以解，可以转化的可以解，人类能求出积分因子来转化的可以解
+** 怎么解
+可分离变量的直接分离后两边积分
+其余用积分因子乘完再利用积分的乘法法则倒推
+或者往全微分凑
+*** 具体操作要点
+1. 可以积分因子的
+   可能需要两边做一些变换，乘除之类
+   之后利用 $e^{g(t)}'=e^{g(t)}g'(t)$ 来凑
+2. 可以全微分的
+   试一试 $dx$ 前的项对 $y$ 偏导和 $dy$ 前的项对 $x$ 偏导一不一样
+   一样的话（或转化成一样的话）就可以用全微分公式倒推
+   $dx$ 前对 $y$ 积分，$dy$ 前对 $x$ 积分，合并一下加个常数 $C$

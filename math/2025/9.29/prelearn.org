@@ -1,0 +1,56 @@
+#+TITLE: prelearn
+#+AUTHOR: 2024110144 陈有骏
+#+LATEX_COMPILER: xelatex
+#+LATEX_CLASS: article
+#+LATEX_CLASS_OPTIONS: [a4paper,10pt]
+#+LATEX_HEADER: \usepackage[margin=0.5in]{geometry}
+#+LATEX_HEADER: \usepackage{xeCJK}
+#+LATEX_HEADER: \usepackage{fontspec}
+#+LATEX_HEADER: \usepackage{amsmath}
+#+LATEX_HEADER: \setCJKmainfont{WenQuanYi Zen Hei}
+#+OPTIONS: \n:t toc:nil num:nil date:nil
+
+* 求解二阶微分方程 $y"=xe^x$
+$$\begin{aligned}
+y' &= \int xe^xdx\\
+&= \int x de^x\\
+&= xe^x - \int e^x dx\\
+&= xe^x - e^x + C
+\end{aligned}$$
+$$\begin{aligned}
+y &= \int xe^x - e^x + C dx\\
+&= xe^x - e^x + C_1 - e^x + C_2 + Cx + C_3\\
+&= xe^x - 2e^x + C_1x + C_2
+\end{aligned}$$
+
+* 求方程 $(1-2x)y"-y'=0$ 的通解
+这里我们让 $m=y'$
+那么 $(1-2x)m'-m=0$
+这就回到了学过的内容
+如果 $x=0.5$, 那么有 $m=0$
+如果 $x\neq 0.5$, 那么有 $e^{\frac{1}{2} \ln (2x-1)}m=C$
+也就是 $m=Ce^{-\frac{1}{2}}(2x-1)$
+对m再积分，我们得到
+$$\begin{aligned}
+y &= \int m dx\\
+&= C\int e^{-\frac{1}{2}}(2x-1) dx\\
+&= Ce^{-\frac{1}{2}} \int (2x-1) dx\\
+&= Ce^{-\frac{1}{2}} (x^2-x+C_1)\\
+&= C_1e^{-\frac{1}{2}} (x^2-x) + C_2
+\end{aligned}$$
+
+* 求方程 $y"=\frac{1}{x} y' + xe^x$ 的通解
+也差不多，先代换
+得到 $m'=\frac{1}{x} m + xe^x$
+也就是 $m-xm'=-x^2e^x$
+进而 $e^{-\frac{1}{2}x^2}m=\int -x^2e^{x-\frac{1}{2}x^2} dx$
+不知道怎么求右边，算了
+
+* 求方程 $yy" + y'^2=0$ 的通解
+* 求方程 $y"=\frac{3}{2} y^2$ 满足 $y(3)=1, y'(3)=1$ 的特解
+* 预习和总结二阶线性方程的相关概念
+* 解方程 $y"-y=0$
+* 预习和总结二阶常系数线性方程及其解的特点
+* 解决 $L.V.P.$ $y"-y=0, y(0)=2, y'(0)=-1$
+* 讨论具有互异实根二阶常系数线性方程通解的形式
+* 解决 $L.V.P.$ $y" + 5y' + 6y = 0, y(0)=2, y'(0)=3$

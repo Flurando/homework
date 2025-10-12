@@ -1,0 +1,182 @@
+#+TITLE: Week 10.11 Math Homework
+#+AUTHOR: 2024110144 陈有骏
+#+LATEX_COMPILER: xelatex
+#+LATEX_CLASS: article
+#+LATEX_CLASS_OPTIONS: [a4paper,10pt]
+#+LATEX_HEADER: \usepackage[margin=0.5in]{geometry}
+#+LATEX_HEADER: \usepackage{xeCJK}
+#+LATEX_HEADER: \usepackage{fontspec}
+#+LATEX_HEADER: \usepackage{amsmath}
+#+LATEX_HEADER: \setCJKmainfont{WenQuanYi Zen Hei}
+#+OPTIONS: \n:t toc:nil num:nil date:nil
+
+#+begin_comment
+3.1 1-21 mod 3 (P123)
+第二章复习题 18-37 mod 3 (P114)
+#+end_comment
+
+* 3.1
+** 3
+$6y"-y'-y=0$
+suppose $y=e^{rt}$
+then $6r^2-r-1=0$
+we get $r=\frac{1}{2}, -\frac{1}{3}$
+then $y=c_1e^{\frac{1}{2}t}+c_2e^{-\frac{1}{3}t}$
+** 6
+$y"-2y'-2y=0$
+similarly, we have $r^2-2r-2=0$
+then $r=1\pm\sqrt{3}$
+so $y=c_1e^{1+\sqrt{3}}+c_2e^{1-\sqrt{3}}$
+** 9
+$y"+3y'=0$
+there is $r^2+r=0$
+giving $r=0, -1$
+so $y=c_1+c_2e^{-t}$
+with initial conditions, $c_1+c_2=-2$ and $-c_2=3$
+then $c_1=1, c_2=-3$
+so $y=1-3e^{-t}$
+#+begin_src gnuplot :file 10.11-3.1-9.png :exports both
+  set xrange [-10:10]
+  set xlabel "X"
+  set ylabel "Y"
+  set title "10.11-3.1-9"
+
+  f(x) = 1-3*exp(-x)
+  
+  plot f(x) title "y=1-3e^{-x}"
+#+end_src
+
+#+RESULTS:
+[[file:10.11-3.1-9.png]]
+
+it goes toward a constant ($1$) as we can see, as $t$ increases
+** 12
+$4r^2-1=0$
+$r=\pm\frac{1}{2}$
+$y=c_1e^{\frac{1}{2}t}+c_2e^{-\frac{1}{2}t}$
+$\begin{aligned}
+c_1e^{-1}+c_2e &= 1\\
+c_1e^{-1} - c_2e &= -2
+\end{aligned}$
+so $c_1=-\frac{e}{2}, c_2=\frac{3}{2e}$
+$y = -\frac{1}{2}e^{\frac{1}{2}t+1} + \frac{3}{2}e^{-\frac{1}{2}t-1}$
+#+begin_src gnuplot :file 10.11-3.1-12.png :exports both
+  set xrange [-10:10]
+  set xlabel "X"
+  set ylabel "Y"
+  set title "10.11-3.1-12"
+
+  f(x) = -0.5*exp(0.5*x+1) + 1.5*exp(-0.5*x-1)
+  
+  plot f(x) notitle
+#+end_src
+
+#+RESULTS:
+[[file:10.11-3.1-12.png]]
+
+when $t$ increases, it just goes down, in a fast-slow-fast manner.
+** 15
+$2r^2-3r+1=0$
+$(2r-1)(r-1)=0$
+so $r=1, \frac{1}{2}$
+$y=c_1e^t+c_2e^{\frac{t}{2}}$
+$\begin{aligned}
+c_1+c_2 &= 2\\
+c_1+\frac{1}{2}c_2=\frac{1}{2}
+\end{aligned}$
+$c_1=-1, c_2=3$
+so $y=-e^t+3e^{\frac{t}{2}}$
+suppose $a=e^{\frac{t}{2}} > 0$
+then $y = -a^2+3a$
+when $a=\frac{3}{2}$, we get max $y=\frac{9}{4}$
+and when $a=3$, $y=0$ which means points $t$ of $2\ln 3$
+** 18
+** 21
+* review
+** 18
+$\frac{dy}{dx} + \frac{2y^2+6xy-4}{3x^2+4xy+3y^2} = 0$
+rearrange the equation, $(2y^2+6xy-4)dx + (3x^2+4xy+3y^2)dy = 0$
+check $\frac{\delta (2y^2+6xy-4)}{\delta y} = 4y+6x$
+and $\frac{\delta (3x^2+4xy+3y^2)}{\delta x} = 6x+4y$
+they are equal so we suppose $u(x,y)$ meeting
+$$\begin{aligned}
+\frac{\delta u(x,y)}{\delta x} &= 2y^2+6xy-4\\
+\frac{\delta u(x,y)}{\delta y} &= 3x^2+4xy+3y^2
+\end{aligned}$$
+so $u(x,y)=2xy^2+3x^2y-4x+y^3+C$
+
+** 21
+$\frac{dy}{dx} = \frac{x}{x^2y+y^3}$
+let $u=x^2$
+$(uy+y^3)dy = \frac{1}{2}du$
+$(u+y^2)d(y^2) = du$
+let $v=y^2$
+$(u+v)dv = du$
+$u+v = \frac{du}{dv}$
+$\frac{du}{dv} - u = v$
+$e^{-v}\frac{du}{dv} - e^{-v} u = v$
+$\frac{de^{-v}u}{dv} = v$
+$e^{-v}u = \frac{1}{2} v^2 + C$
+$u = \frac{1}{2} v^2 e^v + C$
+$x^2 = \frac{1}{2} y^4 e^{y^2} + C$
+
+** 24
+$xy'+y-y^2e^{2x}=0, y(1)=2$
+$xdy + (y-y^2e^{2x}) dx=0$
+when $y=0, xy'=0$
+when $x=0, y=y^2$
+when $x, y\neq 0$, $\frac{x}{y^2}dy + (\frac{1}{y}-e^{2x})dx = 0$
+I want $\frac{x^{n+1}}{y^2}dy + (\frac{x^n}{y} - x^ne^{2x})dx = 0$
+where $(n+1)\frac{x^n}{y^2}=-\frac{x^n}{y^2}-0$
+giving $n=-2$
+so $\frac{1}{xy^2}dy + \left(\frac{1}{x^2y} - \frac{e^{2x}}{x^2}\right)dx = 0$
+we need $u(x, y) = -\frac{1}{xy} - \int \frac{e^{2x}}{x^2} dx + C$
+don't know the solution of the integral embedded
+** 27
+*** a
+$\frac{dy}{dt} = (1-y)(x(t)+by)$
+$y'=-by^2+(b-x(t))y+x(t)$
+so it is a Ribbeca equation
+apply $y_1(t)=1$
+we get $0=-b+b-x(t)+x(t)$, true
+let $y=y_1(t)+\frac{1}{v(t)}$ so $y=1+\frac{1}{v(t)}$
+then $-\frac{v'(t)}{v^2(t)} = -b(1+\frac{1}{v(t)})^2+(b-x(t))(1+\frac{1}{v(t)})+x(t)$
+$\frac{dv}{dt} = (b+x(t))v+b$
+*** b
+$\frac{dv}{dt} = (b+at)v+b$
+$v'-(b+at)v = b$
+$e^{-bt-\frac{a}{2}t^2}v=bt+C$
+$v=bte^{bt+\frac{a}{2}t^2} + C$
+** 30
+$y"+ty'^2=0$
+$v'+tv^2=0$
+$dv + tv^2 dt=0$
+$2dv + v^2 d(t^2) = 0$
+suppose $n = t^2$, $2dv + v^2 dn = 0$
+then $\frac{2}{v^2} dv + dn = 0$
+we get $u(v,n)=-\frac{2v}{v^2}+n+C$
+so $-\frac{2}{v^2} + t^2 = C$
+$\frac{2}{v^2} = t^2-C$
+$v^2=\frac{2}{t^2-C}$
+$v=\pm \sqrt{\frac{2}{t^2-C}}$
+$y = \pm \int \sqrt{\frac{2}{t^2-C}} dt$
+** 33
+$y"+y=0$
+suppose $v=y'$
+then $y"=v\cdot\frac{dv}{dy}$
+$\frac{vdv}{dy}+y=0$
+$vdv+ydy=0$
+$\frac{1}{2}v^2+\frac{1}{2}y^2+C=0$
+$v^2+y^2=0$
+$y=0$
+** 36
+$y'y"=2, y(0)=1, y'(0)=2$
+$vv'=2$
+$vdv-2dy=0$
+$\frac{1}{2}v^2-2y+C=0$
+$v^2-4y=C$
+$y'^2-4y=C$
+$C=0$
+$y'^2=4y$
+we can see $y=t^2$ is an answer
+don't know if other answers exists
