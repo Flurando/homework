@@ -91,7 +91,24 @@ then $y = -a^2+3a$
 when $a=\frac{3}{2}$, we get max $y=\frac{9}{4}$
 and when $a=3$, $y=0$ which means points $t$ of $2\ln 3$
 ** 18
+$r^2+(3-\alpha)r-2(\alpha-1)=0$
+$(r+2)(r+1-\alpha)=0$
+$r=-2, \alpha-1$
+$y=c_1e^{-2t}+c_2e^{(\alpha-1)t}$
+for the first situation, $\alpha\leq 1$ works
+for the second situation, there is no such $\alpha$ that suits all
 ** 21
+$ar^2+br+c=0$
+$\Delta = b^2-4ac$
+*** a
+$b^2-4ac>0$
+$-b+\sqrt{b^2-4ac}<0$
+*** b
+$b^2-4ac>0$
+$c<0$
+*** c
+$b^2-4ac>0$
+$-b-\sqrt{b^2-4ac}>0$
 * review
 ** 18
 $\frac{dy}{dx} + \frac{2y^2+6xy-4}{3x^2+4xy+3y^2} = 0$
