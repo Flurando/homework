@@ -117,3 +117,12 @@ $y=y_n+f(t_n,y_n)(t-t_n)$
 ** existence and uniqueness theorem
 *** $\exists !$ Theorem for *$1^{st}$ Nonlinear* D.E.
 *** Picard sequence
+* $2^{nd}$ Linear D.E.
+** differencial Operator $L$
+$L[\psi]=\psi''+ p\psi' + q\psi$
+$L$ 从函数 $\psi$ 映射到函数 $L[\psi]$
+** $\exists !$ Theorem for $2^{nd}$ Linear D.E.
+** $W[y_1,y_2](t)=\left|\begin{aligned}y_1 & y_2\\y'_1 & y'_2\end{aligned}\right|$
+if this is $0$, $y=c_1y_1(t)+c_2y_2(t)$ is a complete answer
+** Abel's THeorem
+Wronskian $W[y_1, y_2](t)=c e^\left(-\int p(t) dt\right)$
