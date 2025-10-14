@@ -119,3 +119,26 @@ eq ge gt le lt ne 它的不等于是~= isequal isequaln
 
 #+RESULTS:
 : s = 1887
+
+while 也能用
+#+begin_src octave :results output :exports both
+  s = 0;
+  k = 0;
+  while k <= 10
+    k = k + 1;
+    if k == 3
+      continue
+    end
+    s = s + k;
+    if s > 100
+      break
+    end
+  end
+  fprintf("s = %1d", s);
+#+end_src
+
+#+RESULTS:
+: s = 63
+
+矩阵通过方括号生成
+也有部分辅助函数，如zeros，ones
