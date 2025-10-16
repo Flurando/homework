@@ -1,0 +1,32 @@
+#+TITLE: 3 Wave and Oscillation Homework
+#+AUTHOR: 2024110144 陈有骏
+#+LATEX_COMPILER: xelatex
+#+LATEX_CLASS: article
+#+LATEX_CLASS_OPTIONS: [a4paper,10pt]
+#+LATEX_HEADER: \usepackage[margin=0.5in]{geometry}
+#+LATEX_HEADER: \usepackage{xeCJK}
+#+LATEX_HEADER: \usepackage{fontspec}
+#+LATEX_HEADER: \usepackage{amsmath}
+#+LATEX_HEADER: \setCJKmainfont{WenQuanYi Zen Hei}
+#+OPTIONS: \n:t toc:nil num:nil date:nil
+The three normal modes
+$$\begin{aligned}
+\omega &= \pm\sqrt{2} \omega_0 &\Longrightarrow \left(\begin{matrix} A_1 \\ A_2 \\ A_3\end{matrix}\right) &\propto \left(\begin{matrix} 1 \\ 0 \\ -1\end{matrix}\right) \\
+\omega &= \pm\sqrt{2+\sqrt{2}} \omega_0 &\Longrightarrow \left(\begin{matrix} A_1 \\ A_2 \\ A_3\end{matrix}\right) &\propto \left(\begin{matrix} 1 \\ -\sqrt{2} \\ 1\end{matrix}\right) \\
+\omega &= \pm\sqrt{2-\sqrt{2}} \omega_0 &\Longrightarrow \left(\begin{matrix} A_1 \\ A_2 \\ A_3\end{matrix}\right) &\propto \left(\begin{matrix} 1 \\ \sqrt{2} \\ 1\end{matrix}\right)
+\end{aligned}$$
+$$M\left(\begin{matrix} A_1 \\ A_2 \\ A_3\end{matrix}\right) = -\omega^2 \left(\begin{matrix} A_1 \\ A_2 \\ A_3\end{matrix}\right)$$
+suppose $det(M+\omega^2 I)=0$, we get the eigenvalues as the three $omega$ given
+then to get the eigenvectors
+$$M\left(\begin{matrix} A_1 \\ A_2 \\ A_3\end{matrix}\right)=2\omega_0^2\left(\begin{matrix} A_1 \\ A_2 \\ A_3\end{matrix}\right)$$
+$$M\left(\begin{matrix} A_1 \\ A_2 \\ A_3\end{matrix}\right)=(2+\sqrt{2})\omega_0^2\left(\begin{matrix} A_1 \\ A_2 \\ A_3\end{matrix}\right)$$
+$$M\left(\begin{matrix} A_1 \\ A_2 \\ A_3\end{matrix}\right)=(2-\sqrt{2})\omega_0^2\left(\begin{matrix} A_1 \\ A_2 \\ A_3\end{matrix}\right)$$
+the solutions gives the right part of the equations
+suppose $m_1,m_2,m_3$, the distances from original points (leftwards being positive) are $x_1,x_2,x_3$
+then with $F=ma$ we get
+$$m_1\frac{d^2x_1}{dt^2} = -k(x_1-x_2)$$
+$$m_2\frac{d^2x_2}{dt^2} = -k(x_2-x_1)-k(x_2-x_3)$$
+$$m_3\frac{d^2x_3}{dt^2} = -k(x_3-x_2)$$
+they can be combined, as $m\frac{d^2 x}{dt^2} = Mx$ where $x = \left(\begin{matrix} x_1 \\ x_2 \\ x_3\end{matrix}\right)$
+by calculating the eigenvalues then eigenvectors of $M$, we can get the $\omega s$
+but I don't know the $M$ here...

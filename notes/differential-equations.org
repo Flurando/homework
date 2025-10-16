@@ -126,3 +126,6 @@ $L$ 从函数 $\psi$ 映射到函数 $L[\psi]$
 if this is $0$, $y=c_1y_1(t)+c_2y_2(t)$ is a complete answer
 ** Abel's THeorem
 Wronskian $W[y_1, y_2](t)=c e^\left(-\int p(t) dt\right)$
+** 有复数根的怎么解
+换成cos，sin继续（欧拉公式）
+** 重根

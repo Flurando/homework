@@ -1,0 +1,84 @@
+#+TITLE: Week 10.13 Math Homework
+#+AUTHOR: 2024110144 陈有骏
+#+LATEX_COMPILER: xelatex
+#+LATEX_CLASS: article
+#+LATEX_CLASS_OPTIONS: [a4paper,10pt]
+#+LATEX_HEADER: \usepackage[margin=0.5in]{geometry}
+#+LATEX_HEADER: \usepackage{xeCJK}
+#+LATEX_HEADER: \usepackage{fontspec}
+#+LATEX_HEADER: \usepackage{amsmath}
+#+LATEX_HEADER: \setCJKmainfont{WenQuanYi Zen Hei}
+#+OPTIONS: \n:t toc:nil num:nil date:nil
+
+#+begin_comment
+3.2 1-38 mod 5 (P133)
+3.3 1-36 mod 5
+#+end_comment
+
+* 3.2
+** 5
+$cos^2\theta, 1 + \cos (2\theta)$
+$\begin{aligned}
+W
+&= \left|\begin{matrix}
+\cos^2\theta & 1+\cos(2\theta)\\
+(\cos^2\theta)' & (1+\cos(2\theta))'
+\end{matrix}\right|\\
+&= \left|\begin{matrix}
+\cos^2\theta & 1+\cos(2\theta)\\
+-2\cos\theta\sin\theta & -2\sin(2\theta)
+\end{matrix}\right|\\
+&= \left|\begin{matrix}
+\cos^2\theta & 1+\cos(2\theta)\\
+-\sin(2\theta) & -2\sin(2\theta)
+\end{matrix}\right|\\
+&= -2\sin(2\theta)\cos^2\theta + (1+\cos(2\theta))\sin(2\theta)\\
+&= \sin(2\theta) (1+\cos(2\theta)-2\cos^2\theta)\\
+&= \sin(2\theta) (1+\cos^2\theta-\sin^2\theta-2\cos^2\theta)\\
+&= \sin(2\theta) \cdot 0\\
+&= 0
+\end{aligned}$
+
+** 10
+apply $y_1(t)=t^2$
+we get $2t^2-2t^2=0$
+apply $y_2(t)=t^{-1}$
+we get $\frac{2}{t}-2\cdot \frac{1}{t}=0$
+apply $y = c_1t^2+c_2t^{-1}$
+since $y'' = 2c_1+2c_2\cdot t^{-3}$
+we get $2c_1t^2+2c_2\cdot t^{-1} - 2c_1t^2 - 2c_2\cdot t^{-1} = 0$
+
+** 15
+$W[f, g] = fg' - gf' = t\cos t-\sin t$
+here $u = f + 3g, v = f - g$
+$\begin{aligned}
+W[u, v]
+&= uv' - vu'\\
+&= (f+3g)(f'-g') - (f-g)(f'+3g')\\
+&= ff'-fg'+3f'g-3gg'-ff'-3fg'+gf'+3gg'\\
+&= 4(gf'-fg')\\
+&= -4t\cos t + 4\sin t
+\end{aligned}$
+
+** 20
+apply $y_1(t)=e^t$
+we get $e^t-2e^t+e^t=0$
+apply $y_2(t)=te^t$
+we get $(t+2)e^t-2(t+1)e^t+te^t=0$
+check $\begin{aligned}
+W[y_1, y_2]
+&= e^t(t+1)e^t - te^te^t\\
+&= e^{2t}
+\end{aligned}$
+not zero, so does not constitute a fundamental set of solutions
+
+** 25
+
+** 30
+#+begin_comment
+Prove that if $y_1$ and $y_2$ have a common point of inflection $t_0$ in $I$
+then they cannot be a fundamental set of solutions on $I$ unless both $p$ and $q$
+are zero at $t_0$
+#+end_comment
+$y''+p(t)y'+q(t)y=0, y_1''(t_0)=y_2''(t_0)=0$
+$W[y_1, y_2] = 

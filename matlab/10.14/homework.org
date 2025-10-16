@@ -1,0 +1,52 @@
+#+begin_src octave :results output
+  tic;
+
+  p=1;q=1;
+  ans_p=1;ans_q=1;error=0.00001;
+
+  rounds = 0;
+    
+  while p <= 1e6
+    q = floor(p/pi);
+    while q <= p/(pi-error) && q >= p/(pi+error)
+      rounds = rounds + 1;
+      if abs(p/q - pi) < error
+        ans_p = p;
+        ans_q = q;
+        error = abs(p/q - pi);
+      end
+      q = q + 1;
+    end
+    p = p + 1;
+  end
+
+  fprintf("after %d rounds\nwe found p, q = %d, %d\n", rounds, ans_p, ans_q);
+
+  toc;
+#+end_src
+
+#+RESULTS:
+
+#+begin_src octave :eval no
+  ## use a child sequence s_n to generate all t_n
+  ## assume n >= t >= 2
+  function s(n, t)
+    if t == n
+      sqrt(1+t)
+    else
+      sqrt(1+t*s(n, t+1))
+    end
+  end
+
+  function f(n)
+    if n == 1
+      sqrt(2)
+    else
+      s(n, 2)
+    end
+  end
+
+  for n=1:26
+    fprintf("f_%d = %.8f", n, f(n));
+  end
+#+end_src

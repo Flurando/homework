@@ -3,6 +3,7 @@
 !*.org
 !.gitignore
 !notes/slopefield/*
+ms/some-SZU-LaTeX-templates/
 *~
 *#
 .#*
