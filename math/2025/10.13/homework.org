@@ -13,6 +13,7 @@
 #+begin_comment
 3.2 1-38 mod 5 (P133)
 3.3 1-36 mod 5
+3.4 1-30 mod 6
 #+end_comment
 
 * 3.2
@@ -81,4 +82,37 @@ then they cannot be a fundamental set of solutions on $I$ unless both $p$ and $q
 are zero at $t_0$
 #+end_comment
 $y''+p(t)y'+q(t)y=0, y_1''(t_0)=y_2''(t_0)=0$
-$W[y_1, y_2] = 
+$W[y_1, y_2] = y_1y_2'-y_1'y_2$
+$p(t_0)y_1'+q(t_0)y_1=0, p(t_0)y_2'+q(t_0)y_2=0$
+they are a fundamental set of solutions only when $y_1y_2'=y_1'y_2$
+if $p(t_0)\neq 0, q(t_0)\neq 0$
+since they have inflection point, they can't be zero
+so $\frac{y_1}{y_1'}=\frac{y_2}{y_2'}=\frac{y_1\pm y_2}{y_1'\pm y_2'}=-\frac{p(t_0)}{q(t_0)}$
+then $y_1=ky_2, y_1'=ky_2'$
+impossible
+if $p(t_0)\neq 0, q(t_0)=0$
+$y_1'=y_2'=0$
+since $y_1''=y_2''=0$, we have $y_1=C_1, y_2=C_2$
+impossible
+if $p(t_0)=0, q(t_0)\neq 0$
+$y_1=y_2=0$
+since $y_1''=y_2''=0$, we know $y_1, y_2$ one forever $\geq 0$, the other forever $\leq 0$
+impossible
+
+** 35
+
+* 3.3
+** 5
+** 10
+** 15
+** 20
+** 25
+** 30
+** 35
+
+* 3.4
+** 6
+** 12
+** 18
+** 24
+** 30
