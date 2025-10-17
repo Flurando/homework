@@ -98,6 +98,10 @@ if $p(t_0)=0, q(t_0)\neq 0$
 $y_1=y_2=0$
 since $y_1''=y_2''=0$, we know $y_1, y_2$ one forever $\geq 0$, the other forever $\leq 0$
 impossible
+so only when $y_1\neq 0, y_2\neq 0$
+$\frac{y_1}{y_1'}=\frac{y_2}{y_2'}=-\frac{p(t_0)}{q(t_0)}$
+$y_1y_2'-y_1'y_2 = 0$
+true
 
 ** 35
 
