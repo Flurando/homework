@@ -269,3 +269,31 @@ they are the basis for interactions:
 **** 蛋白质表面的二级结构
 **** Diseases of Protein Folding
 
+** Lipids 酯类
+*** biological functions of lipids
++ storage of energy
++ membrane structure
++ ..
++ ..
+
+*** Classes of lipids
+based on the structure and function
+
+*** fatty acids
++ fatty acids are comprised of alkyl烷烃 chains and terminated by carboxylic acid groups
++ fatty acids are either saturated饱和 or unsaturated.
+  根据烷烃上是否有双键，分为饱和和不饱和脂肪酸。
++ monounsaturated/polyunsaturated
+  一个/多个双键判断
++ 单键旋转让脂肪酸灵活转动
+  
+*** Triacylglycerols三酰甘油
+也叫triglycerides甘油三酯
+
+*** cahn-ingold-prelog (CIP) rules of priority 命名规则
+原子序数越高，优先级越高
+同位素中，物质的量越大的优先级越高
+如果遇到优先级相同的情况，就比较与这些原子连接的下一位原子优先级
+..
+
+*** stereo-specific numbering system
