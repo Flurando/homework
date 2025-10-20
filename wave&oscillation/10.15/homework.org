@@ -1,0 +1,142 @@
+#+TITLE: 4 Wave and Oscillation Homework
+#+AUTHOR: 2024110144 陈有骏
+#+LATEX_COMPILER: xelatex
+#+LATEX_CLASS: article
+#+LATEX_CLASS_OPTIONS: [a4paper,10pt]
+#+LATEX_HEADER: \usepackage[margin=0.5in]{geometry}
+#+LATEX_HEADER: \usepackage{xeCJK}
+#+LATEX_HEADER: \usepackage{fontspec}
+#+LATEX_HEADER: \usepackage{amsmath}
+#+LATEX_HEADER: \setCJKmainfont{WenQuanYi Zen Hei}
+#+OPTIONS: \n:t toc:nil num:nil date:nil
+
+* 1
+Consider the system of two equal masses connected by three springs along a line.
+The springs which have their ends attached to the vertical support and one mass have spring constant k.
+The central spring whose ends are attached to the two masses has spring constant k'.
+One of the masses is under a forcing $F(t)=F_0\cos \omega t$.
+Include a damping term of the form $2\beta\times velocity$
+** a
+Write down the equations of motion for the two masses.
+*** Solution
+suppose leftward as the positive direction
+apply common meanings for $m, k, k', a_1, a_2, v_1, v_2, x_1, x_2$
+$ma_1 = -kx_1-k'(x_1-x_2)-2\beta v_1+F_0\cos\omega t$
+$ma_2 = -kx_2-k'(x_2-x_1)-2\beta v_2$
+** b
+Solve the equations by identifying the normal modes.
+*** Solution
+$ma_1 = -kx_1-k'(x_1-x_2)$
+$ma_2 = -kx_2-k'(x_2-x_1)$
+suppose $x_1=C_1e^{i\omega t}, x_2=C_2e^{i\omega t}$
+$\begin{bmatrix}
+-k-k'+m\omega^2 & k'\\
+k' & -k-k'+m\omega^2
+\end{bmatrix}
+\begin{bmatrix} C_1 \\ C_2 \end{bmatrix} = \begin{bmatrix} 0 \\ 0 \end{bmatrix}$
+$det\left(\begin{bmatrix}
+-k-k'+m\omega^2 & k'\\
+k' & -k-k'+m\omega^2
+\end{bmatrix}\right)=0$
+$\omega_1^2=\frac{k+2k'}{m}, \omega_2^2=\frac{k}{m}$
+** c
+Write down solutions for the two masses.
+*** Solution
+$m \ddot{x_1} + 2\beta \dot{x_1} + (k + k') x_1 - k' x_2 = F_0 \cos(\omega t)$
+$m \ddot{x_2} + 2\beta \dot{x_2} + (k + k') x_2 - k' x_1 = 0$
+$x_1(t) = A e^{\lambda t}$
+$x_2(t) = B e^{\lambda t}$
+The characteristic equation is:
+$$\text{Det} \begin{bmatrix}
+m\lambda^2 + 2\beta\lambda + (k + k') & -k' \\
+-k' & m\lambda^2 + 2\beta\lambda + (k + k')
+\end{bmatrix} = 0$$
+The solutions give us the damped natural frequencies, $\lambda_1$ and $\lambda_2$
+The general solution for each mass is:
+$x_1(t) = C_1 e^{\lambda_1 t} + D_1 e^{\lambda_2 t} + A_p \cos(\omega t) + B_p \sin(\omega t)$
+$x_2(t) = C_2 e^{\lambda_1 t} + D_2 e^{\lambda_2 t} + C_p \cos(\omega t) + D_p \sin(\omega t)$
+Constants can be determined using initial conditions at $t=0$:
+- Initial displacement: $x_1(0)$ and $x_2(0)$
+- Initial velocities: $\dot{x_1}(0)$ and $\dot{x_2}(0)$
+** d
+Evaluate the square of the ratio of the amplitudes $\frac{|A_1|^2}{|A_2|^2}$
+and plot it as a function of $\omega$ for negligible damping.
+*** Solution
+The equations of motion are given by:
+- For Mass 1 ($m_1$):
+  $m \ddot{x_1} + (k + k') x_1 - k' x_2 = F_0 \cos(\omega t)$
+- For Mass 2 ($m_2$):
+  $m \ddot{x_2} + (k + k') x_2 - k' x_1 = 0$
+$x_1(t) = A_1 \cos(\omega t + \phi) \quad \text{and} \quad x_2(t) = A_2 \cos(\omega t + \phi)$
+Using the equations of motion, the amplitudes can be expressed as:
+1. $A_1 = \frac{F_0 k'}{D}, \quad \text{where } D = (-(k + k') + m\omega^2)^2 - (k')^2$
+2. $A_2 = \frac{F_0 (-(k + k') + m\omega^2)}{D}$
+Thus, the square of the ratio of the amplitudes is: $\frac{|A_1|^2}{|A_2|^2} = \frac{(k')^2}{(-(k + k') + m\omega^2)^2}$
+#+begin_src gnuplot :file 10.15-1-d.png :exports both
+  set term png size 300,300
+  set xrange [2:4]
+  set yrange [0:50]
+  set xlabel "omega"
+
+  k=1
+  k_=2
+  m=1
+
+  f(x)=(k_*k_)/((-(k+k_)+m*x)*(-(k+k_)+m*x))
+
+  plot f(x) notitle
+#+end_src
+
+#+RESULTS:
+[[file:10.15-1-d.png]]
+
+** e
+Analyse your result in $(d)$ and arrive at the result:
+*The unforced mass has large amplitude only when the forcing frequency lies*
+*between $\omega_1$ and $\omega_2$, otherwise it does not respond to forcing.*
+*The system acts like a mechanical band-pass filter.*
+*** Solution
+when $\omega$ lies outside $[\omega_1, \omega_2]$, $-(k+k')+m\omega^2$ is negative or extremely large
+when $\omega$ lies inside $[\omega_1, \omega_2]$, $-(k+k')+m\omega^2$ is small, leading to large amplitude
+
+* 2
+Three identical masses $m$ are connected in series by four identical springs
+of spring constant $k$ (each mass coupled to two strings, and the end springs
+to the walls).
+** a
+Calculate the normal modes of this system.
+*** Solution
+$ma_1^2=-k(x_1-0)-k(x_1-x_2)$
+$ma_2^2=-k(x_2-x_1)-k(x_2-x_3)$
+$ma_3^2=-k(x_3-x_2)-k(x_3-0)$
+$m\frac{d^2\begin{bmatrix}x_1\\x_2\\x_3\end{bmatrix}}{dt^2} = -k\begin{bmatrix}2 & -1 & 0\\-1 & 2 & -1\\0 & -1 & 2\end{bmatrix}\begin{bmatrix}x_1\\x_2\\x_3\end{bmatrix}$
+we want $x(t)=Ae^{i\omega t}$
+$-\omega^2 mA=-k\begin{bmatrix}2 & -1 & 0\\-1 & 2 & -1\\0 & -1 & 2\end{bmatrix}A$
+$\begin{bmatrix}2 & -1 & 0\\-1 & 2 & -1\\0 & -1 & 2\end{bmatrix}A=\frac{\omega^2 m}{k}A$
+there are three eigenvalues, $0, \frac{3}{2}, 4$
+apply back to get the eigenvectors, we have
+1. $A_1=A_2=A_3$
+2. $A_1=-A_3,A_2=0$
+3. $A_1=-2A_2=A_3$
+
+** b
+What sets of initial displacements would you give to the three masses
+so that the systemoscillates in each of these normal modes.
+*** Solution
+just correspond to the eigenvectors
+1. $A_1=A_2=A_3$
+2. $A_1=-A_3,A_2=0$
+3. $A_1=-2A_2=A_3$
+
+* 3
+Consider the earth as a homogeneous sphere or radius R
+and a straight hole is bored in it through its centre.
+Show that a particle dropped into the hole will execute a simple
+harmonic motion such that its time period is
+$$T=2\pi\sqrt{\frac{R}{g}}$$
+** Solution
+From $M=\rho \frac{4}{3} \pi R^3$ we get $\rho=\frac{3M}{4\pi R^3}$
+$F=-\frac{G\cdot \rho \frac{4}{3} \pi r^3 \cdot m}{r^2}=-\frac{GMmr}{R^3}$
+$-\omega^2 r=-\frac{GM}{R^3}r$
+$T=2\pi\frac{1}{\omega}=2\pi\sqrt{\frac{R^3}{GM}}$
+$T=2\pi\sqrt{\frac{R}{g}}$

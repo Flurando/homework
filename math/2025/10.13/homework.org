@@ -66,7 +66,8 @@ apply $y_1(t)=e^t$
 we get $e^t-2e^t+e^t=0$
 apply $y_2(t)=te^t$
 we get $(t+2)e^t-2(t+1)e^t+te^t=0$
-check $\begin{aligned}
+check
+$\begin{aligned}
 W[y_1, y_2]
 &= e^t(t+1)e^t - te^te^t\\
 &= e^{2t}
@@ -74,7 +75,17 @@ W[y_1, y_2]
 not zero, so does constitute a fundamental set of solutions
 
 ** 25
-
+$(1-x^2)y''-2xy'+\alpha(\alpha+1)y = 0$
+$y''-\frac{2x}{1-x^2}y'+\frac{\alpha(\alpha+1)}{1-x^2}y=0$
+$\begin{aligned}
+W &= ce^{\int \frac{2x}{1-x^2} dx}\\
+&= ce^{\int \frac{1}{1-x^2} dx^2}\\
+&= ce^{\int \frac{1}{1-x} dx}\\
+&= ce^{-\int \frac{1}{x} dx}\\
+&= ce^{-\ln x + C}\\
+&= ce^{-\ln x}\\
+&= cx^{-1}
+\end{aligned}$
 ** 30
 #+begin_comment
 Prove that if $y_1$ and $y_2$ have a common point of inflection $t_0$ in $I$
@@ -104,6 +115,7 @@ $y_1y_2'-y_1'y_2 = 0$
 true
 
 ** 35
+I don't see what shall I write for this question.
 
 * 3.3
 ** 5
@@ -130,14 +142,16 @@ y'
 apply initial conditions
 we get $e^{-\frac{\pi}{4}}\cdot \frac{\sqrt{2}}{2} \cdot (C_1+iC_2)=2$
 and $e^{-\frac{\pi}{4}}\cdot \frac{\sqrt{2}}{2} \cdot (-2C_1)=-2$
-so $\begin{aligned}
+so
+$\begin{aligned}
 C_1+iC_2 &= 2\sqrt{2} e^{\frac{\pi}{4}}\\
 2C_1 &= -2\sqrt{2} e^{\frac{\pi}{4}}
 \end{aligned}$
-this gives $\left{\begin{aligned}
+this gives
+$\left{\begin{aligned}
 C_1 &= -\sqrt{2} e^{\frac{\pi}{4}}\\
 C_2 &= -i \cdot 3\sqrt{2} e^{\frac{\pi}{4}}
-\end{aligned}\right .$
+\end{aligned}\right. $
 $y = -\sqrt{2}e^{-t+\frac{\pi}{4}}(\cos t - 3\sin t)$
 
 #+begin_src gnuplot :file 10.13-3.3-15.png :exports both
@@ -162,7 +176,8 @@ apply $y_1(t)=\cos t$
 we get $-\cos t+\cos t=0$
 apply $y_2(t)=\sin t$
 we get $-\sin t+\sin t=0$
-since $\begin{aligned}
+since
+$\begin{aligned}
 W[y_1, y_2]
 &= y_1y_2' - y_1'y_2\\
 &= \cos t \cos t + \sin t \sin t\\
@@ -205,7 +220,9 @@ W[y_1, y_2]
 e^{-3x} & e^x\\
 -3e^{-3x} & e^x
 \end{matrix}\right|\\
-&= e^{-2x}\left(1\times 1 - 1\times (-3)\right) \neq 0$
+&= e^{-2x}\left(1\times 1 - 1\times (-3)\right)\\
+&\neq 0
+\end{aligned}$
 so $y_1(x)$ and $y_2(x)$ form a fundamental set of solution
 then $y_1(\ln t), y_2(\ln t)$ form as well
 so $y=c_1\frac{1}{t^3} + c_2t$
@@ -237,7 +254,8 @@ e^{\frac{-1+i\sqrt{3}}{2}\cdot x} & e^{\frac{-1-i\sqrt{3}}{2}\cdot x}\\
 \end{aligned}$
 so $y_1(x), y_2(x)$ is a fundamental set of solution
 then $y_1(\frac{1}{2} t^2 + C), y_2(\frac{1}{2} t^2 + C)$ is as well
-which means $\begin{aligned}
+which means
+$\begin{aligned}
 y &= c_1e^{\frac{-1+i\sqrt{3}}{2}\cdot (\frac{1}{2} t^2 + C)} + c_2e^{\frac{-1-i\sqrt{3}}{2}\cdot (\frac{1}{2} t^2 + C)}\\
 &= c_1e^{\frac{-1+i\sqrt{3}}{2}\cdot \frac{1}{2} t^2} + c_2e^{\frac{-1-i\sqrt{3}}{2}\cdot \frac{1}{2} t^2}\\
 &= c_1e^{\frac{-1+i\sqrt{3}}{4} t^2} + c_2e^{\frac{-1-i\sqrt{3}}{4} t^2}
@@ -269,7 +287,43 @@ given $y_1(t)=t^2$
 we suppose $y=v(t)y_1(t)=v(t)t^2$
 then $y'=v'(t)t^2+2tv(t)$
 $y''=v''(t)t^2+4tv'(t)+2v(t)$
-$v''(t)t^2+4tv'(t)+2v(t)+p(t)v'(t)t^2+2tp(t)v(t)+q(t)y=0$
-$v''(t)t^2+4tv'(t)
+$v''(t)t^2+4tv'(t)+2v(t)+p(t)v'(t)t^2+2tp(t)v(t)+q(t)v(t)t^2=0$
+$v''(t)t^2+(4t+p(t)t^2)v'(t) +2tp(t)v(t) + 2v(t) + q(t)v(t)t^2=0$
+$v''(t)t^2=0$
+$v(t)=c_1t+c_2$
+so the second is $y_2(t)=Ct^3$ with $C\neq 0$
 ** 24
+$y''+p(t)y'+q(t)y=0$
+$y_1$ already a solution
+$y=v(t)y_1(t)$
+$y_1v''+(2y_1'+py_1)v'=0$
+suppose $u=v'$
+then $y_1u'+(2y_1'+py_1)u=0$
+since $\frac{y_2}{y_1}=v$ and
+$\begin{aligned}
+\frac{W}{y_1^2} &= \frac{y_1y_2'-y_1'y_2}{y_1^2}\\
+&= \frac{y_1(v'y_1+vy_1')-y_1'vy_1}{y_1^2}\\
+&= v'\\
+&= u
+\end{aligned}$
+$W[y_1, y_2](t)=ce^{-\int p(t) dt}=v'$
+$v = \int ce^{-\int p(t) dt} dt$
+so $y_2=c\int e^{-\int p(t) dt} dt$
 ** 30
+apply, get $-\sin t + k\sin^2 t \cos t + \sin t - k\cos t\sin^2 t=0$
+when $0<k<2$, of course $k\sin^2 t \geq 0$
+since $\cos t\sin t = \frac{1}{2} \sin 2t \leq \frac{1}{2}$
+we know $1-k\cos t\sin t>0$
+$p(t)=k\sin^2 t\geq 0, q(t)=1-k\cos t\sin t>0$
+$y=v(t)y_1(t)=v(t)\sin t$
+$y'=v'\sin t+v\cos t$
+$y''=v''\sin t + 2v'\cos t - v\sin t$
+$v''\sin t + 2v'\cos t - v\sin t + (k\sin^2 t)(v'\sin t+v\cos t) + (1-k\cos t\sin t) v\sin t=0$
+$v''\sin t + (2\cos t + k\sin^3 t)v' = 0$
+suppose $u=v'$
+then $\sin t u' + (2\cos t + k\sin^3 t) u = 0$
+when $\sin t\neq 0$, $u' + (\frac{2\cos t}{\sin t} + k\sin^2 t)u = 0$
+$u(t) = C\cdot\frac{1}{\sin^2 t e^{\frac{k}{2}\left(t-\frac{\sin 2t}{2}\right)}}$
+then $v(t) = C\int \cot^2 t e^{-\frac{k}{2}t+\frac{k}{4}\sin (2t)} dt$
+so $y=C\sin t \int \cot^2 t e^{-\frac{k}{2}t+\frac{k}{4}\sin (2t)} dt$
+can't observe out the other solution

@@ -129,3 +129,7 @@ Wronskian $W[y_1, y_2](t)=c e^\left(-\int p(t) dt\right)$
 ** 有复数根的怎么解
 换成cos，sin继续（欧拉公式）
 ** 重根
+$(c_1+c_2t)\cdot e^{rt}$
+** Euler Equations
+$t^2y''(t)+\alpha ty'(t)+\beta y(t) = 0$
+令$x=\ln t$ 即可

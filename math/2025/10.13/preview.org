@@ -1,0 +1,26 @@
+#+TITLE: Week 10.13 Math Preview
+#+AUTHOR: 2024110144 陈有骏
+#+LATEX_COMPILER: xelatex
+#+LATEX_CLASS: article
+#+LATEX_CLASS_OPTIONS: [a4paper,10pt]
+#+LATEX_HEADER: \usepackage[margin=0.5in]{geometry}
+#+LATEX_HEADER: \usepackage{xeCJK}
+#+LATEX_HEADER: \usepackage{fontspec}
+#+LATEX_HEADER: \usepackage{amsmath}
+#+LATEX_HEADER: \setCJKmainfont{WenQuanYi Zen Hei}
+#+OPTIONS: \n:t toc:nil num:nil date:nil
+
+* 回顾一阶恰当方程及其求解
+往全微分方程上凑
+* 预习二阶恰当方程及其求解
+还是往全微分方程上凑，和一阶没区别
+* 预习和总结二阶齐次微分方程的伴随方程概念
+就是可以给二阶齐次微分方程找到积分因子，但由于求解积分因子和求解原方程一样难，所以叫伴随方程
+* 预习和总结欧拉方程的特点及其求解方法
+先用 $x=\ln t$ 代换，回头检查完 $W$ 不为零的话，可以在结果处再换回来
+* 预习和总结将变系数方程约化为常系数方程的变量代换法适用条件
+$p(x), q(x)$ 都是线性的
+* 预习和总结将已知一个解，求另外一个线性无关解的降阶法
+假设 $y=v(t)y_1(t)$, 代换后刚好 $v(t)$ 项会被消去
+* 预习和总结二阶方程的降阶法
+要么直接代换，要么把y当变量换元，要么先凑一个解然后乘 $v(t)$ 代换
