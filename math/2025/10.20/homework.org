@@ -1,0 +1,99 @@
+#+TITLE: Week 10.20 Math Homework
+#+AUTHOR: 2024110144 陈有骏
+#+LATEX_COMPILER: xelatex
+#+LATEX_CLASS: article
+#+LATEX_CLASS_OPTIONS: [a4paper,10pt]
+#+LATEX_HEADER: \usepackage[margin=0.5in]{geometry}
+#+LATEX_HEADER: \usepackage{xeCJK}
+#+LATEX_HEADER: \usepackage{fontspec}
+#+LATEX_HEADER: \usepackage{amsmath}
+#+LATEX_HEADER: \setCJKmainfont{WenQuanYi Zen Hei}
+#+OPTIONS: \n:t toc:nil num:nil date:nil
+
+#+begin_comment
+3.2 31-38 mod 2 (P133)
+3.3 25-36 mod 3 (P139)
+3.4 30-34 mod 2 (P147)
+#+end_comment
+
+(repetitive questions skipped)
+
+* 3.2
+** 32
+$P(x)y''+Q(x)y'+R(x)y=0$
+$(P(x)y')'+(f(x)y)'=0$
+$P''(x)-Q'(x)+R(x)=0$
+
+$y''+xy'+y=0$
+$P(x)=1, Q(x)=x, R(x)=1$
+$P''(x)-Q'(x)+R(x)=0-1+1=0$
+so it is an exact equation
+it can be written as $y''+(xy)'=0$
+$y' = xy + C$
+$y' - xy = C$
+$(xy)' - 2(xy) = C$
+suppose $u=xy$
+so $u' - 2u = C$
+$e^{-2x}u' - 2e^{-2x}u = C$
+$e^{-2x}u = C_1x + C_2$
+$u = C_1xe^{-2x} + C_2e^{-2x}$
+$y = C_1e^{-2x} + C_2x^{-1}e^{-2x}$
+** 34
+$x^2y''+xy'-y=0, x>0$
+$P(x)=x^2, Q(x)=x, R(x)=-1$
+$P''(x)-Q'(x)+R(x)=2-1-1=0$
+so it is an exact equation
+it can be written as $(x^2y')'-(xy)'=0$
+$x^2y'=xy + C$
+$x^2y' - xy = C$
+$xy' - y = \frac{1}{x}C$
+$(xy)' - 2(xy) = \frac{1}{x}C$
+$u'-2u=\frac{1}{x}C$
+$e^{-2x}u=C_1\ln x + C_2$
+$u = C_1\ln x\cdot e^{2x} + C_2\cdot e^{2x}$
+$y = C_1\frac{\ln x}{x}\cdot e^{2x} + C_2\cdot x^{-1}\cdot e^{2x}$
+** 36
+$\mu(x)P(x)y'' + \mu(x)Q(x)y' + \mu(x)R(x)y=0$
+$(\mu(x)P(x)y')' + (f(x)y)'=0$
+$P\mu'' + (2P' - Q)\mu' + (P'' - Q' + R)\mu = 0$
+
+$P(x)=x^2, Q(x)=x, R(x)=x^2-v^2$
+$x^2\mu'' + 3x\mu' + (1 + x^2 - v^2)\mu = 0$
+** 38
+$P(x)=P(x), 2P'(x)-Q(x)=Q(x), P''(x)-Q'(x)+R(x) = R(x)$
+so $P'(x)=Q(x), P''(x)=Q'(x)$
+$36$ is not because $(x^2)'=2x\neq x$
+$37$ indeed is because $1'=0$ with no second order differencials
+* 3.3
+** 27
+let $x=\ln t$
+$\begin{aligned}
+\frac{dy}{dt} &= \frac{dy}{dx}\frac{dx}{dt}\\
+&=\frac{dy}{tdx}
+\end{aligned}$
+$\begin{aligned}
+\frac{d^2y}{dt^2}
+&= \frac{1}{t}\frac{d^2y}{dxdt} - \frac{1}{t^2} \frac{dy}{dx}\\
+&= \frac{1}{t^2}\frac{d^2y}{dx^2} - \frac{1}{t^2} \frac{dy}{dx}
+\end{aligned}$
+
+$t^2y'' + 4ty' + 2y = 0$
+$\frac{d^2y}{dx^2} + 3\frac{dy}{dx} + 2y = 0$
+$r^2+3r+2=0$
+$(r+2)(r+1)=0$
+$r=-2, -1$
+$y=c_1e^{-2x}+c_2e^{-x}$
+$W[e^{-2x}, e^{-x}] \neq 0$
+$y=c_1e^{-2\ln t}+c_2e^{-\ln t}$
+** 33
+$x = \int (q(t))^{\frac{1}{2}} dt = \int e^{-\frac{t^2}{2}} dt = -\frac{1}{t}e^{-\frac{t^2}{2}} + C$
+$y'' + ty' + e^{-t^2}y = 0, -\infty<t<\infty$
+$\frac{dy}{dt} = (1+\frac{1}{t^2})e^{-\frac{t^2}{2}}\frac{dy}{dx}$
+$\frac{d^2y}{dt^2} = (-t-\frac{1}{t}-\frac{2}{t^3})e^{-\frac{t^2}{2}}\frac{dy}{dx} + (1+\frac{1}{t^2})^2e^{-t^2} \frac{d^2y}{dx^2}$
+$(1+\frac{1}{t^2})e^{-t^2} \frac{d^2y}{dx^2} - \frac{2}{t^3}e^{-\frac{t^2}{2}}\frac{dy}{dx} + e^{-t^2}y = 0$
+tried many times but still not solving
+** 36
+
+* 3.4
+** 32
+** 34
