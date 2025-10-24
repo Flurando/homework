@@ -297,3 +297,26 @@ based on the structure and function
 ..
 
 *** stereo-specific numbering system
+*** 临界胶束
+*** What are the chemical and physical properties of membranes?
+*** Lipids form ordered structures spontaneously in water
+1. 两亲性酯类在水中自发形成有序结构
+2. ..
+3. ..
+4. ..
+
+*** Biological membranes are asymmetric structure
+这个非对称性是生物学功能重要的基础
+
+*** Lipids undergo a variety of movements in membranes
+*** Membrane lipids can be ordered to different extents
+** 核苷酸和核酸Nucleotides and Nucleosides
+How is genetic information stored and transferred across a family tree?
+*** structure and chemistry of nitrogenous bases
+the nitrogenous bases fo nucleotides are derivatives of pyrimidine嘧啶 and ..
+**** pyrimidine嘧啶
+含两个氮原子的六元杂环组成
+**** purine嘌呤
+嘌呤有两个环，一个类似..
+*** nucleosides 核苷
+*** restriction mapping of DNA

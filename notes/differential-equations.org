@@ -133,22 +133,5 @@ $(c_1+c_2t)\cdot e^{rt}$
 ** Euler Equations
 $t^2y''(t)+\alpha ty'(t)+\beta y(t) = 0$
 令$x=\ln t$ 即可
-#+begin_export latex
-$x = \ln t$
-\begin{align*}
-\frac{dy}{dt}
-&= \frac{dy}{dx}\cdot \frac{dx}{dt}\\
-&= \frac{dy}{dx}\cdot \frac{1}{t}
-\end{align*}
-\begin{align*}
-\frac{d^2y}{dt^2}
-&= \frac{d\frac{dy}{dx}\cdot \frac{1}{t}}{dt}\\
-&= \frac{d^2y}{dx^2} \frac{1}{t^2} - \frac{1}{t^2} \frac{dy}{dx}
-\end{align*}
-#+end_export
-
-#+begin_export latex
-$ty''(t)-y'(t)+4t^3y(t)=0$
-$y=v(t)y_1(t)=v(t)\sin t^2$
-
-#+end_export
+** $ay'' + by' + cy = g(t)$
+试$Ae^{at}, A\sin\beta t+B\cos\beta t, P_n(t)$

@@ -93,7 +93,7 @@ $\frac{d^2y}{dt^2} = (-t-\frac{1}{t}-\frac{2}{t^3})e^{-\frac{t^2}{2}}\frac{dy}{d
 $(1+\frac{1}{t^2})e^{-t^2} \frac{d^2y}{dx^2} - \frac{2}{t^3}e^{-\frac{t^2}{2}}\frac{dy}{dx} + e^{-t^2}y = 0$
 tried many times but still not solving
 ** 36
-
+since $q(t)<0$, it is not possible
 * 3.4
 ** 32
 ** 34
