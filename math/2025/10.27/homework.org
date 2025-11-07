@@ -1,0 +1,77 @@
+#+TITLE: Week 10.27 Math Homework
+#+AUTHOR: 2024110144 陈有骏
+#+LATEX_COMPILER: xelatex
+#+LATEX_CLASS: article
+#+LATEX_CLASS_OPTIONS: [a4paper,10pt]
+#+LATEX_HEADER: \usepackage[margin=0.5in]{geometry}
+#+LATEX_HEADER: \usepackage{xeCJK}
+#+LATEX_HEADER: \usepackage{fontspec}
+#+LATEX_HEADER: \usepackage{amsmath}
+#+LATEX_HEADER: \setCJKmainfont{WenQuanYi Zen Hei}
+#+OPTIONS: \n:t toc:nil num:nil date:nil
+
+#+begin_comment
+3.7 1-24 mod 6 P171
+3.8 1-18 mod 6 P
+#+end_comment
+
+* 3.7
+** 6
+$k=\frac{3N}{0.1m}=30N/m$
+$b=\frac{3N}{5m/s}=0.6N\cdot s/m$
+$mx''=-kx-bx', x>0$
+$x''-0.6x'+30x=0$
+$r^2-0.6r+30=0$
+$\Delta = 0.36-120 = -119.67$
+$r = \frac{0.6\pm i\sqrt{119.67}}{2}$
+$x = e^{0.3t}\left(c_1\sin\frac{119.67}{2}t + c_2\cos\frac{119.67}{2}t\right)$
+initial condition is $x(0)=0.05, x'(0)=0.1$
+so $c_2=0.05$
+$x'(0) = 0.3c_2 + c_1\frac{119.67}{2} = 0.1$
+so $c_1=\frac{2}{119.67}\cdot 0.085$
+we have $x = e^{0.3t}\left(\frac{2}{119.67}\cdot 0.085\sin\frac{119.67}{2}t + 0.05\cos\frac{119.67}{2}t\right)$
+since this is only half, we have to change the symbol of $x$ whenever it goes to $0$
+we know the full $T=\frac{2\pi}{\omega}=\frac{4\pi}{119.67}$
+so we have to change the symbol every $\frac{2\pi}{119.67}$
+and the question is using $u$ instead of $x$
+so $u = (-1)^{\left[\frac{t}{\frac{2\pi}{119.67}}\right]} e^{0.3t}\left(\frac{2}{119.67}\cdot 0.085\sin\frac{119.67}{2}t + 0.05\cos\frac{119.67}{2}t\right)$
+which approxamates to
+$u = (-1)^{[0.052504t]} e^{0.3t}\left(0.0014206\sin (59.835t) + 0.05\cos (59.835t)\right)$
+the quasi-frequency $\mu = \frac{1}{T} = \frac{119.67}{4\pi} = 9.5230$
+if undamped, $x''+30x=0$
+$\mu = \frac{120}{4\pi}$
+so the ratio is $\frac{119.67}{120} = 0.9972$
+** 12
+$C=0.8\times 10^{-6} F$
+$L=0.2H$
+for critically damped circus, damping ratio $\zeta = 1$
+so $zeta = \frac{R}{2\sqrt{\frac{L}{C}}} = 1$
+then $R = 2\sqrt{\frac{L}{C}} = 1000\Omega$
+To use the method in differencial equation instead of formula
+we need to use $KVL$ equation
+$LI' + RI + \frac{1}{C}\int I = 0$
+
+** 18
+*** a
+$u'' + \frac{\upsilon}{m}u' + \frac{k}{m}u=0, u(0)=u_0, u'(0)=v(0)$
+$mr^2 + \upsilon r + k = 0$
+$\Delta = \upsilon^2 - 4mk$
+$r = \frac{-\upsilon\pm\sqrt{\upsilon^2-4mk}}{2m}$
+$u = c_1e^{\frac{-\upsilon+\sqrt{\upsilon^2-4mk}}{2m}t}+c_2e^{\frac{-\upsilon-\sqrt{\upsilon^2-4mk}}{2m}t}$
+$u = e^{\frac{-\upsilon}{2m}t} \left(c_1e^{\frac{\sqrt{\upsilon^2-4mk}}{2m}t} + c_2e^{-\frac{\sqrt{\upsilon^2-4mk}}{2m}t}\right)$
+$u(0) = c_1+c_2 = u_0, u'(0) = \frac{-\upsilon}{2m}(c_1+c_2) + \frac{\sqrt{\upsilon^2-4mk}}{2m}(c_1-c_2) = v_0$
+$c_1+c_2=u_0, c_1-c_2=\frac{2m}{\sqrt{\upsilon^2-4mk}} (v_0-\frac{-\upsilon}{2m}u_0)$
+$c_1 = \frac{1}{2}u_0 + \frac{m}{\sqrt{\upsilon^2-4mk}} (v_0-\frac{-\upsilon}{2m}u_0)$
+$c_2 = \frac{1}{2}u_0 - \frac{m}{\sqrt{\upsilon^2-4mk}} (v_0-\frac{-\upsilon}{2m}u_0)$
+so
+$\begin{aligned}
+u &= e^{\frac{-\upsilon}{2m}t} \left((\frac{1}{2}u_0 + \frac{m}{\sqrt{\upsilon^2-4mk}} (v_0-\frac{-\upsilon}{2m}u_0))e^{\frac{\sqrt{\upsilon^2-4mk}}{2m}t}\\
+&+\quad (\frac{1}{2}u_0 - \frac{m}{\sqrt{\upsilon^2-4mk}} (v_0-\frac{-\upsilon}{2m}u_0))e^{-\frac{\sqrt{\upsilon^2-4mk}}{2m}t}\right)$
+*** b
+$u = Re^{-\upsilon t/(2m)}\cos (\mu t-\sigma)$
+*** c
+** 24
+* 3.8
+** 6
+** 12
+** 18

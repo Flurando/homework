@@ -320,3 +320,17 @@ the nitrogenous bases fo nucleotides are derivatives of pyrimidine嘧啶 and ..
 嘌呤有两个环，一个类似..
 *** nucleosides 核苷
 *** restriction mapping of DNA
+*** PCR Polymerase chain reaction
+*** Plasmids are very useful in cloning genes
+*** virtually any DNA sequence can be cloned
+*** What is a DNA library
+A DNA lib
+*** What is mRNA vaccine?
+不加蛋白，脂质体包RNA
+** Basic principle of chemical kinetics
+*** Rate Law
+$v=k[A]^a[B]^b$
+*** Enzyme catalyzed reaction is not consistent with a typical First-order rection
+酶催化反应不符合一级反应
+*** 酶周转数the turnover number
+it defines the activity of one enzyme molecule
