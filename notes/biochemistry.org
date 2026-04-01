@@ -334,3 +334,46 @@ $v=k[A]^a[B]^b$
 酶催化反应不符合一级反应
 *** 酶周转数the turnover number
 it defines the activity of one enzyme molecule
+*** $V_{max}$ 是无法达到的理论值
+*** Transition state theory过渡态
+*** allosteric regulation别构调节
+allosteric enzymes are subject to feedback regulation
+*** 别构酶的动力学曲线是S型
+Kinetics of allosteric enzyme..
+*** the symmetry model for allosteric regulation
+- Allosteric proteins can exist in two states
+  R (relaxed) and T (taut)
+- all the subunits..
+*** the sequential model for allosteric regulation is based on ligand-induced conformation changes
+
+* Molecular Motor
+** motor proteins, also known as molecular motors
+use chamical energy (atp) to orchestrate movements
+线性或旋转
+*** linear
+Kinesins
+Dyneins
+Myosins
+*** rotating
+flagellar motor
+** actin is the principal component of thin filaments
+** cytoskeleton 细胞骨架
+** TCA循环
+*** Succinyl-CoA Synthetase Catalyzes Substrate Level Phosphorylation
+** *TCA循环* 重要！
+** Coenzyme Q 辅酶Q
+*** the isoprenoid tail makes the Coenzyme Q highly hydrophobic疏水性 and can diffuses freely in the hydrophobic core of the inner mitochondrial mambrane
+*** Complex I oxidizes NADH and reduces Coenzyme Q
+*** The electrons are transferred through a series of iron sulfur clusters and are eventually delivered to ubiquinone (UQ)
+**** FMN 可以接受电子
+$$NADH+[FMN]+H^+ \longrightarrow [FMNH_2]+NAD^+$$
+*** PEP高能量
+Phosphoenolpyruvate (PEP) carboxykinase uses GTP and a decarboxylation to drive PEP synthesis
+** Fischer projection to Haworth projection
+** 脂肪酸的 $\beta$ 氧化
+*** palmitoyl-CoA乙酰辅酶A的 $\beta$ -oxidation
+*** how are odd-carbon fatty acids oxidized?
+yeilds propionyl-CoA丙酰辅酶A
+which would later be convrted to succinyl-CoA琥珀酸辅酶A
+这里是靠二氧化碳上羧基
+*** 琥珀酸需要靠转化为acetyl-CoA苹果酸来保持数量恒定

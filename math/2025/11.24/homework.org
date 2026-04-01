@@ -1,0 +1,163 @@
+#+TITLE: Week 11.24 Math Homework
+#+AUTHOR: 2024110144 陈有骏
+#+LATEX_COMPILER: xelatex
+#+LATEX_CLASS: article
+#+LATEX_CLASS_OPTIONS: [a4paper,10pt]
+#+LATEX_HEADER: \usepackage[margin=0.5in]{geometry}
+#+LATEX_HEADER: \usepackage{xeCJK}
+#+LATEX_HEADER: \usepackage{fontspec}
+#+LATEX_HEADER: \usepackage{amsmath}
+#+LATEX_HEADER: \setCJKmainfont{WenQuanYi Zen Hei}
+#+OPTIONS: \n:t toc:nil num:nil date:nil
+
+#+begin_comment
+5.4 25-37 mod 5
+5.5 1-12 mod 4
+5.6 1-12 mod 4
+#+end_comment
+
+* 5.4
+** 25
+Find all values of $\beta$ which all solutions of $x^2y''+\beta y=0$ approaches zero as $x\to 0$
+suppose $y=x^r$
+then $y'=rx^{r-1}, y''=r(r-1)x^{r-2}$
+so $r(r-1)x^r+x^r=0$
+assume $x\neq 0$, there is $r^2-r+\beta=0$
+which yeilds $r=\frac{1\pm \sqrt{1-4\beta}}{2}$
+only $0< \beta \leq \frac{1}{4}$, $y\to 0$ as $x\to 0$
+** 30
+show that the point $x = 0$ is a regular singular point.
+Try to find solutions of the form $\sum_{n=0}^{\infty} a_nx^n$
+Show that (except for constant multiples) there is only one nonzero solution of this form
+Thus the general solution could not found in this manner. This is typical of equations with singular points.
+$$2xy''+3y'+xy=0$$
+divide by $2x$ we get $y'' + \frac{3}{2x}y' + \frac{1}{2}y=0$
+here $P, Q$ both have at most a pole of order when $x=0$, so $x=0$ is a regular singular point
+now suppose $y=\sum_{n=0}^{\infty} a_nx^n$
+we know $y' = \sum_{n=0}^{\infty} na_nx^{n-1}, y'' = \sum_{n=0}^{\infty} n(n-1)a_nx^{n-2}$
+hence we get $2x\sum_{n=0}^{\infty} n(n-1)a_nx^{n-2} + 3\sum_{n=0}^{\infty} na_nx^{n-1} + x\sum_{n=0}^{\infty} a_nx^n=0$
+which is $2\sum_{n=0}^{\infty} n(n-1)a_nx^{n-1} + 3\sum_{n=0}^{\infty} na_nx^{n-1} + \sum_{n=0}^{\infty} a_nx^{n+1}=0$
+$2\sum_{n=2}^{\infty} n(n-1)a_nx^{n-1} + 3\sum_{n=2}^{\infty} na_nx^{n-1} + \sum_{n=0}^{\infty} a_nx^{n+1} + 3a_1=0$
+$2\sum_{n=1}^{\infty} n(n+1)a_{n+1}x^n + 3\sum_{n=1}^{\infty} (n+1)a_{n+1}x^n + \sum_{n=1}^{\infty} a_{n-1}x^n + 3a_1=0$
+$$\sum_{n=1}^{\infty} \left\((2n^2+5n+3)a_{n+1} + a_{n-1}\right\) x^n + 3a_1 = 0$
+as we only need to find one set of this kind of $y$,
+I assume $a_1=0$, then for $n=1\to \infty$, we have $(2n^2+5n+3)a_{n+1} + a_{n-1}=0$
+so all $a_{2k+1}=0, k=0,1,2,\dots$
+of course we want $a_0 \neq 0$ for useful meaning
+no idea how to get the solution, or the "one non-zero solution" out
+** 35
+$(1-x^2)y'' - 2xy' + \alpha(\alpha+1)y = 0$
+$P(x)=1-x^2, Q(x)=-2x, R(x)=\alpha(\alpha+1)$
+suppose $t=\frac{1}{x}$
+$y' = y'_t \cdot t' = y'_t \cdot -\frac{1}{x^2}$
+$y'' = y'_x'_t \cdot t' = ( y''_t \cdot -\frac{1}{x^2} + y'_t \cdot \frac{2}{x^3} )\cdot -\frac{1}{x^2}$
+following what said in question 32
+first calculate
+$$\begin{aligned}
+\frac{1}{P(\frac{1}{t})} \left\(\frac{2P(\frac{1}{t})}{t}-\frac{Q(\frac{1}{t})}{t^2}\right\)
+&= \frac{1}{1-\frac{1}{t^2}} \left\(\frac{2-\frac{2}{t^2}}{t}+\frac{2}{t^3}\right\)\\
+&= \frac{1}{1-\frac{1}{t^2}} \frac{2}{t}\\
+&= \frac{2}{t-\frac{1}{t}}\\
+&= \frac{2t}{t^2-1}
+\end{aligned}$$
+since this is differenciable and can approach $0$, it has taylor expansions
+second consider
+$$\begin{aligned}
+\frac{R(\frac{1}{t})}{t^4P(\frac{1}{t})}
+&= \frac{\alpha(\alpha+1)}{t^4-t^2}
+&= \alpha(\alpha+1) \frac{1}{t^2} \frac{1}{t^2-1}
+\end{aligned}$$
+it does not have taylor series
+so it is irregular singular point
+* 5.5
+** 4
+a. Show that the given differential equation has a regular
+singular point at x = 0.
+b. Determine the indicial equation, the recurrence relation, and
+the roots of the indicial equation.
+c. Find the series solution ( x > 0) corresponding to the larger
+root.
+d. If the roots are unequal and do not differ by an integer, find
+the series solution corresponding to the smaller root also.
+$xy''+y'-y=0$
+*** a
+let $p(x)=\frac{1}{x}, q(x)=-\frac{1}{x}$, both have poles of at most order $1$ at $x=0$
+so regular singular point
+*** b
+assume $y=x^r\sum_{n=0}^{\infty} a_n x^n$
+we know $y' = \sum_{n=0}^{\infty} (n+r)a_n x^{n+r-1}$
+$y'' = \sum_{n=0}^{\infty} (n+r)(n+r-1)a_n x^{n+r-2}$
+subsitute to $\sum_{n=0}^{\infty} a_n (n+r)^2 x^{n+r-1} - \sum_{n=1}^{\infty} a_{n-1} x^{n+r} = 0$
+let $n=0$, we have $r^2=0$
+the roots are $r=0$ of course
+the recurrance relation is $a_n(n+r)(n+r-1) + a_n(n+r) - a_{n-1} = 0, n\geq 1$
+which means $a_n = \frac{a_{n-1}}{(n+r)^2}$
+*** c
+for $r=0$, we know $a_n = \frac{1}{n^2} a_{n-1}$
+so $a_n = \frac{a_0}{(n!)^2}$
+$y = a_0 \sum_{n=0}^{\infty} \frac{x^n}{(n!)^2}$
+*** d
+$y = a_0 \sum_{n=0}^{\infty} \frac{x^n}{(n!)^2} \ln x + \sum_{n=0}^{\infty} a_nx^n$
+similar, $y = a_0 \sum_{n=0}^{\infty} \frac{x^n}{(n!)^2} \ln x + C \sum_{n=0}^{\infty} \frac{x^n}{(n!)^2}
+** 8
+$(1-x^2)y'' - xy' + \alpha^2 y = 0$
+let $P(x) = 0$ we have $x=\pm 1$
+and since $-\frac{x}{1-x^2}, \frac{\alpha^2}{1-x^2}$ is infinite when $x\to \infty$
+they are regular singular points
+suppose $y = \sum_{n=0}^{\infty} a_n(x-x_0)^{n+r}$
+let $x_0=1$, then $y = \sum_{n=0}^{\infty} a_n(x-1)^{n+r}$
+consider $\delta = x-1$
+then $(-2\delta-\delta^2)y''+ (1+\delta)y' + \alpha^2 y = 0$
+when $\delta\to 0$
+we know the $P$ here would be $-2\delta$
+so the exponents are $0$ and $1$
+for $x_0=-1$, $y = \sum_{n=0}^{\infty} a_n(x+1)^{n+r}$
+$(2\delta-\delta^2)y''+ (1-\delta)y' + \alpha^2 y = 0$
+still $0$ and $1$
+to get the solution for $x=1$, use $\delta$ as the new $x$
+$(-2x-x^2)y''+ (1+x)y' + \alpha^2 y = 0$
+assume $y = \sum_{n=0}^{\infty} a_nx^n$
+$y' = \sum_{n=0}^{\infty} na_nx^{n-1}$
+$y'' = \sum_{n=0}^{\infty} n(n-1) a_nx^{n-2}$
+$(-2x-x^2)\sum_{n=0}^{\infty} n(n-1) a_nx^{n-2} + (1+x)\sum_{n=0}^{\infty} na_nx^{n-1} + \alpha^2\sum_{n=0}^{\infty} a_nx^n=0$
+let $a_0=0$
+then for $n\geq 2$
+we have $n(n-1)(\alpha^2-1)a_n = 2(n-1)a_{n-1}$ which means $a_n=\frac{2}{n(\alpha^2-1)}a_{n-1}$
+so $a_n = \left\(\frac{2}{\alpha^2-1}\right\)^{n-1} \frac{1}{n!}$
+$y = \sum_{n=0}^{\infty} \left\(\frac{2}{\alpha^2-1}\right\)^{n-1} \frac{1}{n!} x^n$
+** 12
+$x^2y'' + xy' + (x^2-1)y = 0$
+*** a
+since $P(x)=x^2=0$ gives $x=0$, we know it is singular point
+and as $\frac{1}{x}$ and $1-\frac{1}{x^2}$ are both finite when $x$ is infinite, it is regular
+*** b
+suppose $y = \sum_{n=0}^{\infty} a_nx^n$
+then $x^2\sum_{n=0}^{\infty} n(n-1) a_nx^{n-2} + x\sum_{n=0}^{\infty} na_nx^{n-1} + (x^2-1)\sum_{n=0}^{\infty} a_nx^n = 0$
+which is $x^2\sum_{n=2}^{\infty} n(n-1) a_nx^{n-2} + x\sum_{n=1}^{\infty} na_nx^{n-1} + (x^2-1)\sum_{n=0}^{\infty} a_nx^n = 0$
+$x^2\sum_{n=2}^{\infty} n(n-1) a_nx^{n-2} + x\sum_{n=1}^{\infty} na_nx^{n-1} + (x^2-1)\sum_{n=0}^{\infty} a_nx^n = 0$
+$x^2\sum_{n=1}^{\infty} n(n+1) a_{n+1}x^{n-1} + x\sum_{n=1}^{\infty} na_nx^{n-1} + (x^2-1)\sum_{n=1}^{\infty} a_{n-1}x^{n-1} = 0$
+assume $x\neq 0$, we have $x^2\sum_{n=1}^{\infty} n(n+1) a_{n+1} + x\sum_{n=1}^{\infty} na_n + (x^2-1)\sum_{n=1}^{\infty} a_{n-1}=0$
+by rearranging, we get $x^2\sum_{n=1}^{\infty} (n(n+1) a_{n+1} + a_{n-1}) + x\sum_{n=1}^{\infty} na_n - \sum_{n=1}^{\infty} a_{n-1}=0$
+this is a rank 2 function for $x$, substitute $x=\pm 1$ gives $0$, so roots
+*** c
+*** d
+*** e
+* 5.6
+** 4
+*** a
+$2x(x+2)y'' + y' - xy = 0$
+let $P(x)=0$ we have $x=0, -2$ and as rank of $P$ higher than $Q,R$, they are regular
+*** b
+suppose $y = x^r\sum_{n=0}^{\infty} a_nx^n$
+when $x=0$, $y=x^r$
+$2x(x+2)r(r-1)x^{r-2} + rx^{r-1} - x^{r+1} = 0$
+$2r(r-1)x^r + 4r(r-1)x^{r-1} + rx^{r-1} - x^{r+1} = 0$
+$2r(r-1)x^r + (4r^2 - 3r)x^{r-1} - x^{r+1} = 0$
+suppose $x\neq 0$, we have $-x^2 + 2r(r-1)x + (4r^2-3r) = 0$
+let each of them to $0$ we have $0, 1, \frac{3}{4}$
+when $x=-2$, let $m=x+2$
+so $2(m-2)my'' + y' - (m-2)y=0$
+here $y = m^r$
+so $2(m-2)mr(r-1)m^{r-2} + rm^{r-1} - (m-2)m^r = 0$
+** 8
+** 12

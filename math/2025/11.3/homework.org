@@ -15,3 +15,184 @@
 4.2 1-31 mod 5
 4.3 1-17 mod 4
 #+end_comment
+
+* 11.3
+** 4.1
+*** 5
+$f_1(t)=2t-3, f_2(t)=t^2+1, f_3(t)=3t^2 - t$
+$(2t-3)k_1 + (t^2+1)k_2 + (3t^2-t)k_3 = 0$
+when $t=0$
+$-3k_1 + k_2 = 0$ gives $3k_1 = k_2$
+when $t=1$
+$-k_1 + 2K_2 + 2K_3 = 0$ gives $5k_1 = 2k_3$
+so we can suppose $k_1=2k,k_2=6k,k_3=5k$
+then $21t^2 - t = 0$, impossible for all $t$ s!
+so they are linearly independent
+*** 10
+$xy'''-y''=0, 1, x, x^3$
+for $1, x$, $0-0=0$
+for $x^3$, $x\cdot 6 - 6x=0$
+so they are indeed solutions
+$\begin{aligned}
+W[1,x,x^3]
+&= \|\begin{matrix}
+1 & x & x^3\\
+0 & 1 & 3x^2\\
+0 & 0 & 6x
+\end{matrix}\|\\
+&= 1\cdot 1\cdot 6x\\
+&= 6x
+\end{aligned}$
+*** 15
+**** a
+$W = y_1y_2'y_3'' + y_1''y_2y_3' + y_1'y_2''y_3 - y_1''y_2'y_3 - y_1'y_2y_3'' - y_1y_2''y_3'$
+for $A(x)B(x)C(x)$, we know the derivation is $A(x)(B'(x)C(x)+B(x)C'(x))+A'(x)B(x)C(x)$
+$\begin{aligned}
+W
+&= y_1'y_2'y_3'' + y_1y_2''y_3'' + y_1y_2'y_3'''\\
+&\quad + y_1'''y_2y_3' + y_1''y_2'y_3' + y_1''y_2y_3''\\
+&\quad + y_1''y_2''y_3 + y_1'y_2'''y_3 + y_1'y_2''y_3'\\
+&\quad - y_1'''y_2'y_3 - y_1''y_2''y_3 - y_1''y_2'y_3'\\
+&\quad - y_1''y_2y_3'' - y_1'y_2'y_3'' - y_1'y_2y_3'''\\
+&\quad - y_1'y_2''y_3' - y_1y_2'''y_3' - y_1y_2''y_3''\\
+&= y_1y_2'y_3'''\\
+&\quad + y_1'''y_2y_3'\\
+&\quad + y_1'y_2'''y_3\\
+&\quad - y_1'''y_2'y_3\\
+&\quad - y_1'y_2y_3'''\\
+&\quad - y_1y_2'''y_3'\\
+&= \|\begin{matrix}
+y_1 & y_2 & y_3\\
+y_1' & y_2' & y_3'\\
+y_1''' & y_2''' & y_3'''
+\end{matrix}\|
+\end{aligned}$
+**** b
+$y''' + p_2(t)y' + p_3(t)y = -p_1(t)y''$
+with the third row of $W'$ and $W$
+this is obvious
+**** c
+If one $t$ makes it zero, then $c=0$, then all zeros
+so either all zeros, or no zero
+**** d
+Seems this question does not need answering
+*** 20
+$(2-t)y'''+(2t-3)y''-ty'+y=0, t<2, y_1(t)=e^t$
+$p_1(t)=\frac{2t-3}{2-t}, p_2(t)=-\frac{t}{2-t}$
+let $y = v(t)e^t$
+then $e^tv''' + (3e^t + \frac{2t-3}{2-t}e^t)v'' + (3e^t + 2\frac{2t-3}{2-t}e^t - \frac{t}{2-t}e^t)v' = 0$
+$v''' + (3+\frac{2t-3}{2-t})v'' + (3+2\frac{2t-3}{2-t}-\frac{t}{2-t})v'=0$
+$(2-t)v''' + (3+t)v'' = 0$
+suppose $u=v''$, then $(2-t)u' + (3+t)u = 0$
+$u=C(2-t)^5e^t$
+then $v = A(\sum_{n=0}^5 \int \frac{(-1)^n(2-t)^{5-n}}{n!} dt) + Bt + C$
+so $y = e^t\left(A(\sum_{n=0}^5 \int \frac{(-1)^n(2-t)^{5-n}}{n!} dt) + Bt + C\right)$
+** 4.2
+*** 5
+$1 + 0i$
+the third roots
+$\cos 0 + i\sin 0 = e^{i 0}$
+$\cos 2m\pi + i\sin 2m\pi = e^{i2m\pi}$
+so $1^{\frac{1}{3}} = e^{\frac{2m\pi}{3}i} = \cos \frac{2m\pi}{3} + i\sin \frac{2m\pi}{3}$
+the three third roots are gained by setting $m=0,1,2$
+which is $1, -\frac{1}{2} + \frac{\sqrt{3}}{2}i, -\frac{1}{2} - \frac{\sqrt{3}}{2}i$
+*** 10
+just $y''=(A+Bt)e^{2t}$
+so $y=\int\int (A+Bt)e^{2t} dt dt$
+$\begin{aligned}
+y &= \int (At + \frac{B}{2}\int t de^{2t}) dt\\
+&= \int (At + \frac{B}{2}(te^{2t} - \int e^{2t} dt)) dt\\
+&= \int (At + \frac{B}{2}(te^{2t} - 2e^{2t}) + C) dt\\
+&= \int (At + \frac{B}{2}te^{2t} - Be^{2t} + C) dt\\
+&= \frac{1}{2}At^2 + Ct + B\int (\frac{1}{2}t-1)e^{2t} dt + D\\
+&= \frac{1}{2}At^2 + Ct + \frac{B}{2}\int (\frac{1}{4}t-1) de^t + D\\
+&= \frac{1}{2}At^2 + Ct + \frac{B}{8}\int t de^t - \frac{B}{2}e^t + D\\
+&= \frac{1}{2}At^2 + Ct + \frac{B}{8}(te^t - \int e^t dt) - \frac{B}{2}e^t + D\\
+&= \frac{1}{2}At^2 + Ct + \frac{B}{8}te^t - \frac{B}{8}e^t - \frac{B}{2}e^t + D\\
+&= \frac{1}{2}At^2 + Ct + \frac{B}{8}te^t - \frac{5B}{8}e^t + D
+\end{aligned}$
+*** 15
+$y''''''''+8y''''+16y=0$
+$r^8+8r^4+16=0$
+$r^4=4$
+$r^2=\pm 2$
+$r=\sqrt{2}, -\sqrt{2}, \sqrt{2}i, -\sqrt{2}i$
+$y=Ae^{\sqrt{2}t} + Be^{-\sqrt{2}t} + Ce^{\sqrt{2}it} + De^{-\sqrt{2}it}$
+*** 20
+$y'''+y'=0, y(0)=0, y'(0)=1, y''(0)=2$
+$r^3+r=0$
+$r(r-i)(r+i)=0$
+$y=Ae^t+Be^{it}+Ce^{-it}$
+applying initial conditions
+we get $A+B+C=0, A+iB-iC=1, A-B-C=2$
+$A=1, B=C=-\frac{1}{2}$
+$y=e^t-\frac{1}{2}(e^{it}+e^{-it})$
+#+begin_src gnuplot :file 11.3-4.2-20.png :exports both
+  set term png size 300,300
+  set xlabel "t"
+  set ylabel "y"
+
+  f(x)=exp(x)-0.5*(exp(x*I)+exp(-x*I))
+
+  plot f(x) notitle
+#+end_src
+
+#+RESULTS:
+[[file:11.3-4.2-20.png]]
+
+*** 25
+$6y'''+5y''+y' = 0, y(0)=-2,y'(0)=2,y''(0)=0$
+$6r^3+5r^2+r=0$
+$r(2r+1)(3r+1)=0$
+$r=0,-\frac{1}{2},-\frac{1}{3}$
+$y=A+Be^{-\frac{1}{2}t}+Ce^{-\frac{1}{3}t}$
+$A+B+C=-2, -\frac{1}{2}B-\frac{1}{3}C=2, \frac{1}{4}B+\frac{1}{9}C=0$
+$A=B=8,C=-18$
+$y=8+8e^{-\frac{1}{2}t}-18e^{-\frac{1}{3}t}$
+#+begin_src gnuplot :file 11.3-4.2-25.png :exports both
+  set term png size 300,300
+  set xlabel "t"
+  set ylabel "y"
+
+  f(x)=8+8*exp(-0.5*x)-18*exp(-(1/3.0)*x)
+
+  plot f(x) notitle
+#+end_src
+
+#+RESULTS:
+[[file:11.3-4.2-25.png]]
+
+*** 30
+**** a
+**** b
+**** c
+**** d
+* 11.5
+** 4.3
+*** 4
+$y''''-4y''=t^2+e^t$
+for $y''''-4y''=0$
+we know $r^4-4r^2=0$
+so $r=0,0,2,-2$
+$y=A+Bt+Ce^{2t}+De^{-2t}$
+for $y''''-4y''=t^2$
+$y'' = -\frac{1}{4}t^2 - \frac{1}{8}$
+$y = -\frac{1}{48}t^4 - \frac{1}{16}t^2$
+for $y''''-4y''=e^t$
+$y'' = -\frac{1}{3}e^t$
+$y = -\frac{1}{3}e^t$
+combined together, we have $A+Bt+Ce^{2t}+De^{-2t}-\frac{1}{48}t^4 - \frac{1}{16}t^2-\frac{1}{3}e^t$
+*** 8
+$y'''-y' = \tan t, y\left(\frac{\pi}{4}\right)=2, y'\left(\frac{\pi}{4}\right)=1,y''\left(\frac{\pi}{4}\right)=-1$
+for $y'''-y'=0$
+$r^3-r=0$, $r=0,1,-1$
+$y=A+Be^t+Ce^{-t}$
+don't know specific differencing for $\tan t$
+*** 12
+$y'''-3y''+3y'-y=g(t)$
+$Y(t)=-g(t)-3g'(t)+6g''(t)-24g'''(t)-3g''''(t)+81g'''''(t)-96g''''''(t)+...$
+don't know how to write this into integral..
+when $g(t)=t^{-2}e^t$
+$Y(t)=t^{-2}e^t(-1+3+6+24-3-81-96-..)$
+*** 16
+there is no problem 16?

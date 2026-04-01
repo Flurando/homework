@@ -1,0 +1,166 @@
+#+TITLE: Week 11.11 Math Homework
+#+AUTHOR: 2024110144 陈有骏
+#+LATEX_COMPILER: xelatex
+#+LATEX_CLASS: article
+#+LATEX_CLASS_OPTIONS: [a4paper,10pt]
+#+LATEX_HEADER: \usepackage[margin=0.5in]{geometry}
+#+LATEX_HEADER: \usepackage{xeCJK}
+#+LATEX_HEADER: \usepackage{fontspec}
+#+LATEX_HEADER: \usepackage{amsmath}
+#+LATEX_HEADER: \setCJKmainfont{WenQuanYi Zen Hei}
+#+OPTIONS: \n:t toc:nil num:nil date:nil
+
+#+begin_comment
+4.4 1-12 mod 3
+#+end_comment
+
+* 4.4
+** 3
+$y'''-2y''-y'+2y=e^{4t}$
+try to find a set of fundamental solution first
+$y'''-2y''-y'+2y=0$
+$r^3-2r^2-r+2=0$
+$(r-1)(r^2-r-2)=0$
+$r=1, 2, -1$
+so fundamental set is $e^t, e^{2t}, e^{-t}$
+$\begin{aligned}
+W &= \|\begin{matrix}
+e^t & e^{2t} & e^{-t}\\
+e^t & 2e^{2t} & -e^{-t}\\
+e^t & 4e^{2t} & e^{-t}
+\end{matrix}\|\\
+&= e^{2t}\|\begin{matrix}
+1 & 1 & 1\\
+1 & 2 & -1\\
+1 & 4 & 1
+\end{matrix}\|\\
+&= e^{2t}(2-1+4-2+4-1)\\
+&= 6e^{2t}
+\end{aligned}$
+$\begin{aligned}
+W_1 &= \|\begin{matrix}
+0 & e^{2t} & e^{-t}\\
+0 & 2e^{2t} & -e^{-t}\\
+1 & 4e^{2t} & e^{-t}
+\end{matrix}\|\\
+&= e^t-2e^t\\
+&= -e^t
+\end{aligned}$
+$\begin{aligned}
+W_2 &= \|\begin{matrix}
+e^t & 0 & e^{-t}\\
+e^t & 0 & -e^{-t}\\
+e^t & 1 & e^{-t}
+\end{matrix}\|\\
+&= -2
+\end{aligned}$
+$\begin{aligned}
+W_3 &= \|\begin{matrix}
+e^t & e^{2t} & 0\\
+e^t & 2e^{2t} & 0\\
+e^t & 4e^{2t} & 1
+\end{matrix}\|\\
+&= e^{3t}
+\end{matrix}$
+$Y = e^t\int_{t_0}^t \frac{e^{4s}(-e^s)}{6e^{2s}} ds + e^{2t}\int_{t_0}^t \frac{e^{4s}(-2)}{6e^{2s}} ds + e^{-t}\int_{t_0}^t \frac{e^{4s}e^{2s}}{6e^{2s}} ds$
+$Y = e^t\int_{t_0}^t -\frac{1}{6}e^s ds - e^{2t}\int_{t_0}^t \frac{1}{3}e^{2s} ds + e^{-t}\int_{t_0}^t \frac{e^{4s}}{6} ds$
+$y = c_1e^t + c_2e^{2t} + c_3e^{-t} + Y$
+** 6
+$y'''-y'=\csc t, 0<t<\pi$
+$r^3-r=0$
+$r=0,-1,1$
+$1,e^{-t},e^t$
+$W=0$
+there is no special solution $Y$
+not knowing what to do then
+** 9
+$\begin{aligned}
+W
+&= \|\begin{matrix}
+x & x^2 & \frac{1}{x}\\
+1 & 2x & -\frac{1}{x^2}\\
+0 & 2 & \frac{2}{x^3}
+\end{matrix}\|\\
+&= 4 + \frac{2}{x} - \frac{2}{x} + \frac{2}{x}\\
+&= 4 + \frac{2}{x}
+\end{aligned}$
+$\begin{aligned}
+W_1
+&= \|\begin{matrix}
+0 & x^2 & \frac{1}{x}\\
+0 & 2x & -\frac{1}{x^2}\\
+1 & 2 & \frac{2}{x^3}
+\end{matrix}\|\\
+&= 1
+\end{aligned}$
+$\begin{aligned}
+W_2
+&= \|\begin{matrix}
+x & 0 & \frac{1}{x}\\
+1 & 0 & -\frac{1}{x^2}\\
+0 & 1 & \frac{2}{x^3}
+\end{matrix}\|\\
+&= 0
+\end{aligned}$
+$\begin{aligned}
+W_3
+&= \|\begin{matrix}
+x & x^2 & 0\\
+1 & 2x & 0\\
+0 & 2 & 1
+\end{matrix}\|\\
+&= 3x^2
+\end{aligned}$
+$Y = x\int_{t_0}^t \frac{2s^4\cdot 1}{4+\frac{2}{s}} ds + x^2\int_{t_0}^t \frac{2s^4\cdot 0}{4+\frac{2}{s}} ds + \frac{1}{x}\int_{t_0}^t \frac{2s^4\cdot 3s^2}{4+\frac{2}{s}} ds$
+$Y = x\int_{t_0}^t \frac{2s^4\cdot 1}{4+\frac{2}{s}} ds + \frac{1}{x}\int_{t_0}^t \frac{2s^4\cdot 3s^2}{4+\frac{2}{s}} ds$
+** 12
+$y'''-3y''+3y'-y=g(t)$
+$r^3-3r^2+3r-1=0$
+$(r-1)(r^2+2r+1)=0$
+$r=1,-i,+i$
+$e^t, e^{-it}, e^{it}$
+$\begin{aligned}
+W
+&= \|\begin{matrix}
+e^t & e^{-it} & e^{it}\\
+e^t & -ie^{-it} & ie^{it}\\
+e^t & -e^{-it} & -e^{it}
+\end{matrix}\|\\
+&= e^t\|\begin{matrix}
+1 & 1 & 1\\
+1 & -i & i\\
+1 & -1 & -1
+\end{matrix}\|\\
+&= i+i-1+i+i+1\\
+&= 4i
+\end{aligned}$
+$\begin{aligned}
+W_1
+&= \|\begin{matrix}
+0 & e^{-it} & e^{it}\\
+0 & -ie^{-it} & ie^{it}\\
+1 & -e^{-it} & -e^{it}
+\end{matrix}\|\\
+&= 0
+\end{aligned}$
+$\begin{aligned}
+W_2
+&= \|\begin{matrix}
+e^t & 0 & e^{it}\\
+e^t & 0 & ie^{it}\\
+e^t & 1 & -e^{it}
+\end{matrix}\|\\
+&= (1+i)e^{(1+i)t}
+\end{aligned}$
+$\begin{aligned}
+W_3
+&= \|\begin{matrix}
+e^t & e^{-it} & 0\\
+e^t & -ie^{-it} & 0\\
+e^t & -e^{-it} & 1
+\end{matrix}\|\\
+&= (1-i)e^{(1-i)t}
+\end{aligned}$
+$Y = e^{-it}\int_{t_0}^t \frac{g(s)(1+i)e^{(1+i)t}}{4i} ds + e^{it}\int_{t_0}^t \frac{g(s)(1-i)e^{(1-i)t}}{4i} ds$
+when $g(t)=t^{-2}e^t$
+$Y = e^{-it}\int_{t_0}^t \frac{t^{-2}e^t(1+i)e^{(1+i)t}}{4i} ds + e^{it}\int_{t_0}^t \frac{t^{-2}e^t(1-i)e^{(1-i)t}}{4i} ds$

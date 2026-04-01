@@ -1,0 +1,122 @@
+#+TITLE: Linear Algebra Assignment 1
+#+AUTHOR: 
+#+LATEX_CLASS: article
+#+LATEX_CLASS_OPTIONS: [a4paper,12pt]
+#+LATEX_HEADER: \usepackage[margin=1in]{geometry}
+#+LATEX_HEADER: \pdfcompresslevel=9
+#+OPTIONS: \n:t toc:nil num:nil date:nil
+
+#+begin_center
+Please submit to the email address: 1830138248@qq.com
+#+end_center
+
+* Problem 1
+$$\left[\begin{array}{ccc|c}
+2 & -1 & 3 & 11\\
+1 & 2 & -1 & 2\\
+3 & 1 & 2 & 13
+\end{array}\right]$$
+$$\left[\begin{array}{ccc|c}
+2 & -1 & 3 & 11\\
+2 & 4 & -2 & 4\\
+3 & 1 & 2 & 13
+\end{array}\right]$$
+$$\left[\begin{array}{ccc|c}
+2 & -1 & 3 & 11\\
+0 & 5 & -5 & -7\\
+3 & 1 & 2 & 13
+\end{array}\right]$$
+$$\left[\begin{array}{ccc|c}
+6 & -3 & 9 & 33\\
+0 & 5 & -5 & -7\\
+6 & 2 & 4 & 26
+\end{array}\right]$$
+$$\left[\begin{array}{ccc|c}
+6 & -3 & 9 & 33\\
+0 & 5 & -5 & -7\\
+0 & 5 & -5 & -7
+\end{array}\right]$$
+$$\left[\begin{array}{ccc|c}
+6 & -3 & 9 & 33\\
+0 & 5 & -5 & -7\\
+0 & 0 & 0 & 0
+\end{array}\right]$$
+so pivots are $x_1$ and $x_2$
+solve $x_3$ and $x_4$ with variable $x_1, x_2$
+
+* Problem 2
+$$\begin{aligned}
+2A-3B &= \begin{bmatrix}
+8 & -2 & 4\\
+0 & 6 & 2\\
+-4 & 2 & 10
+\end{bmatrix} - \begin{bmatrix}
+3 & 6 & -3\\
+9 & 0 & 12\\
+6 & 3 & 0
+\end{bmatrix}\\
+&= \begin{bmatrix}
+5 & -8 & 7\\
+-9 & 6 & -10\\
+-10 & -1 & 10
+\end{bmatrix}
+\end{aligned}$$
+$$(AB)^T - A^TB^T = \begin{bmatrix}
+0 & 0 & 0\\
+0 & 0 & 0\\
+0 & 0 & 0
+\end{bmatrix}$$
+$$B^T = \begin{bmatrix}
+1 & 3 & 2\\
+2 & 0 & 1\\
+-1 & 4 & 0
+\end{bmatrix}$$
+
+* Problem 3
+$$\begin{bmatrix}
+1 & -2 & 4 & 3\\
+2 & 1 & -1 & 7\\
+3 & 0 & a & b
+\end{bmatrix}$$
+$$\begin{bmatrix}
+1 & -2 & 4 & 3\\
+0 & 5 & -9 & 1\\
+0 & 6 & a-12 & b-9
+\end{bmatrix}$$
+$$\begin{bmatrix}
+1 & -2 & 4 & 3\\
+0 & 5 & -9 & 1\\
+0 & 0 & a-1.2 & b-10.2
+\end{bmatrix}$$
+when $a\neq 1.2$, there is only one solution
+when $a=1.2, b=10.2$, there is infinitely amount of solutions
+when $a=1.2, b\neq 10.2$, no solution
+
+* Problem 4
+$$\left[\begin{array}{cccc|c}
+1 & 3 & -1 & 2 & 5\\
+2 & 6 & -3 & 1 & 8\\
+3 & 9 & -4 & 3 & 13
+\end{array}\right]$$
+$$\left[\begin{array}{cccc|c}
+1 & 3 & -1 & 2 & 5\\
+0 & 0 & -1 & -3 & -2\\
+0 & 0 & -1 & -3 & -2
+\end{array}\right]$$
+$$\left[\begin{array}{cccc|c}
+1 & 3 & -1 & 2 & 5\\
+0 & 0 & -1 & -3 & -2\\
+0 & 0 & 0 & 0 & 0
+\end{array}\right]$$
+leading variables are $x_1, x_3$, free variables are $x_2, x_4$
+suppose $x_1 = a, x_3 = b$
+then $x_4 = \frac{2-b}{3}$
+we know $a + 3x_2 - b + \frac{4-2b}{3} = 5$
+which means $x_2 = \frac{11 - 3a + 5b}{9}$
+so general solution is $\begin{bmatrix}a\\\frac{11 - 3a + 5b}{9}\\b\\\frac{2-b}{3}\end{bmatrix}$
+or written as $\begin{bmatrix}9a\\11 - 3a + 5b\\9b\\6-3b\end{bmatrix}$
+
+* Problem 5
+we know $x_1+2x_2=9, 3x_1-x_2=4$, so $7x_1=17, x_1=\frac{17}{7}, x_2=\frac{23}{7}$
+also $y_1+2y_2=0, 3y_1-y_2=7$, we have $y_1=\frac{7}{5}, y_2=-\frac{14}{5}$
+

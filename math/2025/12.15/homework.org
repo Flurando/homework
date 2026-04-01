@@ -1,0 +1,126 @@
+#+TITLE: Week 12.15 Math Homework
+#+AUTHOR: 2024110144 陈有骏
+#+LATEX_COMPILER: xelatex
+#+LATEX_CLASS: article
+#+LATEX_CLASS_OPTIONS: [a4paper,10pt]
+#+LATEX_HEADER: \usepackage[margin=0.5in]{geometry}
+#+LATEX_HEADER: \usepackage{xeCJK}
+#+LATEX_HEADER: \usepackage{fontspec}
+#+LATEX_HEADER: \usepackage{amsmath}
+#+LATEX_HEADER: \setCJKmainfont{WenQuanYi Zen Hei}
+#+OPTIONS: \n:t toc:nil num:nil date:nil
+
+#+begin_comment
+6.4 1-17 mod 4
+#+end_comment
+
+* 6.4
+** 4
+#+begin_comment
+a. Sketch the graph of the forcing function on an appropriate
+interval.
+b. Find the solution of the given initial value problem.
+c. Plot the graph of the solution.
+d. Explain how the graphs of the forcing function and the
+solution are related.
+#+end_comment
+$$y''+3y'+2y=f(t), y(0)=0, y'(0)=0$$
+$$f(t)=\left{\begin{aligned}1, & 0\leq t < 10\\
+0, & t\geq 10\end{aligned}\right.$$
+the $f(t)$ is likely as below
+#+begin_src gnuplot :file 12.15-6.4-4.png :exports both
+  set xrange [0:50]
+  set xlabel "t"
+  set ylabel "y"
+  set title "12.15-6.4-4"
+
+  f(x) = (x < 10) ? 1 : 0
+  
+  plot f(x) notitle
+#+end_src
+
+#+RESULTS:
+[[file:12.15-6.4-4.png]]
+
+to solve this, apply Laplace transform to the funciton
+$$L[y''+3y'+2y]=L[f(t)]$$
+which is $L[y''] + L[3y'] + L[2y] = L[f(t)]$
+$$s^2Y(s) - sy(0) - y'(0) + 3(sY(s) - y(0)) + 2Y(s) = L[f(t)]$$
+as we know, $y(0)=y'(0)=0$, there is $s^2Y(s) + 3sY(s) + 2Y(s) = L[f(t)]$
+for $L[f(t)]$, by searching online we know it could be represented as $\frac{1}{s} - \frac{e^{-10s}}{s}$
+so $Y(s) = \frac{1-e^{-10s}}{s(s^2+3s+2)}$
+now we need to inverse the Laplace transform for $Y(s)$
+first break it up into $Y(s) = (1-e^{-10s}) \cdot \left(\frac{1}{2s} + \frac{1}{s+1} + \frac{1}{2(s+2)}\right)$
+for that with $1$, it is $\frac{1}{2} + e^{-t} + \frac{1}{2}e^{-2t}$
+for the other with $e^{-10s}$, it is when $t\geq 10$, yeilding $\frac{1}{2} + e^{10}e^{-t} + \frac{1}{2}e^{-2(t-10)}$
+so wrapping up, the solution is
+when $t < 10$, $y(t)=\frac{1}{2} + e^{-t} + \frac{1}{2}e^{-2t}$
+when $t \geq 10$, $y(t)=(1-e^{10})e^{-t} + \frac{1}{2}e^{-2t} - \frac{1}{2}e^{-2(t-10)}$
+
+then let me draw the image
+#+begin_src gnuplot :file 12.15-6.4-4(2).png :exports both
+  set xrange [0:50]
+  set xlabel "t"
+  set ylabel "y"
+  set title "12.15-6.4-4(2)"
+
+  f(x) = (x < 10) ? 0.5 + exp(-x) + 0.5*exp(-2*x) : (1-exp(10))*exp(-x) + 0.5*exp(-2*x) - 0.5*exp(-2*(x-10))
+  
+  plot f(x) notitle
+#+end_src
+
+#+RESULTS:
+[[file:12.15-6.4-4(2).png]]
+
+besides the sharp turn on the break point, there is not other relevance I could find.
+** 8
+$y^{(4)} + 5y'' + 4y = 1-u_{\pi}, y(0)=y'(0)=y''(0)=y'''(0)=0$
+
+the right part is as below
+#+begin_src gnuplot :file 12.15-6.4-8(1).png :exports both
+  set xrange [0:50]
+  set yrange [-0.5:1.5]
+  set xlabel "t"
+  set ylabel "y"
+  set title "12.15-6.4-8(1)"
+
+  f(x) = 1 - ((x < pi) ? 0 : 1)
+
+  plot f(x) notitle
+#+end_src
+
+#+RESULTS:
+[[file:12.15-6.4-8(1).png]]
+
+after Laplace transform, we get $s^4Y(s) + 5s^2Y(s) + 4Y(s) = \frac{1}{s} - \frac{e^{-\pi s}}{s}$
+so $Y(s) = \frac{1-e^{-\pi s}}{s(s^4+5s^2+4)}$
+
+then inverse the laplace transform for this
+$$Y(s) = \frac{1}{s(s^4+5s^2+4)} - \frac{e^{-\pi s}}{s(s^4+5s^2+4)}$$
+which I failed to solve
+** 12
+$f(t) = \frac{1}{k} (u_5(t)(t-5) - u_{5+k}(t) (t-5-k))/k$
+$y'' + 4y = f(t), y(0)=y'(0)=0$
+
+#+begin_src gnuplot :file 12.15-6.4-12(1).png :exports both
+  set xlabel "t"
+  set ylabel "y"
+  set title "12.15-6.4-12(1)"
+
+  k=3
+  u1(x) = (x < 5) ? 0 : 1
+  u2(x) = (x < (5+k))? 0 : 1
+  f(x) = 1.0/(k*k) * (u1(x)*(x-5) - u2(x)*(x-5-k))
+
+  plot f(x) notitle
+#+end_src
+
+#+RESULTS:
+[[file:12.15-6.4-12(1).png]]
+
+the special point is the jumping becomes a slope instead of vertical line
+
+after Laplace transform, we have $Y(s)(s^2+4) = \frac{\frac{1}{k^2} (e^{-5s} - e^{-(5+k)s})}{s^2}$
+
+then inverse the transform for $Y(s)$, failed to do so
+** 16
