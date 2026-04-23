@@ -1,0 +1,102 @@
+#+TITLE: Linear Algebra Assignment 3
+#+AUTHOR: 
+#+LATEX_CLASS: article
+#+LATEX_CLASS_OPTIONS: [a4paper,12pt]
+#+LATEX_HEADER: \usepackage[margin=1in]{geometry}
+#+LATEX_HEADER: \pdfcompresslevel=9
+#+OPTIONS: \n:t toc:nil num:nil date:nil
+
+#+begin_center
+Please submit to the email address: 1830138248@qq.com
+#+end_center
+
+* Problem 1
+** a
+by definiton, we need to prove that $W$ contains $\begin{pmatrix}0\\0\\0\end{pmatrix}$, closed for addition & scalar multiplication
+since $0 - 2 \cdot 0 + 3 \cdot 0 = 0$, $W$ does contain $\begin{pmatrix}0\\0\\0\end{pmatrix}$
+known $x_1 - 2x_2 + 3x_3 = 0, x_1' - 2x_2' + 3x_3' = 0$, it is obvious that $(x_1 + x_1') - 2(x_2 + x_2') + 3(x_3 + x_3') = 0$
+which means $\begin{pmatrix}x_1 + x_1'\\x_2 + x_2'\\x_3 + x_3'\end{pmatrix} \in W$
+for scalar multiplication, this is the same with addition
+** b
+suppose $\vec{u} = \begin{pmatrix}x_1\\x_2\\x_3\end{pmatrix}, \vec{v} = \begin{pmatrix}x_1'\\x_2'\\x_3'\end{pmatrix}$
+then $3\vec{u} - 2\vec{v} = \begin{pmatrix}3x_1-2x_1'\\3x_2-2x_2'\\3x_3-2x_3'\end{pmatrix}$
+as $\begin{aligned}
+3x_1-2x_1' - 2(3x_2-2x_2') + 3(3x_3-2x_3')
+&= 3(x_1 - 2x_2 + 3x_3) - 2(x_1' - 2x_2' + 3x_3')\\
+&= 0-0\\
+&= 0
+\end{aligned}$
+
+* Problem 2
+** a
+$U\cap W$ is subspace of $U$, furthermore subspace of $V$
+** b
+suppose $u \in U, w \in W$
+obviously ${u+w}$ contains $\begin{pmatrix}0\\0\\0\end{pmatrix}$
+here $u, w \in V$, so $u + w \in V$
+thus, $U+W$ is subspace of $V$
+
+* Problem 3
+** a
+as obviously any two of them are linearly independent, the three are linearly independent
+** b
+$k \in \{x|x\in \mathbb{R}, x\neq -\frac{1}{2}\}$
+
+* Problem 4
+** a
+for null space, we need $A\vec{x} = 0$
+so $\vec{x} = \begin{pmatrix}a\\b\\c\end{pmatrix}, a + b + c = 0$
+in other words, $N(A) = \left\{\begin{pmatrix}a\\b\\c\end{pmatrix} | a + b + c = 0\right\}$
+- $0 + 0 + 0 = 0$
+- $(a+a_1) + (b+b_1) + (c+c_1) = (a+b+c) + (a_1+b_1+c_1) = 0 + 0 = 0$
+- $c_0\in\mathbb{R}, c_0a + c_0b + c_0c = 0$
+so $N(A)$ indeed is a subspace of $\mathbb{R}^3$
+** b
+$\left\{\begin{pmatrix}a\\b\\c\end{pmatrix} \in \mathbb{R}| a + b + c = 0\right\}$
+
+* Problem 5
+** a
+nope, as $2P_1(x) + P_2(x) = P_3(x)$
+** b
+consider $\begin{bmatrix}
+2 & -1 & 1\\
+1 & 3 & -2\\
+5 & 1 & 0
+\end{bmatrix}$ or $\begin{bmatrix}
+1 & 3 & -2\\
+0 & -7 & 5\\
+0 & 0 & 0
+\end{bmatrix}$
+then $\begin{bmatrix}
+7 & 21 & -14\\
+0 & -7 & 5\\
+0 & 0 & 0
+\end{bmatrix}$
+$\begin{bmatrix}
+7 & 8 & -14+65/7\neq -5\\
+0 & -7 & 5\\
+0 & 0 & 0
+\end{bmatrix}$
+impossible
+** c
+$\begin{bmatrix}
+1 & 3 & -2\\
+0 & -7 & 5\\
+0 & 0 & 0
+\end{bmatrix}$
+$\begin{bmatrix}
+3 & 9 & -6\\
+0 & -7 & 5\\
+0 & 0 & 0
+\end{bmatrix}$
+$\begin{bmatrix}
+3 & 9-49/5 & 1\\
+0 & -7 & 5\\
+0 & 0 & 0
+\end{bmatrix}$
+$\begin{bmatrix}
+3 & -4/5 & 1\\
+0 & -7 & 5\\
+0 & 0 & 0
+\end{bmatrix}$
+so only one possible $t$, which is $-\frac{4}{5}$ 

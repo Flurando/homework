@@ -1,0 +1,21 @@
+* 1
+(a) $P(n) = C_N^n p^n(1-p)^{N-n}$
+(b) $P'(m) = C_N^{\frac{N+m}{2}} p^n(1-p)^{N-n}$
+* 2
+(a) $P(N/2) = C_{N/2}^n p^n(1-p)^{{N/2}-n}$
+(b) $0$
+* 3
+for $u1 u2 ... un$
+suppose u1 + u2 + ... + un = u
+then (u1-u)^2 + (u2-u)^2 + ... + (un - u)^2 = (u1^2 + u2^2 + ... + un^2) - 2(u1u + u2u + ... + unu) + nu^2 = (u1^2 + u2^2 + ... + un^2) - 2unu + nu^2 = (u1^2 + u2^2 + ... + un^2) - nu^2
+and we know nu^2 \geq 0
+* 4
+(a) u = pu_0 - (1-p)u_0 = (2p-1)u_0
+u^2 = u_0^2
+(b) u_0^2 - (4p^2 - 4p + 1)u_0^2
+* 5
+(a) u = pu_0 - pu_0 + (1-2p)0 = 0
+u^2 = 2pu_0^2 + 0 = 2pu_0^2
+(b) 2pu_0^2
+(c) M = u = 0
+\Delta M = 2Mpu_0^2

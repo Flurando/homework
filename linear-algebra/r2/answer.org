@@ -1,0 +1,232 @@
+#+TITLE: Linear Algebra Assignment 2
+#+AUTHOR: 
+#+LATEX_CLASS: article
+#+LATEX_CLASS_OPTIONS: [a4paper,12pt]
+#+LATEX_HEADER: \usepackage[margin=1in]{geometry}
+#+LATEX_HEADER: \pdfcompresslevel=9
+#+OPTIONS: \n:t toc:nil num:nil date:nil
+
+#+begin_center
+Please submit to the email address: 1830138248@qq.com
+#+end_center
+
+* Problem 1
+$$A = \begin{bmatrix}
+0 & 1 & 2 & 3\\
+1 & 1 & 1 & 1\\
+-2 & -2 & 3 & 3\\
+1 & 2 & -2 & -3
+\end{bmatrix}$$
+
+$$\begin{bmatrix}
+1 & 2 & 3 & 4\\
+1 & 1 & 1 & 1\\
+-2 & -2 & 3 & 3\\
+1 & 2 & -2 & -3
+\end{bmatrix}$$
+$$\begin{bmatrix}
+1 & 2 & 3 & 4\\
+1 & 1 & 1 & 1\\
+0 & 0 & 5 & 5\\
+1 & 2 & -2 & -3
+\end{bmatrix}$$
+$$\begin{bmatrix}
+1 & 2 & 3 & 4\\
+0 & 1 & -3 & -4\\
+0 & 0 & 5 & 5\\
+1 & 1 & 1 & 1
+\end{bmatrix}$$
+$$\begin{bmatrix}
+1 & 1 & 0 & 0\\
+0 & 1 & -3 & -4\\
+0 & 0 & 5 & 5\\
+0 & 2 & 0 & 0
+\end{bmatrix}$$
+$$\begin{bmatrix}
+1 & 1 & 0 & 0\\
+0 & 2 & 0 & 0\\
+0 & 0 & -3 & -4\\
+0 & 0 & 0 & 5/3
+\end{bmatrix}$$
+so $det(A) = -10$
+the two determinations are same with that of $A$, so $-20$
+
+* Problem 2
+** a
+$$\begin{aligned}
+\left(\begin{matrix}O&I\\I&O\end{matrix}\right)B
+&= \left(\begin{matrix}B_{21}&B_{22}\\B_{11}&B_{12}\end{matrix}\right)
+\end{aligned}$$
+** b
+$$\begin{aligned}
+\left(\begin{matrix}C&O\\O&C\end{matrix}\right)B
+&= \left(\begin{matrix}CB_{11}&CB_{12}\\CB_{21}&CB_{22}\end{matrix}\right)\\
+&= \left(\begin{matrix}1 & 1 & 1 & 1\\ 0 & 1 & 0 & 0\\ 3 & 1 & 1 & 1\\ 0 & 1 & 0 & 1\end{matrix}\right)
+\end{aligned}$$
+** c
+$$\begin{aligned}
+\left(\begin{matrix}D&O\\O&I\end{matrix}\right)B
+&= \left(\begin{matrix}DB_{11}&DB_{12}\\IB_{21}&IB_{22}\end{matrix}\right)\\
+&= \left(\begin{matrix}2B_{11} & 2B_{12}\\ B_{21} & B_{22}\end{matrix}\right)
+\end{aligned}$$
+** d
+$$\begin{aligned}
+\left(\begin{matrix}E&O\\O&E\end{matrix}\right)B
+&= \left(\begin{matrix}EB_{11}&EB_{12}\\EB_{21}&EB_{22}\end{matrix}\right)\\
+&= \left(\begin{matrix}1 & 2 & 1 & 1\\ 1 & 1 & 1 & 1\\ 3 & 2 & 1 & 2\\ 3 & 1 & 1 & 1\end{matrix}\right)
+\end{aligned}$$
+
+* Problem 3
+** a
+$$A = \begin{bmatrix}
+2 & 1 & 1\\
+6 & 4 & 5\\
+4 & 1 & 3
+\end{bmatrix}$$
+
+$$\begin{bmatrix}
+2 & 1 & 1\\
+0 & 1 & 2\\
+0 & 0 & 3
+\end{bmatrix}$$
+so $det(A) = 6$, meaning $A$ is invertible
+
+$$\left[\begin{array}{ccc|ccc}
+2 & 1 & 1 & 1 & 0 & 0\\
+0 & 1 & 2 & -3 & 1 & 0\\
+0 & 0 & 3 & -5 & 1 & 1
+\end{array}\right]$$
+
+we reverse the operations, so $E_1=\begin{bmatrix}
+1 & 0 & 0\\
+-3 & 1 & 0\\
+0 & 0 & 1
+\end{bmatrix}$
+$E_2=\begin{bmatrix}
+1 & 0 & 0\\
+0 & 1 & 0\\
+-2 & 0 & 1
+\end{bmatrix}$
+$E_3=\begin{bmatrix}
+1 & 0 & 0\\
+0 & 1 & 0\\
+0 & 1 & 1
+\end{bmatrix}$
+
+** b
+$$\begin{aligned}
+L &= E_1^{-1}E_2^{-1}E_3^{-1}\\
+&= \begin{bmatrix}
+1 & 0 & 0\\
+3 & 1 & 0\\
+0 & 0 & 1
+\end{bmatrix}\begin{bmatrix}
+1 & 0 & 0\\
+0 & 1 & 0\\
+2 & 0 & 1
+\end{bmatrix}\begin{bmatrix}
+1 & 0 & 0\\
+0 & 1 & 0\\
+0 & -1 & 1
+\end{bmatrix}\\
+&= \begin{bmatrix}
+1 & 0 & 0\\
+3 & 1 & 0\\
+2 & 0 & 1
+\end{bmatrix}\begin{bmatrix}
+1 & 0 & 0\\
+0 & 1 & 0\\
+0 & -1 & 1
+\end{bmatrix}\\
+&= \begin{bmatrix}
+1 & 0 & 0\\
+3 & 1 & 0\\
+2 & -1 & 1
+\end{bmatrix}
+\end{aligned}$$
+so $L$ is an lower triangular matrix
+$$\begin{aligned}
+LU &= \begin{bmatrix}
+1 & 0 & 0\\
+3 & 1 & 0\\
+2 & -1 & 1
+\end{bmatrix}\begin{bmatrix}
+2 & 1 & 1\\
+0 & 1 & 2\\
+0 & 0 & 3
+\end{bmatrix}\\
+&= \begin{bmatrix}
+2 & 1 & 1\\
+6 & 4 & 5\\
+4 & 1 & 3
+\end{bmatrix}\\
+&= A
+\end{aligned}$$
+
+* Problem 4
+** a
+$$A = \begin{bmatrix}
+1 & 2 & 3\\
+2 & 3 & 4\\
+3 & 4 & 5
+\end{bmatrix}$$
+
+$$\begin{aligned}
+det(A) &= \left|\begin{matrix}
+1 & 2 & 3\\
+0 & -1 & -2\\
+0 & 0 & 0
+\end{matrix}\right|\\
+&= 0
+\end{aligned}$$
+so $A$ indeed is singular, or is not non-singular.
+
+$$\begin{aligned}
+adj(A) &= \begin{bmatrix}
+15-16 & 10-12 & 8-9\\
+10-12 & 5-9 & 4-6\\
+8-9 & 4-6 & 3-4
+\end{bmatrix}\\
+&= \begin{bmatrix}
+-2 & -2 & -1\\
+-2 & -4 & -2\\
+-1 & -2 & -1
+\end{bmatrix}
+\end{aligned}$$
+
+$$\begin{aligned}
+Aadj(A) &= \begin{bmatrix}
+1 & 2 & 3\\
+2 & 3 & 4\\
+3 & 4 & 5
+\end{bmatrix}\begin{bmatrix}
+-2 & -2 & -1\\
+-2 & -4 & -2\\
+-1 & -2 & -1
+\end{bmatrix}\\
+&= -\begin{bmatrix}
+1 & 2 & 3\\
+2 & 3 & 4\\
+3 & 4 & 5
+\end{bmatrix}\begin{bmatrix}
+2 & 2 & 1\\
+2 & 4 & 2\\
+1 & 2 & 1
+\end{bmatrix}\\
+&= -\begin{bmatrix}
+9 & 16 & 8\\
+14 & 21 & 13\\
+19 & 26 & 18
+\end{bmatrix}
+\end{aligned}$$
+
+* Problem 5
+** a
+$$det(AB)=det(A)det(B)=20$$
+** b
+$$det(3A)=3^3\cdot det(A)=108$$
+** c
+$$det(2AB)=2^3\cdot det(AB)=160$$
+** d
+$$det(A^{-1}B)=det(A)^{-1}det(B)=\frac{5}{4}$$
+

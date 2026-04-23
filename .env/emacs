@@ -1,0 +1,8 @@
+#!/bin/sh
+exec guix time-machine -C channels.scm \
+     -- shell --container --no-cwd --network -m manifest.scm \
+     --preserve='^DISPLAY$' --preserve='^XAUTHORITY$' --expose=$XAUTHORITY \
+     --preserve='^SSL_CERT_DIR$' --preserve='^SSL_CERT_FILE$' --expose=$SSL_CERT_DIR \
+     --share=.emacs.d=$HOME/.emacs.d --expose=.emacs.d/init.el=$HOME/.emacs.d/init.el \
+     --share=./..=/homework \
+     -- emacs --chdir "/homework" --maximized

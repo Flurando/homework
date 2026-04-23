@@ -1,0 +1,108 @@
+#+TITLE: Statistical Physics Assignment 2
+#+AUTHOR: 2024110144 陈有骏
+#+LATEX_COMPILER: xelatex
+#+LATEX_CLASS: article
+#+LATEX_CLASS_OPTIONS: [a4paper,10pt]
+#+LATEX_HEADER: \usepackage[margin=0.5in]{geometry}
+#+LATEX_HEADER: \usepackage{xeCJK}
+#+LATEX_HEADER: \usepackage{fontspec}
+#+LATEX_HEADER: \usepackage{amsmath}
+#+LATEX_HEADER: \setCJKmainfont{WenQuanYi Zen Hei}
+#+OPTIONS: \n:t toc:nil num:nil date:nil
+
+* Solution 1
+** a
+of course as "the spin are statistically independent"
+** b
+the expected variation of $n$ equals to the sum of the variation of $u$
+this is true as $E(var(n)) = E(var(\sum u)) = E(\sum var(u))$
+** c
+$\bar{u} = p$
+$\begin{aligned}
+\overline{(\Delta u)^2}
+&= p(1-\bar{u})^2 + q(0-\bar{u})^2\\
+&= p(1-p)^2 + qp^2\\
+&= p-2p^2+p^3 + (1-p)p^2\\
+&= p-p^2
+\end{aligned}$
+** d
+$\bar{n} = Np$
+$\overline{(\Delta n)^2} = N(p-p^2)$
+
+* Solution 2
+** a
+$\bar{n} = Np = \frac{NV}{V_0}$
+** b
+the standard deviation is $\sqrt{\sum_{i=0}^N P(i) (i-\bar{n})^2}$
+where $P(i) = C_N^i p^i (1-p)^{N-i}$
+so $\begin{aligned}
+\sqrt{\sum_{i=0}^N P(i) (i-\bar{n})^2}
+&= \sqrt{\sum_{i=0}^N C_N^i p^i (1-p)^{N-i} (i-\bar{n})^2}\\
+&= \sqrt{\sum_{i=0}^N C_N^i \left(\frac{V}{V_0}\right)^i (1-\left(\frac{V}{V_0}\right))^{N-i} (i^2-2\cdot i\cdot\bar{n}+\bar{n}^2)}\\
+&= \sqrt{\sum_{i=0}^N C_N^i \frac{V^i (V_0-V)^{N-i}}{V_0^N} (i^2-2\cdot i\cdot\bar{n}+\bar{n}^2)}\\
+&= \sqrt{\bar{n}^2 + \frac{1}{V_0^N} \sum_{i=0}^N C_N^i V^i (V_0-V)^{N-i} (i^2-2\cdot i\cdot\bar{n})}
+\end{aligned}$
+don't know how to proceed
+** c
+when $V\ll V_0$, $\begin{aligned}
+\sqrt{\sum_{i=0}^N P(i) (i-\bar{n})^2}
+&= \sqrt{\bar{n}^2 + \frac{1}{V_0^N} \sum_{i=0}^N C_N^i V^i (V_0-V)^{N-i} (i^2-2\cdot i\cdot\bar{n})}\\
+&= \sqrt{\bar{n}^2}\\
+&= |\bar{n}|\\
+&= \frac{NV}{V_0}
+\end{aligned}$
+and the latter becomes $1$
+** d
+should be $0$, $\begin{aligned}
+\sqrt{\sum_{i=0}^N P(i) (i-\bar{n})^2}
+&= \sqrt{\bar{n}^2 + \frac{1}{V_0^N} \sum_{i=0}^N C_N^i V^i (V_0-V)^{N-i} (i^2-2\cdot i\cdot\bar{n})}\\
+&= \sqrt{\bar{n}^2 + N^2-2\cdot N\cdot\bar{n}}\\
+&= |\bar{n} - N|\\
+&= (1-\frac{V}{V_0})N\\
+&= (V\to V_0)\quad (1-1)N\\
+&= 0
+\end{aligned}$
+agreed
+
+* Solution 3
+** a
+below lists conditions
+$\left[\begin{array}{ccc|cc} - & - & - & + & + \\ + & + & - & - & + \\ + & - & + & - & + \\ - & + & + & - & + \\ + & + & - & + & - \\ + & - & + & + & - \\ - & + & + & + & - \end{array}\right]$
+so $P(-3\mu_0) = \frac{1}{7}, P(\mu_0) = \frac{6}{7}$
+** b
+$-3\mu_0P(-3\mu_0) + +4\mu_0P(\mu_0) = 3\mu_0$
+** c
+$\left[\begin{array}{ccc|cc} - & - & - & ? & ? \\ + & + & - & ? & ? \\ + & - & + & ? & ? \\ - & + & + & ? & ?\end{array}\right]$
+so $P(-3\mu_0) = \frac{1}{4}, P(\mu_0) = \frac{3}{4}$
+$-3\mu_0P(-3\mu_0) + +4\mu_0P(\mu_0) = \frac{9}{4}\mu_0$
+
+* Solution 4
+** a
+$C_N^n$ or $\begin{pmatrix}N\\n\end{pmatrix}$
+** b
+$n+1$ up and $N-n-1$ down
+$C_N^{n+1}$
+** c
+$\begin{aligned}
+P_-/P_+
+&= \frac{C_N^{n+1}}{C_N^n}\\
+&= \frac{N!/(n+1)!/(N-n-1)!}{N!/n!/(N-n)!}\\
+&= \frac{1/(n+1)!/(N-n-1)!}{1/n!/(N-n)!}\\
+&= \frac{n!(N-n)!}{(n+1)!(N-n-1)!}\\
+&= \frac{N-n}{n+1}
+\end{aligned}$
+when $n, n' \gg 1$, we have $P_-/P_+ = n'/n$
+if $n > n'$, smaller
+
+* Solution 5
+** a
+formula (15) is $E = \frac{\pi^2h^2}{2m}\left(\frac{n_x^2}{L_x^2} + \frac{n_y^2}{L_y^2} + \frac{n_z^2}{L_z^2}\right)$
+then $F = -(\frac{\delta\frac{\pi^2h^2}{2m}\frac{n_x^2}{L_x^2}}{\delta L_x}+0+0) = \frac{\pi^2h^2}{4m}\frac{n_x^2}{L_x^3}$
+** b
+$\bar{F} = \frac{\pi^2h^2}{4m}\frac{\overline{n_x^2}}{L_x^3}$
+$\bar{E} = 3\bar{F}$
+** c
+$\bar{P}= N\bar{F} / (L_yL_z) = N\bar{E} / (3L_yL_z)$
+failed to continue
+** d
+eh, this subquestion does not require answering seemingly
