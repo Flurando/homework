@@ -1,8 +1,15 @@
 #!/bin/sh
 exec guix time-machine -C channels.scm \
      -- shell --container --no-cwd --network -m manifest.scm \
-     --preserve='^DISPLAY$' --preserve='^XAUTHORITY$' --expose=$XAUTHORITY \
+     --preserve='^WAYLAND_DISPLAY$' --preserve="^XDG_RUNTIME_DIR$" --share=$XDG_RUNTIME_DIR/wayland-0 --expose=$XDG_RUNTIME_DIR/wayland-0.lock \
+     --preserve="^GUIX_GTK3_IM_MODULE_FILE$" --expose=$GUIX_GTK3_IM_MODULE_FILE \
+     --preserve='^XAUTHORITY$' --expose=$XAUTHORITY \
      --preserve='^SSL_CERT_DIR$' --preserve='^SSL_CERT_FILE$' --expose=$SSL_CERT_DIR \
      --share=.emacs.d=$HOME/.emacs.d --expose=.emacs.d/init.el=$HOME/.emacs.d/init.el \
      --share=./..=/homework \
-     -- emacs --chdir "/homework" --maximized
+     --expose=/gnu/store \
+     --expose=/etc/localtime \
+     --expose=$HOME/.cache/fontconfig \
+     -- bash -c 'emacs --chdir "/homework" --maximized'
+# the /etc/localtime is required only because lsp mode seems to require this for watchdog
+# 不挂载fontconfig时可运行fc-cache -f -v; 来提高独立性
